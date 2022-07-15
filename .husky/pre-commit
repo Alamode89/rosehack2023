@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo 'Starting to check formatting and linting... 😁'
+
+npm run format || (
+    echo 'Failed formatting check 🚫'
+    false;
+)
+
+echo 'Passed formatting check ✅'
+
+npm run eslint || (
+    echo 'Failed linting check 🚫'
+    false;
+)
+
+echo 'Passed linting check ✅'

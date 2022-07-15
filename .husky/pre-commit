@@ -3,7 +3,7 @@
 
 echo 'Starting to check formatting and linting... 😁'
 
-npm run format || (
+npm run check || (
     echo 'Failed formatting check 🚫'
     false;
 )

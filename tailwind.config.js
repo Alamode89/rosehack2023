@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ["Poppins"],
+      },
       colors: {
         rosehack: {
           primary: {

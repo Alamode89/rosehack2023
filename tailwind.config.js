@@ -6,6 +6,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "split-green-to-purple":
+          "linear-gradient(to bottom, #c5c6fb 50% , #c9f9be 50%);",
+      },
       fontFamily: {
         poppins: ["Poppins"],
       },

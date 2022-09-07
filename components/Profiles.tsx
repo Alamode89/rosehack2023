@@ -7,7 +7,7 @@ const boardMembers = [
     name: "Divyank Shah",
     pronouns: "he/him",
     position: "Web Dev ",
-    games: "Fortnite",
+    game: "Fortnite",
     linkedin: "https://www.linkedin.com/in/divyank-shah/",
     instagram: "https://www.instagram.com/divyank.shah/",
     github: "",
@@ -17,7 +17,7 @@ const boardMembers = [
     name: "Divyank Shah",
     pronouns: "he/him",
     position: "Web Dev ",
-    games: "Fortnite",
+    game: "Fortnite",
     linkedin: "",
     instagram: "https://www.instagram.com/divyank.shah/",
     github: "https://github.com/shahdivyank",
@@ -27,7 +27,7 @@ const boardMembers = [
     name: "Divyank Shah",
     pronouns: "he/him",
     position: "Web Dev ",
-    games: "Fortnite",
+    game: "Fortnite",
     linkedin: "https://www.linkedin.com/in/divyank-shah/",
     instagram: "",
     github: "https://github.com/shahdivyank",
@@ -37,7 +37,7 @@ const boardMembers = [
     name: "Divyank Shah",
     pronouns: "he/him",
     position: "Web Dev ",
-    games: "Fortnite",
+    game: "Fortnite",
     linkedin: "",
     instagram: "https://www.instagram.com/divyank.shah/",
     github: "",
@@ -47,7 +47,7 @@ const boardMembers = [
     name: "Divyank Shah",
     pronouns: "he/him",
     position: "Web Dev ",
-    games: "Fortnite",
+    game: "Fortnite",
     linkedin: "https://www.linkedin.com/in/nicoleb-garcia/",
     instagram: "",
     github: "",
@@ -57,7 +57,7 @@ const boardMembers = [
     name: "Nicole Garcia",
     pronouns: "she/her",
     position: "Sponsorship ",
-    games: "The Last of Us",
+    game: "The Last of Us",
     linkedin: "https://www.linkedin.com/in/nicoleb-garcia/",
     instagram: "https://www.instagram.com/lpurgitoryl/",
     github: "https://github.com/lpurgitoryl",
@@ -67,7 +67,7 @@ const boardMembers = [
     name: "Divyank Shah",
     pronouns: "he/him",
     position: "Web Dev ",
-    games: "Fortnite",
+    game: "Fortnite",
     linkedin: "https://www.linkedin.com/in/divyank-shah/",
     instagram: "https://www.instagram.com/divyank.shah/",
     github: "https://github.com/shahdivyank",
@@ -77,7 +77,7 @@ const boardMembers = [
     name: "Divyank Shah",
     pronouns: "he/him",
     position: "Web Dev ",
-    games: "Fortnite",
+    game: "Fortnite",
     linkedin: "https://www.linkedin.com/in/divyank-shah/",
     instagram: "https://www.instagram.com/divyank.shah/",
     github: "https://github.com/shahdivyank",
@@ -87,7 +87,7 @@ const boardMembers = [
     name: "Andre Amante",
     pronouns: "he/him",
     position: "Web Dev ",
-    games: "The Last of Us",
+    game: "The Last of Us",
     linkedin: "https://www.linkedin.com/in/andreamantee/",
     instagram: " https://www.instagram.com/andweeeee/",
     github: "https://github.com/Alamode89",
@@ -97,7 +97,7 @@ const boardMembers = [
     name: "Divyank Shah",
     pronouns: "he/him",
     position: "Web Dev ",
-    games: "Fortnite",
+    game: "Fortnite",
     linkedin: "https://www.linkedin.com/in/divyank-shah/",
     instagram: "https://www.instagram.com/divyank.shah/",
     github: "https://github.com/shahdivyank",
@@ -129,7 +129,7 @@ const Profiles = () => {
               name={member.name}
               pronouns={member.pronouns}
               position={member.position}
-              games={member.games}
+              game={member.game}
               linkedin={member.linkedin}
               instagram={member.instagram}
               github={member.github}

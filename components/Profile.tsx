@@ -7,7 +7,7 @@ interface props {
   name: string;
   pronouns: string;
   position: string;
-  games: string;
+  game: string;
   linkedin: string;
   instagram: string;
   github: string;
@@ -19,7 +19,7 @@ const Profile = ({
   name,
   pronouns,
   position,
-  games,
+  game,
   linkedin,
   instagram,
   github,
@@ -102,7 +102,7 @@ const Profile = ({
             )}
           </div>
           <p className="text-base  h-full -m-0.5 p-1 border-l-2 border-black">
-            favorite game: {games}
+            favorite game: {game}
           </p>
         </Col>
       </Row>

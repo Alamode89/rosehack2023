@@ -1,7 +1,7 @@
 import React from "react";
 
 const Sponsors = () => {
-  return <div>Sponsors</div>;
+  return <section id="sponsors">Sponsors</section>;
 };
 
 export default Sponsors;

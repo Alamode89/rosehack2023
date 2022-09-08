@@ -23,13 +23,13 @@ const Navigation = () => {
             <Nav.Link href="#sponsors" className="!text-xl text-white hover:!text-gray-300 !pr-10">
               SPONSORS
             </Nav.Link>
-            <Nav.Link href="#team" className="!text-xl text-white hover:!text-gray-300 !pr-10">
+            <Nav.Link href="#board" className="!text-xl text-white hover:!text-gray-300 !pr-10">
               TEAM
             </Nav.Link>
-            <Nav.Link href="#board" className="!text-xl text-white hover:!text-gray-300 !pr-10">
+            <Nav.Link href="#faq" className="!text-xl text-white hover:!text-gray-300 !pr-10">
               FAQ
             </Nav.Link>
-            <Navbar.Brand href="#home" className = "text-white">
+            <Navbar.Brand className = "text-white">
               MLH LOGO 
             </Navbar.Brand>
           </Nav>

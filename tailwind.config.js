@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "split-green-to-purple":
-          "linear-gradient(to bottom, #c5c6fb 50% , #c9f9be 50%);",
+          "linear-gradient(to bottom, #c5c6fb 48% , black 48%, black 52%, #c9f9be 52%);",
       },
       fontFamily: {
         poppins: ["Poppins"],

@@ -61,7 +61,7 @@ const Profile = ({
           xs={12}
           className="flex justify-start items-center border-t-2 border-black m-0 p-0"
         >
-          <div className="flex justify-evenly items-center w-1/3 m-0 p-1">
+          <div className="flex justify-evenly items-center w-1/3 m-0 p-1 h-full border-r-2 border-black">
             {linkedin === "" ? (
               <></>
             ) : (
@@ -101,9 +101,8 @@ const Profile = ({
               </a>
             )}
           </div>
-          <p className="text-base  h-full -m-0.5 p-1 border-l-2 border-black">
-            favorite game: {game}
-          </p>
+
+          <p className="text-base h-full -m-0.5 p-1">favorite game: {game}</p>
         </Col>
       </Row>
     </div>

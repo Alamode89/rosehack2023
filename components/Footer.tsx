@@ -13,31 +13,31 @@ const SocialLinks = [
   {
     path: "mailto:rosehackucr@gmail.com",
     title: "Email",
-    image: <FaEnvelope size="45"></FaEnvelope>,
+    image: <FaEnvelope size="45" />,
   },
 
   {
     path: "https://www.instagram.com/rosehackucr/",
     title: "Instagram",
-    image: <FaInstagram size="45"></FaInstagram>,
+    image: <FaInstagram size="45" />,
   },
 
   {
     path: "https://www.linkedin.com/company/rose-hack/mycompany/",
     title: "Linkedin",
-    image: <FaLinkedin size="45"></FaLinkedin>,
+    image: <FaLinkedin size="45" />,
   },
 
   {
     path: "https://www.facebook.com/rosehackucr",
     title: "Facebook",
-    image: <FaFacebookSquare size="45"></FaFacebookSquare>,
+    image: <FaFacebookSquare size="45" />,
   },
 
   {
     path: "https://twitter.com/rosehack_ucr",
     title: "Twitter",
-    image: <FaTwitter size="45"></FaTwitter>,
+    image: <FaTwitter size="45" />,
   },
 ];
 

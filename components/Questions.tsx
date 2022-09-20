@@ -3,7 +3,7 @@ import React from "react";
 const FAQQuestions = () => {
   return (
     <div className="bg-rosehack-primary-darkestpurple">
-      <p>hello</p>
+      <p>goodbye</p>
     </div>
   );
 };

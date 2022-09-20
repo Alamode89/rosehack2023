@@ -9,7 +9,7 @@ const FAQHeader = () => {
         <p className="m-0 p-0">
           Please contact us at&nbsp;
           <a
-            className="no-underline font-[600] text-rosehack-secondary-white hover:text-rosehack-secondary-salmon"
+            className="no-underline font-semibold text-rosehack-secondary-white hover:text-rosehack-secondary-salmon"
             href="mailto:rosehack@gmail.com"
           >
             rosehack@gmail.com

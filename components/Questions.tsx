@@ -5,7 +5,6 @@ const FAQQuestions = () => {
     <div className="bg-rosehack-primary-darkestpurple">
       <p>hello</p>
     </div>
-
   );
 };
 

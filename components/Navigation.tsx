@@ -7,7 +7,7 @@ const Navigation = () => {
       <Navbar expand="lg">
         <Navbar.Brand href="#home">
           <img
-            src="rhlogo.jpg"
+            src="favicon.ico"
             width="60"
             height="60"
             className="d-inline-block align-top pl-2"

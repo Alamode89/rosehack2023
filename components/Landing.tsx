@@ -13,8 +13,15 @@ const Landing = () => {
           sm={12}
           className="flex flex-col justify-center sm:items-start  items-center"
         >
-          <img src="RH_HOME_3.png" className="w-2/3" />
-          <img src="RH_HOME_4.png" className="w-1/2 my-4 mt-0" />
+          <img src="RH_WEBSITE_HOME_ASSET_TITLE.png" className="w-2/3 mb-5" />
+          <img
+            src="RH_WEBSITE_HOME_ASSET.png"
+            className="w-1/2 my-4 mt-0 hidden sm:block"
+          />
+          <img
+            src="RH_WEBSITE_HOME_ASSET_TEXT.png"
+            className="w-1/2 my-4 mt-0 block sm:hidden"
+          />
           <a
             href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
             target="_blank"

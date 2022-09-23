@@ -11,7 +11,7 @@ const Navigation = () => {
             width="60"
             height="60"
             className="d-inline-block align-top pl-2"
-            alt="React Bootstrap logo"
+            alt="RoseHack Logo"
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

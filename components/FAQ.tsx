@@ -1,4 +1,5 @@
 import React from "react";
+import { Col, Row } from "react-bootstrap";
 import FAQHeader from "./FAQHeader";
 import Questions from "./Questions";
 
@@ -8,8 +9,14 @@ const FAQ = () => {
       id="faq"
       className="bg-rosehack-primary-darkpurple w-full flex justify-center items-center flex-col py-5"
     >
-      <FAQHeader />
-      <Questions />
+      <Row>
+        <Col lg={6} className="bg-blue-500">
+          <FAQHeader />
+        </Col>
+        <Col lg={6} className="bg-red-500">
+          <Questions />
+        </Col>
+      </Row>
     </section>
   );
 };

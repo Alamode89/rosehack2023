@@ -10,8 +10,8 @@ module.exports = {
         poppins: ["Poppins"],
       },
       backgroundImage: {
-        plus: `url('/plus.png')`,
-        minus: "url('/minus.png')",
+        "split-green-to-purple":
+          "linear-gradient(to bottom, #c5c6fb 48% , black 48%, black 52%, #c9f9be 52%);",
       },
       colors: {
         rosehack: {

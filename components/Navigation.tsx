@@ -4,8 +4,12 @@ import { FaBars } from "react-icons/fa";
 
 const Navigation = () => {
   return (
-    <div className="bg-rosehack-primary-darkestpurple items-center pl-4">
-      <Navbar expand="lg">
+    <div className="bg-rosehack-primary-darkestpurple min-h-[10vh] border-0">
+      <Navbar
+        className="bg-rosehack-primary-darkestpurple min-h-[10vh] px-4"
+        expand="lg"
+        fixed="top"
+      >
         <Navbar.Brand href="#home">
           <img
             src="favicon.ico"
@@ -17,37 +21,36 @@ const Navigation = () => {
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
-          className="!text-rosehack-secondary-salmon mr-4"
+          className="!text-rosehack-secondary-salmon mr-4 border-0"
         >
           <FaBars size="30" />
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="!font-poppins ml-auto mr-10">
+          <Nav className="!font-poppins ml-auto">
             <Nav.Link
               href="#about"
-              className="!text-xl text-white hover:!text-gray-300 !pr-10"
+              className="!text-xl text-center text-white hover:!text-gray-300 pr-0"
             >
               ABOUT
             </Nav.Link>
             <Nav.Link
               href="#sponsors"
-              className="!text-xl text-white hover:!text-gray-300 !pr-10"
+              className="!text-xl text-center text-white hover:!text-gray-300"
             >
               SPONSORS
             </Nav.Link>
             <Nav.Link
               href="#board"
-              className="!text-xl text-white hover:!text-gray-300 !pr-10"
+              className="!text-xl text-center text-white hover:!text-gray-300"
             >
               TEAM
             </Nav.Link>
             <Nav.Link
               href="#faq"
-              className="!text-xl text-white hover:!text-gray-300 !pr-10"
+              className="!text-xl text-center text-white hover:!text-gray-300"
             >
               FAQ
             </Nav.Link>
-            <Navbar.Brand className="text-white">MLH LOGO</Navbar.Brand>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

@@ -5,7 +5,7 @@ const Landing = () => {
   return (
     <section
       style={{ backgroundImage: `url('RH_HOME_5.png')` }}
-      className="flex justify-center items-center py-5"
+      className="flex justify-center items-center py-5 min-h-[90vh]"
     >
       <Row className="p-0 m-0 w-11/12 flex justify-center items-center">
         <Col
@@ -13,10 +13,10 @@ const Landing = () => {
           sm={12}
           className="flex flex-col justify-center sm:items-start  items-center"
         >
-          <img src="RH_WEBSITE_HOME_ASSET_TITLE.png" className="w-2/3 mb-5" />
+          <img src="RH_WEBSITE_HOME_ASSET_TITLE.png" className="w-2/4 mb-5" />
           <img
             src="RH_WEBSITE_HOME_ASSET.png"
-            className="w-1/2 my-4 mt-0 hidden sm:block"
+            className="w-1/3 my-4 mt-0 hidden sm:block"
           />
           <img
             src="RH_WEBSITE_HOME_ASSET_TEXT.png"

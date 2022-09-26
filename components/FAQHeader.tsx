@@ -2,11 +2,15 @@ import React from "react";
 
 const FAQHeader = () => {
   return (
-    <div className="bg-rosehack-darkpurple flex-col justify-between items-center w-11/12 rounded-full -mb-8 z-10">
-      <img src="RH_ASSET_FAQ4.png" className="lg:w-1/3 w-1/2" />
+    <div className="bg-rosehack-darkpurple">
+      <div className="flex justify-center lg:justify-start items-center w-full ">
+        <img src="RH_ASSET_FAQ4.png" className="lg:w-1/1 w-1/2" />
+      </div>
       <div className="text-rosehack-secondary-white font-poppins pt-4">
-        <p className="m-0 p-0">Don&apos;t see your question?</p>
-        <p className="m-0 p-0">
+        <p className="m-0 p-0 !text-center lg:!text-left">
+          Don&apos;t see your question?
+        </p>
+        <p className="m-0 mb-4 p-0 !text-center lg:!text-left">
           Please contact us at&nbsp;
           <a
             className="no-underline font-semibold text-rosehack-secondary-white hover:text-rosehack-secondary-salmon"

@@ -13,6 +13,10 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins"],
       },
+      backgroundImage: {
+        plus: `url('/plus.png')`,
+        minus: "url('/minus.png')",
+      },
       colors: {
         rosehack: {
           primary: {

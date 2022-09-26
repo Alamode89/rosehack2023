@@ -74,6 +74,16 @@ const boardMembers = [
     image: "divyank.jpg",
   },
   {
+    name: "Samantha Niño",
+    pronouns: "she/her",
+    position: "Marketing",
+    game: "Stardew Valley",
+    linkedin: "",
+    instagram: "",
+    github: "",
+    image: "divyank.jpg",
+  },
+  {
     name: "Cindy Do",
     pronouns: "she/her",
     position: "Web Dev",

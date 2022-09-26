@@ -1,9 +1,10 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
+import { FaBars } from "react-icons/fa";
 
 const Navigation = () => {
   return (
-    <div className="bg-rosehack-primary-darkestpurple items-center">
+    <div className="bg-rosehack-primary-darkestpurple items-center pl-4">
       <Navbar expand="lg">
         <Navbar.Brand href="#home">
           <img
@@ -14,7 +15,12 @@ const Navigation = () => {
             alt="RoseHack Logo"
           />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          className="!text-rosehack-secondary-salmon mr-4"
+        >
+          <FaBars size="30" />
+        </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="!font-poppins ml-auto mr-10">
             <Nav.Link

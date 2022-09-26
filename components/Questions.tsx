@@ -62,7 +62,7 @@ const FAQQuestions = () => {
   return (
     <div className=" w-full mt-3">
       <Accordion
-        className=" flex flex-col justify-center mx-auto w-11/12"
+        className=" flex flex-col justify-center mx-auto"
         flush
         alwaysOpen
       >

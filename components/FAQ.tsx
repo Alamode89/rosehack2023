@@ -9,11 +9,11 @@ const FAQ = () => {
       id="faq"
       className="bg-rosehack-primary-darkpurple w-full flex justify-center items-center flex-col py-5"
     >
-      <Row>
-        <Col lg={6} className="bg-blue-500">
+      <Row className="w-11/12">
+        <Col lg={6} className="">
           <FAQHeader />
         </Col>
-        <Col lg={6} className="bg-red-500">
+        <Col lg={6} className="">
           <Questions />
         </Col>
       </Row>

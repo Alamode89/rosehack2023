@@ -15,7 +15,7 @@ const Navigation = () => {
             src="favicon.ico"
             width="60"
             height="60"
-            className="d-inline-block align-top pl-2"
+            className="d-inline-block align-top"
             alt="RoseHack Logo"
           />
         </Navbar.Brand>
@@ -29,25 +29,25 @@ const Navigation = () => {
           <Nav className="!font-poppins ml-auto">
             <Nav.Link
               href="#about"
-              className="!text-xl text-center text-white hover:!text-gray-300 pr-0"
+              className="!text-xl text-center text-white hover:!text-gray-300 p-3"
             >
               ABOUT
             </Nav.Link>
             <Nav.Link
               href="#sponsors"
-              className="!text-xl text-center text-white hover:!text-gray-300"
+              className="!text-xl text-center text-white hover:!text-gray-300 p-3"
             >
               SPONSORS
             </Nav.Link>
             <Nav.Link
               href="#board"
-              className="!text-xl text-center text-white hover:!text-gray-300"
+              className="!text-xl text-center text-white hover:!text-gray-300 p-3"
             >
               TEAM
             </Nav.Link>
             <Nav.Link
               href="#faq"
-              className="!text-xl text-center text-white hover:!text-gray-300"
+              className="!text-xl text-center text-white hover:!text-gray-300 p-3"
             >
               FAQ
             </Nav.Link>

@@ -7,14 +7,12 @@ const Navigation = () => {
     <div className="bg-rosehack-primary-darkestpurple min-h-[10vh] border-0">
       <Navbar
         className="bg-rosehack-primary-darkestpurple min-h-[10vh] px-4"
-        expand="lg"
+        expand="md"
         fixed="top"
       >
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="#home" className="lg:w-1/12 md:w-2/6 w-1/12">
           <img
             src="favicon.ico"
-            width="60"
-            height="60"
             className="d-inline-block align-top"
             alt="RoseHack Logo"
           />
@@ -25,31 +23,40 @@ const Navigation = () => {
         >
           <FaBars size="30" />
         </Navbar.Toggle>
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="!font-poppins ml-auto">
+        <Navbar.Collapse className="flex md:justify-end justify-center items-center">
+          <Nav className="!font-poppins flex lg:w-9/12 w-full justify-end items-center">
             <Nav.Link
               href="#about"
-              className="!text-xl text-center text-white hover:!text-gray-300 p-3"
+              className="!text-xl md:w-1/6 w-full text-center text-white hover:!text-gray-300 p-3"
             >
               ABOUT
             </Nav.Link>
             <Nav.Link
               href="#sponsors"
-              className="!text-xl text-center text-white hover:!text-gray-300 p-3"
+              className="!text-xl md:w-1/6 w-full text-center text-white hover:!text-gray-300 p-3"
             >
               SPONSORS
             </Nav.Link>
             <Nav.Link
               href="#board"
-              className="!text-xl text-center text-white hover:!text-gray-300 p-3"
+              className="!text-xl md:w-1/6 w-full text-center text-white hover:!text-gray-300 p-3"
             >
               TEAM
             </Nav.Link>
             <Nav.Link
               href="#faq"
-              className="!text-xl text-center text-white hover:!text-gray-300 p-3"
+              className="!text-xl md:w-1/6 w-full text-center text-white hover:!text-gray-300 p-3"
             >
               FAQ
+            </Nav.Link>
+            <Nav.Link
+              href="#faq"
+              className="!text-xl lg:w-3/12 md:w-1/6 w-3/6 text-center text-white hover:!text-gray-300 p-3"
+            >
+              <img
+                src="RH_ASSET_20.png"
+                className=" cursor-pointer hover:scale-105"
+              />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

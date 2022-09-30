@@ -23,29 +23,19 @@ const Landing = () => {
             src="RH_WEBSITE_HOME_ASSET_TEXT.png"
             className="w-1/2 my-4 mt-0 block sm:hidden"
           />
-          <a
-            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-            target="_blank"
-            rel="noreferrer"
-            className="cursor-default flex flex-col justify-center sm:items-start items-center"
-          >
-            <img
-              src="RH_ASSET_20.png"
-              className="w-1/2 lg:w-1/3 my-5 mb-2 cursor-pointer hover:scale-105"
-            />
-          </a>
-
-          <a
-            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-            target="_blank"
-            rel="noreferrer"
-            className="cursor-default flex flex-col justify-center sm:items-start items-center"
-          >
-            <img
-              src="RH_ASSET_21.png"
-              className="w-1/2 lg:w-1/3 cursor-pointer sm:m-0 mb-5 hover:scale-105"
-            />
-          </a>
+          <div className="cursor-default flex flex-col justify-center sm:items-start items-center">
+            <a
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              target="_blank"
+              rel="noreferrer"
+              className="w-1/2 lg:w-1/3 h-full p-0 m-0"
+            >
+              <img
+                src="RH_ASSET_21.png"
+                className="w-full cursor-pointer sm:m-0 hover:scale-105"
+              />
+            </a>
+          </div>
         </Col>
 
         <Col

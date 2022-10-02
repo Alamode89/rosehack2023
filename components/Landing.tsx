@@ -23,7 +23,7 @@ const Landing = () => {
             src="RH_WEBSITE_HOME_ASSET_TEXT.png"
             className="w-1/2 my-4 mt-0 block sm:hidden"
           />
-          <div className="cursor-default flex flex-col justify-center sm:items-start items-center">
+          {/* <div className="cursor-default flex flex-col justify-center sm:items-start items-center">
             <a
               href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               target="_blank"
@@ -35,7 +35,7 @@ const Landing = () => {
                 className="w-full cursor-pointer sm:m-0 hover:scale-105"
               />
             </a>
-          </div>
+          </div> */}
         </Col>
 
         <Col

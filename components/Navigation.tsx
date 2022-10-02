@@ -49,15 +49,17 @@ const Navigation = () => {
             >
               FAQ
             </Nav.Link>
-            <Nav.Link
-              href="#faq"
+            <a
+              href="https://form.typeform.com/to/M0vqqDRG"
+              target="_blank"
               className="!text-xl lg:w-3/12 md:w-1/6 w-3/6 text-center text-white hover:!text-gray-300 p-3"
+              rel="noreferrer"
             >
               <img
                 src="RH_ASSET_20.png"
                 className=" cursor-pointer hover:scale-105"
               />
-            </Nav.Link>
+            </a>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

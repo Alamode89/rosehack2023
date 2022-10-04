@@ -43,7 +43,7 @@ const SocialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-rosehack-primary-darkestpurple py-3">
+    <footer className="bg-rosehack-primary-darkestpurple py-5">
       <Container className="justify-center mx-auto">
         <Row className="justify-center mx-auto">
           {SocialLinks.map((link, index) => {

@@ -8,19 +8,19 @@ const sponsorsList = [
     link: "https://www.triadmagnetics.com/",
   },
   {
-    sponsorName: "Sponsor 2",
-    image: "rhlogo.jpg",
-    link: "https://google.com/", // diff links to test if each click is different
+    sponsorName: "Triad Magnetics",
+    image: "triad_logo.png",
+    link: "https://www.triadmagnetics.com/",
   },
   {
-    sponsorName: "Sponsor 3",
-    image: "rhlogo.jpg",
-    link: "https://facebook.com/",
+    sponsorName: "Triad Magnetics",
+    image: "triad_logo.png",
+    link: "https://www.triadmagnetics.com/",
   },
   {
-    sponsorName: "Sponsor 4",
-    image: "rhlogo.jpg",
-    link: "https://rosehack.com/",
+    sponsorName: "Triad Magnetics",
+    image: "triad_logo.png",
+    link: "https://www.triadmagnetics.com/",
   },
 ];
 const SponsorBorder = () => {

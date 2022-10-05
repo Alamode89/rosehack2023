@@ -7,7 +7,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="bg-rosehack-primary-darkpurple w-full flex justify-center items-center flex-col py-5"
+      className="bg-rosehack-primary-darkpurple w-full flex justify-center items-center flex-col py-[11vh]"
     >
       <AboutHeader />
       <Introduction />

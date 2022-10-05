@@ -7,13 +7,13 @@ const FAQ = () => {
   return (
     <section
       id="faq"
-      className="bg-rosehack-primary-darkpurple w-full flex justify-center items-center flex-col py-5"
+      className="bg-rosehack-primary-darkpurple w-full flex justify-center items-center flex-col py-[11vh]"
     >
       <Row className="w-11/12">
-        <Col lg={6} className="">
+        <Col lg={6}>
           <FAQHeader />
         </Col>
-        <Col lg={6} className="">
+        <Col lg={6}>
           <Questions />
         </Col>
       </Row>

@@ -13,42 +13,47 @@ const SocialLinks = [
   {
     path: "mailto:rosehackucr@gmail.com",
     title: "Email",
-    image: <FaEnvelope size="45" />,
+    image: <FaEnvelope className="sm:text-5xl text-4xl" />,
   },
 
   {
     path: "https://www.instagram.com/rosehackucr/",
     title: "Instagram",
-    image: <FaInstagram size="45" />,
+    image: <FaInstagram className="sm:text-5xl text-4xl" />,
   },
 
   {
     path: "https://www.linkedin.com/company/rose-hack/mycompany/",
     title: "Linkedin",
-    image: <FaLinkedin size="45" />,
+    image: <FaLinkedin className="sm:text-5xl text-4xl" />,
   },
 
   {
     path: "https://www.facebook.com/rosehackucr",
     title: "Facebook",
-    image: <FaFacebookSquare size="45" />,
+    image: <FaFacebookSquare className="sm:text-5xl text-4xl" />,
   },
 
   {
     path: "https://twitter.com/rosehack_ucr",
     title: "Twitter",
-    image: <FaTwitter size="45" />,
+    image: <FaTwitter className="sm:text-5xl text-4xl" />,
   },
 ];
 
 const Footer = () => {
   return (
-    <footer className="bg-rosehack-primary-darkestpurple py-5">
-      <Container className="justify-center mx-auto">
-        <Row className="justify-center mx-auto">
+    <footer className="bg-rosehack-primary-darkestpurple py-5 flex justify-center items-center">
+      <Container className="justify-center m-0 p-0">
+        <Row className="justify-center m-0 p-0">
           {SocialLinks.map((link, index) => {
             return (
-              <Col key={index} xs={2} md={1} className="flex justify-center">
+              <Col
+                key={index}
+                xs={2}
+                md={1}
+                className="flex justify-center m-0 p-0"
+              >
                 <Link href={link.path}>
                   <a
                     rel="noopener noreferrer"
@@ -64,12 +69,11 @@ const Footer = () => {
           })}
         </Row>
 
-        <Row className="text-2xl font-poppins text-center text-rosehack-secondary-white py-2">
-          <p>made with &#9829; by the Rose Hack team at UCR</p>
-        </Row>
-
-        <Row className="font-poppins text-center text-rosehack-secondary-white">
-          <p>MLH link (will put later)</p>
+        <Row className="text-2xl font-poppins text-center text-rosehack-secondary-white m-0 p-0">
+          <p className="inline p-0 m-0 mt-4">
+            made with &#9829; by the Rose Hack team at UCR
+          </p>
+          <p className="inline p-0 m-0 mt-3">MLH link (will put later)</p>
         </Row>
       </Container>
     </footer>

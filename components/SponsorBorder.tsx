@@ -44,10 +44,7 @@ const SponsorBorder = () => {
               src="RH_SPONSORS_BUTTON1.png"
               className="lg:p-5 w-1/3 sm:w-1/4"
             />
-            <img
-              src="circle_buttons.png"
-              className="w-1/3 sm:w-1/4 sm:h-1/4"
-            />
+            <img src="circle_buttons.png" className="w-1/3 sm:w-1/4 sm:h-1/4" />
           </div>
         </div>
       </div>

@@ -59,7 +59,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     target="_blank"
                     title={link.title}
-                    className="fill-current text-rosehack-secondary-white hover:text-rosehack-secondary-gray"
+                    className="fill-current text-rosehack-secondary-white hover:text-rosehack-secondary-salmon"
                   >
                     {link.image}
                   </a>

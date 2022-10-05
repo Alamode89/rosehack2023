@@ -8,19 +8,19 @@ const sponsorsList = [
     link: "https://www.triadmagnetics.com/",
   },
   {
-    sponsorName: "Sponsor 2",
-    image: "rhlogo.jpg",
-    link: "https://google.com/", // diff links to test if each click is different
+    sponsorName: "Triad Magnetics",
+    image: "triad_logo.png",
+    link: "https://www.triadmagnetics.com/",
   },
   {
-    sponsorName: "Sponsor 3",
-    image: "rhlogo.jpg",
-    link: "https://facebook.com/",
+    sponsorName: "Triad Magnetics",
+    image: "triad_logo.png",
+    link: "https://www.triadmagnetics.com/",
   },
   {
-    sponsorName: "Sponsor 4",
-    image: "rhlogo.jpg",
-    link: "https://rosehack.com/",
+    sponsorName: "Triad Magnetics",
+    image: "triad_logo.png",
+    link: "https://www.triadmagnetics.com/",
   },
 ];
 const SponsorBorder = () => {
@@ -39,7 +39,7 @@ const SponsorBorder = () => {
           ))}
         </div>
         <div className="bg-rosehack-primary-darkpurple h-full">
-          <div className="flex items-start space-x-24 xl:space-x-[34rem] sm:space-x-64 sm:pt-10 sm:mx-5">
+          <div className="flex justify-between items-start space-x-24 xl:space-x-[34rem] sm:space-x-64 sm:pt-10 sm:mx-5">
             <img
               src="RH_SPONSORS_BUTTON1.png"
               className="lg:p-5 w-1/3 sm:w-1/4 pt-2"

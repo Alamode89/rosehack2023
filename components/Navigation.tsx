@@ -4,9 +4,9 @@ import { FaBars } from "react-icons/fa";
 
 const Navigation = () => {
   return (
-    <div className="bg-rosehack-primary-darkestpurple min-h-[10vh] border-0">
+    <div className="bg-rosehack-primary-darkestpurple h-[10vh]">
       <Navbar
-        className="bg-rosehack-primary-darkestpurple min-h-[10vh] px-4"
+        className="bg-rosehack-primary-darkestpurple h-[10vh] px-4 border-b-4 border-rosehack-secondary-salmon"
         expand="md"
         fixed="top"
       >

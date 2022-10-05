@@ -1,12 +1,12 @@
 import React from "react";
-import BoardProfiles from "./Profiles";
+import Profiles from "./Profiles";
 import BoardHeader from "./BoardHeader";
 
 const Board = () => {
   return (
-    <section id="board" className="bg-rosehack-secondary-darkpurple py-5">
+    <section id="board" className="bg-rosehack-secondary-darkpurple py-[11vh]">
       <BoardHeader />
-      <BoardProfiles />
+      <Profiles />
     </section>
   );
 };

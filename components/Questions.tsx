@@ -38,7 +38,11 @@ const FaqItem = ({ index, element }: any) => {
       id={`element${index}`}
       eventKey={index}
     >
-      <div className=" h-full w-auto border-b-2 border-rosehack-secondary-salmon !bg-transparent">
+      <div
+        className={`h-full w-auto border-b-2 border-rosehack-secondary-salmon !bg-transparent ${
+          index == 0 ? "border-t-2" : ""
+        }`}
+      >
         <Accordion.Button
           onClick={() => setClicked(!clicked)}
           className={`!bg-rosehack-primary-darkestpurple font-poppins !text-rosehack-secondary-salmon after:!bg-none focus:!shadow-none !rounded-none`}
@@ -64,7 +68,7 @@ const FAQQuestions = () => {
   return (
     <div className=" w-full mt-3">
       <Accordion
-        className=" flex flex-col justify-center pb-5 pt-4 !bg-rosehack-primary-darkestpurple rounded-3xl"
+        className=" flex flex-col justify-center py-5 !bg-rosehack-primary-darkestpurple rounded-3xl"
         flush
         alwaysOpen
       >

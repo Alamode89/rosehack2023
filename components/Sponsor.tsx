@@ -11,11 +11,11 @@ const Sponsor = ({ sponsorName, image, link }: props) => {
     <div className="rounded-2xl">
       <a href={link} target="_blank" rel="noreferrer">
         <img
-          className="transform flex rounded-3xl scale-75 transition duration-500 hover:scale-[0.8]"
+          className="py-4 transform flex scale-75 transition duration-500 hover:scale-[0.8]"
           src={image}
         />
       </a>
-      <div className="flex justify-center font-poppins text-2xl"></div>
+      <div className="flex justify-center text-2xl"></div>
     </div>
   );
 };

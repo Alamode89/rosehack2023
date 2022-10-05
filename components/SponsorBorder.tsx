@@ -9,17 +9,17 @@ const sponsorsList = [
   },
   {
     sponsorName: "Sponsor 2",
-    image: "rhlogo.jpg",
+    image: "triad_logo.png",
     link: "https://google.com/", // diff links to test if each click is different
   },
   {
     sponsorName: "Sponsor 3",
-    image: "rhlogo.jpg",
+    image: "triad_logo.png",
     link: "https://facebook.com/",
   },
   {
     sponsorName: "Sponsor 4",
-    image: "rhlogo.jpg",
+    image: "triad_logo.png",
     link: "https://rosehack.com/",
   },
 ];
@@ -39,14 +39,14 @@ const SponsorBorder = () => {
           ))}
         </div>
         <div className="bg-rosehack-primary-darkpurple h-full">
-          <div className="flex items-start space-x-24 xl:space-x-[34rem] sm:space-x-64 sm:pt-10 sm:mx-5">
+          <div className="pt-5 pb-3 md:pr-8 md:pl-5 flex justify-between">
             <img
               src="RH_SPONSORS_BUTTON1.png"
-              className="lg:p-5 w-1/3 sm:w-1/4 pt-2"
+              className="lg:p-5 w-1/3 sm:w-1/4"
             />
             <img
               src="circle_buttons.png"
-              className="sm:w-1/4 w-1/3 sm:pt-8 pt-2 pr-2"
+              className="w-1/3 sm:w-1/4 sm:h-1/4"
             />
           </div>
         </div>

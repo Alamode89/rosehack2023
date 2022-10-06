@@ -79,7 +79,7 @@ const boardMembers = [
     position: "Marketing",
     game: "Stardew Valley",
     linkedin: "",
-    instagram: "",
+    instagram: "https://www.instagram.com/samdosea/",
     github: "",
     image: "divyank.jpg",
   },

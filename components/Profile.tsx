@@ -39,7 +39,7 @@ const Profile = ({
           xs={8}
           className="font-poppins font-thin p-0 m-0 flex justify-evenly items-center flex-col"
         >
-          <div className="pl-2 pt-2 w-full h-1/2 flex justify-center items-center">
+          <div className="pl-2 pt-2 w-full h-2/3 flex justify-center items-center">
             <div className=" flex justify-start items-center w-full ">
               <div className="text-xl flex justify-center items-start font-bold p-1 flex-col">
                 {name.toUpperCase()}
@@ -50,7 +50,7 @@ const Profile = ({
             </div>
           </div>
 
-          <div className="pl-2 w-full h-1/2 flex justify-center items-center border-t-2 border-black">
+          <div className="pl-2 w-full h-1/3 flex justify-center items-center border-t-2 border-black">
             <p className="text-xl w-full font-bold inline m-0 p-1">
               {position.toUpperCase()}
             </p>
@@ -59,9 +59,9 @@ const Profile = ({
 
         <Col
           xs={12}
-          className="flex justify-start items-center border-t-2 border-black m-0 p-0"
+          className="flex justify-start items-center border-t-2  border-black m-0 p-0"
         >
-          <div className="flex justify-evenly items-center w-1/3 m-0 p-1 h-full border-r-2 border-black">
+          <div className="flex justify-evenly border-r-2 border-black items-center w-1/3 m-0 p-0 h-full ">
             {linkedin === "" ? (
               <></>
             ) : (
@@ -101,8 +101,11 @@ const Profile = ({
               </a>
             )}
           </div>
-
-          <p className="text-base h-full -m-0.5 p-1">favorite game: {game}</p>
+          <div className="h-full p-2">
+            <p className=" text-base h-full pl-1  inline">
+              favorite game: {game}
+            </p>
+          </div>
         </Col>
       </Row>
     </div>

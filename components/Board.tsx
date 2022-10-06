@@ -4,7 +4,10 @@ import BoardHeader from "./BoardHeader";
 
 const Board = () => {
   return (
-    <section id="board" className="bg-rosehack-secondary-darkpurple py-[11vh]">
+    <section
+      id="board"
+      className="bg-rosehack-secondary-darkpurple py-[11vh] scroll-m-[11vh]"
+    >
       <BoardHeader />
       <Profiles />
     </section>

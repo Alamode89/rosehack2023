@@ -10,9 +10,11 @@ const Navigation = () => {
         expand="md"
         fixed="top"
       >
-        <Navbar.Brand href="#home" className="lg:w-1/12 md:w-2/6 w-1/12">
+        <Navbar.Brand href="#home">
           <img
             src="favicon.ico"
+            width="60"
+            height="60"
             className="d-inline-block align-top"
             alt="RoseHack Logo"
           />
@@ -24,41 +26,38 @@ const Navigation = () => {
           <FaBars size="30" />
         </Navbar.Toggle>
         <Navbar.Collapse className="flex md:justify-end justify-center items-center">
-          <Nav className="!font-poppins flex lg:w-9/12 w-full justify-end items-center">
+          <Nav className="!font-poppins flex lg:w-6/12 w-full justify-end items-center">
             <Nav.Link
               href="#about"
-              className="!text-xl md:w-1/6 w-full text-center text-white hover:!text-gray-300 p-3"
+              className="!text-xl text-center text-white hover:!text-rosehack-secondary-salmon p-3"
             >
               ABOUT
             </Nav.Link>
             <Nav.Link
               href="#sponsors"
-              className="!text-xl md:w-1/6 w-full text-center text-white hover:!text-gray-300 p-3"
+              className="!text-xl text-center text-white hover:!text-rosehack-secondary-salmon p-3"
             >
               SPONSORS
             </Nav.Link>
             <Nav.Link
               href="#board"
-              className="!text-xl md:w-1/6 w-full text-center text-white hover:!text-gray-300 p-3"
+              className="!text-xl text-center text-white hover:!text-rosehack-secondary-salmon p-3"
             >
               TEAM
             </Nav.Link>
             <Nav.Link
               href="#faq"
-              className="!text-xl md:w-1/6 w-full text-center text-white hover:!text-gray-300 p-3"
+              className="!text-xl text-center text-white hover:!text-rosehack-secondary-salmon p-3 mr-1"
             >
               FAQ
             </Nav.Link>
             <a
               href="https://form.typeform.com/to/M0vqqDRG"
               target="_blank"
-              className="!text-xl lg:w-3/12 md:w-1/6 w-3/6 text-center text-white hover:!text-gray-300 p-3"
+              className="!text-xl text-center no-underline !bg-rosehack-secondary-salmon text-white hover:!text-rosehack-primary-darkestpurple rounded-md p-3"
               rel="noreferrer"
             >
-              <img
-                src="RH_ASSET_20.png"
-                className=" cursor-pointer hover:scale-105"
-              />
+              REGISTER
             </a>
           </Nav>
         </Navbar.Collapse>

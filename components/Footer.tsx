@@ -13,37 +13,37 @@ const SocialLinks = [
   {
     path: "mailto:rosehackucr@gmail.com",
     title: "Email",
-    image: <FaEnvelope className="sm:text-5xl text-4xl" />,
+    image: <FaEnvelope className="text-5xl hover:scale-110" />,
   },
 
   {
     path: "https://www.instagram.com/rosehackucr/",
     title: "Instagram",
-    image: <FaInstagram className="sm:text-5xl text-4xl" />,
+    image: <FaInstagram className="text-5xl hover:scale-110" />,
   },
 
   {
     path: "https://www.linkedin.com/company/rose-hack/mycompany/",
     title: "Linkedin",
-    image: <FaLinkedin className="sm:text-5xl text-4xl" />,
+    image: <FaLinkedin className="text-5xl hover:scale-110" />,
   },
 
   {
     path: "https://www.facebook.com/rosehackucr",
     title: "Facebook",
-    image: <FaFacebookSquare className="sm:text-5xl text-4xl" />,
+    image: <FaFacebookSquare className="text-5xl hover:scale-110" />,
   },
 
   {
     path: "https://twitter.com/rosehack_ucr",
     title: "Twitter",
-    image: <FaTwitter className="sm:text-5xl text-4xl" />,
+    image: <FaTwitter className="text-5xl hover:scale-110" />,
   },
 ];
 
 const Footer = () => {
   return (
-    <footer className="bg-rosehack-primary-darkestpurple py-5 flex justify-center items-center">
+    <footer className="bg-rosehack-primary-darkestpurple py-4 flex justify-center items-center">
       <Container className="justify-center m-0 p-0">
         <Row className="justify-center m-0 p-0">
           {SocialLinks.map((link, index) => {
@@ -69,11 +69,10 @@ const Footer = () => {
           })}
         </Row>
 
-        <Row className="text-2xl font-poppins text-center text-rosehack-secondary-white m-0 p-0">
+        <Row className="text-2xl font-poppins text-center text-rosehack-secondary-white m-0">
           <p className="inline p-0 m-0 mt-4">
             made with &#9829; by the Rose Hack team at UCR
           </p>
-          <p className="inline p-0 m-0 mt-3">MLH link (will put later)</p>
         </Row>
       </Container>
     </footer>

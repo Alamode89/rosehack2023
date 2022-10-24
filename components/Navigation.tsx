@@ -15,7 +15,7 @@ const Navigation = () => {
             src="favicon.ico"
             width="60"
             height="60"
-            className="d-inline-block align-top"
+            className="d-inline-block align-top hover:scale-110"
             alt="RoseHack Logo"
           />
         </Navbar.Brand>
@@ -29,32 +29,32 @@ const Navigation = () => {
           <Nav className="!font-poppins flex lg:w-6/12 w-full justify-end items-center">
             <Nav.Link
               href="#about"
-              className="!text-xl text-center text-white hover:!text-rosehack-secondary-salmon p-3"
+              className="!text-xl text-center text-white hover:!text-rosehack-secondary-salmon hover:scale-110 p-3"
             >
               ABOUT
             </Nav.Link>
             <Nav.Link
               href="#sponsors"
-              className="!text-xl text-center text-white hover:!text-rosehack-secondary-salmon p-3"
+              className="!text-xl text-center text-white hover:!text-rosehack-secondary-salmon hover:scale-110 p-3"
             >
               SPONSORS
             </Nav.Link>
             <Nav.Link
               href="#board"
-              className="!text-xl text-center text-white hover:!text-rosehack-secondary-salmon p-3"
+              className="!text-xl text-center text-white hover:!text-rosehack-secondary-salmon hover:scale-110 p-3"
             >
               TEAM
             </Nav.Link>
             <Nav.Link
               href="#faq"
-              className="!text-xl text-center text-white hover:!text-rosehack-secondary-salmon p-3 mr-1"
+              className="!text-xl text-center text-white hover:!text-rosehack-secondary-salmon hover:scale-110 p-3 mr-1"
             >
               FAQ
             </Nav.Link>
             <a
               href="https://form.typeform.com/to/M0vqqDRG"
               target="_blank"
-              className="!text-xl text-center no-underline !bg-rosehack-secondary-salmon text-white hover:!text-rosehack-primary-darkestpurple rounded-md p-3"
+              className="!text-xl text-center no-underline !bg-rosehack-secondary-salmon text-white hover:!text-rosehack-primary-darkestpurple rounded-md p-3 hover:scale-110"
               rel="noreferrer"
             >
               REGISTER

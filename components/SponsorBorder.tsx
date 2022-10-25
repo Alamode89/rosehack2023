@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import Sponsor from "./Sponsor";
 
@@ -40,11 +41,22 @@ const SponsorBorder = () => {
         </div>
         <div className="bg-rosehack-primary-darkpurple h-full">
           <div className="pt-5 pb-3 md:pr-8 md:pl-5 flex justify-between">
-            <img
-              src="RH_SPONSORS_BUTTON1.png"
-              className="lg:p-5 w-1/3 sm:w-1/4"
-            />
-            <img src="circle_buttons.png" className="w-1/3 sm:w-1/4 sm:h-1/4" />
+            <div className="lg:p-5 w-1/3 sm:w-1/4">
+              <Image
+                layout="responsive"
+                height={1036}
+                width={1036}
+                src="/RH_SPONSORS_BUTTON1.png"
+              />
+            </div>
+            <div className="w-1/3 sm:w-1/4 sm:h-1/4">
+              <Image
+                layout="responsive"
+                height={954}
+                width={1028}
+                src="/circle_buttons.png"
+              />
+            </div>
           </div>
         </div>
       </div>

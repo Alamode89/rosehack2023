@@ -6,7 +6,7 @@ const Board = () => {
   return (
     <section
       id="board"
-      className="bg-rosehack-secondary-darkpurple py-[11vh] scroll-m-[11vh]"
+      className="bg-rosehack-secondary-darkpurple py-[11vh] scroll-m-[2vh]"
     >
       <BoardHeader />
       <Profiles />

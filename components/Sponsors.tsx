@@ -6,7 +6,7 @@ const Sponsors = () => {
   return (
     <section
       id="sponsors"
-      className=" py-[11vh] bg-rosehack-primary-darkestpurple scroll-m-[11vh]"
+      className=" py-[11vh] bg-rosehack-primary-darkestpurple scroll-m-[2vh]"
     >
       <SponsorsHeader />
       <SponsorBorder />

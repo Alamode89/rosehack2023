@@ -7,7 +7,7 @@ const FAQ = () => {
   return (
     <section
       id="faq"
-      className="bg-rosehack-primary-darkpurple w-full flex justify-center items-center flex-col py-[11vh] scroll-m-[11vh]"
+      className="bg-rosehack-primary-darkpurple w-full flex justify-center items-center flex-col py-[11vh] scroll-m-[2vh]"
     >
       <Row className="w-11/12">
         <Col lg={5}>

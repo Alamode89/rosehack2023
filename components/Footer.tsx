@@ -74,7 +74,7 @@ const Footer = () => {
         made with &#9829; by the Rose Hack team at UCR
       </p>
       <p className="inline p-0 m-0 mt-4 text-2xl text-white">
-        *MLH Code of Conduct* (link)
+        *MLH Code of Conduct*
       </p>
       {/* </Row> */}
       {/* </Container> */}

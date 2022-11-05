@@ -1,10 +1,11 @@
 import type { NextPage } from "next";
+import Team from "../components/Team";
 
 const Home: NextPage = () => {
   return (
-    <>
-      <p className="font-pixel">helldfgdsfgdgdf dfgdf gd fg df gd o</p>
-    </>
+    <div className="flex justify-center items-center">
+      <Team />
+    </div>
   );
 };
 

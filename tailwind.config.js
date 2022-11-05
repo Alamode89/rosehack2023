@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        // poppins: ["Poppins"],
+        poppins: ["Poppins"],
         pixel: ["'Press Start 2P'", "cursive"],
       },
       backgroundImage: {
@@ -20,6 +20,21 @@ module.exports = {
           right: "#1B0070",
           fright: "#1C113F",
           hover: "#F08DCF",
+        },
+        team: {
+          top: "#8C7DFF",
+          bottom: "#4FF4FF",
+          green: "#C9F9BE",
+          pink: "#F7CDE0",
+          yellow: "#FCFBB6",
+          blue: "#A0C3FA",
+          hotpink: "#F08DCF",
+          purple: "#A480F2",
+          gold: "#FAD6A5",
+          teal: "#9BF6FC",
+          orange: "#F4ACAD",
+          lightpurple: "#BDB2FA",
+          committee: "#F08DCF",
         },
       },
       boxShadow: {

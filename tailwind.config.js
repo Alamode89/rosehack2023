@@ -36,6 +36,10 @@ module.exports = {
           lightpurple: "#BDB2FA",
           committee: "#F08DCF",
         },
+        sponsors: {
+          top: "#CC00FF",
+          bottom: "#8C7DFF",
+        },
       },
       boxShadow: {
         hover: "0px 4px 10px #FFFFFF, 0px 4px 16px #FFFFFF",

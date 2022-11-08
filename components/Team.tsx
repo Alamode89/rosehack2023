@@ -45,7 +45,7 @@ const profiles = [
     instagram: "https://www.instagram.com/sussyangy/",
     github: "",
     image: "angie.jpeg",
-    shadow: "shadow-team-blue",
+    shadow: "shadow-team-teal",
   },
   {
     name: "Samarth Srinivasa",
@@ -67,7 +67,7 @@ const profiles = [
     instagram: "https://www.instagram.com/lpurgitoryl/",
     github: "https://github.com/lpurgitoryl",
     image: "nicole.jpeg",
-    shadow: "shadow-team-purple",
+    shadow: "shadow-team-orange",
   },
   {
     name: "Bonnie Yeh",
@@ -89,7 +89,7 @@ const profiles = [
     instagram: "https://www.instagram.com/samdosea/",
     github: "",
     image: "samantha.jpeg",
-    shadow: "shadow-team-teal",
+    shadow: "shadow-team-purple",
   },
   {
     name: "Cindy Do",
@@ -100,7 +100,7 @@ const profiles = [
     instagram: "https://www.instagram.com/c1ndydonut/",
     github: "https://github.com/condoes",
     image: "cindy.jpeg",
-    shadow: "shadow-team-orange",
+    shadow: "shadow-team-lightpurple",
   },
   {
     name: "Andre Amante",
@@ -111,7 +111,7 @@ const profiles = [
     instagram: " https://www.instagram.com/andweeeee/",
     github: "https://github.com/Alamode89",
     image: "andre.jpeg",
-    shadow: "shadow-team-lightpurple",
+    shadow: "shadow-team-green",
   },
   {
     name: "Divyank Shah",
@@ -122,7 +122,7 @@ const profiles = [
     instagram: "https://www.instagram.com/divyank.shah/",
     github: "https://github.com/shahdivyank",
     image: "divyank.jpeg",
-    shadow: "shadow-team-green",
+    shadow: "shadow-team-pink",
   },
 ];
 

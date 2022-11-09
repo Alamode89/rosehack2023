@@ -33,7 +33,6 @@ module.exports = {
           green: "#C9F9BE",
           pink: "#F7CDE0",
           yellow: "#FCFBB6",
-          blue: "#A0C3FA",
           hotpink: "#F08DCF",
           purple: "#A480F2",
           gold: "#FAD6A5",

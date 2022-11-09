@@ -23,11 +23,20 @@ const About = () => {
       <div className="flex justify-between items-center 10/12 lg:w-2/3 p-5">
         <div className="w-2/3 p-5">
           <div className="flex justify-between items-center mb-4">
-            <img src="PINK_HEART1.png" className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink" />
+            <img
+              src="PINK_HEART1.png"
+              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
+            />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
-            <img src="PINK_HEART1.png" className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink" />
+            <img
+              src="PINK_HEART1.png"
+              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
+            />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
-            <img src="PINK_HEART1.png" className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink" />
+            <img
+              src="PINK_HEART1.png"
+              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
+            />
           </div>
           <p className="drop-shadow-pinksmall py-5 font-lexend text-base md:text-2xl w-full p-0 m-0 text-white text-center">
             Rose Hack is UC Riverside’s 24-hour hackathon, one of the few
@@ -37,11 +46,20 @@ const About = () => {
           </p>
 
           <div className="flex justify-between items-center mb-4">
-            <img src="PINK_HEART1.png" className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink" />
+            <img
+              src="PINK_HEART1.png"
+              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
+            />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
-            <img src="PINK_HEART1.png" className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink" />
+            <img
+              src="PINK_HEART1.png"
+              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
+            />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
-            <img src="PINK_HEART1.png" className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink" />
+            <img
+              src="PINK_HEART1.png"
+              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
+            />
           </div>
         </div>
         <img className="w-1/3" src="MACHINE_3.png"></img>
@@ -50,11 +68,20 @@ const About = () => {
         <img className="w-1/3" src="MACHINE_2.png"></img>
         <div className="w-2/3 p-5">
           <div className="flex justify-between items-center mb-4">
-            <img src="BLUE_HEART1.png" className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue" />
+            <img
+              src="BLUE_HEART1.png"
+              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
+            />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
-            <img src="BLUE_HEART1.png" className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue" />
+            <img
+              src="BLUE_HEART1.png"
+              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
+            />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
-            <img src="BLUE_HEART1.png" className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue" />
+            <img
+              src="BLUE_HEART1.png"
+              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
+            />
           </div>
           <p className="drop-shadow-bluesmall py-5 text-base md:text-2xl font-lexend w-full p-0 m-0 text-white text-center">
             Rose Hack’s mission is to encourage individuals from
@@ -63,11 +90,20 @@ const About = () => {
             in Science and Technology.{" "}
           </p>
           <div className="flex justify-between items-center mb-4">
-            <img src="BLUE_HEART1.png" className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue" />
+            <img
+              src="BLUE_HEART1.png"
+              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
+            />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
-            <img src="BLUE_HEART1.png" className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue" />
+            <img
+              src="BLUE_HEART1.png"
+              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
+            />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
-            <img src="BLUE_HEART1.png" className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue" />
+            <img
+              src="BLUE_HEART1.png"
+              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
+            />
           </div>
         </div>
       </div>

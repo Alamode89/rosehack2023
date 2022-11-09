@@ -5,18 +5,24 @@ interface props {
   position: String;
   shadow: String;
   image: string;
+  linkedin: string;
 }
 
-const Profile = ({ name, position, shadow, image }: props) => {
+const Profile = ({ name, position, shadow, image, linkedin }: props) => {
   return (
     <div className="flex justify-center items-center flex-col p-2">
-      <div className={`${shadow} shadow-[20px_-16px_0px_0px] rounded-[2rem]`}>
-        <img src={image} className="border-white border-8 rounded-[2rem]" />
-      </div>
-      <p className="inline p-0 m-0 mt-3 font-poppins text-3xl text-white font-semibold">
+      <a
+        href={linkedin}
+        target="_blank"
+        className={`${shadow} shadow-[20px_-16px_0px_0px] rounded-[2rem] hover:-translate-y-2`}
+        rel="noreferrer"
+      >
+        <img src={image} className="border-white border-8 rounded-[2rem] " />
+      </a>
+      <p className="inline p-0 m-0 mt-3 font-poppins text-3xl text-white font-semibold text-center">
         {name}
       </p>
-      <p className="inline p-0 m-0 font-poppins text-3xl text-white font-semibold">
+      <p className="inline p-0 m-0 font-poppins text-3xl text-white font-semibold text-center">
         {position}
       </p>
     </div>

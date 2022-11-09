@@ -9,7 +9,7 @@ module.exports = {
       dropShadow: {
         blue: "0 0px 9px rgba(73,200,255, 1)",
         pink: "0 0px 9px rgba(252,122,213, 1)",
-        white: "0 0px 9px rgba(0,0,0, 1)",
+        white: "0 0px 9px rgba(255,255,255, 1)",
       },
       fontFamily: {
         lexend: ["Lexend"],

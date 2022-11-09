@@ -29,7 +29,7 @@ const About = () => {
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
             <img src="PINK_HEART1.png" className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink" />
           </div>
-          <p className="py-5 font-lexend text-base md:text-2xl w-full p-0 m-0 text-white text-center">
+          <p className="drop-shadow-pinksmall py-5 font-lexend text-base md:text-2xl w-full p-0 m-0 text-white text-center">
             Rose Hack is UC Riverside’s 24-hour hackathon, one of the few
             women-centric hackathons in California! Founded by the female
             leaders of the Association for Computing Machinery (ACM-W) and the
@@ -56,7 +56,7 @@ const About = () => {
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
             <img src="BLUE_HEART1.png" className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue" />
           </div>
-          <p className="py-5 text-base md:text-2xl font-lexend w-full p-0 m-0 text-white text-center">
+          <p className="drop-shadow-bluesmall py-5 text-base md:text-2xl font-lexend w-full p-0 m-0 text-white text-center">
             Rose Hack’s mission is to encourage individuals from
             underrepresented groups in STEM to gain experience, create strong
             networks, and build amazing projects through their shared passions

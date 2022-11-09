@@ -45,7 +45,7 @@ const Sponsors = () => {
         </div>
         <Row>
           {sponsors.map((sponsor, index) => (
-            <Col xl={3} key={index} className="p-4">
+            <Col lg={3} md={4} xs={6} key={index} className="p-4">
               <div>
                 <div className={`rounded-full hover:-translate-y-2`}>
                   <img

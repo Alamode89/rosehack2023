@@ -6,7 +6,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      dropShadow: {
+        blue: "0 0px 9px rgba(73,200,255, 1)",
+        pink: "0 0px 9px rgba(252,122,213, 1)",
+        white: "0 0px 9px rgba(0,0,0, 1)",
+      },
       fontFamily: {
+        lexend: ["Lexend"],
         poppins: ["Poppins"],
         pixel: ["'Press Start 2P'", "cursive"],
       },
@@ -39,6 +45,14 @@ module.exports = {
         sponsors: {
           top: "#CC00FF",
           bottom: "#8C7DFF",
+        },
+        about: {
+          top: "#3D008A",
+          bottom: "#771CAE",
+          left: "#D20ED6",
+          right: "#57AEFF",
+          pink: "#E653BA",
+          blue: "#15DBFF",
         },
       },
       boxShadow: {

@@ -20,7 +20,7 @@ const About = () => {
         <FaCircle className="drop-shadow-blue text-white" />
         <img src="RH_ASSET_22.png" className="h-10 w-10 " />
       </div>
-      <div className="flex justify-between items-center 10/12 md:w-2/3 p-5">
+      <div className="flex justify-between items-center 10/12 lg:w-2/3 p-5">
         <div className="w-2/3 p-5">
           <div className="flex justify-between items-center mb-4">
             <img src="PINK_HEART1.png" className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink" />
@@ -46,7 +46,7 @@ const About = () => {
         </div>
         <img className="w-1/3" src="MACHINE_3.png"></img>
       </div>
-      <div className="flex justify-between items-center 10/12 md:w-2/3  p-5">
+      <div className="flex justify-between items-center 10/12 lg:w-2/3  p-5">
         <img className="w-1/3" src="MACHINE_2.png"></img>
         <div className="w-2/3 p-5">
           <div className="flex justify-between items-center mb-4">

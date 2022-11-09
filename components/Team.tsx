@@ -129,16 +129,17 @@ const profiles = [
 const Team = () => {
   return (
     <div className="bg-gradient-to-b from-team-top to-team-bottom flex justify-center items-center flex-col py-4">
-      <div className="w-11/12 flex justify-center items-center flex-col">
+      <div className="w-10/12 flex justify-center items-center flex-col">
         <p className="font-pixel text-4xl text-white">Meet the Team</p>
         <Row>
           {profiles.map((profile, index) => (
-            <Col xl={3} key={index} className=" p-3">
+            <Col lg={3} md={4} xs={6} key={index} className=" p-3">
               <Profile
                 name={profile.name}
                 position={profile.position}
                 shadow={profile.shadow}
                 image={profile.image}
+                linkedin={profile.linkedin}
               />
             </Col>
           ))}

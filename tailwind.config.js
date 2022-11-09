@@ -10,6 +10,7 @@ module.exports = {
         blue: "0 0px 9px rgba(73,200,255, 1)",
         pink: "0 0px 9px rgba(252,122,213, 1)",
         white: "0 0px 9px rgba(255,255,255, 1)",
+        bigwhite: "0 0px 20px rgba(255,255,255, .3)",
       },
       fontFamily: {
         lexend: ["Lexend"],

@@ -71,7 +71,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="bg-gradient-to-r from-about-left to-about-right w-1/2 rounded-3xl m-5 drop-shadow-white">
+      <div className="bg-gradient-to-r from-about-left to-about-right w-1/2 rounded-3xl m-5 drop-shadow-bigwhite">
         <p className="bg-about-bottom py-5 font-lexend text-2xl p-5 m-4 text-white text-center rounded-3xl">
           Rose Hack welcomes both undergraduate and high school students for a
           lively weekend filled with innovation, discovery, networking,

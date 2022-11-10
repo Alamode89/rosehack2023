@@ -126,6 +126,16 @@ const profiles = [
   },
 ];
 
+const commitee = [
+  "Divyank Shah",
+  "Divyank Shah",
+  "Divyank Shah",
+  "Divyank Shah",
+  "Divyank Shah",
+  "Divyank Shah",
+  "Divyank Shah",
+];
+
 const Team = () => {
   return (
     <div className="bg-gradient-to-b from-team-top to-team-bottom flex justify-center items-center flex-col py-4">
@@ -144,6 +154,39 @@ const Team = () => {
             </Col>
           ))}
         </Row>
+        <div className="flex justify-center items-stretch flex-col p-2 w-full">
+          <a
+            target="_blank"
+            className={`shadow-team-yellow shadow-[20px_-16px_0px_0px] rounded-[2rem] w-full`}
+            rel="noreferrer"
+          >
+            <div className="border-white bg-white border-8 rounded-[2rem]">
+              <Row className="w-full">
+                <Col className="">
+                  {commitee.slice(0, 5).map((member, index) => (
+                    <p key={index} className="block">
+                      {member}
+                    </p>
+                  ))}
+                </Col>
+                <Col>
+                  {commitee.slice(0, 5).map((member, index) => (
+                    <p key={index} className="block">
+                      {member}
+                    </p>
+                  ))}
+                </Col>
+                <Col>
+                  {commitee.slice(0, 5).map((member, index) => (
+                    <p key={index} className="block">
+                      {member}
+                    </p>
+                  ))}
+                </Col>
+              </Row>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   );

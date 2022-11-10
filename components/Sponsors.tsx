@@ -3,16 +3,19 @@ import { FaCircle } from "react-icons/fa";
 import { Row, Col } from "react-bootstrap";
 
 const sponsors = [
-  "triad_logo.png",
-  "triad_logo.png",
-  "triad_logo.png",
-  "triad_logo.png",
+  "triad.jpeg",
+  "desmos.png",
+  "balsamiq.jpg",
+  "ripplematch.png",
+  "wolfram.png",
+  "badabeanbadaboom.jpeg",
+  "echo3d.webp",
 ];
 
 const Sponsors = () => {
   return (
     <div className="bg-gradient-to-b from-sponsors-top to-sponsors-bottom w-full flex justify-center items-center flex-col">
-      <div className="w-11/12 flex justify-center items-center flex-col">
+      <div className="w-10/12 flex justify-center items-center flex-col">
         <div className="w-1/2">
           <div className="flex justify-between items-center  mt-4">
             <FaCircle className="text-white" />
@@ -42,8 +45,15 @@ const Sponsors = () => {
         </div>
         <Row>
           {sponsors.map((sponsor, index) => (
-            <Col xl={4} key={index} className="p-4">
-              <img src={sponsor} />
+            <Col lg={3} md={4} xs={6} key={index} className="p-4">
+              <div>
+                <div className={`rounded-full hover:-translate-y-2`}>
+                  <img
+                    src={sponsor}
+                    className="border-team-green border-8 rounded-full "
+                  />
+                </div>
+              </div>
             </Col>
           ))}
         </Row>

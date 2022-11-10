@@ -45,7 +45,7 @@ const profiles = [
     instagram: "https://www.instagram.com/sussyangy/",
     github: "",
     image: "angie.jpeg",
-    shadow: "shadow-team-blue",
+    shadow: "shadow-team-teal",
   },
   {
     name: "Samarth Srinivasa",
@@ -67,7 +67,7 @@ const profiles = [
     instagram: "https://www.instagram.com/lpurgitoryl/",
     github: "https://github.com/lpurgitoryl",
     image: "nicole.jpeg",
-    shadow: "shadow-team-purple",
+    shadow: "shadow-team-orange",
   },
   {
     name: "Bonnie Yeh",
@@ -89,7 +89,7 @@ const profiles = [
     instagram: "https://www.instagram.com/samdosea/",
     github: "",
     image: "samantha.jpeg",
-    shadow: "shadow-team-teal",
+    shadow: "shadow-team-purple",
   },
   {
     name: "Cindy Do",
@@ -100,7 +100,7 @@ const profiles = [
     instagram: "https://www.instagram.com/c1ndydonut/",
     github: "https://github.com/condoes",
     image: "cindy.jpeg",
-    shadow: "shadow-team-orange",
+    shadow: "shadow-team-lightpurple",
   },
   {
     name: "Andre Amante",
@@ -111,7 +111,7 @@ const profiles = [
     instagram: " https://www.instagram.com/andweeeee/",
     github: "https://github.com/Alamode89",
     image: "andre.jpeg",
-    shadow: "shadow-team-lightpurple",
+    shadow: "shadow-team-green",
   },
   {
     name: "Divyank Shah",
@@ -122,23 +122,24 @@ const profiles = [
     instagram: "https://www.instagram.com/divyank.shah/",
     github: "https://github.com/shahdivyank",
     image: "divyank.jpeg",
-    shadow: "shadow-team-green",
+    shadow: "shadow-team-pink",
   },
 ];
 
 const Team = () => {
   return (
     <div className="bg-gradient-to-b from-team-top to-team-bottom flex justify-center items-center flex-col py-4">
-      <div className="w-11/12 flex justify-center items-center flex-col">
+      <div className="w-10/12 flex justify-center items-center flex-col">
         <p className="font-pixel text-4xl text-white">Meet the Team</p>
         <Row>
           {profiles.map((profile, index) => (
-            <Col xl={3} key={index} className=" p-3">
+            <Col lg={3} md={4} xs={6} key={index} className=" p-3">
               <Profile
                 name={profile.name}
                 position={profile.position}
                 shadow={profile.shadow}
                 image={profile.image}
+                linkedin={profile.linkedin}
               />
             </Col>
           ))}

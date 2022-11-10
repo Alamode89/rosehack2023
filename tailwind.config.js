@@ -14,6 +14,7 @@ module.exports = {
         lightblue: "0 4px 9px rgba(21, 219, 255, 1)",
       },
       fontFamily: {
+        lexend: ["Lexend"],
         poppins: ["Poppins"],
         pixel: ["'Press Start 2P'", "cursive"],
       },
@@ -34,7 +35,6 @@ module.exports = {
           green: "#C9F9BE",
           pink: "#F7CDE0",
           yellow: "#FCFBB6",
-          blue: "#A0C3FA",
           hotpink: "#F08DCF",
           purple: "#A480F2",
           gold: "#FAD6A5",
@@ -54,6 +54,13 @@ module.exports = {
           bottom: "#9E00FF",
           secondtop: "#491CFF",
           secondbottom: "#05001A",
+        about: {
+          top: "#3D008A",
+          bottom: "#771CAE",
+          left: "#D20ED6",
+          right: "#57AEFF",
+          pink: "#E653BA",
+          blue: "#15DBFF",
         },
       },
       boxShadow: {

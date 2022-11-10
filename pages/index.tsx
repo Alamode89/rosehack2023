@@ -3,6 +3,7 @@ import About from "../components/About";
 import Landing from "../components/Landing";
 import Sponsors from "../components/Sponsors";
 import Team from "../components/Team";
+import FAQ from "../components/FAQ";
 
 const Home: NextPage = () => {
   return (
@@ -11,6 +12,7 @@ const Home: NextPage = () => {
       <About />
       <Sponsors />
       <Team />
+      <FAQ />
     </div>
   );
 };

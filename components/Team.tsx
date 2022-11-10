@@ -141,7 +141,7 @@ const Team = () => {
     <div className="bg-gradient-to-b from-team-top to-team-bottom flex justify-center items-center flex-col py-4">
       <div className="w-10/12 flex justify-center items-center flex-col">
         <p className="font-pixel text-4xl text-white">Meet the Team</p>
-        <Row className="flex justify-center items-center">
+        <Row className="flex justify-center items-initial">
           {profiles.map((profile, index) => (
             <Col lg={3} md={4} xs={6} key={index} className=" p-3">
               <Profile
@@ -154,6 +154,7 @@ const Team = () => {
             </Col>
           ))}
         </Row>
+        <p className="font-pixel text-4xl text-white">Committee Members</p>
         <div className="flex justify-center items-stretch flex-col p-2 w-full">
           <a
             target="_blank"
@@ -161,7 +162,7 @@ const Team = () => {
             rel="noreferrer"
           >
             <div className="border-white bg-white border-8 rounded-[2rem]">
-              <Row className="w-full">
+              <Row className="w-full p-3">
                 <Col className="">
                   {commitee.slice(0, 5).map((member, index) => (
                     <p key={index} className="block">

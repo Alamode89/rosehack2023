@@ -138,7 +138,10 @@ const commitee = [
 
 const Team = () => {
   return (
-    <div className="bg-gradient-to-b from-team-top to-team-bottom flex justify-center items-center flex-col py-4">
+    <section
+      id="board"
+      className="bg-gradient-to-b from-team-top to-team-bottom flex justify-center items-center flex-col py-[11vh] scroll-m-[2vh]"
+    >
       <div className="w-10/12 flex justify-center items-center flex-col">
         <p className="font-pixel text-4xl text-white">Meet the Team</p>
         <Row className="flex justify-center items-initial">
@@ -189,7 +192,7 @@ const Team = () => {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -126,12 +126,22 @@ const profiles = [
   },
 ];
 
+const commitee = [
+  "Divyank Shah",
+  "Divyank Shah",
+  "Divyank Shah",
+  "Divyank Shah",
+  "Divyank Shah",
+  "Divyank Shah",
+  "Divyank Shah",
+];
+
 const Team = () => {
   return (
     <div className="bg-gradient-to-b from-team-top to-team-bottom flex justify-center items-center flex-col py-4">
       <div className="w-10/12 flex justify-center items-center flex-col">
         <p className="font-pixel text-4xl text-white">Meet the Team</p>
-        <Row>
+        <Row className="flex justify-center items-initial">
           {profiles.map((profile, index) => (
             <Col lg={3} md={4} xs={6} key={index} className=" p-3">
               <Profile
@@ -144,6 +154,40 @@ const Team = () => {
             </Col>
           ))}
         </Row>
+        <p className="font-pixel text-4xl text-white">Committee Members</p>
+        <div className="flex justify-center items-stretch flex-col p-2 w-full">
+          <a
+            target="_blank"
+            className={`shadow-team-yellow shadow-[20px_-16px_0px_0px] rounded-[2rem] w-full`}
+            rel="noreferrer"
+          >
+            <div className="border-white bg-white border-8 rounded-[2rem]">
+              <Row className="w-full p-3">
+                <Col className="">
+                  {commitee.slice(0, 5).map((member, index) => (
+                    <p key={index} className="block">
+                      {member}
+                    </p>
+                  ))}
+                </Col>
+                <Col>
+                  {commitee.slice(0, 5).map((member, index) => (
+                    <p key={index} className="block">
+                      {member}
+                    </p>
+                  ))}
+                </Col>
+                <Col>
+                  {commitee.slice(0, 5).map((member, index) => (
+                    <p key={index} className="block">
+                      {member}
+                    </p>
+                  ))}
+                </Col>
+              </Row>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   );

@@ -141,7 +141,7 @@ const Team = () => {
     <div className="bg-gradient-to-b from-team-top to-team-bottom flex justify-center items-center flex-col py-4">
       <div className="w-10/12 flex justify-center items-center flex-col">
         <p className="font-pixel text-4xl text-white">Meet the Team</p>
-        <Row>
+        <Row className="flex justify-center items-center">
           {profiles.map((profile, index) => (
             <Col lg={3} md={4} xs={6} key={index} className=" p-3">
               <Profile

@@ -20,8 +20,9 @@ const About = () => {
         <FaCircle className="drop-shadow-blue text-white" />
         <img src="RH_ASSET_22.png" className="h-10 w-10 " />
       </div>
+      <img className="w-1/3 md:hidden" src="MACHINE_3.png" />
       <div className="flex justify-between items-center 10/12 lg:w-2/3 p-5">
-        <div className="w-2/3 p-5">
+        <div className="w-11/12 md:w-2/3 p-1 md:p-5">
           <div className="flex justify-between items-center mb-4">
             <img
               src="PINK_HEART1.png"
@@ -38,14 +39,14 @@ const About = () => {
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
             />
           </div>
-          <p className="drop-shadow-pinksmall py-5 font-lexend text-base md:text-2xl w-full p-0 m-0 text-white text-center">
+          <p className="drop-shadow-pinksmall py-0 md:py-5 font-lexend text-base md:text-2xl w-full p-0 m-0 text-white text-center">
             Rose Hack is UC Riverside’s 24-hour hackathon, one of the few
             women-centric hackathons in California! Founded by the female
             leaders of the Association for Computing Machinery (ACM-W) and the
             Society of Women Engineers (SWE).{" "}
           </p>
 
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex justify-between items-center mt-4">
             <img
               src="PINK_HEART1.png"
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
@@ -62,11 +63,12 @@ const About = () => {
             />
           </div>
         </div>
-        <img className="w-1/3" src="MACHINE_3.png"></img>
+        <img className="w-1/3 hidden md:flex" src="MACHINE_3.png"></img>
       </div>
+      <img className="w-1/3 md:hidden" src="MACHINE_2.png"></img>
       <div className="flex justify-between items-center 10/12 lg:w-2/3  p-5">
-        <img className="w-1/3" src="MACHINE_2.png"></img>
-        <div className="w-2/3 p-5">
+        <img className="w-1/3 hidden md:flex" src="MACHINE_2.png"></img>
+        <div className="w-11/12 md:w-2/3 p-1 md:p-5">
           <div className="flex justify-between items-center mb-4">
             <img
               src="BLUE_HEART1.png"
@@ -83,13 +85,13 @@ const About = () => {
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
             />
           </div>
-          <p className="drop-shadow-bluesmall py-5 text-base md:text-2xl font-lexend w-full p-0 m-0 text-white text-center">
+          <p className="drop-shadow-bluesmall py-0 md:py-5 text-base md:text-2xl font-lexend w-full p-0 m-0 text-white text-center">
             Rose Hack’s mission is to encourage individuals from
             underrepresented groups in STEM to gain experience, create strong
             networks, and build amazing projects through their shared passions
             in Science and Technology.{" "}
           </p>
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex justify-between items-center mt-4">
             <img
               src="BLUE_HEART1.png"
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"

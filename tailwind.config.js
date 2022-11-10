@@ -54,6 +54,7 @@ module.exports = {
           bottom: "#9E00FF",
           secondtop: "#491CFF",
           secondbottom: "#05001A",
+        },
         about: {
           top: "#3D008A",
           bottom: "#771CAE",

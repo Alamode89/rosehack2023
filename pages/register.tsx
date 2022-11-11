@@ -28,7 +28,7 @@ const shirts = [
   "Xtra Xtra Large",
 ];
 
-const ages = [16, 17, 18, 19, 20, 21, 22];
+const ages = ["16", "17", "18", "19", "20", "21", "22"];
 
 const majors = [
   "Computer Science",
@@ -42,12 +42,11 @@ const genders = ["Female", "Male", "Transgender", "Nonbinary"];
 const data = {
   first: "",
   last: "",
-  age: 18,
+  age: "18",
   phone: "",
   email: "",
   school: "California Baptist University",
   grade: "College Freshmen",
-  country: "",
   dietary: [],
   underrepresented: false,
   gender: "Female",
@@ -55,12 +54,28 @@ const data = {
   major: "Computer Science",
 };
 
-const Register = () => {
-  const [user, setUser] = useState(data);
+interface user_attributes {
+  first: string;
+  last: string;
+  email: string;
+  phone: string;
+  school: string;
+  grade: string;
+  gender: string;
+  shirt: string;
+  major: string;
+}
 
-  const handleInput = (data, value) => {
-    console.log(data, value);
+const Register = () => {
+  const [user, setUser] = useState<user_attributes>(data);
+
+  const handleInput = (data: string, value: string) => {
     setUser({ ...user, [data]: value });
+    console.log(user);
+  };
+
+  const handleField = (e: any) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
     console.log(user);
   };
 
@@ -73,7 +88,7 @@ const Register = () => {
         type="text"
         name="first"
         value={user.first}
-        onChange={handleInput}
+        onChange={handleField}
         placeholder="First Name"
         className="rounded-xl p-3"
       />
@@ -81,7 +96,7 @@ const Register = () => {
         type="text"
         name="last"
         value={user.last}
-        onChange={handleInput}
+        onChange={handleField}
         placeholder="Last Name"
         className="rounded-xl p-3"
       />
@@ -89,7 +104,7 @@ const Register = () => {
         type="text"
         name="email"
         value={user.email}
-        onChange={handleInput}
+        onChange={handleField}
         placeholder="Email Address"
         className="rounded-xl p-3"
       />
@@ -97,7 +112,7 @@ const Register = () => {
         type="text"
         name="phone"
         value={user.phone}
-        onChange={handleInput}
+        onChange={handleField}
         placeholder="Phone Number"
         className="rounded-xl p-3"
       />

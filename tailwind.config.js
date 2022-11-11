@@ -63,6 +63,10 @@ module.exports = {
           pink: "#E653BA",
           blue: "#15DBFF",
         },
+        register: {
+          top: "#9E00FF",
+          bottom: "#FC7AD5",
+        },
       },
       boxShadow: {
         hover: "0px 4px 10px #FFFFFF, 0px 4px 16px #FFFFFF",

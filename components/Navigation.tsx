@@ -5,7 +5,7 @@ import { FaBars } from "react-icons/fa";
 
 const Navigation = () => {
   return (
-    <div className="from:bg-navigation-left to:bg-navigation-right min-h-[10vh]">
+    <div className="from:bg-header-left to:bg-header-right min-h-[10vh]">
       <Navbar
         className="bg-gradient-to-r from-header-left to-header-right min-h-[10vh] px-4"
         expand="md"

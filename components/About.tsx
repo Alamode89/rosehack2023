@@ -1,9 +1,10 @@
 import React from "react";
 import { FaCircle } from "react-icons/fa";
+import { Row, Col } from "react-bootstrap";
 
 const About = () => {
   return (
-    <div className="bg-gradient-to-b from-about-top to-about-bottom w-full flex justify-center items-center flex-col">
+    <div className="bg-gradient-to-b from-about-top to-about-bottom w-full flex justify-center items-center flex-col font-lexend">
       <div className="flex justify-between items-center w-11/12 m-5">
         <img src="RH_ASSET_19.png" className="h-10 w-10 transform rotate-180" />
         <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
@@ -20,10 +21,14 @@ const About = () => {
         <FaCircle className="drop-shadow-blue text-white" />
         <img src="RH_ASSET_22.png" className="h-10 w-10 " />
       </div>
-      <img className="w-1/3 md:hidden" src="MACHINE_3.png" />
-      <div className="flex justify-between items-center 10/12 lg:w-2/3 p-5">
-        <div className="w-11/12 md:w-2/3 p-1 md:p-5">
-          <div className="flex justify-between items-center mb-4">
+
+      <Row className="sm:w-9/12 w-10/12 flex justify-center items-center flex-row-reverse sm:flex-row">
+        <Col
+          xl={8}
+          md={6}
+          className="px-5 flex justify-center items-center flex-col"
+        >
+          <div className="flex justify-between items-center mb-4 w-full">
             <img
               src="PINK_HEART1.png"
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
@@ -46,7 +51,7 @@ const About = () => {
             Society of Women Engineers (SWE).{" "}
           </p>
 
-          <div className="flex justify-between items-center mt-4">
+          <div className="flex justify-between items-center mt-4 w-full">
             <img
               src="PINK_HEART1.png"
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
@@ -62,14 +67,21 @@ const About = () => {
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
             />
           </div>
-        </div>
-        <img className="w-1/3 hidden md:flex" src="MACHINE_3.png"></img>
-      </div>
-      <img className="w-1/3 md:hidden" src="MACHINE_2.png"></img>
-      <div className="flex justify-between items-center 10/12 lg:w-2/3  p-5">
-        <img className="w-1/3 hidden md:flex" src="MACHINE_2.png"></img>
-        <div className="w-11/12 md:w-2/3 p-1 md:p-5">
-          <div className="flex justify-between items-center mb-4">
+        </Col>
+        <Col xl={4} md={6}>
+          <img className="" src="MACHINE_3.png"></img>
+        </Col>
+      </Row>
+      <Row className="mt-5 sm:w-9/12 w-10/12 flex justify-center items-center flex-col-reverse md:flex-row-reverse">
+        <Col xl={4} md={6}>
+          <img className="" src="MACHINE_2.png" />
+        </Col>
+        <Col
+          xl={8}
+          md={6}
+          className="px-5 flex justify-center items-center flex-col"
+        >
+          <div className="flex justify-between items-center mb-4 w-full">
             <img
               src="BLUE_HEART1.png"
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
@@ -91,7 +103,7 @@ const About = () => {
             networks, and build amazing projects through their shared passions
             in Science and Technology.{" "}
           </p>
-          <div className="flex justify-between items-center mt-4">
+          <div className="flex justify-between items-center mt-4 w-full">
             <img
               src="BLUE_HEART1.png"
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
@@ -107,8 +119,8 @@ const About = () => {
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
             />
           </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
       <div className="bg-gradient-to-r from-about-left to-about-right w-1/2 rounded-3xl m-5 drop-shadow-bigwhite">
         <p className="bg-about-bottom py-5 font-lexend  text-base md:text-2xl  p-5 m-4 text-white text-center rounded-3xl">
           Rose Hack welcomes both undergraduate and high school students for a

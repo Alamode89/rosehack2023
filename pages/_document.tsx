@@ -19,6 +19,10 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
             rel="stylesheet"
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Lexend&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
         <body>
           <Main />

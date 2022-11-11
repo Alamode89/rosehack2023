@@ -68,13 +68,13 @@ const About = () => {
             />
           </div>
         </Col>
-        <Col xl={4} md={6}>
-          <img className="" src="MACHINE_3.png"></img>
+        <Col xl={4} md={6} className="flex items-center justify-center">
+          <img className="w-1/3 md:w-full pt-5 md:pt-0" src="MACHINE_3.png"></img>
         </Col>
       </Row>
       <Row className="mt-5 sm:w-9/12 w-10/12 flex justify-center items-center flex-col-reverse md:flex-row-reverse">
-        <Col xl={4} md={6}>
-          <img className="" src="MACHINE_2.png" />
+        <Col xl={4} md={6} className="flex items-center justify-center">
+          <img className="w-1/3 md:w-full pt-5 md:pt-0" src="MACHINE_2.png" />
         </Col>
         <Col
           xl={8}

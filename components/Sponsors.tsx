@@ -14,10 +14,13 @@ const sponsors = [
 
 const Sponsors = () => {
   return (
-    <div className="bg-gradient-to-b from-sponsors-top to-sponsors-bottom w-full flex justify-center items-center flex-col">
+    <section
+      id="sponsors"
+      className="bg-gradient-to-b from-sponsors-top to-sponsors-bottom w-full flex justify-center items-center flex-col py-[11vh] scroll-m-[2vh]"
+    >
       <div className="w-10/12 flex justify-center items-center flex-col">
         <div className="w-1/2">
-          <div className="flex justify-between items-center  mt-4">
+          <div className="flex justify-between items-center mt-4">
             <FaCircle className="text-white" />
             <img src="PURPLE_HEART.png" className="h-10 w-10 " />
             <FaCircle className="text-white" />
@@ -58,7 +61,7 @@ const Sponsors = () => {
           ))}
         </Row>
       </div>
-    </div>
+    </section>
   );
 };
 

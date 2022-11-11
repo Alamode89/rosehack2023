@@ -67,6 +67,16 @@ module.exports = {
           top: "#9E00FF",
           bottom: "#FC7AD5",
         },
+        faq: {
+          top: "#CC00FF",
+          bottom: "#FF8A65",
+          middle: "#441797",
+          question: "#F08DCF",
+          answer: "#FBFBFB",
+          noQuestion: "#01FFC2",
+          contact: "#26DDE1",
+          email: "#48BDFF",
+        },
       },
       boxShadow: {
         hover: "0px 4px 10px #FFFFFF, 0px 4px 16px #FFFFFF",

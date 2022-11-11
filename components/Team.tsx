@@ -127,13 +127,13 @@ const profiles = [
 ];
 
 const commitee = [
-  "Divyank Shah",
-  "Divyank Shah",
-  "Divyank Shah",
-  "Divyank Shah",
-  "Divyank Shah",
-  "Divyank Shah",
-  "Divyank Shah",
+  "Jasmita Yechuri",
+  "Ashwin Jagadish",
+  "Jenny Dao",
+  "Souhita Thota",
+  "Suhani Chaudhary",
+  "Rudy Cazares",
+  "Kay Vo",
 ];
 
 const Team = () => {
@@ -159,37 +159,19 @@ const Team = () => {
         </Row>
         <p className="font-pixel text-4xl text-white">Committee Members</p>
         <div className="flex justify-center items-stretch flex-col p-2 w-full">
-          <a
-            target="_blank"
+          <div
             className={`shadow-team-yellow shadow-[20px_-16px_0px_0px] rounded-[2rem] w-full`}
-            rel="noreferrer"
           >
             <div className="border-white bg-white border-8 rounded-[2rem]">
-              <Row className="w-full p-3">
-                <Col className="">
-                  {commitee.slice(0, 5).map((member, index) => (
-                    <p key={index} className="block">
-                      {member}
-                    </p>
-                  ))}
-                </Col>
-                <Col>
-                  {commitee.slice(0, 5).map((member, index) => (
-                    <p key={index} className="block">
-                      {member}
-                    </p>
-                  ))}
-                </Col>
-                <Col>
-                  {commitee.slice(0, 5).map((member, index) => (
-                    <p key={index} className="block">
-                      {member}
-                    </p>
-                  ))}
-                </Col>
+              <Row className="w-full p-3 flex justify-left items-center">
+                {commitee.map((member, index) => (
+                  <Col key={index} xl={3}>
+                    <p className="text-black">{member}</p>
+                  </Col>
+                ))}
               </Row>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </section>

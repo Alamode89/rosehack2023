@@ -27,12 +27,15 @@ const Landing = () => {
           <ProgressBar
             className="border-4 !rounded-full drop-shadow-green"
             variant="lightgreen"
-            now={Math.round(
-              (new Date(2023, 0, 14, 12).getTime() - new Date().getTime()) /
-                1000 /
-                3600 /
-                24
-            )}
+            now={
+              100 -
+              Math.round(
+                (new Date(2023, 0, 14, 12).getTime() - new Date().getTime()) /
+                  1000 /
+                  3600 /
+                  24
+              )
+            }
             style={{ height: 32 }}
           />
         </div>

@@ -3,7 +3,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 
 interface props {
   options: Array<string>;
-  user: Object;
+  user: any;
   field: string;
   handleInput: Function;
 }

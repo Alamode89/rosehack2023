@@ -29,7 +29,7 @@ const shirts = [
   "Xtra Xtra Large",
 ];
 
-const ages = [16, 17, 18, 19, 20, 21, 22];
+const ages = ["16", "17", "18", "19", "20", "21", "22"];
 
 const majors = [
   "Computer Science",
@@ -59,10 +59,14 @@ const data = {
 const Register = () => {
   const [user, setUser] = useState(data);
 
-  const handleInput = (data, value) => {
+  const handleInput = (data: string, value: string) => {
     console.log(data, value);
     setUser({ ...user, [data]: value });
     console.log(user);
+  };
+
+  const handleField = (e: any) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
   };
 
   return (
@@ -80,7 +84,7 @@ const Register = () => {
               type="text"
               name="first"
               value={user.first}
-              onChange={handleInput}
+              onChange={handleField}
               placeholder="First Name"
               className="text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
             />
@@ -93,7 +97,7 @@ const Register = () => {
               type="text"
               name="last"
               value={user.last}
-              onChange={handleInput}
+              onChange={handleField}
               placeholder="Last Name"
               className="text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
             />
@@ -107,7 +111,7 @@ const Register = () => {
             type="text"
             name="email"
             value={user.email}
-            onChange={handleInput}
+            onChange={handleField}
             placeholder="Email Address"
             className="text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
           />
@@ -121,7 +125,7 @@ const Register = () => {
             type="text"
             name="phone"
             value={user.phone}
-            onChange={handleInput}
+            onChange={handleField}
             placeholder="Phone Number"
             className="text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
           />

@@ -37,25 +37,25 @@ const Navigation = () => {
         <Navbar.Collapse className="flex md:justify-center justify-center items-center">
           <Nav className="font-pixel flex lg:w-6/12 w-full justify-center items-center">
             <Nav.Link
-              href="#about"
+              href="/#about"
               className="!text-xl text-center text-white p-3 hover:underline decoration-4 underline-offset-8"
             >
               ABOUT
             </Nav.Link>
             <Nav.Link
-              href="#sponsors"
+              href="/#sponsors"
               className="!text-xl text-center text-white p-3 hover:underline decoration-4 underline-offset-8"
             >
               SPONSORS
             </Nav.Link>
             <Nav.Link
-              href="#board"
+              href="/#board"
               className="!text-xl text-center text-white p-3 hover:underline decoration-4 underline-offset-8"
             >
               TEAM
             </Nav.Link>
             <Nav.Link
-              href="#faq"
+              href="/#faq"
               className="!text-xl text-center text-white mr-1 hover:underline decoration-4 underline-offset-8"
             >
               FAQ

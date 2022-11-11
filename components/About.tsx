@@ -4,7 +4,10 @@ import { Row, Col } from "react-bootstrap";
 
 const About = () => {
   return (
-    <div className="bg-gradient-to-b from-about-top to-about-bottom w-full flex justify-center items-center flex-col font-lexend">
+    <section
+      id="about"
+      className="bg-gradient-to-b from-about-top to-about-bottom w-full flex justify-center items-center flex-col py-[11vh] scroll-m-[2vh]"
+    >
       <div className="flex justify-between items-center w-11/12 m-5">
         <img src="RH_ASSET_19.png" className="h-10 w-10 transform rotate-180" />
         <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
@@ -142,7 +145,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

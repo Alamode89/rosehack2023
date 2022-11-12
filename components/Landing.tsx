@@ -5,15 +5,27 @@ import Link from "next/link";
 
 const Landing = () => {
   return (
-    <div className="flex flex-col bg-gradient-to-br from-landing-bottom to-landing-bottompink w-full justify-center item-center pt-24">
-      <div className="shadow-[0_0px_72px_0] shadow-white/60 m-auto bg-gradient-to-b from-landing-top/20 to-landing-bottom/20 bg-gradient-to-b from-landing-secondtop/20 to-landing-second-bottom/20 border-[6px] rounded-3xl text-center justify-center items-center w-7/12 p-4">
-        <p className="drop-shadow-blue drop-shadow-lightblue text-white font-pixel text-4xl justify-center">
+    <div className="flex flex-col bg-gradient-to-br from-landing-bottom to-landing-bottompink w-full justify-center item-center pt-10">
+      <div className="w-7/12 flex p-6 m-auto text-center items-center justify-evenly">
+        <img draggable="false" className="w-1/12" src="PINK_HEART1.png" />
+        <FaCircle className="text-white hidden md:block" />
+        <FaCircle className="text-white " />
+        <img draggable="false" className="w-1/12" src="BLUE_HEART1.png" />
+        <FaCircle className="text-white hidden md:block" />
+        <FaCircle className="text-white " />
+        <img draggable="false" className="w-1/12" src="PINK_HEART1.png" />
+        <FaCircle className="text-white hidden md:block" />
+        <FaCircle className="text-white " />
+        <img draggable="false" className="w-1/12" src="BLUE_HEART1.png" />
+      </div>
+      <div className="shadow-[0_0px_72px_0] shadow-white/60 m-auto bg-gradient-to-b from-landing-secondtop/20 to-landing-second-bottom/20 border-[6px] rounded-3xl text-center justify-center items-center w-7/12 p-4">
+        <div className="drop-shadow-lightblue text-white font-pixel text-4xl justify-center">
           Rose Hack <br /> 2023
           <p className="pt-3 text-2xl underline"> JANUARY 14-15</p>
-        </p>
+        </div>
         <div className="flex items-center justify-center py-3">
           <Link href="/register">
-            <a className="shadow-[0_0_16px_0] shadow-[#15DBFF] px-4 drop-shadow-lightblue drop-shadow-blue p-2 font-pixel text-white border-[6px] rounded-2xl text-sm md:text-2xl">
+            <a className="shadow-[0_0_16px_0] shadow-[#15DBFF] px-4 drop-shadow-blue p-2 font-pixel text-white border-[6px] rounded-2xl text-sm md:text-2xl">
               Register
             </a>
           </Link>

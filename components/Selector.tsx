@@ -13,7 +13,7 @@ const Selector = ({ options, user, field, handleInput }: props) => {
     <Dropdown className="w-full">
       <Dropdown.Toggle
         variant=""
-        id="dropdown-basic"
+        id=""
         className="text-white w-full bg-transparent !border-4 border-solid border-white !rounded-xl drop-shadow-bluesmall focus:border-white active:border-white"
       >
         {user[field]}

@@ -97,7 +97,7 @@ const FAQQuestions = () => {
   return (
     <div className="w-full flex justify-center items-center flex-col mt-5">
       <Accordion
-        className="flex flex-col content-center w-8/12 py-5 bg-faq-middle rounded-3xl !border-transparent"
+        className="flex flex-col content-center w-full py-5 bg-faq-middle rounded-3xl !border-transparent"
         flush
         alwaysOpen
       >

@@ -47,32 +47,21 @@ const Sponsors = () => {
       className="bg-gradient-to-b from-sponsors-top to-sponsors-bottom w-full flex justify-center items-center flex-col py-[11vh] scroll-m-[2vh]"
     >
       <div className="w-10/12 flex justify-center items-center flex-col">
-        <div className="w-1/2">
-          <div className="flex justify-between items-center mt-4">
-            <FaCircle className="text-white" />
-            <img src="PURPLE_HEART.png" className="h-10 w-10 " />
-            <FaCircle className="text-white" />
-            <img src="PURPLE_HEART.png" className="h-10 w-10 " />
-            <FaCircle className="text-white" />
-            <img src="PURPLE_HEART.png" className="h-10 w-10 " />
-            <FaCircle className="text-white" />
-          </div>
-          <div className="flex justify-between items-center my-3">
-            <img src="PURPLE_HEART.png" className="h-8" />
-            <div className="font-pixel text-4xl w-1/2 p-0 m-0 text-white text-center">
-              Sponsors
-            </div>
-            <img src="PURPLE_HEART.png" className="w-8" />
-          </div>
-          <div className="flex justify-between items-center mb-4">
-            <FaCircle className="text-white" />
-            <img src="PURPLE_HEART.png" className="h-10 w-10 " />
-            <FaCircle className="text-white" />
-            <img src="PURPLE_HEART.png" className="h-10 w-10 " />
-            <FaCircle className="text-white" />
-            <img src="PURPLE_HEART.png" className="h-10 w-10 " />
-            <FaCircle className="text-white" />
-          </div>
+        <div className="flex justify-between items-center w-full m-5">
+          <img src="PINK_HEART1.png" className="h-10 w-10 transform" />
+          <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
+          <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
+          <FaCircle className="drop-shadow-blue text-white hidden lg:flex" />
+          <FaCircle className="drop-shadow-blue text-white" />
+
+          <p className="drop-shadow-blue font-pixel text-4xl p-0 m-0 text-white text-center">
+            Sponsors
+          </p>
+          <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
+          <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
+          <FaCircle className="drop-shadow-blue text-white hidden lg:flex" />
+          <FaCircle className="drop-shadow-blue text-white" />
+          <img src="PINK_HEART1.png" className="h-10 w-10 " />
         </div>
         <Row>
           {sponsors.map((sponsor, index) => (

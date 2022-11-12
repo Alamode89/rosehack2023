@@ -25,7 +25,7 @@ const Landing = () => {
         </div>
         <div className="flex items-center justify-center py-3">
           <Link href="/register">
-            <a className="shadow-[0_0_16px_0] no-underline shadow-[#15DBFF] px-4 drop-shadow-blue p-2 font-pixel text-white border-[6px] rounded-2xl text-sm md:text-2xl">
+            <a className="shadow-[0_0_16px_0] hover:scale-105 no-underline shadow-[#15DBFF] px-4 drop-shadow-blue p-2 font-pixel text-white border-[6px] rounded-2xl text-sm md:text-2xl">
               Register
             </a>
           </Link>

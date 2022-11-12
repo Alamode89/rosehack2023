@@ -3,14 +3,14 @@ import Selector from "../components/Selector";
 import { Row, Col } from "react-bootstrap";
 
 const schools = [
-  "University of California, Riverside",
+  "UC Riverside",
   "Riverside City College",
   "La Sierra College",
   "California Baptist University",
   "University of Redlands",
-  "California State University, San Bernardino",
-  "University of California, Los Angeles",
-  "University of California, San Diego",
+  "CSU San Bernardino",
+  "UC Los Angeles",
+  "UC San Diego",
 ];
 
 const grades = [
@@ -33,7 +33,7 @@ const ages = ["16", "17", "18", "19", "20", "21", "22"];
 
 const majors = [
   "Computer Science",
-  "Computer Science with Business Applications",
+  "CS with Business Applications",
   "Computer Engineering",
   "Data Science",
 ];
@@ -72,11 +72,11 @@ const Register = () => {
   return (
     <div className="flex justify-center items-center flex-col bg-gradient-to-b from-about-top to-about-bottom w-full">
       <div className="border-4 mt-5 rounded-3xl border-white drop-shadow-blue items-center flex flex-col w-2/3">
-        <div className="font-pixel text-4xl p-0 text-white text-center w-1/2 m-4">
+        <div className="font-pixel text-md md:text-xl lg:text-4xl p-0 text-white text-center w-1/2 m-4">
           &lt;REGISTER&gt;
         </div>
-        <Row className="w-10/12 flex justify-between items-between">
-          <Col md={5}>
+        <Row className="w-10/12 flex justify-between">
+          <Col md={5} className="p-0">
             <label className="font-pixel text-md text-white text-center w-full drop-shadow-bluesmall">
               first name
             </label>
@@ -89,7 +89,7 @@ const Register = () => {
               className="text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
             />
           </Col>
-          <Col md={5}>
+          <Col md={5} className="p-0">
             <label className="font-pixel text-md text-white text-center w-full drop-shadow-bluesmall">
               last name
             </label>
@@ -103,7 +103,7 @@ const Register = () => {
             />
           </Col>
         </Row>
-        <div className="my-2 w-10/12 ">
+        <Row className="my-2 w-10/12">
           <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
             email
           </label>
@@ -115,8 +115,8 @@ const Register = () => {
             placeholder="Email Address"
             className="text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
           />
-        </div>
-        <div className="my-2 w-10/12 ">
+        </Row>
+        <Row className="my-2 w-10/12 ">
           <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
             phone number
           </label>
@@ -129,14 +129,14 @@ const Register = () => {
             placeholder="Phone Number"
             className="text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
           />
-        </div>
-        <div className="w-10/12 flex justify-start ">
+        </Row>
+        <Row className="w-10/12">
           <label className="my-2 drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
             school
           </label>
-        </div>
-        <Row className="  w-10/12">
-          <Col md={8} className="m-0">
+        </Row>
+        <Row className=" w-10/12">
+          <Col md={12} className="m-0 p-0">
             <Selector
               options={schools}
               user={user}
@@ -144,7 +144,12 @@ const Register = () => {
               handleInput={handleInput}
             />
           </Col>
-          <Col md={4}>
+        </Row>
+        <Row className="py-2 w-10/12 justify-between">
+          <Col md={5} className="p-0">
+            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+              grade
+            </label>
             <Selector
               options={grades}
               user={user}
@@ -152,36 +157,57 @@ const Register = () => {
               handleInput={handleInput}
             />
           </Col>
+          <Col md={5} className="p-0">
+            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+              major
+            </label>
+            <Selector
+              options={majors}
+              user={user}
+              field="major"
+              handleInput={handleInput}
+            />
+          </Col>
+        </Row>
+        <Row className=" w-10/12 justify-between flex">
+          <Col md={3} className="m-0 p-0">
+            <label className="my-2 drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+              size
+            </label>
+            <Selector
+              options={shirts}
+              user={user}
+              field="shirt"
+              handleInput={handleInput}
+            />
+          </Col>
+          <Col md={3} className="m-0 p-0">
+            <label className="my-2 drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+              age
+            </label>
+            <Selector
+              options={ages}
+              user={user}
+              field="age"
+              handleInput={handleInput}
+            />
+          </Col>
+          <Col md={3} className="m-0 p-0">
+            <label className="my-2 drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+              gender
+            </label>
+            <Selector
+              options={genders}
+              user={user}
+              field="gender"
+              handleInput={handleInput}
+            />
+          </Col>
         </Row>
 
-        <Selector
-          options={shirts}
-          user={user}
-          field="shirt"
-          handleInput={handleInput}
-        />
-
-        <Selector
-          options={ages}
-          user={user}
-          field="age"
-          handleInput={handleInput}
-        />
-
-        <Selector
-          options={majors}
-          user={user}
-          field="major"
-          handleInput={handleInput}
-        />
-
-        <Selector
-          options={genders}
-          user={user}
-          field="gender"
-          handleInput={handleInput}
-        />
-        <button className="p-3 bg-white">Submit</button>
+        <button className="px-5 py-2 rounded-xl m-5 bg-transparent border-4 border-white drop-shadow-bluesmall font-pixel text-md md:text-xl lg:text-2xl text-white text-center">
+          SUBMIT
+        </button>
       </div>
     </div>
   );

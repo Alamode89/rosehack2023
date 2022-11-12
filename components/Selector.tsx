@@ -22,7 +22,7 @@ const Selector = ({ options, user, field, handleInput }: props) => {
       <Dropdown.Menu className="w-full">
         {options.map((option, index) => (
           <Dropdown.Item
-            className=""
+            className="text-black"
             key={index}
             onClick={() => handleInput(field, option)}
           >

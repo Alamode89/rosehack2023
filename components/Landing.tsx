@@ -46,16 +46,16 @@ const Landing = () => {
         </div>
       </div>
       <div className="w-7/12 flex p-6 m-auto text-center items-center justify-evenly">
-        <img draggable="false" className="w-1/12" src="RH_ASSET_15.png" />
+        <img draggable="false" className="w-1/12" src="PINK_HEART1.png" />
         <FaCircle className="text-white hidden md:block" />
-        <FaCircle className="text-white" />
-        <img draggable="false" className="w-1/12" src="RH_ASSET_16.png" />
+        <FaCircle className="text-white " />
+        <img draggable="false" className="w-1/12" src="BLUE_HEART1.png" />
         <FaCircle className="text-white hidden md:block" />
-        <FaCircle className="text-white" />
-        <img draggable="false" className="w-1/12" src="RH_ASSET_17.png" />
+        <FaCircle className="text-white " />
+        <img draggable="false" className="w-1/12" src="PINK_HEART1.png" />
         <FaCircle className="text-white hidden md:block" />
-        <FaCircle className="text-white" />
-        <img draggable="false" className="w-1/12" src="RH_ASSET_18.png" />
+        <FaCircle className="text-white " />
+        <img draggable="false" className="w-1/12" src="BLUE_HEART1.png" />
       </div>
       <div className="w-full justify-center">
         <img draggable="false" src="pixels_landing.png" />

@@ -20,9 +20,9 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Lexend:wght@400&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Lexend&display=swap"
             rel="stylesheet"
-          />
+          ></link>
         </Head>
         <body>
           <Main />

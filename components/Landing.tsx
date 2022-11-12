@@ -1,6 +1,7 @@
 import React from "react";
 import { FaCircle } from "react-icons/fa";
 import ProgressBar from "react-bootstrap/ProgressBar";
+import Link from "next/link";
 
 const Landing = () => {
   return (
@@ -11,20 +12,25 @@ const Landing = () => {
           <p className="pt-3 text-2xl underline"> JANUARY 14-15</p>
         </p>
         <div className="flex items-center justify-center py-3">
-          <button className="shadow-[0_0_16px_0] shadow-[#15DBFF] px-4 drop-shadow-lightblue drop-shadow-blue p-2 font-pixel md:text-2xl text-sm text-white border-[6px] rounded-2xl">
-            Register
-          </button>
+          <Link href="/register">
+            <a className="shadow-[0_0_16px_0] shadow-[#15DBFF] px-4 drop-shadow-lightblue drop-shadow-blue p-2 font-pixel text-white border-[6px] rounded-2xl text-sm md:text-2xl">
+              Register
+            </a>
+          </Link>
         </div>
         <div className="pt-4 w-7/12 justify-center items-center m-auto">
           <ProgressBar
             className="border-4 !rounded-full drop-shadow-green"
             variant="lightgreen"
-            now={Math.round(
-              (new Date(2023, 0, 14, 12).getTime() - new Date().getTime()) /
-                1000 /
-                3600 /
-                24
-            )}
+            now={
+              100 -
+              Math.round(
+                (new Date(2023, 0, 14, 12).getTime() - new Date().getTime()) /
+                  1000 /
+                  3600 /
+                  24
+              )
+            }
             style={{ height: 32 }}
           />
         </div>

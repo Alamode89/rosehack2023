@@ -8,7 +8,11 @@ module.exports = {
     extend: {
       dropShadow: {
         blue: "0 0px 9px rgba(73,200,255, 1)",
+        bluesmall: "0 0px 3px rgba(73,200,255, 1)",
         pink: "0 0px 9px rgba(252,122,213, 1)",
+        pinksmall: "0 0px 3px rgba(252,122,213, 1)",
+        white: "0 0px 9px rgba(255,255,255, 1)",
+        bigwhite: "0 0px 20px rgba(255,255,255, .3)",
         white: "0 0px 9px rgba(0,0,0, 1)",
         green: "0 0px 9px rgba(30, 255, 26, 1)",
         lightblue: "0 4px 9px rgba(21, 219, 255, 1)",
@@ -62,6 +66,20 @@ module.exports = {
           right: "#57AEFF",
           pink: "#E653BA",
           blue: "#15DBFF",
+        },
+        register: {
+          top: "#9E00FF",
+          bottom: "#FC7AD5",
+        },
+        faq: {
+          top: "#CC00FF",
+          bottom: "#FF8A65",
+          middle: "#441797",
+          question: "#F08DCF",
+          answer: "#FBFBFB",
+          noQuestion: "#01FFC2",
+          contact: "#26DDE1",
+          email: "#48BDFF",
         },
       },
       boxShadow: {

@@ -135,6 +135,7 @@ const commitee = [
   "Suhani Chaudhary",
   "Rudy Cazares",
   "Kay Vo",
+  "Felix Maass",
 ];
 
 const Team = () => {
@@ -144,7 +145,9 @@ const Team = () => {
       className="bg-gradient-to-b from-team-top to-team-bottom flex justify-center items-center flex-col py-[11vh] scroll-m-[2vh]"
     >
       <div className="w-10/12 flex justify-center items-center flex-col">
-        <p className="font-pixel text-4xl text-white">Meet the Team</p>
+        <p className="font-pixel text-4xl text-white text-center">
+          Meet the Team
+        </p>
         <Row className="flex justify-center items-initial">
           {profiles.map((profile, index) => (
             <Col lg={3} md={4} xs={6} key={index} className=" p-3">
@@ -158,7 +161,9 @@ const Team = () => {
             </Col>
           ))}
         </Row>
-        <p className="font-pixel text-4xl text-white">Committee Members</p>
+        <p className="font-pixel text-4xl text-white text-center">
+          Committee Members
+        </p>
         <div className="flex justify-center items-stretch flex-col p-2 w-full">
           <div
             className={`shadow-team-yellow shadow-[20px_-16px_0px_0px] rounded-[2rem] w-full`}
@@ -166,7 +171,12 @@ const Team = () => {
             <div className="border-white bg-white border-8 rounded-3xl">
               <Row className="w-full p-3 flex justify-left items-center">
                 {commitee.map((member, index) => (
-                  <Col key={index} xl={3}>
+                  <Col
+                    key={index}
+                    xl={3}
+                    xs={6}
+                    className="flex justify-left items-center"
+                  >
                     <p className="p-0 m-2 text-black font-lexend">{member}</p>
                   </Col>
                 ))}

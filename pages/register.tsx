@@ -75,9 +75,9 @@ const Register = () => {
         <div className="font-pixel text-md md:text-xl lg:text-4xl p-0 text-white text-center w-1/2 m-4">
           &lt;REGISTER&gt;
         </div>
-        <Row className="w-10/12 flex justify-between">
-          <Col md={5} className="p-0">
-            <label className="font-pixel text-md text-white text-center w-full drop-shadow-bluesmall">
+        <Row className="w-10/12 flex justify-between ">
+          <Col md={5} className="px-0 py-1">
+            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
               first name
             </label>
             <input
@@ -89,8 +89,8 @@ const Register = () => {
               className="text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
             />
           </Col>
-          <Col md={5} className="p-0">
-            <label className="font-pixel text-md text-white text-center w-full drop-shadow-bluesmall">
+          <Col md={5} className="px-0 py-1">
+            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
               last name
             </label>
             <input
@@ -103,40 +103,42 @@ const Register = () => {
             />
           </Col>
         </Row>
-        <Row className="my-2 w-10/12">
-          <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
-            email
-          </label>
-          <input
-            type="text"
-            name="email"
-            value={user.email}
-            onChange={handleField}
-            placeholder="Email Address"
-            className="text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
-          />
+        <Row className="w-10/12 flex justify-start">
+          <Col className="px-0 py-1">
+            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+              email
+            </label>
+            <input
+              type="text"
+              name="email"
+              value={user.email}
+              onChange={handleField}
+              placeholder="Email Address"
+              className="text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
+            />
+          </Col>
         </Row>
-        <Row className="my-2 w-10/12 ">
-          <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
-            phone number
-          </label>
+        <Row className="w-10/12 ">
+          <Col className="px-0 py-1">
+            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+              phone number
+            </label>
 
-          <input
-            type="text"
-            name="phone"
-            value={user.phone}
-            onChange={handleField}
-            placeholder="Phone Number"
-            className="text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
-          />
+            <input
+              type="text"
+              name="phone"
+              value={user.phone}
+              onChange={handleField}
+              placeholder="Phone Number"
+              className="text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
+            />
+          </Col>
         </Row>
         <Row className="w-10/12">
-          <label className="my-2 drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
-            school
-          </label>
-        </Row>
-        <Row className=" w-10/12">
-          <Col md={12} className="m-0 p-0">
+          <Col className="px-0 py-1">
+            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+              school
+            </label>
             <Selector
               options={schools}
               user={user}
@@ -145,8 +147,8 @@ const Register = () => {
             />
           </Col>
         </Row>
-        <Row className="py-2 w-10/12 justify-between">
-          <Col md={5} className="p-0">
+        <Row className="w-10/12 justify-between">
+          <Col md={5} className="px-0 py-1">
             <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
               grade
             </label>
@@ -157,7 +159,7 @@ const Register = () => {
               handleInput={handleInput}
             />
           </Col>
-          <Col md={5} className="p-0">
+          <Col md={5} className="px-0 py-1">
             <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
               major
             </label>
@@ -170,8 +172,8 @@ const Register = () => {
           </Col>
         </Row>
         <Row className=" w-10/12 justify-between flex">
-          <Col md={3} className="m-0 p-0">
-            <label className="my-2 drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+          <Col md={3} className="px-0 py-1">
+            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
               size
             </label>
             <Selector
@@ -181,8 +183,8 @@ const Register = () => {
               handleInput={handleInput}
             />
           </Col>
-          <Col md={3} className="m-0 p-0">
-            <label className="my-2 drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+          <Col md={3} className="px-0 py-1">
+            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
               age
             </label>
             <Selector
@@ -192,8 +194,8 @@ const Register = () => {
               handleInput={handleInput}
             />
           </Col>
-          <Col md={3} className="m-0 p-0">
-            <label className="my-2 drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+          <Col md={3} className="px-0 py-1">
+            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
               gender
             </label>
             <Selector

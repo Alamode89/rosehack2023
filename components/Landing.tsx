@@ -21,11 +21,11 @@ const Landing = () => {
       <div className="shadow-[0_0px_72px_0] shadow-white/60 m-auto bg-gradient-to-b from-landing-secondtop/20 to-landing-second-bottom/20 border-[6px] rounded-3xl text-center justify-center items-center w-7/12 p-4">
         <div className="drop-shadow-lightblue text-white font-pixel text-4xl justify-center">
           Rose Hack <br /> 2023
-          <p className="pt-3 text-2xl underline"> JANUARY 14-15</p>
+          <p className="pt-3 text-2xl no-underline"> JANUARY 14-15</p>
         </div>
         <div className="flex items-center justify-center py-3">
           <Link href="/register">
-            <a className="shadow-[0_0_16px_0] shadow-[#15DBFF] px-4 drop-shadow-blue p-2 font-pixel text-white border-[6px] rounded-2xl text-sm md:text-2xl">
+            <a className="shadow-[0_0_16px_0] hover:scale-105 no-underline shadow-[#15DBFF] px-4 drop-shadow-blue p-2 font-pixel text-white border-[6px] rounded-2xl text-sm md:text-2xl">
               Register
             </a>
           </Link>

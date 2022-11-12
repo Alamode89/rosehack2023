@@ -8,8 +8,8 @@ const About = () => {
       id="about"
       className="bg-gradient-to-b from-about-top to-about-bottom w-full flex justify-center items-center flex-col py-[11vh] scroll-m-[2vh]"
     >
-      <div className="flex justify-between items-center w-11/12 m-5">
-        <img src="RH_ASSET_19.png" className="h-10 w-10 transform rotate-180" />
+      <div className="flex justify-between items-center w-10/12 m-5">
+        <img src="PINK_HEART1.png" className="h-10 w-10 transform" />
         <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
         <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
         <FaCircle className="drop-shadow-blue text-white hidden lg:flex" />
@@ -22,7 +22,7 @@ const About = () => {
         <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
         <FaCircle className="drop-shadow-blue text-white hidden lg:flex" />
         <FaCircle className="drop-shadow-blue text-white" />
-        <img src="RH_ASSET_22.png" className="h-10 w-10 " />
+        <img src="PINK_HEART1.png" className="h-10 w-10 " />
       </div>
 
       <Row className="sm:w-9/12 w-10/12 flex justify-center items-center flex-row-reverse sm:flex-row">
@@ -127,7 +127,7 @@ const About = () => {
           </div>
         </Col>
       </Row>
-      <div className="bg-gradient-to-r from-about-left to-about-right w-1/2 rounded-3xl m-5 drop-shadow-bigwhite">
+      <div className="bg-gradient-to-r from-about-left to-about-right md:w-1/2 w-10/12 rounded-3xl m-5 drop-shadow-bigwhite">
         <p className="bg-about-bottom py-5 font-lexend  text-base md:text-2xl  p-5 m-4 text-white text-center rounded-3xl">
           Rose Hack welcomes both undergraduate and high school students for a
           lively weekend filled with innovation, discovery, networking,

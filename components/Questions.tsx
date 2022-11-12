@@ -57,10 +57,6 @@ const QA = [
     answer:
       "No, you can work independently if you wish.  If you do want to join a team, there is a limit of 4 people per team!",
   },
-  {
-    question: "Don't see your question listed?",
-    answer: "Contact us at rosehackucr@gmail.com for any further questions!",
-  },
 ];
 
 const FaqItem = ({ index, element }: any) => {

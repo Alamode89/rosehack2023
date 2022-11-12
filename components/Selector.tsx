@@ -10,14 +10,22 @@ interface props {
 
 const Selector = ({ options, user, field, handleInput }: props) => {
   return (
-    <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
+    <Dropdown className="w-full">
+      <Dropdown.Toggle
+        variant=""
+        id="dropdown-basic"
+        className="text-white w-full bg-transparent !border-4 border-solid border-white !rounded-xl drop-shadow-bluesmall focus:border-white active:border-white"
+      >
         {user[field]}
       </Dropdown.Toggle>
 
-      <Dropdown.Menu>
+      <Dropdown.Menu className="w-full">
         {options.map((option, index) => (
-          <Dropdown.Item key={index} onClick={() => handleInput(field, option)}>
+          <Dropdown.Item
+            className=""
+            key={index}
+            onClick={() => handleInput(field, option)}
+          >
             {option}
           </Dropdown.Item>
         ))}

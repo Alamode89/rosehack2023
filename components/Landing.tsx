@@ -13,13 +13,13 @@ const Landing = () => {
         <p className="drop-shadow-blue drop-shadow-lightblue text-white font-pixel text-4xl justify-center p-2">
           2023
         </p>
-        <p className="drop-shadow-blue drop-shadow-lightblue underline text-white font-pixel text-2xl justify-center pt-3">
+        <p className="drop-shadow-blue drop-shadow-lightblue text-white font-pixel text-2xl justify-center pt-3">
           JANUARY 14-15
         </p>
         <div className="flex items-center justify-center py-3">
-          <div className="shadow-[0_0_16px_0] shadow-[#15DBFF] px-4 drop-shadow-lightblue drop-shadow-blue p-2 font-pixel text-2xl text-white border-[6px] rounded-2xl">
-            <Link href="/register" className="!text-white">
-              Register
+          <div className="shadow-[0_0_16px_0] shadow-[#15DBFF] hover:scale-105 hover:cursor-pointer px-4 drop-shadow-lightblue drop-shadow-blue p-2 font-pixel text-2xl border-[6px] rounded-2xl">
+            <Link href="/register" className="no-underline">
+              <p className="inline text-white ">Register</p>
             </Link>
           </div>
         </div>

@@ -6,7 +6,7 @@ const FAQ = () => {
   return (
     <section
       id="faq"
-      className="bg-gradient-to-b from-faq-top to-faq-bottom w-full flex justify-center items-center flex-col py-[11vh] scroll-m-[2vh]"
+      className="bg-gradient-to-b from-faq-top to-faq-bottom w-full flex justify-center items-center flex-col pt-[11vh] pb-6 scroll-m-[2vh]"
     >
       <div className="w-11/12 flex justify-center items-center flex-col">
         <div className="w-1/4">
@@ -23,14 +23,14 @@ const FAQ = () => {
           <Questions />
         </div>
 
-        <div className="text-center pt-4">
-          <p className="text-faq-noQuestion text-xl">
+        <div className="text-center p-0 pt-4">
+          <p className="text-white text-xl font-pixel">
             Don&apos;t see your question?
           </p>
-          <p className="text-faq-contact text-xl">Please contact us at</p>
-          <p>
+          <p className="text-white text-xl font-pixel">Please contact us at</p>
+          <p className="hover:scale-105 ">
             <a
-              className="no-underline font-semibold text-faq-email text-xl"
+              className="no-underline font-semibold text-header-right hover:text-header-right font-pixel text-xl "
               href="mailto:rosehack@gmail.com"
             >
               rosehack@gmail.com

@@ -5,3 +5,13 @@
 .bg-lightgreen {
   background-color: #1eff1a !important;
 }
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+a {
+  color: #fff !important;
+  text-decoration: none !important;
+}

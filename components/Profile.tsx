@@ -19,10 +19,10 @@ const Profile = ({ name, position, shadow, image, linkedin }: props) => {
       >
         <img src={image} className="border-white border-8 rounded-[2rem] " />
       </a>
-      <p className="inline p-0 m-0 mt-3 font-poppins text-3xl text-white font-semibold text-center">
+      <p className="inline p-0 m-0 mt-3 font-poppins md:text-3xl text-xl text-white font-semibold text-center">
         {name}
       </p>
-      <p className="inline p-0 m-0 font-poppins text-3xl text-white font-semibold text-center">
+      <p className="inline p-0 m-0 font-poppins md:text-3xl text-xl text-white font-semibold text-center">
         {position}
       </p>
     </div>

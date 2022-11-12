@@ -127,6 +127,7 @@ const profiles = [
 ];
 
 const commitee = [
+  "Menthy Wu",
   "Jasmita Yechuri",
   "Ashwin Jagadish",
   "Jenny Dao",
@@ -162,11 +163,11 @@ const Team = () => {
           <div
             className={`shadow-team-yellow shadow-[20px_-16px_0px_0px] rounded-[2rem] w-full`}
           >
-            <div className="border-white bg-white border-8 rounded-[2rem]">
+            <div className="border-white bg-white border-8 rounded-3xl">
               <Row className="w-full p-3 flex justify-left items-center">
                 {commitee.map((member, index) => (
                   <Col key={index} xl={3}>
-                    <p className="text-black">{member}</p>
+                    <p className="p-0 m-2 text-black font-lexend">{member}</p>
                   </Col>
                 ))}
               </Row>

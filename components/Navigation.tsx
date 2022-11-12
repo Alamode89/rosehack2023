@@ -1,4 +1,4 @@
-// import Image from "next/image";
+import Image from "next/image";
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { FaBars } from "react-icons/fa";
@@ -11,14 +11,17 @@ const Navigation = () => {
         expand="md"
         fixed="top"
       >
-        {/* <Image
-          src="/ROSE_HACK.png"
-          height={100}
-          width={200}
-          layout="fixed"
-          alt="RoseHack Logo"
-          className="p-3"
-        /> */}
+        <Nav.Link href="/">
+          <Image
+            src="/ROSE_HACK.png"
+            height={100}
+            width={200}
+            layout="fixed"
+            alt="RoseHack Logo"
+            className="p-2 fixed top-0 left-0"
+          />
+        </Nav.Link>
+
         {/* <Navbar.Brand href="#home" className=" block relative">
           <Image
             src="/ROSE_HACK.png"
@@ -34,7 +37,7 @@ const Navigation = () => {
         >
           <FaBars size="30" />
         </Navbar.Toggle>
-        <Navbar.Collapse className="flex md:justify-center justify-center items-center">
+        <Navbar.Collapse className="flex justify-end items-center">
           <Nav className="font-pixel flex lg:w-6/12 w-full justify-center items-center">
             <Nav.Link
               href="/#about"

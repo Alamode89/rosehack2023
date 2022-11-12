@@ -205,7 +205,7 @@ const Register = () => {
           </Col>
         </Row>
 
-        <button className="px-5 py-2 rounded-xl m-5 bg-transparent border-4 border-white drop-shadow-bluesmall font-pixel text-md md:text-xl lg:text-2xl text-white text-center">
+        <button className="px-5 py-2 hover:scale-105 rounded-xl m-5 bg-transparent border-4 border-white drop-shadow-bluesmall font-pixel text-md md:text-xl lg:text-2xl text-white text-center">
           SUBMIT
         </button>
       </div>

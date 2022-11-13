@@ -18,7 +18,7 @@ const Landing = () => {
         <FaCircle className="text-white " />
         <img draggable="false" className="w-1/12" src="BLUE_HEART1.png" />
       </div>
-      <div className="shadow-[0_0px_72px_0] shadow-white/60 m-auto bg-gradient-to-b from-landing-secondtop/20 to-landing-second-bottom/20 border-[6px] rounded-3xl text-center justify-center items-center w-7/12 p-4">
+      <div className="shadow-[0_0px_72px_0]  shadow-white/60 m-auto bg-gradient-to-b from-landing-secondtop/20 to-landing-second-bottom/20 border-[6px] rounded-3xl text-center justify-center items-center md:w-7/12 w-10/12 p-4">
         <div className="drop-shadow-lightblue text-white font-pixel text-4xl justify-center">
           Rose Hack <br /> 2023
           <p className="pt-3 text-2xl no-underline"> JANUARY 14-15</p>

@@ -44,8 +44,11 @@ const Sponsors = () => {
   return (
     <section
       id="sponsors"
-      className="bg-gradient-to-b from-sponsors-top to-sponsors-bottom w-full flex justify-center items-center flex-col py-[11vh] scroll-m-[2vh]"
+      className="bg-gradient-to-b from-sponsors-top to-sponsors-bottom w-full flex justify-center items-center flex-col pb-[11vh] scroll-m-[2vh]"
     >
+      <div className="w-full justify-center">
+        <img draggable="false" src="pixel2.png" />
+      </div>
       <div className="w-10/12 flex justify-center items-center flex-col">
         <div className="flex justify-between items-center w-full m-5">
           <img src="PINK_HEART1.png" className="h-10 w-10 transform" />

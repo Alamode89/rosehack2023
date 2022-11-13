@@ -68,7 +68,7 @@ const Register = () => {
 
   return (
     <div className="flex justify-center items-center flex-col bg-gradient-to-b from-about-top to-about-bottom w-full">
-      <div className="border-4 mt-5 rounded-3xl border-white drop-shadow-blue items-center flex flex-col w-2/3">
+      <div className="border-4 mt-5 rounded-3xl border-white drop-shadow-blue items-center flex flex-col w-10/12">
         <div className="font-pixel text-md md:text-xl lg:text-4xl p-0 text-white text-center w-1/2 m-4">
           &lt;REGISTER&gt;
         </div>

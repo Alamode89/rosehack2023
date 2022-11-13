@@ -43,8 +43,7 @@ const SocialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-header-left to-header-fright py-4 flex justify-center items-center flex-col">
-      {/* <Container className="justify-center m-0 p-0"> */}
+    <footer className="bg-gradient-to-r from-header-left to-header-fright py-4 flex justify-center w-full items-center flex-col">
       <Row className="flex justify-center items-center m-0 p-0 w-full">
         {SocialLinks.map((link, index) => {
           return (
@@ -68,16 +67,12 @@ const Footer = () => {
           );
         })}
       </Row>
-
-      {/* <Row className="text-2xl font-poppins text-center text-white m-0"> */}
-      <p className="inline p-0 m-0 mt-4 text-2xl text-white">
+      <p className="inline p-0 m-0 mt-4 text-2xl w-10/12 text-center text-white">
         made with &#9829; by the Rose Hack team at UCR
       </p>
-      <p className="inline p-0 m-0 mt-4 text-2xl text-white">
+      <p className="inline p-0 m-0 mt-4 text-2xl  w-10/12 text-center text-white">
         *MLH Code of Conduct*
       </p>
-      {/* </Row> */}
-      {/* </Container> */}
     </footer>
   );
 };

@@ -7,9 +7,7 @@ const FAQ = () => {
       id="faq"
       className="bg-gradient-to-b from-faq-top to-faq-bottom w-full flex justify-center items-center flex-col pt-[11vh] pb-6 scroll-m-[2vh]"
     >
-      <div className="w-10/12 md:w-8/12 flex justify-center items-center flex-col">
-        {/* <div className="w-full bg-red-500"> */}
-        {/* <div className="mt-4"> */}
+      <div className="w-10/12 flex justify-center items-center flex-col">
         <div className="font-pixel text-5xl p-2 m-0 text-white text-center flex justify-center items-center ">
           <img
             draggable="false"
@@ -22,22 +20,21 @@ const FAQ = () => {
             className="w-1/12 mx-4"
             src="PINK_HEART1.png"
           />
-          {/* </div> */}
         </div>
-        {/* </div> */}
-
         <div className="w-full flex justify-center items-center flex-col">
           <Questions />
         </div>
 
         <div className="text-center p-0 pt-4">
-          <p className="text-white text-xl font-pixel">
+          <p className="text-white md:text-xl text-lg font-pixel">
             Don&apos;t see your question?
           </p>
-          <p className="text-white text-xl font-pixel">Please contact us at</p>
+          <p className="text-white md:text-xl text-lg font-pixel">
+            Please contact us at
+          </p>
           <p className="hover:scale-105">
             <a
-              className="no-underline font-semibold text-header-right hover:text-header-right font-pixel text-xl "
+              className="no-underline  md:text-xl text-lg font-semibold text-header-right hover:text-header-right font-pixel"
               href="mailto:rosehack@gmail.com"
             >
               rosehack@gmail.com

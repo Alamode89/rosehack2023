@@ -136,6 +136,7 @@ const commitee = [
   "Rudy Cazares",
   "Kay Vo",
   "Felix Maass",
+  "Mrinalini Venkatachalam",
 ];
 
 const Team = () => {

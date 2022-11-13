@@ -21,16 +21,6 @@ const Navigation = () => {
             className="p-2 fixed top-0 left-0"
           />
         </Nav.Link>
-
-        {/* <Navbar.Brand href="#home" className=" block relative">
-          <Image
-            src="/ROSE_HACK.png"
-            height={100}
-            width={200}
-            layout="responsive"
-            alt="RoseHack Logo"
-          />
-        </Navbar.Brand> */}
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
           className="mr-4 border-0"

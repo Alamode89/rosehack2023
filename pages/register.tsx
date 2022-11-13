@@ -4,10 +4,7 @@ import { Row, Col } from "react-bootstrap";
 
 const schools = [
   "UC Riverside",
-  "Riverside City College",
   "La Sierra College",
-  "California Baptist University",
-  "University of Redlands",
   "CSU San Bernardino",
   "UC Los Angeles",
   "UC San Diego",
@@ -71,7 +68,7 @@ const Register = () => {
 
   return (
     <div className="flex justify-center items-center flex-col bg-gradient-to-b from-about-top to-about-bottom w-full">
-      <div className="border-4 mt-5 rounded-3xl border-white drop-shadow-blue items-center flex flex-col w-2/3">
+      <div className="border-4 mt-5 rounded-3xl border-white drop-shadow-blue items-center flex flex-col w-10/12">
         <div className="font-pixel text-md md:text-xl lg:text-4xl p-0 text-white text-center w-1/2 m-4">
           &lt;REGISTER&gt;
         </div>
@@ -174,7 +171,7 @@ const Register = () => {
         <Row className=" w-10/12 justify-between flex">
           <Col md={3} className="px-0 py-1">
             <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
-              size
+              shirt size
             </label>
             <Selector
               options={shirts}

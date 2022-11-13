@@ -47,7 +47,7 @@ const About = () => {
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
             />
           </div>
-          <p className="drop-shadow-pinksmall py-0 md:py-5 font-lexend text-base md:text-2xl w-full p-0 m-0 text-white text-center">
+          <p className="drop-shadow-pinksmall py-0 md:py-5 font-lexend text-xl md:text-2xl w-full p-0 m-0 text-white text-center">
             Rose Hack is UC Riverside’s 24-hour hackathon, one of the few
             women-centric hackathons in California! Founded by the female
             leaders of the Association for Computing Machinery (ACM-W) and the
@@ -103,7 +103,7 @@ const About = () => {
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
             />
           </div>
-          <p className="drop-shadow-bluesmall py-0 md:py-5 text-base md:text-2xl font-lexend w-full p-0 m-0 text-white text-center">
+          <p className="drop-shadow-bluesmall py-0 md:py-5 text-xl md:text-2xl font-lexend w-full p-0 m-0 text-white text-center">
             Rose Hack’s mission is to encourage individuals from
             underrepresented groups in STEM to gain experience, create strong
             networks, and build amazing projects through their shared passions
@@ -128,19 +128,19 @@ const About = () => {
         </Col>
       </Row>
       <div className="bg-gradient-to-r from-about-left to-about-right md:w-1/2 w-10/12 rounded-3xl m-5 drop-shadow-bigwhite">
-        <p className="bg-about-bottom py-5 font-lexend  text-base md:text-2xl  p-5 m-4 text-white text-center rounded-3xl">
+        <p className="bg-about-bottom py-5 font-lexend text-xl md:text-2xl  p-5 m-4 text-white text-center rounded-3xl">
           Rose Hack welcomes both undergraduate and high school students for a
           lively weekend filled with innovation, discovery, networking,
           mentorship, and so much more!
         </p>
         <div className="justify-between flex mx-20 my-3">
           <img className="w-4/12 md:w-2/12" src="RH_SPONSORS_BUTTON1.png"></img>
-          <div className="w-2/12 justify-center flex">
-            <div className="items-end flex">
-              <FaCircle className="text-about-pink text-base md:text-3xl   bt-5" />
+          <div className="w-2/12 flex justify-between items-center">
+            <div className="h-full flex justify-center items-end">
+              <FaCircle className="text-about-pink text-5xl" />
             </div>
-            <div className="items-start flex">
-              <FaCircle className="text-about-blue  text-base md:text-3xl  mt-3" />
+            <div className="h-full flex justify-center items-start">
+              <FaCircle className="text-about-blue text-5xl" />
             </div>
           </div>
         </div>

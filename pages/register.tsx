@@ -4,10 +4,7 @@ import { Row, Col } from "react-bootstrap";
 
 const schools = [
   "UC Riverside",
-  "Riverside City College",
   "La Sierra College",
-  "California Baptist University",
-  "University of Redlands",
   "CSU San Bernardino",
   "UC Los Angeles",
   "UC San Diego",
@@ -172,7 +169,7 @@ const Register = () => {
         <Row className=" w-10/12 justify-between flex">
           <Col md={3} className="m-0 p-0">
             <label className="my-2 drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
-              size
+              shirt size
             </label>
             <Selector
               options={shirts}

@@ -143,7 +143,7 @@ const Team = () => {
   return (
     <section
       id="board"
-      className="bg-gradient-to-b from-team-top to-team-bottom flex justify-center items-center flex-col py-[11vh] scroll-m-[2vh]"
+      className="bg-gradient-to-b from-team-top to-team-bottom flex justify-center items-center flex-col pt-[11vh] scroll-m-[2vh]"
     >
       <div className="w-10/12 flex justify-center items-center flex-col">
         <p className="font-pixel text-4xl text-white text-center">
@@ -185,6 +185,10 @@ const Team = () => {
             </div>
           </div>
         </div>
+      </div>
+      
+      <div className="w-full justify-center">
+        <img draggable="false" src="pixel5.png" />
       </div>
     </section>
   );

@@ -68,7 +68,7 @@ const Register = () => {
 
   return (
     <div className="flex justify-center items-center flex-col bg-gradient-to-b from-about-top to-about-bottom w-full">
-      <div className="border-4 mt-5 rounded-3xl border-white drop-shadow-blue items-center flex flex-col w-10/12">
+      <div className="my-24 border-4 rounded-3xl border-white drop-shadow-blue items-center flex flex-col w-10/12">
         <div className="font-pixel text-md md:text-xl lg:text-4xl p-0 text-white text-center w-1/2 m-4">
           &lt;REGISTER&gt;
         </div>
@@ -83,7 +83,7 @@ const Register = () => {
               value={user.first}
               onChange={handleField}
               placeholder="First Name"
-              className="text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
             />
           </Col>
           <Col md={5} className="px-0 py-1">
@@ -96,7 +96,7 @@ const Register = () => {
               value={user.last}
               onChange={handleField}
               placeholder="Last Name"
-              className="text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
             />
           </Col>
         </Row>
@@ -111,7 +111,7 @@ const Register = () => {
               value={user.email}
               onChange={handleField}
               placeholder="Email Address"
-              className="text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
             />
           </Col>
         </Row>
@@ -127,7 +127,7 @@ const Register = () => {
               value={user.phone}
               onChange={handleField}
               placeholder="Phone Number"
-              className="text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
             />
           </Col>
         </Row>

@@ -6,12 +6,81 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        glitch: "glitch .5s ease-in-out infinite",
+        glitchReverse: "glitchReverse .5s ease-in-out infinite",
+        shinging: "shinging 1.5s ease-in-out infinite",
+        shingingReverse: "shingingReverse 1s ease-in-out infinite",
+      },
+      keyframes: {
+        glitch: {
+          "0%": { transform: "translate(0)" },
+          "10%": { transform: "translate(-4px, 4px)" },
+          "20%": { transform: "translate(-4px, -4px)" },
+          "30%": { transform: "translate(7px, 4px)" },
+          "35%": { transform: "translate(0)" },
+          "45%": { transform: "translate(0)" },
+          "50%": { transform: "translate(4px, 4px)" },
+          "60%": { transform: "translate(4px, -4px)" },
+          "70%": { transform: "translate(0)" },
+          "100%": { transform: "translate(0)" },
+        },
+        glitchReverse: {
+          "0%": { transform: "translate(0)" },
+          "10%": { transform: "translate(4px, -4px)" },
+          "20%": { transform: "translate(4px, 4px)" },
+          "30%": { transform: "translate(2px, 4px)" },
+          "35%": { transform: "translate(0)" },
+          "45%": { transform: "translate(0)" },
+          "50%": { transform: "translate(-4px, -4px)" },
+          "60%": { transform: "translate(-4px, 4px)" },
+          "70%": { transform: "translate(0)" },
+          "100%": { transform: "translate(0)" },
+        },
+        shinging: {
+          "0%": { opacity: 1 },
+          "5%": { opacity: 0.1 },
+          "8%": { opacity: 1 },
+          "10%": { opacity: 0.1 },
+          "15%": { opacity: 1 },
+          "30%": { opacity: 1 },
+          "35%": { opacity: 0.1 },
+          "40%": { opacity: 1 },
+          "100%": { opacity: 1 },
+        },
+        shingingReverse: {
+          "0%": { opacity: 1 },
+          "60%": { opacity: 1 },
+          "65%": { opacity: 0.1 },
+          "70%": { opacity: 0.1 },
+          "75%": { opacity: 1 },
+          "90%": { opacity: 0.1 },
+          "92%": { opacity: 1 },
+          "95%": { opacity: 0.1 },
+          "100%": { opacity: 1 },
+        },
+        bounce: {
+          "0%": {
+            transform: "translateY(-10%)",
+            animationTimingFunction: "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "100%": {
+            transform: "translateY(-10%)",
+            animationTimingFunction: "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "50%": {
+            transform: "translateY(0)",
+            animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)",
+          },
+        },
+      },
       dropShadow: {
         blue: "0 0px 9px rgba(73,200,255, 1)",
         bluesmall: "0 0px 3px rgba(73,200,255, 1)",
         pink: "0 0px 9px rgba(252,122,213, 1)",
         pinksmall: "0 0px 3px rgba(252,122,213, 1)",
         white: "0 0px 9px rgba(255,255,255, 1)",
+        whitebig: "0 0px 15px rgba(255,255,255, 1)",
         bigwhite: "0 0px 20px rgba(255,255,255, .3)",
         green: "0 0px 9px rgba(30, 255, 26, 1)",
         lightblue: "0 4px 9px rgba(21, 219, 255, 1)",
@@ -22,8 +91,7 @@ module.exports = {
         pixel: ["'Press Start 2P'", "cursive"],
       },
       backgroundImage: {
-        "split-green-to-purple":
-          "linear-gradient(to bottom, #c5c6fb 48% , black 48%, black 52%, #c9f9be 52%);",
+        "gradient-radial": "radial-gradient(var(--gradient-color-stops))",
       },
       colors: {
         header: {

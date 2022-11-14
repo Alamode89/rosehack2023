@@ -2,20 +2,21 @@ import React, { useState } from "react";
 import Selector from "../components/Selector";
 import { Row, Col } from "react-bootstrap";
 import Snackbar from "../components/Snackbar";
-
-const schools = [
-  "UC Riverside",
-  "La Sierra College",
-  "CSU San Bernardino",
-  "UC Los Angeles",
-  "UC San Diego",
-];
+import { schools } from "../components/data/schools";
+import Schools from "../components/Schools";
 
 const grades = [
-  "College Freshmen",
-  "College Sophomore",
-  "College Junior",
-  "College Senior",
+  "Less than Secondary / High School",
+  "Secondary / High School",
+  "Undergraduate University (2 year)",
+  "Undergraduate University (3+ year)",
+  "Graduate University (Masters, Doctoral, etc)",
+  "Code School / Bootcamp",
+  "Other Vocational / Trade Program / Apprenticeship",
+  "Post Doctorate",
+  "Other",
+  "I’m not currently a student ",
+  "Prefer not to answer",
 ];
 
 const shirts = [
@@ -44,7 +45,7 @@ const data = {
   age: 18,
   phone: "",
   email: "",
-  school: "California Baptist University",
+  school: "University of California, Riverside",
   grade: "College Freshmen",
   country: "",
   dietary: [],
@@ -66,6 +67,10 @@ const Register = () => {
 
   const handleField = (e: any) => {
     setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  const handleSchool = (school: string) => {
+    setUser({ ...user, school: school });
   };
 
   const handleSubmit = () => {
@@ -149,11 +154,10 @@ const Register = () => {
             <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
               school
             </label>
-            <Selector
-              options={schools}
-              user={user}
-              field="school"
-              handleInput={handleInput}
+            <Schools
+              schools={schools}
+              school={user.school}
+              handleSchool={handleSchool}
             />
           </Col>
         </Row>

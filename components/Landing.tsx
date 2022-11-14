@@ -68,9 +68,9 @@ const Landing = () => {
               100 -
               Math.round(
                 (new Date(2023, 0, 14, 12).getTime() - new Date().getTime()) /
-                1000 /
-                3600 /
-                24
+                  1000 /
+                  3600 /
+                  24
               )
             }
             style={{ height: 32 }}
@@ -80,9 +80,9 @@ const Landing = () => {
           now loading...{" "}
           {Math.round(
             (new Date(2023, 0, 14, 12).getTime() - new Date().getTime()) /
-            1000 /
-            3600 /
-            24
+              1000 /
+              3600 /
+              24
           )}
           &nbsp;days left
         </div>

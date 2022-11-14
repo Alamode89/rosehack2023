@@ -144,6 +144,7 @@ const commitee = [
   "Zijun Wang",
   "Trisha Agrawal",
   "Jake Kim",
+  "Joshua Candelaria",
 ];
 
 const Team = () => {

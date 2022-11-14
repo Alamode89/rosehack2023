@@ -14,8 +14,8 @@ const Navigation = () => {
         <Nav.Link href="/">
           <Image
             src="/ROSE_HACK.png"
-            height={100}
-            width={200}
+            height={70}
+            width={140}
             layout="fixed"
             alt="RoseHack Logo"
             className="p-2 fixed top-0 left-0"

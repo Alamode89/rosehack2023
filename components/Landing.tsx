@@ -38,18 +38,17 @@ const Landing = () => {
         <div className="border-dotted animate-shinging w-full h-full absolute border-[6px] inset-0 rounded-3xl drop-shadow-pink" />
         <div className="animate-shingingReverse m-3 absolute border-[3px] inset-0 rounded-3xl drop-shadow-blue" />
         <div className="drop-shadow-lightblue text-white font-pixel text-4xl justify-center m-3">
-          Rose Hack <br /> 2023
-          <div className="absolute inset-0 w-full animate-glitch  text-[#f0f] font-pixel text-4xl justify-center">
+          <div className="absolute inset-0 inset-y-2 w-full animate-glitch  text-[#f0f] font-pixel text-4xl justify-center">
             Rose Hack <br /> 2023
           </div>
-          <div className="absolute inset-0 w-full  animate-glitchReverse  text-[#0ff] font-pixel text-4xl justify-center">
+          <div className="absolute inset-0 inset-y-2 w-full  animate-glitchReverse  text-[#0ff] font-pixel text-4xl justify-center">
             Rose Hack <br /> 2023
           </div>
-          <div className="absolute inset-0 w-full drop-shadow-lightblue text-white font-pixel text-4xl justify-center">
+          <div className="absolute inset-0 inset-y-2 w-full drop-shadow-lightblue text-white font-pixel text-4xl justify-center">
             Rose Hack <br /> 2023
           </div>
         </div>
-        <p className="animate-shinging pt-3 text-2xl no-underline drop-shadow-lightblue text-white font-pixel">
+        <p className="animate-shinging pt-28 text-2xl no-underline drop-shadow-lightblue text-white font-pixel">
           {" "}
           JANUARY 14-15
         </p>

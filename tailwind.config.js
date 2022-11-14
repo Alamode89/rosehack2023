@@ -13,7 +13,6 @@ module.exports = {
         pinksmall: "0 0px 3px rgba(252,122,213, 1)",
         white: "0 0px 9px rgba(255,255,255, 1)",
         bigwhite: "0 0px 20px rgba(255,255,255, .3)",
-        white: "0 0px 9px rgba(0,0,0, 1)",
         green: "0 0px 9px rgba(30, 255, 26, 1)",
         lightblue: "0 4px 9px rgba(21, 219, 255, 1)",
       },

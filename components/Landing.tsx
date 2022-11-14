@@ -34,7 +34,7 @@ const Landing = () => {
           src="BLUE_HEART1.png"
         />
       </div>
-      <div className="drop-shadow-white m-auto bg-gradient-to-b from-landing-secondtop/50 to-landing-second-bottom/20  rounded-3xl text-center justify-center items-center md:w-7/12 w-10/12 p-4">
+      <div className="relative m-auto bg-gradient-to-b from-landing-secondtop/50 to-landing-second-bottom/20  rounded-3xl text-center justify-center items-center md:w-7/12 w-10/12 p-4">
         <div className="border-dotted animate-shinging w-full h-full absolute border-[6px] inset-0 rounded-3xl drop-shadow-pink" />
         <div className="animate-shingingReverse m-3 absolute border-[3px] inset-0 rounded-3xl drop-shadow-blue" />
         <div className="drop-shadow-lightblue text-white font-pixel text-4xl justify-center m-3">

@@ -137,6 +137,13 @@ const commitee = [
   "Kay Vo",
   "Felix Maass",
   "Mrinalini Venkatachalam",
+  "Sneha Panda",
+  "Isabelle Celo",
+  "Huong Le",
+  "Adreyan Distor",
+  "Zijun Wang",
+  "Trisha Agrawal",
+  "Jake Kim",
 ];
 
 const Team = () => {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Selector from "../components/Selector";
 import { Row, Col } from "react-bootstrap";
+import Snackbar from "../components/Snackbar";
 
 const schools = [
   "UC Riverside",
@@ -55,6 +56,7 @@ const data = {
 
 const Register = () => {
   const [user, setUser] = useState(data);
+  const [visible, setVisible] = useState(false);
 
   const handleInput = (data: string, value: string) => {
     console.log(data, value);
@@ -66,12 +68,23 @@ const Register = () => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = () => {
+    setVisible(true);
+  };
+
   return (
     <div className="flex justify-center items-center flex-col bg-gradient-to-b from-about-top to-about-bottom w-full">
       <div className="border-4 mt-5 rounded-3xl border-white drop-shadow-blue items-center flex flex-col w-10/12">
         <div className="font-pixel text-md md:text-xl lg:text-4xl p-0 text-white text-center w-1/2 m-4">
           &lt;REGISTER&gt;
         </div>
+        {visible && (
+          <Snackbar
+            successful={true}
+            visible={visible}
+            setVisible={setVisible}
+          />
+        )}
         <Row className="w-10/12 flex justify-between ">
           <Col md={5} className="px-0 py-1">
             <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
@@ -204,7 +217,10 @@ const Register = () => {
           </Col>
         </Row>
 
-        <button className="px-5 py-2 hover:scale-105 rounded-xl m-5 bg-transparent border-4 border-white drop-shadow-bluesmall font-pixel text-md md:text-xl lg:text-2xl text-white text-center">
+        <button
+          onClick={handleSubmit}
+          className="px-5 py-2 hover:scale-105 rounded-xl m-5 bg-transparent border-4 border-white drop-shadow-bluesmall font-pixel text-md md:text-xl lg:text-2xl text-white text-center"
+        >
           SUBMIT
         </button>
       </div>

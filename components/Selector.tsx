@@ -19,7 +19,7 @@ const Selector = ({ options, user, field, handleInput }: props) => {
         {user[field]}
       </Dropdown.Toggle>
 
-      <Dropdown.Menu className="w-full font-lexend">
+      <Dropdown.Menu className="w-full font-lexend active:bg-white">
         {options.map((option, index) => (
           <Dropdown.Item
             className="font-lexend text-black"

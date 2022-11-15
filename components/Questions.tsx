@@ -62,7 +62,7 @@ const FaqItem = ({ index, element }: any) => {
   const [clicked, setClicked] = useState(false);
   return (
     <Accordion.Item
-      className={` focus:!shadow-none font-poppins !bg-transparent !outline-none !border-none m-0 p-0 `}
+      className={` focus:!shadow-none font-lexend !bg-transparent !outline-none !border-none m-0 p-0 `}
       id={`element${index}`}
       eventKey={index}
     >
@@ -73,7 +73,7 @@ const FaqItem = ({ index, element }: any) => {
       >
         <Accordion.Button
           onClick={() => setClicked(!clicked)}
-          className={`!bg-faq-middle !border-green-500 font-poppins !shadow-blue-500 !text-faq-question after:!bg-none focus:!shadow-none !rounded-none`}
+          className={`!bg-faq-middle !border-green-500 font-lexend !shadow-blue-500 !text-faq-question after:!bg-none focus:!shadow-none !rounded-none`}
         >
           {clicked ? (
             <FaMinus className="pr-2 text-2xl " />
@@ -84,7 +84,7 @@ const FaqItem = ({ index, element }: any) => {
         </Accordion.Button>
       </div>
       <Accordion.Body
-        className={`bg-faq-middle !border-transparent font-poppins text-faq-answer !pt-6 !pb-8`}
+        className={`bg-faq-middle !border-transparent font-lexend text-faq-answer !pt-6 !pb-8`}
       >
         {element.answer}
       </Accordion.Body>

@@ -470,7 +470,6 @@ export const schools = [
   "ecole centrale marseille",
   "École Centrale Paris",
   "École de technologie supérieure",
-  "École nationale supérieure d’électronique, informatique, télécommunications, mathématique et mécanique de Bordeaux (ENSEIRB-MATMECA)",
   "École Polytechnique de Montréal",
   "Edina High School",
   "Edinburgh Napier University",

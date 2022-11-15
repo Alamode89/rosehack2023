@@ -48,17 +48,16 @@ const genders = ["Female", "Male", "Transgender", "Nonbinary"];
 const data = {
   first: "",
   last: "",
-  age: "Choose one of the following:",
+  age: "Choose:",
   phone: "",
   email: "",
-  school: "Choose one of the following:",
-  grade: "Choose one of the following:",
-  country: "",
-  dietary: [],
-  underrepresented: false,
-  gender: "Choose one of the following:",
-  shirt: "Choose one of the following:",
-  major: "Choose one of the following:",
+  school: "Choose:",
+  grade: "Choose:",
+  // dietary: [],
+  // underrepresented: false,
+  gender: "Choose:",
+  shirt: "Choose:",
+  major: "Choose:",
 };
 
 const Register = () => {
@@ -82,7 +81,7 @@ const Register = () => {
 
   const handleSubmit = () => {
     for (const key of Object.keys(user)) {
-      if (user[key].trim() === "") {
+      if (user[key] === "" || user[key] === "Choose:") {
         setVisible(true);
         setSuccessful(false);
         return;

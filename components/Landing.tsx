@@ -34,22 +34,21 @@ const Landing = () => {
           src="BLUE_HEART1.png"
         />
       </div>
-      <div className="relative m-auto bg-gradient-to-b from-landing-secondtop/50 to-landing-second-bottom/20  rounded-3xl text-center justify-center items-center md:w-7/12 w-10/12 p-4">
+      <div className="relative m-auto bg-gradient-to-b from-landing-secondtop/50 to-landing-second-bottom/20 rounded-3xl text-center justify-center items-center md:w-7/12 w-10/12 p-4">
         <div className="border-dotted animate-shinging w-full h-full absolute border-[6px] inset-0 rounded-3xl drop-shadow-pink" />
         <div className="animate-shingingReverse m-3 absolute border-[3px] inset-0 rounded-3xl drop-shadow-blue" />
         <div className="drop-shadow-lightblue text-white font-pixel text-4xl justify-center m-3">
-          Rose Hack <br /> 2023
-          <div className="absolute inset-0 w-full animate-glitch  text-[#f0f] font-pixel text-4xl justify-center">
+          <div className="absolute inset-0 inset-y-2 w-full animate-glitch  text-[#f0f] font-pixel text-2xl md:text-4xl justify-center">
             Rose Hack <br /> 2023
           </div>
-          <div className="absolute inset-0 w-full  animate-glitchReverse  text-[#0ff] font-pixel text-4xl justify-center">
+          <div className="absolute inset-0 inset-y-2 w-full  animate-glitchReverse  text-[#0ff] font-pixel text-2xl md:text-4xl justify-center">
             Rose Hack <br /> 2023
           </div>
-          <div className="absolute inset-0 w-full drop-shadow-lightblue text-white font-pixel text-4xl justify-center">
+          <div className="absolute inset-0 inset-y-2 w-full drop-shadow-lightblue text-white font-pixel text-2xl md:text-4xl justify-center">
             Rose Hack <br /> 2023
           </div>
         </div>
-        <p className="animate-shinging pt-3 text-2xl no-underline drop-shadow-lightblue text-white font-pixel">
+        <p className="animate-shinging pt-28 text-lg md:text-2xl no-underline drop-shadow-lightblue text-white font-pixel">
           {" "}
           JANUARY 14-15
         </p>
@@ -76,7 +75,7 @@ const Landing = () => {
             style={{ height: 32 }}
           />
         </div>
-        <div className="animate-pulse p-2 pb-4 drop-shadow-green font-pixel text-white text-md">
+        <div className="animate-pulse p-2 pb-4 drop-shadow-green font-pixel text-white text-sm md:text-md">
           now loading...{" "}
           {Math.round(
             (new Date(2023, 0, 14, 12).getTime() - new Date().getTime()) /

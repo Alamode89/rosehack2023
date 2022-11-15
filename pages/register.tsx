@@ -15,7 +15,7 @@ const grades = [
   "Other Vocational / Trade Program / Apprenticeship",
   "Post Doctorate",
   "Other",
-  "I’m not currently a student ",
+  "I’m not currently a student",
   "Prefer not to answer",
 ];
 
@@ -84,6 +84,7 @@ const Register = () => {
   return (
     <div className="flex justify-center items-center flex-col bg-gradient-to-b from-about-top to-about-bottom w-full">
       <div className="my-24 border-4 rounded-3xl border-white items-center flex flex-col w-10/12">
+        go back
         <div className="font-pixel text-md md:text-xl lg:text-4xl p-0 text-white text-center w-1/2 m-4">
           REGISTER
         </div>
@@ -224,7 +225,6 @@ const Register = () => {
             />
           </Col>
         </Row>
-
         <button
           onClick={handleSubmit}
           className="px-5 py-2 hover:scale-105 rounded-xl m-5 bg-transparent border-4 border-white  font-pixel text-md md:text-xl lg:text-2xl text-white text-center"

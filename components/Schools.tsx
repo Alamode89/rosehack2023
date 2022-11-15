@@ -17,17 +17,20 @@ interface props_toggle {
 
 const CustomToggle = React.forwardRef(
   ({ children, onClick }: props_toggle, ref: any) => (
-    <a
-      href=""
-      ref={ref}
-      onClick={(e) => {
-        e.preventDefault();
-        onClick(e);
-      }}
-    >
-      {children}
-      &#x25bc;
-    </a>
+    <div className="text-center w-full p-2 bg-transparent !border-4 border-solid border-white !rounded-xl focus:border-white active:border-white">
+      <a
+        className="!font-lexend text-white no-underline"
+        href=""
+        ref={ref}
+        onClick={(e) => {
+          e.preventDefault();
+          onClick(e);
+        }}
+      >
+        {children}
+        &#x25bc;
+      </a>
+    </div>
   )
 );
 
@@ -41,13 +44,12 @@ const CustomMenu = React.forwardRef(
     return (
       <div
         ref={ref}
-        style={style}
-        className={className}
+        className={`${className} w-full `}
         aria-labelledby={labeledBy}
       >
         <Form.Control
           autoFocus
-          className="mx-3 my-2 w-auto"
+          className="focus:!ring-0 "
           placeholder="Type to filter..."
           onChange={(e) => setValue(e.target.value)}
           value={value}

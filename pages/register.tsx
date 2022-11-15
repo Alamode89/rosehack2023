@@ -4,7 +4,7 @@ import { Row, Col } from "react-bootstrap";
 import Snackbar from "../components/Snackbar";
 import { schools } from "../components/data/schools";
 import Schools from "../components/Schools";
-import Link from "next/Link";
+import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
 
 const grades = [
@@ -93,7 +93,7 @@ const Register = () => {
 
   return (
     <div className="flex justify-center items-center flex-col bg-gradient-to-b from-about-top to-about-bottom w-full">
-      <div className="my-24 border-4 rounded-3xl border-white items-center flex flex-col w-10/12">
+      <div className="my-24 border-4 rounded-3xl drop-shadow-blue border-white items-center flex flex-col w-10/12">
         <div className="flex justify-center items-center  w-full relative">
           <div className="absolute top-1/2 left-3 -translate-y-1/2">
             <Link href="/">

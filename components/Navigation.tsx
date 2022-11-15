@@ -23,7 +23,7 @@ const Navigation = () => {
         </Nav.Link>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
-          className="mr-4 border-0"
+          className="mr-4 border-0 text-white"
         >
           <FaBars size="30" />
         </Navbar.Toggle>

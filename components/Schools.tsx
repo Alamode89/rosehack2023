@@ -52,7 +52,7 @@ const CustomMenu = React.forwardRef(
           onChange={(e) => setValue(e.target.value)}
           value={value}
         />
-        <ul className="list-unstyled">
+        <ul className="list-unstyled h-[20vh] overflow-y-scroll">
           {React.Children.toArray(children).filter(
             (child: any) =>
               !value || child.props.children.toLowerCase().startsWith(value)
@@ -73,36 +73,21 @@ const Schools = ({ schools, school, handleSchool }: props) => {
   return (
     <Dropdown>
       <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
-        Custom toggle
+        {school}
       </Dropdown.Toggle>
-
       <Dropdown.Menu as={CustomMenu as any}>
-        <Dropdown.Item eventKey="1">Red</Dropdown.Item>
-        <Dropdown.Item eventKey="2">Blue</Dropdown.Item>
-        <Dropdown.Item eventKey="3" active>
-          Orange
-        </Dropdown.Item>
-        <Dropdown.Item eventKey="1">Red-Orange</Dropdown.Item>
+        {schools.map((school, index) => (
+          <Dropdown.Item
+            key={index}
+            eventKey={index}
+            onClick={() => handleSchool(school)}
+          >
+            {school}
+          </Dropdown.Item>
+        ))}
+        <Dropdown.Item>Hello</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
-
-    // <Dropdown>
-    //   <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
-    //     {school}
-    //   </Dropdown.Toggle>
-    //   <Dropdown.Menu as={CustomMenu}>
-    //     {/* {schools.map((school, index) => (
-    //       <Dropdown.Item
-    //         key={index}
-    //         eventKey={index}
-    //         onClick={() => handleSchool(school)}
-    //       >
-    //         {school}
-    //       </Dropdown.Item>
-    //     ))} */}
-    //     <Dropdown.Item>Hello</Dropdown.Item>
-    //   </Dropdown.Menu>
-    // </Dropdown>
   );
 };
 

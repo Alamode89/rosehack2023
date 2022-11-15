@@ -62,8 +62,9 @@ const data = {
 };
 
 const Register = () => {
-  const [user, setUser] = useState(data);
+  const [user, setUser] = useState<any>(data);
   const [visible, setVisible] = useState(false);
+  const [successful, setSuccessful] = useState(false);
 
   const handleInput = (data: string, value: string) => {
     console.log(data, value);
@@ -80,7 +81,15 @@ const Register = () => {
   };
 
   const handleSubmit = () => {
+    for (const key of Object.keys(user)) {
+      if (user[key].trim() === "") {
+        setVisible(true);
+        setSuccessful(false);
+        return;
+      }
+    }
     setVisible(true);
+    setSuccessful(true);
   };
 
   return (
@@ -99,7 +108,7 @@ const Register = () => {
 
         {visible && (
           <Snackbar
-            successful={true}
+            successful={successful}
             visible={visible}
             setVisible={setVisible}
           />

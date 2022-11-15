@@ -6,6 +6,9 @@ import { schools } from "../components/data/schools";
 import Schools from "../components/Schools";
 import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
+import axios from "axios";
+import { storage } from "../firebase";
+import { ref, uploadBytes } from "firebase/storage";
 
 const grades = [
   "Less than Secondary / High School",
@@ -51,6 +54,8 @@ const data = {
   age: "Choose:",
   phone: "",
   email: "",
+  password: "",
+  confirm_password: "",
   school: "Choose:",
   grade: "Choose:",
   // dietary: [],
@@ -58,12 +63,13 @@ const data = {
   gender: "Choose:",
   shirt: "Choose:",
   major: "Choose:",
+  resume: null,
 };
 
 const Register = () => {
   const [user, setUser] = useState<any>(data);
   const [visible, setVisible] = useState(false);
-  const [successful, setSuccessful] = useState(false);
+  const [message, setMessage] = useState("");
 
   const handleInput = (data: string, value: string) => {
     console.log(data, value);
@@ -82,13 +88,51 @@ const Register = () => {
   const handleSubmit = () => {
     for (const key of Object.keys(user)) {
       if (user[key] === "" || user[key] === "Choose:") {
+        setMessage("Please fill out all fields for registration!");
         setVisible(true);
-        setSuccessful(false);
         return;
       }
     }
-    setVisible(true);
-    setSuccessful(true);
+
+    if (user.password !== user.confirm_password) {
+      setMessage("Passwords do not match! Please re-enter password!");
+      setVisible(true);
+      return;
+    }
+
+    axios
+      .post("/api/register", user)
+      .then((response) => {
+        if (response.status === 200) {
+          setMessage(
+            "Registration Successful! Thank you for joining Rosehack 2023!"
+          );
+          setVisible(true);
+          return;
+        }
+      })
+      .catch((error) => {
+        if (error.response.status === 400) {
+          setMessage(
+            "An account with this email already exists! Please use a different email!"
+          );
+          setVisible(true);
+          return;
+        } else if (error.response.status === 500) {
+          console.log(error);
+          setMessage(
+            `Internal Server Error: please contact rosehackucr@gmail.com`
+          );
+          setVisible(true);
+          return;
+        }
+      });
+
+    uploadBytes(ref(storage, `resumes/hello.pdf`), user.resume).then(
+      (snapshot) => {
+        console.log("Uploaded a blob or file!");
+      }
+    );
   };
 
   return (
@@ -107,9 +151,9 @@ const Register = () => {
 
         {visible && (
           <Snackbar
-            successful={successful}
             visible={visible}
             setVisible={setVisible}
+            message={message}
           />
         )}
         <Row className="w-10/12 flex justify-between ">
@@ -155,7 +199,35 @@ const Register = () => {
             />
           </Col>
         </Row>
-        <Row className="w-10/12 ">
+        <Row className="w-10/12 flex justify-start">
+          <Col className="px-0 py-1">
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
+              password
+            </label>
+            <input
+              type="password"
+              name="password"
+              value={user.password}
+              onChange={handleField}
+              placeholder="Password"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+            />
+          </Col>
+          <Col className="px-0 py-1">
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
+              confirm password
+            </label>
+            <input
+              type="password"
+              name="confirm_password"
+              value={user.confirm_password}
+              onChange={handleField}
+              placeholder="Password"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+            />
+          </Col>
+        </Row>
+        <Row className="w-10/12">
           <Col className="px-0 py-1">
             <label className="text-left font-pixel text-md text-white w-full ml-4">
               phone number
@@ -240,6 +312,27 @@ const Register = () => {
               field="gender"
               handleInput={handleInput}
             />
+          </Col>
+        </Row>
+        <Row className="w-10/12">
+          <Col className="px-0 py-1">
+            <label
+              htmlFor="resume"
+              className="text-left font-pixel text-md text-white w-full ml-4"
+            >
+              resume
+            </label>
+            <input
+              type="file"
+              name="resume"
+              id="resume"
+              value=""
+              onChange={(e: any) =>
+                setUser({ ...user, resume: e.target.files[0] })
+              }
+              className="hidden"
+            />
+            <label htmlFor="resume">SELECTED FILE: {user.resume?.name} </label>
           </Col>
         </Row>
         <button

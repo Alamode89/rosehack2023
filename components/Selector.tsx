@@ -14,7 +14,7 @@ const Selector = ({ options, user, field, handleInput }: props) => {
       <Dropdown.Toggle
         variant=""
         id=""
-        className="!font-lexend text-white w-full bg-transparent !border-4 border-solid border-white !rounded-xl drop-shadow-bluesmall focus:border-white active:border-white"
+        className="!font-lexend text-white w-full bg-transparent !border-4 border-solid border-white !rounded-xl focus:border-white active:border-white"
       >
         {user[field]}
       </Dropdown.Toggle>

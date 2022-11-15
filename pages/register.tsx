@@ -28,13 +28,17 @@ const shirts = [
   "Xtra Xtra Large",
 ];
 
-const ages = ["16", "17", "18", "19", "20", "21", "22", "23+"];
+const ages = ["<16", "16", "17", "18", "19", "20", "21", "22", "23+"];
 
 const majors = [
   "Computer Science",
   "CS with Business Applications",
   "Computer Engineering",
   "Data Science",
+  "Electrical Engineering",
+  "Mechanical Engineering",
+  "Environmental Engineering",
+  "Other",
 ];
 
 const genders = ["Female", "Male", "Transgender", "Nonbinary"];
@@ -42,17 +46,17 @@ const genders = ["Female", "Male", "Transgender", "Nonbinary"];
 const data = {
   first: "",
   last: "",
-  age: 18,
+  age: "Choose one of the following:",
   phone: "",
   email: "",
-  school: "University of California, Riverside",
-  grade: "Undergraduate University (3+ year)",
+  school: "Choose one of the following:",
+  grade: "Choose one of the following:",
   country: "",
   dietary: [],
   underrepresented: false,
-  gender: "Female",
-  shirt: "Medium",
-  major: "Computer Science",
+  gender: "Choose one of the following:",
+  shirt: "Choose one of the following:",
+  major: "Choose one of the following:",
 };
 
 const Register = () => {
@@ -79,9 +83,9 @@ const Register = () => {
 
   return (
     <div className="flex justify-center items-center flex-col bg-gradient-to-b from-about-top to-about-bottom w-full">
-      <div className="my-24 border-4 rounded-3xl border-white drop-shadow-blue items-center flex flex-col w-10/12">
+      <div className="my-24 border-4 rounded-3xl border-white items-center flex flex-col w-10/12">
         <div className="font-pixel text-md md:text-xl lg:text-4xl p-0 text-white text-center w-1/2 m-4">
-          &lt;REGISTER&gt;
+          REGISTER
         </div>
         {visible && (
           <Snackbar
@@ -92,7 +96,7 @@ const Register = () => {
         )}
         <Row className="w-10/12 flex justify-between ">
           <Col md={5} className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
               first name
             </label>
             <input
@@ -101,11 +105,11 @@ const Register = () => {
               value={user.first}
               onChange={handleField}
               placeholder="First Name"
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
             />
           </Col>
           <Col md={5} className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
               last name
             </label>
             <input
@@ -114,13 +118,13 @@ const Register = () => {
               value={user.last}
               onChange={handleField}
               placeholder="Last Name"
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
             />
           </Col>
         </Row>
         <Row className="w-10/12 flex justify-start">
           <Col className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
               email
             </label>
             <input
@@ -129,13 +133,13 @@ const Register = () => {
               value={user.email}
               onChange={handleField}
               placeholder="Email Address"
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
             />
           </Col>
         </Row>
         <Row className="w-10/12 ">
           <Col className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
               phone number
             </label>
 
@@ -145,13 +149,13 @@ const Register = () => {
               value={user.phone}
               onChange={handleField}
               placeholder="Phone Number"
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
             />
           </Col>
         </Row>
         <Row className="w-10/12">
           <Col className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
               school
             </label>
             <Schools
@@ -163,7 +167,7 @@ const Register = () => {
         </Row>
         <Row className="w-10/12 justify-between">
           <Col md={5} className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className=" text-left font-pixel text-md text-white w-full ml-4">
               grade
             </label>
             <Selector
@@ -174,7 +178,7 @@ const Register = () => {
             />
           </Col>
           <Col md={5} className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className=" text-left font-pixel text-md text-white w-full ml-4">
               major
             </label>
             <Selector
@@ -187,7 +191,7 @@ const Register = () => {
         </Row>
         <Row className=" w-10/12 justify-between flex">
           <Col md={3} className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className=" text-left font-pixel text-md text-white w-full ml-4">
               shirt size
             </label>
             <Selector
@@ -198,7 +202,7 @@ const Register = () => {
             />
           </Col>
           <Col md={3} className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className=" text-left font-pixel text-md text-white w-full ml-4">
               age
             </label>
             <Selector
@@ -209,7 +213,7 @@ const Register = () => {
             />
           </Col>
           <Col md={3} className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className=" text-left font-pixel text-md text-white w-full ml-4">
               gender
             </label>
             <Selector
@@ -223,7 +227,7 @@ const Register = () => {
 
         <button
           onClick={handleSubmit}
-          className="px-5 py-2 hover:scale-105 rounded-xl m-5 bg-transparent border-4 border-white drop-shadow-bluesmall font-pixel text-md md:text-xl lg:text-2xl text-white text-center"
+          className="px-5 py-2 hover:scale-105 rounded-xl m-5 bg-transparent border-4 border-white  font-pixel text-md md:text-xl lg:text-2xl text-white text-center"
         >
           SUBMIT
         </button>

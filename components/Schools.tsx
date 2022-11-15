@@ -4,10 +4,10 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Form from "react-bootstrap/Form";
 
 interface props {
-  children: any;
-  style: any;
-  className: any;
-  "aria-labelledby": any;
+  children?: any;
+  style?: any;
+  className?: any;
+  "aria-labelledby"?: any;
 }
 
 interface props_toggle {
@@ -76,7 +76,7 @@ const Schools = ({ schools, school, handleSchool }: props) => {
         Custom toggle
       </Dropdown.Toggle>
 
-      <Dropdown.Menu as={CustomMenu}>
+      <Dropdown.Menu as={CustomMenu as any}>
         <Dropdown.Item eventKey="1">Red</Dropdown.Item>
         <Dropdown.Item eventKey="2">Blue</Dropdown.Item>
         <Dropdown.Item eventKey="3" active>

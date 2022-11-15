@@ -4,7 +4,7 @@ import { Row, Col } from "react-bootstrap";
 import Snackbar from "../components/Snackbar";
 import { schools } from "../components/data/schools";
 import Schools from "../components/Schools";
-import Link from "next/Link";
+import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
 
 const grades = [

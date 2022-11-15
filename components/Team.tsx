@@ -144,7 +144,6 @@ const commitee = [
   "Zijun Wang",
   "Trisha Agrawal",
   "Jake Kim",
-  "Joshua Candelaria",
 ];
 
 const Team = () => {
@@ -186,7 +185,9 @@ const Team = () => {
                     xs={6}
                     className="flex justify-left items-center"
                   >
-                    <p className="p-0 m-2 text-black font-lexend">{member}</p>
+                    <p className="p-0 m-2 text-lg font-semibold text-black font-lexend">
+                      {member}
+                    </p>
                   </Col>
                 ))}
               </Row>

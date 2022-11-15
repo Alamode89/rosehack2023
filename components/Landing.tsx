@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Landing = () => {
   return (
-    <div className="flex flex-col bg-gradient-to-br from-landing-bottom to-landing-bottompink w-full justify-center item-center pt-10">
+    <div className="flex flex-col bg-gradient-to-br from-landing-bottom to-landing-bottompink w-full justify-center item-center p-0 m-0 pt-10">
       <div className="drop-shadow-white bg-gradient-radial w-7/12 flex p-6 m-auto text-center items-center justify-evenly">
         <img
           draggable="false"
@@ -107,16 +107,14 @@ const Landing = () => {
           src="PINK_HEART1.png"
         />
         <FaCircle className="text-white hidden md:block" />
-        <FaCircle className="text-white " />
+        <FaCircle className="text-white" />
         <img
           draggable="false"
           className="w-1/12 animate-pulse"
           src="BLUE_HEART1.png"
         />
       </div>
-      <div className="w-full justify-center">
-        <img draggable="false" src="pixels_landing.png" />
-      </div>
+      <img draggable="false" src="pixels_landing.png" className="w-full" />
     </div>
   );
 };

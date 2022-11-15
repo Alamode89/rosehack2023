@@ -10,8 +10,7 @@ const QA = [
   },
   {
     question: "Who can attend Rose Hack?",
-    answer:
-      "We welcome anyone from any undergrad college to come out and hack with us.",
+    answer: "We welcome students to come out and hack with us.",
   },
   {
     question: "How do I register?",

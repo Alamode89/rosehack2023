@@ -28,7 +28,7 @@ const shirts = [
   "Xtra Xtra Large",
 ];
 
-const ages = ["16", "17", "18", "19", "20", "21", "22"];
+const ages = ["16", "17", "18", "19", "20", "21", "22", "23+"];
 
 const majors = [
   "Computer Science",
@@ -46,7 +46,7 @@ const data = {
   phone: "",
   email: "",
   school: "University of California, Riverside",
-  grade: "College Freshmen",
+  grade: "Undergraduate University (3+ year)",
   country: "",
   dietary: [],
   underrepresented: false,

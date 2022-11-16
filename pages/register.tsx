@@ -70,6 +70,7 @@ const Register = () => {
   const [user, setUser] = useState<any>(data);
   const [visible, setVisible] = useState(false);
   const [message, setMessage] = useState("");
+  const [file, setFile] = useState("");
 
   const handleInput = (data: string, value: string) => {
     console.log(data, value);
@@ -100,6 +101,15 @@ const Register = () => {
       return;
     }
 
+    uploadBytes(ref(storage, `resumes/${user.resume.name}`), user.resume).then(
+      (snapshot) => {
+        console.log(snapshot);
+        setFile(snapshot.metadata.fullPath);
+      }
+    );
+
+    setUser({ ...user, resume: file });
+
     axios
       .post("/api/register", user)
       .then((response) => {
@@ -127,12 +137,6 @@ const Register = () => {
           return;
         }
       });
-
-    uploadBytes(ref(storage, `resumes/hello.pdf`), user.resume).then(
-      (snapshot) => {
-        console.log("Uploaded a blob or file!");
-      }
-    );
   };
 
   return (
@@ -336,7 +340,7 @@ const Register = () => {
               htmlFor="resume"
               className="!font-lexend p-2 text-white w-full bg-transparent !border-4 border-solid border-white !rounded-xl focus:border-white active:border-white"
             >
-              SELECTED FILE: {user.resume?.name}{" "}
+              Selected File: {user.resume?.name}{" "}
             </label>
           </Col>
         </Row>

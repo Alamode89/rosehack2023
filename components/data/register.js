@@ -56,4 +56,5 @@ export const data = {
   usa: false,
   in_person: false,
   covid: false,
+  status: "pending",
 };

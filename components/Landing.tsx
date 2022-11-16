@@ -2,36 +2,51 @@ import React from "react";
 import { FaCircle } from "react-icons/fa";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Link from "next/link";
-
+import Image from "next/image"
+import blueHeart from "../public/BLUE_HEART1.png"
+import pinkHeart from "../public/PINK_HEART1.png"
+import pixels from "../public/pixels_landing.png"
 const Landing = () => {
   return (
     <div className="flex flex-col bg-gradient-to-br from-landing-bottom to-landing-bottompink w-full justify-center item-center p-0 m-0 pt-10">
-      <div className="drop-shadow-white bg-gradient-radial w-7/12 flex p-6 m-auto text-center items-center justify-evenly">
-        <img
+      <div className="drop-shadow-white bg-gradient-radial w-7/12 flex pt-12 pb-3 m-auto text-center items-center justify-evenly">
+        <Image 
+          src={pinkHeart}
+          alt=""
           draggable="false"
-          className="w-1/12 animate-pulse drop-shadow-pink"
-          src="PINK_HEART1.png"
-        />
-        <FaCircle className="text-white hidden md:block " />
-        <FaCircle className="text-white  " />
-        <img
-          draggable="false"
-          className="w-1/12 animate-pulse drop-shadow-blue"
-          src="BLUE_HEART1.png"
+          width="55"
+          height="50"
+          className="animate-pulse drop-shadow-pink"
         />
         <FaCircle className="text-white hidden md:block" />
-        <FaCircle className="text-white " />
-        <img
+        <FaCircle className="text-white hidden md:block" />
+        <Image 
+          src={blueHeart}
+          alt=""
           draggable="false"
-          className="w-1/12 animate-pulse"
-          src="PINK_HEART1.png"
+          width="55"
+          height="50"
+          className="animate-pulse drop-shadow-pink"
         />
         <FaCircle className="text-white hidden md:block" />
-        <FaCircle className="text-white " />
-        <img
+        <FaCircle className="text-white hidden md:block" />
+        <Image 
+          src={pinkHeart}
+          alt=""
           draggable="false"
-          className="w-1/12 animate-pulse"
-          src="BLUE_HEART1.png"
+          width="55"
+          height="50"
+          className="animate-pulse drop-shadow-pink"
+        />
+        <FaCircle className="text-white hidden md:block" />
+        <FaCircle className="text-white hidden md:block" />
+        <Image 
+          src={blueHeart}
+          alt=""
+          draggable="false"
+          width="55"
+          height="50"
+          className="animate-pulse drop-shadow-pink"
         />
       </div>
       <div className="relative m-auto bg-gradient-to-b from-landing-secondtop/50 to-landing-second-bottom/20 rounded-3xl text-center justify-center items-center md:w-7/12 w-10/12 p-4">
@@ -86,35 +101,52 @@ const Landing = () => {
           &nbsp;days left
         </div>
       </div>
-      <div className="drop-shadow-white bg-gradient-radial w-7/12 flex p-6 m-auto text-center items-center justify-evenly">
-        <img
+      <div className="drop-shadow-white bg-gradient-radial w-7/12 flex pb-12 pt-3 m-auto text-center items-center justify-evenly">
+        <Image 
+            src={pinkHeart}
+            alt=""
+            draggable="false"
+            width="55"
+            height="50"
+            className="animate-pulse drop-shadow-pink"
+          />
+        <FaCircle className="text-white hidden md:block" />
+        <FaCircle className="text-white  hidden md:block" />
+        <Image 
+          src={blueHeart}
+          alt=""
           draggable="false"
-          className="w-1/12 animate-pulse drop-shadow-pink"
-          src="PINK_HEART1.png"
-        />
-        <FaCircle className="text-white hidden md:block " />
-        <FaCircle className="text-white  " />
-        <img
-          draggable="false"
-          className="w-1/12 animate-pulse drop-shadow-blue"
-          src="BLUE_HEART1.png"
+          width="55"
+          height="50"
+          className="animate-pulse drop-shadow-pink"
         />
         <FaCircle className="text-white hidden md:block" />
-        <FaCircle className="text-white " />
-        <img
+        <FaCircle className="text-white hidden md:block" />
+        <Image 
+          src={pinkHeart}
+          alt=""
           draggable="false"
-          className="w-1/12 animate-pulse"
-          src="PINK_HEART1.png"
+          width="55"
+          height="50"
+          className="animate-pulse drop-shadow-pink"
         />
         <FaCircle className="text-white hidden md:block" />
-        <FaCircle className="text-white" />
-        <img
+        <FaCircle className="text-white hidden md:block" />
+        <Image 
+          src={blueHeart}
+          alt=""
           draggable="false"
-          className="w-1/12 animate-pulse"
-          src="BLUE_HEART1.png"
+          width="55"
+          height="50"
+          className="animate-pulse drop-shadow-pink"
         />
       </div>
-      <img draggable="false" src="pixels_landing.png" className="w-full" />
+      <Image 
+        src={pixels}
+        alt=""
+        draggable="false" 
+        className="w-[100vw]" 
+      />
     </div>
   );
 };

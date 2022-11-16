@@ -64,6 +64,12 @@ const data = {
   shirt: "Choose:",
   major: "Choose:",
   resume: null,
+  marketing: false,
+  dietary: "",
+  mlh: false,
+  usa: false,
+  in_person: false,
+  covid: false,
 };
 
 const Register = () => {
@@ -79,6 +85,7 @@ const Register = () => {
   };
 
   const handleField = (e: any) => {
+    console.log(e.target.name, e.target.value);
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
@@ -168,8 +175,7 @@ const Register = () => {
             <input
               type="text"
               name="first"
-              value={user.first}
-              onChange={handleField}
+              value="Yes"
               placeholder="First Name"
               className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
             />
@@ -342,6 +348,102 @@ const Register = () => {
             >
               Selected File: {user.resume?.name}{" "}
             </label>
+          </Col>
+        </Row>
+        <Row className="w-10/12 flex justify-start">
+          <Col className="px-0 py-1">
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
+              Do you consent to marketing?
+            </label>
+            <input
+              type="checkbox"
+              name="marketing"
+              checked={user.marketing}
+              onChange={() => {
+                setUser({ ...user, marketing: !user.marketing });
+              }}
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+            />
+          </Col>
+        </Row>
+        <Row className="w-10/12 flex justify-start">
+          <Col className="px-0 py-1">
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
+              mlh code of conduct?
+            </label>
+            <input
+              type="checkbox"
+              name="mlh"
+              checked={user.mlh}
+              onChange={() => {
+                setUser({ ...user, mlh: !user.mlh });
+              }}
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+            />
+          </Col>
+        </Row>
+        <Row className="w-10/12 flex justify-start">
+          <Col className="px-0 py-1">
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
+              live in usa?
+            </label>
+            <input
+              type="checkbox"
+              name="usa"
+              checked={user.usa}
+              onChange={() => {
+                setUser({ ...user, usa: !user.usa });
+              }}
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+            />
+          </Col>
+        </Row>
+        <Row className="w-10/12 flex justify-start">
+          <Col className="px-0 py-1">
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
+              in person?
+            </label>
+            <input
+              type="checkbox"
+              name="in_person"
+              checked={user.in_person}
+              onChange={() => {
+                setUser({ ...user, in_person: !user.in_person });
+              }}
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+            />
+          </Col>
+        </Row>
+        <Row className="w-10/12 flex justify-start">
+          <Col className="px-0 py-1">
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
+              covid?
+            </label>
+            <input
+              type="checkbox"
+              name="covid"
+              checked={user.covid}
+              onChange={() => {
+                setUser({ ...user, covid: !user.covid });
+              }}
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+            />
+          </Col>
+        </Row>
+        <Row className="w-10/12 flex justify-start">
+          <Col className="px-0 py-1">
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
+              dietary?
+            </label>
+            <input
+              type="checkbox"
+              name="dietary"
+              checked={user.dietary}
+              onChange={() => {
+                setUser({ ...user, dietary: !user.dietary });
+              }}
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+            />
           </Col>
         </Row>
         <button

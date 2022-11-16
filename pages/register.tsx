@@ -9,68 +9,14 @@ import { FaChevronLeft } from "react-icons/fa";
 import axios from "axios";
 import { storage } from "../firebase";
 import { ref, uploadBytes } from "firebase/storage";
-
-const grades = [
-  "Less than Secondary / High School",
-  "Secondary / High School",
-  "Undergraduate University (2 year)",
-  "Undergraduate University (3+ year)",
-  "Graduate University (Masters, Doctoral, etc)",
-  "Code School / Bootcamp",
-  "Other Vocational / Trade Program / Apprenticeship",
-  "Post Doctorate",
-  "Other",
-  "I’m not currently a student",
-  "Prefer not to answer",
-];
-
-const shirts = [
-  "Xtra Small",
-  "Small",
-  "Medium",
-  "Large",
-  "Xtra Large",
-  "Xtra Xtra Large",
-];
-
-const ages = ["<16", "16", "17", "18", "19", "20", "21", "22", "23+"];
-
-const majors = [
-  "Computer Science",
-  "CS with Business Applications",
-  "Computer Engineering",
-  "Data Science",
-  "Electrical Engineering",
-  "Mechanical Engineering",
-  "Environmental Engineering",
-  "Other",
-];
-
-const genders = ["Female", "Male", "Transgender", "Nonbinary"];
-
-const data = {
-  first: "",
-  last: "",
-  age: "Choose:",
-  phone: "",
-  email: "",
-  password: "",
-  confirm_password: "",
-  school: "Choose:",
-  grade: "Choose:",
-  // dietary: [],
-  // underrepresented: false,
-  gender: "Choose:",
-  shirt: "Choose:",
-  major: "Choose:",
-  resume: null,
-  marketing: false,
-  dietary: "",
-  mlh: false,
-  usa: false,
-  in_person: false,
-  covid: false,
-};
+import {
+  data,
+  grades,
+  genders,
+  majors,
+  ages,
+  shirts,
+} from "../components/data/register";
 
 const Register = () => {
   const [user, setUser] = useState<any>(data);

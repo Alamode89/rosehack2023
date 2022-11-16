@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import Form from "react-bootstrap/Form";
+import { FaChevronDown } from "react-icons/fa";
 
 interface props {
   children?: any;
@@ -19,7 +20,7 @@ const CustomToggle = React.forwardRef(
   ({ children, onClick }: props_toggle, ref: any) => (
     <div className="text-center w-full p-2 bg-transparent !border-4 border-solid border-white !rounded-xl focus:border-white active:border-white">
       <a
-        className="!font-lexend text-white no-underline"
+        className="!font-lexend flex justify-center items-center text-white no-underline"
         href=""
         ref={ref}
         onClick={(e) => {
@@ -28,7 +29,7 @@ const CustomToggle = React.forwardRef(
         }}
       >
         {children}
-        &#x25bc;
+        <FaChevronDown />
       </a>
     </div>
   )

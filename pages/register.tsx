@@ -332,7 +332,12 @@ const Register = () => {
               }
               className="hidden"
             />
-            <label htmlFor="resume">SELECTED FILE: {user.resume?.name} </label>
+            <label
+              htmlFor="resume"
+              className="!font-lexend p-2 text-white w-full bg-transparent !border-4 border-solid border-white !rounded-xl focus:border-white active:border-white"
+            >
+              SELECTED FILE: {user.resume?.name}{" "}
+            </label>
           </Col>
         </Row>
         <button

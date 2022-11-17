@@ -2,12 +2,11 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 
 interface props {
-    user: any;
-    propertyOfUser: string;
-    setUser: Function;
-    label: string;
-  }
-  
+  user: any;
+  setUser: Function;
+  propertyOfUser: string;
+  label: string;
+}
 const Checkbox = ({ user, setUser, propertyOfUser, label }:props) => {
   return (
     <Row className="w-10/12 flex justify-between">

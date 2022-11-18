@@ -9,7 +9,7 @@ import pixels from "../public/pixels_landing.png";
 const Landing = () => {
   return (
     <div className="flex flex-col bg-gradient-to-br from-landing-bottom to-landing-bottompink w-full justify-center item-center p-0 m-0">
-      <div className="drop-shadow-white bg-gradient-radial w-7/12 flex pt-12 pb-3 m-auto text-center items-center justify-evenly">
+      <div className="drop-shadow-white bg-gradient-radial w-11/12 md:w-7/12 flex pt-12 pb-3 m-auto text-center items-center justify-evenly">
         <Image
           src={pinkHeart}
           alt=""
@@ -101,7 +101,7 @@ const Landing = () => {
           &nbsp;days left
         </div>
       </div>
-      <div className="drop-shadow-white bg-gradient-radial w-7/12 flex pb-12 pt-3 m-auto text-center items-center justify-evenly">
+      <div className="drop-shadow-white bg-gradient-radial w-11/12 md:w-7/12  flex pb-12 pt-3 m-auto text-center items-center justify-evenly">
         <Image
           src={pinkHeart}
           alt=""

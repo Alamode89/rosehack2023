@@ -32,7 +32,7 @@ const About = () => {
         <Col
           xl={8}
           md={6}
-          className="px-5 flex justify-center items-center flex-col"
+          className="md:px-5 px-0 flex justify-center items-center flex-col"
         >
           <div className="flex justify-between items-center mb-4 w-full">
             <img
@@ -88,7 +88,7 @@ const About = () => {
         <Col
           xl={8}
           md={6}
-          className="px-5 flex justify-center items-center flex-col"
+          className="md:px-5 px-0 flex justify-center items-center flex-col"
         >
           <div className="flex justify-between items-center mb-4 w-full">
             <img
@@ -131,18 +131,18 @@ const About = () => {
         </Col>
       </Row>
       <div className="bg-gradient-to-r from-about-left to-about-right md:w-1/2 w-10/12 rounded-3xl m-5">
-        <p className="bg-about-bottom py-5 font-lexend text-xl md:text-2xl  p-5 m-4 text-white text-center rounded-3xl">
+        <p className="bg-about-bottom px-0 md:py-5 font-lexend text-xl md:text-2xl  p-5 m-4 text-white text-center rounded-3xl">
           Rose Hack welcomes both undergraduate and high school students for a
           lively weekend filled with innovation, discovery, networking,
           mentorship, and so much more!
         </p>
-        <div className="justify-between flex mx-20 my-3">
+        <div className="flex justify-between mx-20 my-3">
           <img className="w-4/12 md:w-2/12" src="RH_SPONSORS_BUTTON1.png"></img>
           <div className="w-2/12 flex justify-between items-center">
             <div className="h-full flex justify-center items-end">
               <FaCircle className="text-about-pink text-5xl" />
             </div>
-            <div className="h-full flex justify-center items-start">
+            <div className="flex h-full justify-center items-start">
               <FaCircle className="text-about-blue text-5xl" />
             </div>
           </div>

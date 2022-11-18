@@ -12,20 +12,23 @@ const Team = () => {
     >
       <div className="w-10/12 flex justify-center items-center flex-col">
         <div className="flex justify-between items-center w-full m-5">
-          <img src="PINK_HEART1.png" className="h-10 w-10 transform" />
+          <img
+            src="PINK_HEART1.png"
+            className="h-10 w-10 transform hidden md:flex"
+          />
           <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
           <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
           <FaCircle className="drop-shadow-blue text-white hidden lg:flex" />
-          <FaCircle className="drop-shadow-blue text-white" />
+          <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
 
-          <p className="drop-shadow-blue font-pixel text-4xl p-0 m-0 text-white text-center">
-            Meet the Team
+          <p className="drop-shadow-blue font-pixel text-4xl p-0 m-0 text-white text-center w-full md:w-auto">
+            THE TEAM
           </p>
           <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
           <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
           <FaCircle className="drop-shadow-blue text-white hidden lg:flex" />
-          <FaCircle className="drop-shadow-blue text-white" />
-          <img src="PINK_HEART1.png" className="h-10 w-10 " />
+          <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
+          <img src="PINK_HEART1.png" className="h-10 w-10 hidden md:flex" />
         </div>
         <Row className="flex justify-center items-initial">
           {profiles.map((profile, index) => (
@@ -41,20 +44,23 @@ const Team = () => {
           ))}
         </Row>
         <div className="flex justify-between items-center w-full m-5">
-          <img src="BLUE_HEART1.png" className="h-10 w-10 transform" />
+          <img
+            src="PINK_HEART1.png"
+            className="h-10 w-10 transform hidden md:flex"
+          />
           <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
           <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
           <FaCircle className="drop-shadow-blue text-white hidden lg:flex" />
-          <FaCircle className="drop-shadow-blue text-white" />
+          <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
 
-          <p className="drop-shadow-blue font-pixel text-4xl p-0 m-0 text-white text-center">
-            Committee Members
+          <p className="drop-shadow-blue font-pixel text-4xl p-0 m-0 text-white text-center w-full md:w-auto">
+            COMMITTEE MEMBERS
           </p>
           <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
           <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
           <FaCircle className="drop-shadow-blue text-white hidden lg:flex" />
-          <FaCircle className="drop-shadow-blue text-white" />
-          <img src="BLUE_HEART1.png" className="h-10 w-10 " />
+          <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
+          <img src="PINK_HEART1.png" className="h-10 w-10 hidden md:flex" />
         </div>
         <div className="flex justify-center items-stretch flex-col p-2 w-full">
           <div

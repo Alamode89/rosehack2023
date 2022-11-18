@@ -87,7 +87,6 @@ module.exports = {
       },
       fontFamily: {
         lexend: ["Lexend"],
-        poppins: ["Poppins"],
         pixel: ["'Press Start 2P'", "cursive"],
       },
       backgroundImage: {

@@ -140,4 +140,5 @@ export const commitee = [
   "Zijun Wang",
   "Trisha Agrawal",
   "Jake Kim",
+  "Suryateja Duvvuri",
 ];

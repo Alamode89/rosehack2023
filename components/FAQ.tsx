@@ -1,25 +1,29 @@
 import React from "react";
 import Questions from "./Questions";
+import { FaCircle } from "react-icons/fa";
 
 const FAQ = () => {
   return (
     <section
       id="faq"
-      className="bg-gradient-to-b from-faq-top to-faq-bottom w-full flex justify-center items-center flex-col pt-[11vh] pb-6 scroll-m-[2vh]"
+      className="bg-gradient-to-b from-faq-top to-faq-bottom w-full flex justify-center items-center flex-col pb-6"
     >
       <div className="w-10/12 flex justify-center items-center flex-col">
-        <div className="font-pixel text-5xl p-2 m-0 text-white text-center flex justify-center items-center ">
-          <img
-            draggable="false"
-            className="w-1/12 mx-4"
-            src="PINK_HEART1.png"
-          />
-          FAQ
-          <img
-            draggable="false"
-            className="w-1/12 mx-4"
-            src="PINK_HEART1.png"
-          />
+        <div className="flex justify-between items-center w-full m-5">
+          <img src="PINK_HEART1.png" className="h-10 w-10 transform" />
+          <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
+          <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
+          <FaCircle className="drop-shadow-blue text-white hidden lg:flex" />
+          <FaCircle className="drop-shadow-blue text-white" />
+
+          <p className="drop-shadow-blue font-pixel text-4xl p-0 m-0 text-white text-center">
+            FAQ
+          </p>
+          <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
+          <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
+          <FaCircle className="drop-shadow-blue text-white hidden lg:flex" />
+          <FaCircle className="drop-shadow-blue text-white" />
+          <img src="PINK_HEART1.png" className="h-10 w-10 " />
         </div>
         <div className="w-full flex justify-center items-center flex-col">
           <Questions />

@@ -14,7 +14,7 @@ const Sponsors = () => {
       </div>
       <div className="w-10/12 flex justify-center items-center flex-col">
         <div className="flex justify-between items-center w-full m-5">
-          <img src="PINK_HEART1.png" className="h-10 w-10 transform" />
+          <img src="BLUE_HEART1.png" className="h-10 w-10 transform" />
           <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
           <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
           <FaCircle className="drop-shadow-blue text-white hidden lg:flex" />
@@ -27,7 +27,7 @@ const Sponsors = () => {
           <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
           <FaCircle className="drop-shadow-blue text-white hidden lg:flex" />
           <FaCircle className="drop-shadow-blue text-white" />
-          <img src="PINK_HEART1.png" className="h-10 w-10 " />
+          <img src="BLUE_HEART1.png" className="h-10 w-10 " />
         </div>
         <Row>
           {sponsors.map((sponsor, index) => (

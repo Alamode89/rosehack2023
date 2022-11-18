@@ -148,6 +148,9 @@ const About = () => {
           </div>
         </div>
       </div>
+      <div className="w-full justify-center">
+        <img draggable="false" src="pixel2.png" />
+      </div>
     </section>
   );
 };

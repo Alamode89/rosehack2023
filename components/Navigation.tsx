@@ -53,6 +53,12 @@ const Navigation = () => {
             >
               FAQ
             </Nav.Link>
+            <Nav.Link
+              href="/register"
+              className="!text-xl text-center text-white mr-1 hover:underline decoration-4 underline-offset-8"
+            >
+              REGISTER
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

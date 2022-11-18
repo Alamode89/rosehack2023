@@ -6,7 +6,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="bg-gradient-to-b from-about-top to-about-bottom w-full flex justify-center items-center flex-col"
+      className="bg-gradient-to-b from-about-top to-about-bottom w-full flex justify-center items-center flex-col scroll-my-[10vh]"
     >
       <div className="flex justify-between items-center w-10/12 m-5">
         <img

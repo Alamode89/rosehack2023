@@ -7,7 +7,7 @@ const Sponsors = () => {
   return (
     <section
       id="sponsors"
-      className="bg-gradient-to-b from-sponsors-top to-sponsors-bottom w-full flex justify-center items-center flex-col pb-[11vh] scroll-m-[2vh]"
+      className="bg-gradient-to-b from-sponsors-top to-sponsors-bottom w-full flex justify-center items-center flex-col scroll-m-[2vh]"
     >
       <div className="w-full justify-center">
         <img draggable="false" src="pixel2.png" />
@@ -45,6 +45,9 @@ const Sponsors = () => {
             </Col>
           ))}
         </Row>
+      </div>
+      <div className="w-full justify-center">
+        <img draggable="false" src="pixel6.png" />
       </div>
     </section>
   );

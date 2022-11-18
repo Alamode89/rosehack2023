@@ -101,8 +101,8 @@ module.exports = {
           hover: "#F08DCF",
         },
         team: {
-          top: "#8C7DFF",
-          bottom: "#4FF4FF",
+          top: "#7C4FFF",
+          bottom: "#FF4F79",
           green: "#C9F9BE",
           pink: "#F7CDE0",
           yellow: "#FCFBB6",
@@ -116,7 +116,7 @@ module.exports = {
         },
         sponsors: {
           top: "#CC00FF",
-          bottom: "#8C7DFF",
+          bottom: "#4FF4FF",
         },
         landing: {
           brightgreen: "#1EFF1A",

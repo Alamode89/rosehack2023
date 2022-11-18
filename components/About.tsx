@@ -6,23 +6,26 @@ const About = () => {
   return (
     <section
       id="about"
-      className="bg-gradient-to-b from-about-top to-about-bottom w-full flex justify-center items-center flex-col py-[11vh] scroll-m-[2vh]"
+      className="bg-gradient-to-b from-about-top to-about-bottom w-full flex justify-center items-center flex-col"
     >
       <div className="flex justify-between items-center w-10/12 m-5">
-        <img src="PINK_HEART1.png" className="h-10 w-10 transform" />
+        <img
+          src="PINK_HEART1.png"
+          className="h-10 w-10 transform hidden md:flex"
+        />
         <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
         <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
         <FaCircle className="drop-shadow-blue text-white hidden lg:flex" />
-        <FaCircle className="drop-shadow-blue text-white" />
+        <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
 
-        <p className="drop-shadow-blue font-pixel text-4xl p-0 m-0 text-white text-center">
+        <p className="drop-shadow-blue font-pixel text-4xl p-0 m-0 text-white text-center w-full md:w-auto">
           ABOUT US
         </p>
         <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
         <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
         <FaCircle className="drop-shadow-blue text-white hidden lg:flex" />
-        <FaCircle className="drop-shadow-blue text-white" />
-        <img src="PINK_HEART1.png" className="h-10 w-10 " />
+        <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
+        <img src="PINK_HEART1.png" className="h-10 w-10 hidden md:flex" />
       </div>
 
       <Row className="sm:w-9/12 w-10/12 flex justify-center items-center flex-row-reverse sm:flex-row">
@@ -48,10 +51,10 @@ const About = () => {
             />
           </div>
           <p className="drop-shadow-pinksmall py-0 md:py-5 font-lexend text-xl md:text-2xl w-full p-0 m-0 text-white text-center">
-            Rose Hack is UC Riverside’s 24-hour hackathon, one of the few
+            Rose Hack is UC Riverside&#39;s 24-hour hackathon, one of the few
             women-centric hackathons in California! Founded by the female
-            leaders of the Association for Computing Machinery (ACM-W) and the
-            Society of Women Engineers (SWE).{" "}
+            leaders of the Women in Computing (WINC) and the Society of Women
+            Engineers (SWE).
           </p>
 
           <div className="flex justify-between items-center mt-4 w-full">
@@ -104,10 +107,10 @@ const About = () => {
             />
           </div>
           <p className="drop-shadow-bluesmall py-0 md:py-5 text-xl md:text-2xl font-lexend w-full p-0 m-0 text-white text-center">
-            Rose Hack’s mission is to encourage individuals from
+            Rose Hack&#39;s mission is to encourage individuals from
             underrepresented groups in STEM to gain experience, create strong
             networks, and build amazing projects through their shared passions
-            in Science and Technology.{" "}
+            in science and technology.
           </p>
           <div className="flex justify-between items-center mt-4 w-full">
             <img

@@ -32,9 +32,12 @@ const Footer = () => {
       <p className="inline p-0 m-0 mt-4 text-2xl w-10/12 text-center text-white">
         made with &#9829; by the Rose Hack team at UCR
       </p>
-      <p className="inline p-0 m-0 mt-4 text-2xl  w-10/12 text-center text-white">
-        *MLH Code of Conduct*
-      </p>
+      <a
+        href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
+        className="inline p-0 m-0 mt-4 text-2xl  no-underline hover:!text-header-hover w-10/12 text-center text-white"
+      >
+        MLH Code of Conduct
+      </a>
     </footer>
   );
 };

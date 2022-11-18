@@ -122,7 +122,7 @@ const Register = () => {
             <input
               type="text"
               name="first"
-              value="Yes"
+              value={user.first}
               placeholder="First Name"
               className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
             />
@@ -301,42 +301,42 @@ const Register = () => {
           user={user}
           setUser={setUser}
           propertyOfUser="marketing"
-          label="Do you consent to marketing?"
+          label="Do you consent to videos and photos being taken of you? These photos will be used for on our official Rosehack Instagram and other social media. If you have any concerns, please contact us at rosehackucr@gmail.com"
         />
         <hr className="border-0 h-1 w-10/12 opacity-100 m-0 p-0 bg-gradient-to-r from-white" />
         <Checkbox
           user={user}
           setUser={setUser}
           propertyOfUser="mlh"
-          label="mlh code of conduct?"
+          label="Do you agree to the terms listed by the MLH code of conduct? Failure to comply to these terms may result in disqualification from the hackathon. If you have any questions, please contact MLH at hi@mlh.io or Rosehack at rosehackucr@gmail.com"
         />
         <hr className="border-0 h-1 w-10/12 opacity-100 m-0 p-0 bg-gradient-to-r from-white" />
         <Checkbox
           user={user}
           setUser={setUser}
           propertyOfUser="usa"
-          label="live in usa?"
+          label="Will you be residing in the United States during the duration of the hackathon? The hackathon is hosted in the United States of America only."
         />
         <hr className="border-0 h-1 w-10/12 opacity-100 m-0 p-0 bg-gradient-to-r from-white" />
         <Checkbox
           user={user}
           setUser={setUser}
           propertyOfUser="in_person"
-          label="in person?"
+          label="Will you be attending Rosehack 2023 in person? Note this event is only being hosted in-person. There will be no online or hybrid reccomendations unfortunately."
         />
         <hr className="border-0 h-1 w-10/12 opacity-100 m-0 p-0 bg-gradient-to-r from-white" />
         <Checkbox
           user={user}
           setUser={setUser}
           propertyOfUser="covid"
-          label="covid?"
+          label="Will you be able to provide COVID vaccination status if asked? Rosehack board reserves the right to ask for COVID vaccination status during checkin."
         />
         <hr className="border-0 h-1 w-10/12 opacity-100 m-0 p-0 bg-gradient-to-r from-white" />
         <Checkbox
           user={user}
           setUser={setUser}
           propertyOfUser="dietary"
-          label="dietary?"
+          label="Do you eat meat?"
         />
         <button
           onClick={handleSubmit}

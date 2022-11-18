@@ -101,7 +101,7 @@ module.exports = {
         },
         team: {
           top: "#7C4FFF",
-          bottom: "#FF4F79",
+          bottom: "#FF7777",
           green: "#C9F9BE",
           pink: "#F7CDE0",
           yellow: "#FCFBB6",
@@ -138,7 +138,7 @@ module.exports = {
           bottom: "#FC7AD5",
         },
         faq: {
-          top: "#CC00FF",
+          top: "#7000FF",
           bottom: "#FF8A65",
           middle: "#441797",
           question: "#F08DCF",

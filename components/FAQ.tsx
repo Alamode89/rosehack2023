@@ -6,7 +6,7 @@ const FAQ = () => {
   return (
     <section
       id="faq"
-      className="bg-gradient-to-b from-faq-top to-faq-bottom w-full flex justify-center items-center flex-col pb-6"
+      className="bg-gradient-to-b from-faq-top to-faq-bottom w-full flex justify-center items-center flex-col pb-6 scroll-my-[10vh]"
     >
       <div className="w-10/12 flex justify-center items-center flex-col">
         <div className="flex justify-between items-center w-full m-5">

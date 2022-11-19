@@ -8,23 +8,23 @@ const About = () => {
       id="about"
       className="bg-gradient-to-b from-about-top to-about-bottom w-full flex justify-center items-center flex-col scroll-my-[10vh]"
     >
-      <div className="flex justify-between items-center w-10/12 m-5">
+      <div className="flex justify-between items-center w-10/12 m-5 drop-shadow-white">
         <img
           src="PINK_HEART1.png"
           className="h-10 w-10 transform hidden md:flex"
         />
-        <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
-        <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
-        <FaCircle className="drop-shadow-blue text-white hidden lg:flex" />
-        <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
+        <FaCircle className=" text-white hidden md:flex" />
+        <FaCircle className=" text-white hidden md:flex" />
+        <FaCircle className=" text-white hidden lg:flex" />
+        <FaCircle className=" text-white hidden md:flex" />
 
-        <p className="drop-shadow-blue font-pixel text-4xl p-0 m-0 text-white text-center w-full md:w-auto">
+        <p className="font-pixel text-4xl p-0 m-0 text-white text-center w-full md:w-auto">
           ABOUT US
         </p>
-        <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
-        <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
-        <FaCircle className="drop-shadow-blue text-white hidden lg:flex" />
-        <FaCircle className="drop-shadow-blue text-white hidden md:flex" />
+        <FaCircle className=" text-white hidden md:flex" />
+        <FaCircle className=" text-white hidden md:flex" />
+        <FaCircle className=" text-white hidden lg:flex" />
+        <FaCircle className=" text-white hidden md:flex" />
         <img src="PINK_HEART1.png" className="h-10 w-10 hidden md:flex" />
       </div>
 
@@ -74,16 +74,16 @@ const About = () => {
             />
           </div>
         </Col>
-        <Col xl={4} md={6} className="flex items-center justify-center">
+        <Col xl={4} md={6} className="flex items-center justify-center p-8">
           <img
-            className="w-1/3 md:w-full pt-5 md:pt-0"
+            className="w-2/5 md:w-10/12 pt-5 md:pt-0"
             src="MACHINE_3.png"
           ></img>
         </Col>
       </Row>
       <Row className="mt-5 sm:w-9/12 w-10/12 flex justify-center items-center flex-col-reverse md:flex-row-reverse">
         <Col xl={4} md={6} className="flex items-center justify-center">
-          <img className="w-1/3 md:w-full pt-5 md:pt-0" src="MACHINE_2.png" />
+          <img className="w-2/5 md:w-10/12 pt-5 md:pt-0" src="MACHINE_2.png" />
         </Col>
         <Col
           xl={8}
@@ -148,7 +148,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="w-full justify-center">
+      <div className="w-full justify-center mt-20">
         <img draggable="false" src="pixel2.png" />
       </div>
     </section>

@@ -79,7 +79,7 @@ module.exports = {
         bluesmall: "0 0px 3px rgba(73,200,255, 1)",
         pink: "0 0px 9px rgba(252,122,213, 1)",
         pinksmall: "0 0px 3px rgba(252,122,213, 1)",
-        white: "0 0px 9px rgba(255,255,255, 1)",
+        white: "0 0px 9px rgba(255,255,255, .6)",
         whitebig: "0 0px 15px rgba(255,255,255, 1)",
         bigwhite: "0 0px 20px rgba(255,255,255, .3)",
         green: "0 0px 9px rgba(30, 255, 26, 1)",

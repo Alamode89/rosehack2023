@@ -72,10 +72,10 @@ const Team = () => {
                   <Col
                     key={index}
                     xl={3}
-                    xs={6}
+                    xs={12}
                     className="flex justify-left items-center"
                   >
-                    <p className="p-0 m-2 text-lg font-semibold text-black font-lexend">
+                    <p className="p-0 m-2 text-lg text-center w-full font-semibold text-black font-lexend">
                       {member}
                     </p>
                   </Col>

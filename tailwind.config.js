@@ -9,8 +9,8 @@ module.exports = {
       animation: {
         glitch: "glitch .5s ease-in-out infinite",
         glitchReverse: "glitchReverse .5s ease-in-out infinite",
-        shinging: "shinging 1.5s ease-in-out infinite",
-        shingingReverse: "shingingReverse 1s ease-in-out infinite",
+        shinging: "shinging 2.5s ease-in-out infinite",
+        shingingReverse: "shingingReverse 2s ease-in-out infinite",
       },
       keyframes: {
         glitch: {

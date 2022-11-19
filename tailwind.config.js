@@ -128,7 +128,7 @@ module.exports = {
         },
         about: {
           top: "#3D008A",
-          bottom: "#10C2B8",
+          bottom: "#8000FF",
           left: "#D20ED6",
           right: "#57AEFF",
           pink: "#E653BA",

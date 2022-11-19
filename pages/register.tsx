@@ -123,7 +123,9 @@ const Register = () => {
               type="text"
               name="first"
               value={user.first}
+              onChange={handleField}
               placeholder="First Name"
+              maxLength={30}
               className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
             />
           </Col>
@@ -137,6 +139,7 @@ const Register = () => {
               value={user.last}
               onChange={handleField}
               placeholder="Last Name"
+              maxLength={30}
               className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
             />
           </Col>
@@ -151,6 +154,7 @@ const Register = () => {
               name="email"
               value={user.email}
               onChange={handleField}
+              maxLength={50}
               placeholder="Email Address"
               className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
             />
@@ -189,12 +193,12 @@ const Register = () => {
             <label className="text-left font-pixel text-md text-white w-full ml-4">
               phone number
             </label>
-
             <input
-              type="text"
+              type="tel"
               name="phone"
               value={user.phone}
               onChange={handleField}
+              maxLength={15}
               placeholder="Phone Number"
               className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
             />

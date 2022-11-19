@@ -1,5 +1,6 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
+import { FaChevronDown } from "react-icons/fa";
 
 interface props {
   options: Array<string>;
@@ -14,15 +15,16 @@ const Selector = ({ options, user, field, handleInput }: props) => {
       <Dropdown.Toggle
         variant=""
         id=""
-        className="!font-lexend text-white w-full bg-transparent !border-4 border-solid border-white !rounded-xl drop-shadow-bluesmall focus:border-white active:border-white"
+        className="!font-lexend !flex justify-center items-center text-white after:!hidden w-full bg-transparent !border-4 border-solid border-white !rounded-xl focus:border-white active:border-white"
       >
         {user[field]}
+        <FaChevronDown />
       </Dropdown.Toggle>
 
-      <Dropdown.Menu className="w-full font-lexend">
+      <Dropdown.Menu className="w-full font-lexend active:bg-white">
         {options.map((option, index) => (
           <Dropdown.Item
-            className="font-lexend text-black"
+            className="font-lexend text-black hover:!bg-register-top hover:!text-white"
             key={index}
             onClick={() => handleInput(field, option)}
           >

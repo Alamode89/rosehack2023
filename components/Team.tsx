@@ -1,161 +1,35 @@
 import React from "react";
 import Profile from "./Profile";
 import { Row, Col } from "react-bootstrap";
-
-const profiles = [
-  {
-    name: "Ashley Kim",
-    pronouns: "she/her",
-    position: "Director",
-    game: "Overwatch",
-    linkedin: "https://www.linkedin.com/in/ashley-kim-838893196/",
-    instagram: "https://www.instagram.com/kimyvmin/ ",
-    github: "",
-    image: "ashley.jpeg",
-    shadow: "shadow-team-green",
-  },
-  {
-    name: "Hallie Pham",
-    pronouns: "she/her",
-    position: "Director",
-    game: "Valorant",
-    linkedin: "https://www.linkedin.com/in/hallie-pham-46a749191",
-    instagram: "https://www.instagram.com/halliepham/?hl=en",
-    github: "",
-    image: "hallie.jpeg",
-    shadow: "shadow-team-pink",
-  },
-  {
-    name: "Annabelle Le ",
-    pronouns: "she/her",
-    position: "Operations",
-    game: "Valorant",
-    linkedin: "",
-    instagram: "",
-    github: "",
-    image: "annabelle.jpeg",
-    shadow: "shadow-team-yellow",
-  },
-  {
-    name: "Angelika Bermudez",
-    pronouns: "she/her",
-    position: "Operations",
-    game: "Bloons TD 6",
-    linkedin: "https://www.linkedin.com/in/angelika-bermudez-4233931b8/",
-    instagram: "https://www.instagram.com/sussyangy/",
-    github: "",
-    image: "angie.jpeg",
-    shadow: "shadow-team-teal",
-  },
-  {
-    name: "Samarth Srinivasa",
-    pronouns: "he/him",
-    position: "Sponsorship",
-    game: "Bloons TD 5",
-    linkedin: "https://www.linkedin.com/in/samarth-srinivasa/",
-    instagram: "https://www.instagram.com/samarth_srinivasa/",
-    github: "https://github.com/SamarthSrinivasa",
-    image: "samarth.jpeg",
-    shadow: "shadow-team-hotpink",
-  },
-  {
-    name: "Nicole Garcia",
-    pronouns: "she/her",
-    position: "Sponsorship",
-    game: "The Last of Us",
-    linkedin: "https://www.linkedin.com/in/nicoleb-garcia/",
-    instagram: "https://www.instagram.com/lpurgitoryl/",
-    github: "https://github.com/lpurgitoryl",
-    image: "nicole.jpeg",
-    shadow: "shadow-team-orange",
-  },
-  {
-    name: "Bonnie Yeh",
-    pronouns: "she/her",
-    position: "Marketing",
-    game: "Valorant",
-    linkedin: "https://www.linkedin.com/in/bonnieyeh",
-    instagram: "https://www.instagram.com/bonnnies/",
-    github: "",
-    image: "bonnie.jpeg",
-    shadow: "shadow-team-gold",
-  },
-  {
-    name: "Samantha Niño",
-    pronouns: "she/her",
-    position: "Marketing",
-    game: "Stardew Valley",
-    linkedin: "",
-    instagram: "https://www.instagram.com/samdosea/",
-    github: "",
-    image: "samantha.jpeg",
-    shadow: "shadow-team-purple",
-  },
-  {
-    name: "Cindy Do",
-    pronouns: "she/her",
-    position: "Web Dev",
-    game: "Persona 5",
-    linkedin: "https://www.linkedin.com/in/cindydo-ucr/",
-    instagram: "https://www.instagram.com/c1ndydonut/",
-    github: "https://github.com/condoes",
-    image: "cindy.jpeg",
-    shadow: "shadow-team-lightpurple",
-  },
-  {
-    name: "Andre Amante",
-    pronouns: "he/him",
-    position: "Web Dev",
-    game: "The Last of Us",
-    linkedin: "https://www.linkedin.com/in/andreamantee/",
-    instagram: " https://www.instagram.com/andweeeee/",
-    github: "https://github.com/Alamode89",
-    image: "andre.jpeg",
-    shadow: "shadow-team-green",
-  },
-  {
-    name: "Divyank Shah",
-    pronouns: "he/him",
-    position: "Web Dev",
-    game: "Clash of Clans",
-    linkedin: "https://www.linkedin.com/in/divyank-shah/",
-    instagram: "https://www.instagram.com/divyank.shah/",
-    github: "https://github.com/shahdivyank",
-    image: "divyank.jpeg",
-    shadow: "shadow-team-pink",
-  },
-];
-
-const commitee = [
-  "Menthy Wu",
-  "Jasmita Yechuri",
-  "Ashwin Jagadish",
-  "Jenny Dao",
-  "Souhita Thota",
-  "Suhani Chaudhary",
-  "Rudy Cazares",
-  "Kay Vo",
-  "Felix Maass",
-  "Mrinalini Venkatachalam",
-  "Sneha Panda",
-  "Isabelle Celo",
-  "Huong Le",
-  "Adreyan Distor",
-  "Zijun Wang",
-  "Trisha Agrawal",
-  "Jake Kim",
-];
+import { profiles, commitee } from "./data/team";
+import { FaCircle } from "react-icons/fa";
 
 const Team = () => {
   return (
     <section
       id="board"
-      className="bg-gradient-to-b from-team-top to-team-bottom flex justify-center items-center flex-col pt-[11vh] scroll-m-[2vh]"
+      className="bg-gradient-to-b from-team-top to-team-bottom flex justify-center items-center flex-col scroll-my-[10vh]"
     >
       <div className="w-10/12 flex justify-center items-center flex-col">
-        <p className="font-pixel text-4xl text-white text-center">
-          Meet the Team
-        </p>
+        <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
+          <img
+            src="PINK_HEART1.png"
+            className="h-10 w-10 transform hidden md:flex"
+          />
+          <FaCircle className="text-white hidden md:flex" />
+          <FaCircle className="text-white hidden md:flex" />
+          <FaCircle className="text-white hidden lg:flex" />
+          <FaCircle className="text-white hidden md:flex" />
+
+          <p className="font-pixel text-4xl p-0 m-0 text-white text-center w-full md:w-auto">
+            THE TEAM
+          </p>
+          <FaCircle className="text-white hidden md:flex" />
+          <FaCircle className="text-white hidden md:flex" />
+          <FaCircle className="text-white hidden lg:flex" />
+          <FaCircle className="text-white hidden md:flex" />
+          <img src="PINK_HEART1.png" className="h-10 w-10 hidden md:flex" />
+        </div>
         <Row className="flex justify-center items-initial">
           {profiles.map((profile, index) => (
             <Col lg={3} md={4} xs={6} key={index} className=" p-3">
@@ -169,9 +43,25 @@ const Team = () => {
             </Col>
           ))}
         </Row>
-        <p className="font-pixel text-4xl text-white text-center">
-          Committee Members
-        </p>
+        <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
+          <img
+            src="PINK_HEART1.png"
+            className="h-10 w-10 transform hidden md:flex"
+          />
+          <FaCircle className="text-white hidden md:flex" />
+          <FaCircle className="text-white hidden md:flex" />
+          <FaCircle className="text-white hidden lg:flex" />
+          <FaCircle className="text-white hidden md:flex" />
+
+          <p className=" font-pixel text-4xl p-0 m-0 text-white text-center w-full md:w-auto">
+            COMMITTEE MEMBERS
+          </p>
+          <FaCircle className="text-white hidden md:flex" />
+          <FaCircle className="text-white hidden md:flex" />
+          <FaCircle className="text-white hidden lg:flex" />
+          <FaCircle className="text-white hidden md:flex" />
+          <img src="PINK_HEART1.png" className="h-10 w-10 hidden md:flex" />
+        </div>
         <div className="flex justify-center items-stretch flex-col p-2 w-full">
           <div
             className={`shadow-team-yellow shadow-[20px_-16px_0px_0px] rounded-[2rem] w-full`}
@@ -182,10 +72,12 @@ const Team = () => {
                   <Col
                     key={index}
                     xl={3}
-                    xs={6}
+                    xs={12}
                     className="flex justify-left items-center"
                   >
-                    <p className="p-0 m-2 text-black font-lexend">{member}</p>
+                    <p className="p-0 m-2 text-lg text-center w-full font-semibold text-black font-lexend">
+                      {member}
+                    </p>
                   </Col>
                 ))}
               </Row>
@@ -194,7 +86,7 @@ const Team = () => {
         </div>
       </div>
 
-      <div className="w-full justify-center">
+      <div className="w-full justify-center mt-20">
         <img draggable="false" src="pixel5.png" />
       </div>
     </section>

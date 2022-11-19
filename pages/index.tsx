@@ -13,6 +13,7 @@ const Home: NextPage = () => {
       <Sponsors />
       <Team />
       <FAQ />
+      <title>Rose Hack 2023</title>
     </div>
   );
 };

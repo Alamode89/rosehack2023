@@ -2,61 +2,28 @@ import React, { useState } from "react";
 import Selector from "../components/Selector";
 import { Row, Col } from "react-bootstrap";
 import Snackbar from "../components/Snackbar";
-
-const schools = [
-  "UC Riverside",
-  "La Sierra College",
-  "CSU San Bernardino",
-  "UC Los Angeles",
-  "UC San Diego",
-];
-
-const grades = [
-  "College Freshmen",
-  "College Sophomore",
-  "College Junior",
-  "College Senior",
-];
-
-const shirts = [
-  "Xtra Small",
-  "Small",
-  "Medium",
-  "Large",
-  "Xtra Large",
-  "Xtra Xtra Large",
-];
-
-const ages = ["16", "17", "18", "19", "20", "21", "22"];
-
-const majors = [
-  "Computer Science",
-  "CS with Business Applications",
-  "Computer Engineering",
-  "Data Science",
-];
-
-const genders = ["Female", "Male", "Transgender", "Nonbinary"];
-
-const data = {
-  first: "",
-  last: "",
-  age: 18,
-  phone: "",
-  email: "",
-  school: "California Baptist University",
-  grade: "College Freshmen",
-  country: "",
-  dietary: [],
-  underrepresented: false,
-  gender: "Female",
-  shirt: "Medium",
-  major: "Computer Science",
-};
+import { schools } from "../components/data/schools";
+import Schools from "../components/Schools";
+import Link from "next/link";
+import { FaChevronLeft } from "react-icons/fa";
+import axios from "axios";
+import { storage } from "../firebase";
+import { ref, uploadBytes } from "firebase/storage";
+import Checkbox from "../components/Checkbox";
+import {
+  data,
+  grades,
+  genders,
+  majors,
+  ages,
+  shirts,
+} from "../components/data/register";
 
 const Register = () => {
-  const [user, setUser] = useState(data);
+  const [user, setUser] = useState<any>(data);
   const [visible, setVisible] = useState(false);
+  const [message, setMessage] = useState("");
+  const [file, setFile] = useState("");
 
   const handleInput = (data: string, value: string) => {
     console.log(data, value);
@@ -65,42 +32,103 @@ const Register = () => {
   };
 
   const handleField = (e: any) => {
+    console.log(e.target.name, e.target.value);
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
+  const handleSchool = (school: string) => {
+    setUser({ ...user, school: school });
+  };
+
   const handleSubmit = () => {
-    setVisible(true);
+    for (const key of Object.keys(user)) {
+      if (user[key] === "" || user[key] === "Choose:") {
+        setMessage("Please fill out all fields for registration!");
+        setVisible(true);
+        return;
+      }
+    }
+
+    if (user.password !== user.confirm_password) {
+      setMessage("Passwords do not match! Please re-enter password!");
+      setVisible(true);
+      return;
+    }
+
+    uploadBytes(ref(storage, `resumes/${user.resume.name}`), user.resume).then(
+      (snapshot) => {
+        console.log(snapshot);
+        setFile(snapshot.metadata.fullPath);
+      }
+    );
+
+    setUser({ ...user, resume: file });
+
+    axios
+      .post("/api/register", user)
+      .then((response) => {
+        if (response.status === 200) {
+          setMessage(
+            "Registration Successful! Thank you for joining Rosehack 2023!"
+          );
+          setVisible(true);
+          return;
+        }
+      })
+      .catch((error) => {
+        if (error.response.status === 400) {
+          setMessage(
+            "An account with this email already exists! Please use a different email!"
+          );
+          setVisible(true);
+          return;
+        } else if (error.response.status === 500) {
+          console.log(error);
+          setMessage(
+            `Internal Server Error: please contact rosehackucr@gmail.com`
+          );
+          setVisible(true);
+          return;
+        }
+      });
   };
 
   return (
     <div className="flex justify-center items-center flex-col bg-gradient-to-b from-about-top to-about-bottom w-full">
-      <div className="my-24 border-4 rounded-3xl border-white drop-shadow-blue items-center flex flex-col w-10/12">
-        <div className="font-pixel text-md md:text-xl lg:text-4xl p-0 text-white text-center w-1/2 m-4">
-          &lt;REGISTER&gt;
+      <div className="my-24 border-4 rounded-3xl drop-shadow-blue border-white items-center flex flex-col w-10/12">
+        <div className="flex justify-center items-center  w-full relative">
+          <div className="absolute top-1/2 left-3 -translate-y-1/2">
+            <Link href="/">
+              <FaChevronLeft className="text-white text-5xl hover:!text-about-right hover:cursor-pointer" />
+            </Link>
+          </div>
+          <div className="font-pixel text-md md:text-xl lg:text-4xl p-0 text-white text-center w-full m-4">
+            REGISTER
+          </div>
         </div>
+
         {visible && (
           <Snackbar
-            successful={true}
             visible={visible}
             setVisible={setVisible}
+            message={message}
           />
         )}
         <Row className="w-10/12 flex justify-between ">
           <Col md={5} className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
               first name
             </label>
             <input
               type="text"
               name="first"
               value={user.first}
-              onChange={handleField}
               placeholder="First Name"
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
             />
           </Col>
           <Col md={5} className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
               last name
             </label>
             <input
@@ -109,13 +137,13 @@ const Register = () => {
               value={user.last}
               onChange={handleField}
               placeholder="Last Name"
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
             />
           </Col>
         </Row>
         <Row className="w-10/12 flex justify-start">
           <Col className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
               email
             </label>
             <input
@@ -124,13 +152,41 @@ const Register = () => {
               value={user.email}
               onChange={handleField}
               placeholder="Email Address"
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
             />
           </Col>
         </Row>
-        <Row className="w-10/12 ">
+        <Row className="w-10/12 flex justify-between">
+          <Col className="px-0 py-1" md={5}>
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
+              password
+            </label>
+            <input
+              type="password"
+              name="password"
+              value={user.password}
+              onChange={handleField}
+              placeholder="Password"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+            />
+          </Col>
+          <Col className="px-0 py-1" md={5}>
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
+              confirm password
+            </label>
+            <input
+              type="password"
+              name="confirm_password"
+              value={user.confirm_password}
+              onChange={handleField}
+              placeholder="Password"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+            />
+          </Col>
+        </Row>
+        <Row className="w-10/12">
           <Col className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
               phone number
             </label>
 
@@ -140,26 +196,25 @@ const Register = () => {
               value={user.phone}
               onChange={handleField}
               placeholder="Phone Number"
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white drop-shadow-bluesmall"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
             />
           </Col>
         </Row>
         <Row className="w-10/12">
           <Col className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className="text-left font-pixel text-md text-white w-full ml-4">
               school
             </label>
-            <Selector
-              options={schools}
-              user={user}
-              field="school"
-              handleInput={handleInput}
+            <Schools
+              schools={schools}
+              school={user.school}
+              handleSchool={handleSchool}
             />
           </Col>
         </Row>
         <Row className="w-10/12 justify-between">
           <Col md={5} className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className=" text-left font-pixel text-md text-white w-full ml-4">
               grade
             </label>
             <Selector
@@ -170,7 +225,7 @@ const Register = () => {
             />
           </Col>
           <Col md={5} className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className=" text-left font-pixel text-md text-white w-full ml-4">
               major
             </label>
             <Selector
@@ -183,7 +238,7 @@ const Register = () => {
         </Row>
         <Row className=" w-10/12 justify-between flex">
           <Col md={3} className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className=" text-left font-pixel text-md text-white w-full ml-4">
               shirt size
             </label>
             <Selector
@@ -194,7 +249,7 @@ const Register = () => {
             />
           </Col>
           <Col md={3} className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className=" text-left font-pixel text-md text-white w-full ml-4">
               age
             </label>
             <Selector
@@ -205,7 +260,7 @@ const Register = () => {
             />
           </Col>
           <Col md={3} className="px-0 py-1">
-            <label className="drop-shadow-bluesmall text-left font-pixel text-md text-white w-full ml-4">
+            <label className=" text-left font-pixel text-md text-white w-full ml-4">
               gender
             </label>
             <Selector
@@ -216,10 +271,76 @@ const Register = () => {
             />
           </Col>
         </Row>
-
+        <Row className="w-10/12">
+          <Col className="px-0 py-1">
+            <label
+              htmlFor="resume"
+              className="text-left font-pixel text-md text-white w-full ml-4"
+            >
+              resume
+            </label>
+            <input
+              type="file"
+              name="resume"
+              id="resume"
+              value=""
+              onChange={(e: any) =>
+                setUser({ ...user, resume: e.target.files[0] })
+              }
+              className="hidden"
+            />
+            <label
+              htmlFor="resume"
+              className="!font-lexend p-2 text-white w-full bg-transparent !border-4 border-solid border-white !rounded-xl focus:border-white active:border-white"
+            >
+              Selected File: {user.resume?.name}{" "}
+            </label>
+          </Col>
+        </Row>
+        <Checkbox
+          user={user}
+          setUser={setUser}
+          propertyOfUser="marketing"
+          label="Do you consent to videos and photos being taken of you? These photos will be used for on our official Rosehack Instagram and other social media. If you have any concerns, please contact us at rosehackucr@gmail.com"
+        />
+        <hr className="border-0 h-1 w-10/12 opacity-100 m-0 p-0 bg-gradient-to-r from-white" />
+        <Checkbox
+          user={user}
+          setUser={setUser}
+          propertyOfUser="mlh"
+          label="Do you agree to the terms listed by the MLH code of conduct? Failure to comply to these terms may result in disqualification from the hackathon. If you have any questions, please contact MLH at hi@mlh.io or Rosehack at rosehackucr@gmail.com"
+        />
+        <hr className="border-0 h-1 w-10/12 opacity-100 m-0 p-0 bg-gradient-to-r from-white" />
+        <Checkbox
+          user={user}
+          setUser={setUser}
+          propertyOfUser="usa"
+          label="Will you be residing in the United States during the duration of the hackathon? The hackathon is hosted in the United States of America only."
+        />
+        <hr className="border-0 h-1 w-10/12 opacity-100 m-0 p-0 bg-gradient-to-r from-white" />
+        <Checkbox
+          user={user}
+          setUser={setUser}
+          propertyOfUser="in_person"
+          label="Will you be attending Rosehack 2023 in person? Note this event is only being hosted in-person. There will be no online or hybrid reccomendations unfortunately."
+        />
+        <hr className="border-0 h-1 w-10/12 opacity-100 m-0 p-0 bg-gradient-to-r from-white" />
+        <Checkbox
+          user={user}
+          setUser={setUser}
+          propertyOfUser="covid"
+          label="Will you be able to provide COVID vaccination status if asked? Rosehack board reserves the right to ask for COVID vaccination status during checkin."
+        />
+        <hr className="border-0 h-1 w-10/12 opacity-100 m-0 p-0 bg-gradient-to-r from-white" />
+        <Checkbox
+          user={user}
+          setUser={setUser}
+          propertyOfUser="dietary"
+          label="Do you eat meat?"
+        />
         <button
           onClick={handleSubmit}
-          className="px-5 py-2 hover:scale-105 rounded-xl m-5 bg-transparent border-4 border-white drop-shadow-bluesmall font-pixel text-md md:text-xl lg:text-2xl text-white text-center"
+          className="px-5 py-2 hover:scale-105 rounded-xl m-5 bg-transparent border-4 border-white  font-pixel text-md md:text-xl lg:text-2xl text-white text-center"
         >
           SUBMIT
         </button>

@@ -23,7 +23,7 @@ const Navigation = () => {
         </Nav.Link>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
-          className="mr-4 border-0"
+          className="mr-4 border-0 text-white"
         >
           <FaBars size="30" />
         </Navbar.Toggle>
@@ -52,6 +52,12 @@ const Navigation = () => {
               className="!text-xl text-center text-white mr-1 hover:underline decoration-4 underline-offset-8"
             >
               FAQ
+            </Nav.Link>
+            <Nav.Link
+              href="/register"
+              className="!text-xl text-center text-white mr-1 hover:underline decoration-4 underline-offset-8"
+            >
+              REGISTER
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

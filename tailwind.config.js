@@ -79,7 +79,7 @@ module.exports = {
         bluesmall: "0 0px 3px rgba(73,200,255, 1)",
         pink: "0 0px 9px rgba(252,122,213, 1)",
         pinksmall: "0 0px 3px rgba(252,122,213, 1)",
-        white: "0 0px 9px rgba(255,255,255, 1)",
+        white: "0 0px 9px rgba(255,255,255, .6)",
         whitebig: "0 0px 15px rgba(255,255,255, 1)",
         bigwhite: "0 0px 20px rgba(255,255,255, .3)",
         green: "0 0px 9px rgba(30, 255, 26, 1)",
@@ -87,7 +87,6 @@ module.exports = {
       },
       fontFamily: {
         lexend: ["Lexend"],
-        poppins: ["Poppins"],
         pixel: ["'Press Start 2P'", "cursive"],
       },
       backgroundImage: {
@@ -101,8 +100,8 @@ module.exports = {
           hover: "#F08DCF",
         },
         team: {
-          top: "#8C7DFF",
-          bottom: "#4FF4FF",
+          top: "#7C4FFF",
+          bottom: "#FF7777",
           green: "#C9F9BE",
           pink: "#F7CDE0",
           yellow: "#FCFBB6",
@@ -116,7 +115,7 @@ module.exports = {
         },
         sponsors: {
           top: "#CC00FF",
-          bottom: "#8C7DFF",
+          bottom: "#4FF4FF",
         },
         landing: {
           brightgreen: "#1EFF1A",
@@ -139,7 +138,7 @@ module.exports = {
           bottom: "#FC7AD5",
         },
         faq: {
-          top: "#CC00FF",
+          top: "#7000FF",
           bottom: "#FF8A65",
           middle: "#441797",
           question: "#F08DCF",

@@ -18,7 +18,7 @@ const Selector = ({ options, user, field, handleInput }: props) => {
         className="!font-lexend !flex justify-center items-center text-white after:!hidden w-full bg-transparent !border-4 border-solid border-white !rounded-xl focus:border-white active:border-white"
       >
         {user[field]}
-        <FaChevronDown />
+        <FaChevronDown className="mx-2" />
       </Dropdown.Toggle>
 
       <Dropdown.Menu className="w-full font-lexend active:bg-white">

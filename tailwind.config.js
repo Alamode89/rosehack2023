@@ -148,6 +148,9 @@ module.exports = {
           contact: "#26DDE1",
           email: "#48BDFF",
         },
+        register: {
+          required: "#94FFF9",
+        },
       },
       boxShadow: {
         hover: "0px 4px 10px #FFFFFF, 0px 4px 16px #FFFFFF",

@@ -6,6 +6,7 @@ import { schools } from "../components/data/schools";
 import Schools from "../components/Schools";
 import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
+import { MdOutlineFileUpload } from "react-icons/md";
 import axios from "axios";
 import { storage } from "../firebase";
 import { ref, uploadBytes } from "firebase/storage";
@@ -117,7 +118,8 @@ const Register = () => {
         <Row className="w-10/12 flex justify-between ">
           <Col md={5} className="px-0 py-1">
             <label className="text-left font-pixel text-md text-white w-full ml-4">
-              first name
+              <p className="p-0 m-0 text-register-required inline">*</p>first
+              name
             </label>
             <input
               type="text"
@@ -131,7 +133,7 @@ const Register = () => {
           </Col>
           <Col md={5} className="px-0 py-1">
             <label className="text-left font-pixel text-md text-white w-full ml-4">
-              last name
+              <p className="p-0 m-0 text-white inline">*</p>last name
             </label>
             <input
               type="text"
@@ -147,7 +149,7 @@ const Register = () => {
         <Row className="w-10/12 flex justify-start">
           <Col className="px-0 py-1">
             <label className="text-left font-pixel text-md text-white w-full ml-4">
-              email
+              <p className="p-0 m-0 text-red-500 inline">*</p>email
             </label>
             <input
               type="text"
@@ -281,7 +283,7 @@ const Register = () => {
               htmlFor="resume"
               className="text-left font-pixel text-md text-white w-full ml-4"
             >
-              resume
+              resume (optional)
             </label>
             <input
               type="file"
@@ -297,7 +299,12 @@ const Register = () => {
               htmlFor="resume"
               className="!font-lexend p-2 text-white w-full bg-transparent !border-4 border-solid border-white !rounded-xl focus:border-white active:border-white"
             >
-              Selected File: {user.resume?.name}{" "}
+              <div className="flex justify-between items-center">
+                <p className="hover:cursor-pointer p-0 m-0">
+                  Selected File: {user.resume?.name || "No File Selected"}
+                </p>
+                <MdOutlineFileUpload className="text-3xl m-0 p-0 hover:cursor-pointer" />
+              </div>
             </label>
           </Col>
         </Row>

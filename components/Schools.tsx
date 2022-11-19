@@ -29,7 +29,7 @@ const CustomToggle = React.forwardRef(
         }}
       >
         {children}
-        <FaChevronDown />
+        <FaChevronDown className="mx-2" />
       </a>
     </div>
   )
@@ -58,7 +58,8 @@ const CustomMenu = React.forwardRef(
         <ul className="list-unstyled h-[20vh] overflow-y-scroll">
           {React.Children.toArray(children).filter(
             (child: any) =>
-              !value || child.props.children.toLowerCase().startsWith(value)
+              !value ||
+              child.props.children.toLowerCase().startsWith(value.toLowerCase())
           )}
         </ul>
       </div>

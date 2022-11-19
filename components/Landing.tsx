@@ -16,7 +16,7 @@ const Landing = () => {
           draggable="false"
           width="55"
           height="50"
-          className="animate-pulse drop-shadow-pink"
+          className="drop-shadow-pink"
         />
         <FaCircle className="text-white hidden md:block" />
         <FaCircle className="text-white hidden md:block" />
@@ -26,7 +26,7 @@ const Landing = () => {
           draggable="false"
           width="55"
           height="50"
-          className="animate-pulse drop-shadow-pink"
+          className="drop-shadow-pink"
         />
         <FaCircle className="text-white hidden md:block" />
         <FaCircle className="text-white hidden md:block" />
@@ -36,7 +36,7 @@ const Landing = () => {
           draggable="false"
           width="55"
           height="50"
-          className="animate-pulse drop-shadow-pink"
+          className="drop-shadow-pink"
         />
         <FaCircle className="text-white hidden md:block" />
         <FaCircle className="text-white hidden md:block" />
@@ -46,7 +46,7 @@ const Landing = () => {
           draggable="false"
           width="55"
           height="50"
-          className="animate-pulse drop-shadow-pink"
+          className="drop-shadow-pink"
         />
       </div>
       <div className="relative m-auto bg-gradient-to-b from-landing-secondtop/50 to-landing-second-bottom/20 rounded-3xl text-center justify-center items-center md:w-7/12 w-10/12 p-4">
@@ -108,7 +108,7 @@ const Landing = () => {
           draggable="false"
           width="55"
           height="50"
-          className="animate-pulse drop-shadow-pink"
+          className="drop-shadow-pink"
         />
         <FaCircle className="text-white hidden md:block" />
         <FaCircle className="text-white  hidden md:block" />
@@ -118,7 +118,7 @@ const Landing = () => {
           draggable="false"
           width="55"
           height="50"
-          className="animate-pulse drop-shadow-pink"
+          className="drop-shadow-pink"
         />
         <FaCircle className="text-white hidden md:block" />
         <FaCircle className="text-white hidden md:block" />
@@ -128,7 +128,7 @@ const Landing = () => {
           draggable="false"
           width="55"
           height="50"
-          className="animate-pulse drop-shadow-pink"
+          className="drop-shadow-pink"
         />
         <FaCircle className="text-white hidden md:block" />
         <FaCircle className="text-white hidden md:block" />
@@ -138,7 +138,7 @@ const Landing = () => {
           draggable="false"
           width="55"
           height="50"
-          className="animate-pulse drop-shadow-pink"
+          className="drop-shadow-pink"
         />
       </div>
       <Image src={pixels} alt="" draggable="false" className="w-[100vw]" />

@@ -85,6 +85,7 @@ const Schools = ({ schools, school, handleSchool }: props) => {
             key={index}
             eventKey={index}
             onClick={() => handleSchool(school)}
+            className="hover:!bg-register-top hover:!text-white"
           >
             {school}
           </Dropdown.Item>

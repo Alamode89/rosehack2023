@@ -118,8 +118,7 @@ const Register = () => {
         <Row className="w-10/12 flex justify-between ">
           <Col md={5} className="px-0 py-1">
             <label className="text-left font-pixel text-md text-white w-full ml-4">
-              <p className="p-0 m-0 text-register-required inline">*</p>first
-              name
+              <p className="p-0 m-0 text-red-500 inline">*</p>first name
             </label>
             <input
               type="text"
@@ -133,7 +132,7 @@ const Register = () => {
           </Col>
           <Col md={5} className="px-0 py-1">
             <label className="text-left font-pixel text-md text-white w-full ml-4">
-              <p className="p-0 m-0 text-white inline">*</p>last name
+              <p className="p-0 m-0 text-red-500 inline">*</p>last name
             </label>
             <input
               type="text"
@@ -165,7 +164,7 @@ const Register = () => {
         <Row className="w-10/12 flex justify-between">
           <Col className="px-0 py-1" md={5}>
             <label className="text-left font-pixel text-md text-white w-full ml-4">
-              password
+              <p className="p-0 m-0 text-red-500 inline">*</p>password
             </label>
             <input
               type="password"
@@ -178,7 +177,7 @@ const Register = () => {
           </Col>
           <Col className="px-0 py-1" md={5}>
             <label className="text-left font-pixel text-md text-white w-full ml-4">
-              confirm password
+              <p className="p-0 m-0 text-red-500 inline">*</p>confirm password
             </label>
             <input
               type="password"
@@ -193,7 +192,7 @@ const Register = () => {
         <Row className="w-10/12">
           <Col className="px-0 py-1">
             <label className="text-left font-pixel text-md text-white w-full ml-4">
-              phone number
+              <p className="p-0 m-0 text-red-500 inline">*</p>phone number
             </label>
             <input
               type="tel"
@@ -209,7 +208,7 @@ const Register = () => {
         <Row className="w-10/12">
           <Col className="px-0 py-1">
             <label className="text-left font-pixel text-md text-white w-full ml-4">
-              school
+              <p className="p-0 m-0 text-red-500 inline">*</p>school
             </label>
             <Schools
               schools={schools}
@@ -221,7 +220,7 @@ const Register = () => {
         <Row className="w-10/12 justify-between">
           <Col md={5} className="px-0 py-1">
             <label className=" text-left font-pixel text-md text-white w-full ml-4">
-              grade
+              <p className="p-0 m-0 text-red-500 inline">*</p>grade
             </label>
             <Selector
               options={grades}
@@ -232,7 +231,7 @@ const Register = () => {
           </Col>
           <Col md={5} className="px-0 py-1">
             <label className=" text-left font-pixel text-md text-white w-full ml-4">
-              major
+              <p className="p-0 m-0 text-red-500 inline">*</p>major
             </label>
             <Selector
               options={majors}
@@ -245,7 +244,7 @@ const Register = () => {
         <Row className=" w-10/12 justify-between flex">
           <Col md={3} className="px-0 py-1">
             <label className=" text-left font-pixel text-md text-white w-full ml-4">
-              shirt size
+              <p className="p-0 m-0 text-red-500 inline">*</p>shirt size
             </label>
             <Selector
               options={shirts}
@@ -256,7 +255,7 @@ const Register = () => {
           </Col>
           <Col md={3} className="px-0 py-1">
             <label className=" text-left font-pixel text-md text-white w-full ml-4">
-              age
+              <p className="p-0 m-0 text-red-500 inline">*</p>age
             </label>
             <Selector
               options={ages}
@@ -267,7 +266,7 @@ const Register = () => {
           </Col>
           <Col md={3} className="px-0 py-1">
             <label className=" text-left font-pixel text-md text-white w-full ml-4">
-              gender
+              <p className="p-0 m-0 text-red-500 inline">*</p>gender
             </label>
             <Selector
               options={genders}

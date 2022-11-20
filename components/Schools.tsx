@@ -59,7 +59,7 @@ const CustomMenu = React.forwardRef(
           {React.Children.toArray(children).filter(
             (child: any) =>
               !value ||
-              child.props.children.toLowerCase().startsWith(value.toLowerCase())
+              child.props.children.toLowerCase().includes(value.toLowerCase())
           )}
         </ul>
       </div>

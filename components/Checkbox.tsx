@@ -7,11 +7,12 @@ interface props {
   propertyOfUser: string;
   label: string;
 }
-const Checkbox = ({ user, setUser, propertyOfUser, label }:props) => {
+const Checkbox = ({ user, setUser, propertyOfUser, label }: props) => {
   return (
     <Row className="w-10/12 flex justify-between">
       <Col className="px-0 py-1">
         <label className="text-left font-pixel text-md text-white w-11/12">
+          <p className="p-0 m-0 text-red-500 inline">*</p>
           {label}
         </label>
         <input

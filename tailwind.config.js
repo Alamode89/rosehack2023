@@ -137,6 +137,7 @@ module.exports = {
         register: {
           top: "#9E00FF",
           bottom: "#FC7AD5",
+          required: "#94FFF9",
         },
         faq: {
           top: "#7000FF",
@@ -147,9 +148,6 @@ module.exports = {
           noQuestion: "#01FFC2",
           contact: "#26DDE1",
           email: "#48BDFF",
-        },
-        register: {
-          required: "#94FFF9",
         },
       },
       boxShadow: {

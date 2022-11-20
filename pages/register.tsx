@@ -156,13 +156,8 @@ const Register = () => {
               value={user.email}
               onChange={handleField}
               maxLength={50}
-<<<<<<< HEAD
-              placeholder="email address"
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
-=======
               placeholder="Email Address"
               className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
->>>>>>> 8c5e8c28211cff899b280f14df8130a1838d5363
             />
           </Col>
         </Row>

@@ -100,7 +100,7 @@ const Register = () => {
         <div className="flex justify-center items-center  w-full relative">
           <div className="absolute top-1/2 left-3 -translate-y-1/2">
             <Link href="/">
-              <FaChevronLeft className="text-white text-5xl hover:!text-about-right hover:cursor-pointer" />
+              <FaChevronLeft className="text-white text-5xl hover:drop-shadow-white hover:scale-[1.2] ease-in-out duration-300 hover:cursor-pointer" />
             </Link>
           </div>
           <div className="font-pixel text-md md:text-xl lg:text-4xl p-0 text-white text-center w-full m-4">
@@ -127,7 +127,7 @@ const Register = () => {
               onChange={handleField}
               placeholder="First Name"
               maxLength={30}
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
           <Col md={5} className="px-0 py-1">
@@ -141,7 +141,7 @@ const Register = () => {
               onChange={handleField}
               placeholder="Last Name"
               maxLength={30}
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
         </Row>
@@ -157,7 +157,7 @@ const Register = () => {
               onChange={handleField}
               maxLength={50}
               placeholder="Email Address"
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
         </Row>
@@ -172,7 +172,7 @@ const Register = () => {
               value={user.password}
               onChange={handleField}
               placeholder="Password"
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
           <Col className="px-0 py-1" md={5}>
@@ -185,7 +185,7 @@ const Register = () => {
               value={user.confirm_password}
               onChange={handleField}
               placeholder="Password"
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
         </Row>
@@ -201,7 +201,7 @@ const Register = () => {
               onChange={handleField}
               maxLength={15}
               placeholder="Phone Number"
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
         </Row>
@@ -220,7 +220,7 @@ const Register = () => {
         <Row className="w-10/12 justify-between">
           <Col md={5} className="px-0 py-1">
             <label className=" text-left font-pixel text-md text-white w-full ml-4">
-              <p className="p-0 m-0 text-red-500 inline">*</p>grade
+              <p className="p-0 m-0 text-red-500 inline">*</p> grade
             </label>
             <Selector
               options={grades}

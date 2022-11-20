@@ -22,7 +22,7 @@ const Checkbox = ({ user, setUser, propertyOfUser, label }: props) => {
           onChange={() => {
             setUser({ ...user, [propertyOfUser]: !user[propertyOfUser] });
           }}
-          className="appearance-none w-5 h-5  checked:bg-white rounded-full !ring-0 !focus:ring-0 border-2 border-white"
+          className="appearance-none w-5 h-5  checked:bg-white rounded-full !ring-0 !focus:ring-0 border-2 border-white ease-in-out duration-300"
         />
       </Col>
     </Row>

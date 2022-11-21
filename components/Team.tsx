@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import dynamic from "next/dynamic";
 // import Profile from "./Profile";
 import { Row, Col } from "react-bootstrap";
@@ -36,13 +36,15 @@ const Team = () => {
         <Row className="flex justify-center items-initial">
           {profiles.map((profile, index) => (
             <Col lg={3} md={4} xs={6} key={index} className=" p-3">
-              <Profile
-                name={profile.name}
-                position={profile.position}
-                shadow={profile.shadow}
-                image={profile.image}
-                linkedin={profile.linkedin}
-              />
+              <Suspense fallback={`Loading...`}>
+                <Profile
+                  name={profile.name}
+                  position={profile.position}
+                  shadow={profile.shadow}
+                  image={profile.image}
+                  linkedin={profile.linkedin}
+                />
+              </Suspense>
             </Col>
           ))}
         </Row>

@@ -169,7 +169,7 @@ const Register = () => {
               value={user.email}
               onChange={handleField}
               maxLength={50}
-              placeholder="Email Address"
+              placeholder="email address"
               className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
@@ -184,7 +184,7 @@ const Register = () => {
               name="password"
               value={user.password}
               onChange={handleField}
-              placeholder="Password"
+              placeholder="password"
               className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
@@ -197,7 +197,7 @@ const Register = () => {
               name="confirm_password"
               value={user.confirm_password}
               onChange={handleField}
-              placeholder="Password"
+              placeholder="confirm password"
               className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
@@ -213,7 +213,7 @@ const Register = () => {
               value={user.phone}
               onChange={handleField}
               maxLength={15}
-              placeholder="Phone Number"
+              placeholder="phone number"
               className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>

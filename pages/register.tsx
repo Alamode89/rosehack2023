@@ -56,6 +56,19 @@ const Register = () => {
       return;
     }
 
+    if (
+      user.password.length < 8 ||
+      !user.password.match(/[A-Z]/) ||
+      !user.password.match(/[a-z]/) ||
+      !user.password.match(/[0-9]/)
+    ) {
+      setMessage(
+        "Password does not meet requirements. Please use at least 1 uppercase letter, 1 lowercase letter, and 1 number"
+      );
+      setVisible(true);
+      return;
+    }
+
     uploadBytes(ref(storage, `resumes/${user.resume.name}`), user.resume).then(
       (snapshot) => {
         console.log(snapshot);
@@ -343,12 +356,81 @@ const Register = () => {
           label="Will you be able to provide COVID vaccination status if asked? Rosehack board reserves the right to ask for COVID vaccination status during checkin."
         />
         <hr className="border-0 h-1 w-10/12 opacity-100 m-0 p-0 bg-gradient-to-r from-white" />
-        <Checkbox
-          user={user}
-          setUser={setUser}
-          propertyOfUser="dietary"
-          label="Do you eat meat?"
-        />
+        <Row className="w-10/12 flex justify-between">
+          <Col className="px-0 py-1">
+            <label
+              htmlFor="vegetarian"
+              className="text-left font-pixel text-md text-white w-11/12 hover:cursor-pointer"
+            >
+              <p className="p-0 m-0 text-red-500 inline">*</p>
+              Do you have any of the following dietary restrictions?
+            </label>
+            <label
+              htmlFor="vegetarian"
+              className="text-left font-pixel text-md text-white w-11/12 hover:cursor-pointer"
+            >
+              Vegetarian?
+            </label>
+            <input
+              type="checkbox"
+              name="vegetarian"
+              checked={user.vegetarian}
+              onChange={() => {
+                setUser({ ...user, vegetarian: !user["vegetarian"] });
+                console.log(user);
+              }}
+              className="appearance-none w-5 h-5 hover:cursor-pointer checked:bg-white rounded-full !ring-0 !focus:ring-0 border-2 border-white ease-in-out duration-300"
+            />
+
+            <label
+              htmlFor="vegan"
+              className="text-left font-pixel text-md text-white w-11/12 hover:cursor-pointer"
+            >
+              Vegan?
+            </label>
+            <input
+              type="checkbox"
+              name="vegan"
+              checked={user.vegan}
+              onChange={() => {
+                setUser({ ...user, vegan: !user["vegan"] });
+              }}
+              className="appearance-none w-5 h-5 hover:cursor-pointer checked:bg-white rounded-full !ring-0 !focus:ring-0 border-2 border-white ease-in-out duration-300"
+            />
+
+            <label
+              htmlFor="kosher"
+              className="text-left font-pixel text-md text-white w-11/12 hover:cursor-pointer"
+            >
+              Kosher?
+            </label>
+            <input
+              type="checkbox"
+              name="kosher"
+              checked={user.kosher}
+              onChange={() => {
+                setUser({ ...user, kosher: !user["kosher"] });
+              }}
+              className="appearance-none w-5 h-5 hover:cursor-pointer checked:bg-white rounded-full !ring-0 !focus:ring-0 border-2 border-white ease-in-out duration-300"
+            />
+
+            <label
+              htmlFor="hindu"
+              className="text-left font-pixel text-md text-white w-11/12 hover:cursor-pointer"
+            >
+              Hindu?
+            </label>
+            <input
+              type="checkbox"
+              name="hindu"
+              checked={user.hindu}
+              onChange={() => {
+                setUser({ ...user, hindu: !user["hindu"] });
+              }}
+              className="appearance-none w-5 h-5 hover:cursor-pointer checked:bg-white rounded-full !ring-0 !focus:ring-0 border-2 border-white ease-in-out duration-300"
+            />
+          </Col>
+        </Row>
         <button
           onClick={handleSubmit}
           className="px-5 py-2 hover:scale-105 rounded-xl m-5 bg-transparent border-4 border-white  font-pixel text-md md:text-xl lg:text-2xl text-white text-center"

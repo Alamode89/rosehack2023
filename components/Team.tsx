@@ -5,7 +5,9 @@ import { Row, Col } from "react-bootstrap";
 import { profiles, commitee } from "./data/team";
 import { FaCircle } from "react-icons/fa";
 
-const Profile = dynamic(() => import("../components/Profile"));
+const Profile = dynamic(() => import("../components/Profile"), {
+  suspense: true,
+});
 
 const Team = () => {
   return (

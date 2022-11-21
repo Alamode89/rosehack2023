@@ -220,7 +220,7 @@ const Register = () => {
         <Row className="w-10/12 justify-between">
           <Col md={5} className="px-0 py-1">
             <label className=" text-left font-pixel text-md text-white w-full ml-4">
-              <p className="p-0 m-0 text-red-500 inline">*</p> grade
+              <p className="p-0 m-0 text-red-500 inline">*</p>grade
             </label>
             <Selector
               options={grades}
@@ -288,6 +288,7 @@ const Register = () => {
               type="file"
               name="resume"
               id="resume"
+              accept="application/pdf"
               value=""
               onChange={(e: any) =>
                 setUser({ ...user, resume: e.target.files[0] })

@@ -1,6 +1,8 @@
 import React from "react";
-import Questions from "./Questions";
 import { FaCircle } from "react-icons/fa";
+import dynamic from "next/dynamic";
+
+const Questions = dynamic(() => import("../components/Questions"));
 
 const FAQ = () => {
   return (

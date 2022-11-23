@@ -24,7 +24,6 @@ const Register = () => {
   const [user, setUser] = useState<any>(data);
   const [visible, setVisible] = useState(false);
   const [message, setMessage] = useState("");
-  const [file, setFile] = useState("");
 
   const handleInput = (data: string, value: string) => {
     setUser({ ...user, [data]: value });
@@ -88,8 +87,6 @@ const Register = () => {
       return;
     }
 
-    setUser({ ...user, resume: file });
-
     const response = await axios.post("/api/createUser", user);
 
     if (response.status === 201) {
@@ -106,23 +103,31 @@ const Register = () => {
     delete user["confirm_password"];
 
     if (user.resume !== undefined) {
-      uploadBytes(
-        ref(storage, `resumes/${user.resume.name}`),
-        user.resume
-      ).then((snapshot) => {
-        setFile(snapshot.metadata.fullPath);
-        setUser({ ...user, resume: user.resume.name });
-      });
-    }
-
-    const responseTwo = await axios.post("/api/storeUser", user);
-
-    if (responseTwo.status !== 200) {
+      if (
+        user.resume.name.includes(user.first.toLowerCase()) &&
+        user.resume.name.includes(user.last.toLowerCase())
+      ) {
+        uploadBytes(ref(storage, `resumes/${user.resume.name}`), user.resume);
+        return;
+      }
       handleMessage(
-        "There was an registering your account, please contact rosehackucr@gmail.com for assistance!"
+        "Please include your first name and last name in the resume file name!"
       );
       return;
     }
+
+    const responseTwo = await axios.post("/api/storeUser", {
+      ...user,
+      resume: user.resume.name,
+    });
+
+    if (responseTwo.status !== 200) {
+      handleMessage(
+        "There was an error registering your account, please contact rosehackucr@gmail.com for assistance!"
+      );
+      return;
+    }
+
     handleMessage("Registration Successful!");
   };
 

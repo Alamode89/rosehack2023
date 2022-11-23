@@ -13,7 +13,7 @@ const Checkbox = ({ user, setUser, propertyOfUser, label }: props) => {
       <Col className="px-0 py-1">
         <label
           htmlFor={propertyOfUser}
-          className="text-left font-pixel text-md text-white w-11/12 hover:cursor-pointer"
+          className="text-left font-lexend text-md text-white w-11/12 hover:cursor-pointer"
           onClick={() => {
             setUser({ ...user, [propertyOfUser]: !user[propertyOfUser] });
           }}

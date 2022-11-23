@@ -41,6 +41,12 @@ const Register = () => {
     setUser({ ...user, school: school });
   };
 
+  const handleMessage = (message: string) => {
+    setMessage(message);
+    setVisible(true);
+    setUser({ ...user, password: "", confirm_password: "" });
+  };
+
   const handleSubmit = async () => {
     for (const key of Object.keys(user)) {
       if (
@@ -51,28 +57,37 @@ const Register = () => {
         if (key === "resume") {
           continue;
         }
-        setMessage("Please fill out all fields for registration!");
-        setVisible(true);
+        handleMessage("Please fill out all fields for registration!");
         return;
       }
     }
 
     if (user.password !== user.confirm_password) {
-      setMessage("Passwords do not match! Please re-enter password!");
-      setVisible(true);
+      handleMessage("Passwords do not match! Please re-enter password!");
       return;
     }
 
+    if (
+      !user.mlh ||
+      !user.usa ||
+      !user.marketing ||
+      !user.in_person ||
+      !user.covid
+    ) {
+      handleMessage(
+        "Please check all the boxes before submitting, you will be required to meet the following guidelines in order to participate!"
+      );
+      return;
+    }
     if (
       user.password.length < 8 ||
       !user.password.match(/[A-Z]/) ||
       !user.password.match(/[a-z]/) ||
       !user.password.match(/[0-9]/)
     ) {
-      setMessage(
+      handleMessage(
         "Password does not meet requirements. Please use at least 1 uppercase letter, 1 lowercase letter, and 1 number"
       );
-      setVisible(true);
       return;
     }
 
@@ -82,14 +97,12 @@ const Register = () => {
     const response = await axios.post("/api/createUser", user);
 
     if (response.status === 201) {
-      setMessage(
+      handleMessage(
         "There is an account already registered under this email address!"
       );
-      setVisible(true);
       return;
     } else if (response.status !== 200) {
-      setMessage("Internal Server Error");
-      setVisible(true);
+      handleMessage("Internal Server Error");
       return;
     }
 
@@ -110,15 +123,12 @@ const Register = () => {
     const responseTwo = await axios.post("/api/storeUser", user);
 
     if (responseTwo.status !== 200) {
-      setMessage(
+      handleMessage(
         "There was an registering your account, please contact rosehackucr@gmail.com for assistance!"
       );
-      setVisible(true);
       return;
     }
-
-    setMessage("Registration Successful!");
-    setVisible(true);
+    handleMessage("Registration Successful!");
   };
 
   return (
@@ -339,7 +349,10 @@ const Register = () => {
           user={user}
           setUser={setUser}
           propertyOfUser="marketing"
-          label="Do you consent to videos and photos being taken of you? These photos will be used for on our official Rosehack Instagram and other social media. If you have any concerns, please contact us at rosehackucr@gmail.com"
+          label={`I, ${
+            user.first + " " + user.last
+          } give the University of California, Riverside, the absolute right and permission to use my photograph/video in its promotional materials and publicity efforts. I understand that the photographs/video may be used in a publication, print ad, direct-mail piece, electronic media (e.g. video, CD-ROM, Internet/WWW, UCTV), or other form of promotion. I release the University, the photographer/videographer, their officers, employees, agents, and designees from liability for any violation of any personal or proprietary right I may have in connection with such use. I am 18 years of age or older. By checking the following box, I agree to the above terms.
+          `}
         />
         <hr className="border-0 h-1 w-10/12 opacity-100 m-0 p-0 bg-gradient-to-r from-white" />
         <Checkbox

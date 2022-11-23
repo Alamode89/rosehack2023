@@ -103,7 +103,17 @@ const Register = () => {
     delete user["confirm_password"];
 
     if (user.resume !== undefined) {
-      uploadBytes(ref(storage, `resumes/${user.resume.name}`), user.resume);
+      if (
+        user.resume.name.includes(user.first.toLowerCase()) &&
+        user.resume.name.includes(user.last.toLowerCase())
+      ) {
+        uploadBytes(ref(storage, `resumes/${user.resume.name}`), user.resume);
+        return;
+      }
+      handleMessage(
+        "Please include your first name and last name in the resume file name!"
+      );
+      return;
     }
 
     const responseTwo = await axios.post("/api/storeUser", {

@@ -27,13 +27,10 @@ const Register = () => {
   const [file, setFile] = useState("");
 
   const handleInput = (data: string, value: string) => {
-    console.log(data, value);
     setUser({ ...user, [data]: value });
-    console.log(user);
   };
 
   const handleField = (e: any) => {
-    console.log(e.target.name, e.target.value);
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
@@ -91,7 +88,6 @@ const Register = () => {
       return;
     }
 
-    console.log(user);
     setUser({ ...user, resume: file });
 
     const response = await axios.post("/api/createUser", user);
@@ -114,7 +110,6 @@ const Register = () => {
         ref(storage, `resumes/${user.resume.name}`),
         user.resume
       ).then((snapshot) => {
-        console.log(snapshot);
         setFile(snapshot.metadata.fullPath);
         setUser({ ...user, resume: user.resume.name });
       });
@@ -387,14 +382,18 @@ const Register = () => {
           <Col className="px-0 py-1">
             <label
               htmlFor="vegetarian"
-              className="text-left font-pixel text-md text-white w-11/12 hover:cursor-pointer"
+              className="text-left font-lexend text-md text-white w-11/12 hover:cursor-pointer"
             >
               <p className="p-0 m-0 text-red-500 inline">*</p>
-              Do you have any of the following dietary restrictions?
+              Do you have any of the following dietary restrictions? (leave
+              empty if none)
             </label>
             <label
               htmlFor="vegetarian"
-              className="text-left font-pixel text-md text-white w-11/12 hover:cursor-pointer"
+              className="text-left font-lexend text-md text-white w-11/12 hover:cursor-pointer"
+              onClick={() => {
+                setUser({ ...user, vegetarian: !user["vegetarian"] });
+              }}
             >
               Vegetarian?
             </label>
@@ -404,14 +403,16 @@ const Register = () => {
               checked={user.vegetarian}
               onChange={() => {
                 setUser({ ...user, vegetarian: !user["vegetarian"] });
-                console.log(user);
               }}
               className="appearance-none w-5 h-5 hover:cursor-pointer checked:bg-white rounded-full !ring-0 !focus:ring-0 border-2 border-white ease-in-out duration-300"
             />
 
             <label
               htmlFor="vegan"
-              className="text-left font-pixel text-md text-white w-11/12 hover:cursor-pointer"
+              className="text-left font-lexend text-md text-white w-11/12 hover:cursor-pointer"
+              onClick={() => {
+                setUser({ ...user, vegan: !user["vegan"] });
+              }}
             >
               Vegan?
             </label>
@@ -427,7 +428,10 @@ const Register = () => {
 
             <label
               htmlFor="kosher"
-              className="text-left font-pixel text-md text-white w-11/12 hover:cursor-pointer"
+              className="text-left font-lexend text-md text-white w-11/12 hover:cursor-pointer"
+              onClick={() => {
+                setUser({ ...user, kosher: !user["kosher"] });
+              }}
             >
               Kosher?
             </label>
@@ -443,7 +447,10 @@ const Register = () => {
 
             <label
               htmlFor="hindu"
-              className="text-left font-pixel text-md text-white w-11/12 hover:cursor-pointer"
+              className="text-left font-lexend text-md text-white w-11/12 hover:cursor-pointer"
+              onClick={() => {
+                setUser({ ...user, hindu: !user["hindu"] });
+              }}
             >
               Hindu?
             </label>

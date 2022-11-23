@@ -49,7 +49,7 @@ export const data = {
   gender: "Choose:",
   shirt: "Choose:",
   major: "Choose:",
-  resume: null,
+  resume: undefined,
   marketing: false,
   vegetarian: false,
   kosher: false,

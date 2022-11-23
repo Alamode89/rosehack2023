@@ -41,9 +41,16 @@ const Register = () => {
     setUser({ ...user, school: school });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     for (const key of Object.keys(user)) {
-      if (user[key] === "" || user[key] === "Choose:") {
+      if (
+        user[key] === "" ||
+        user[key] === "Choose:" ||
+        user[key] === undefined
+      ) {
+        if (key === "resume") {
+          continue;
+        }
         setMessage("Please fill out all fields for registration!");
         setVisible(true);
         return;
@@ -69,42 +76,49 @@ const Register = () => {
       return;
     }
 
-    uploadBytes(ref(storage, `resumes/${user.resume.name}`), user.resume).then(
-      (snapshot) => {
-        console.log(snapshot);
-        setFile(snapshot.metadata.fullPath);
-      }
-    );
-
+    console.log(user);
     setUser({ ...user, resume: file });
 
-    axios
-      .post("/api/register", user)
-      .then((response) => {
-        if (response.status === 200) {
-          setMessage(
-            "Registration Successful! Thank you for joining Rosehack 2023!"
-          );
-          setVisible(true);
-          return;
-        }
-      })
-      .catch((error) => {
-        if (error.response.status === 400) {
-          setMessage(
-            "An account with this email already exists! Please use a different email!"
-          );
-          setVisible(true);
-          return;
-        } else if (error.response.status === 500) {
-          console.log(error);
-          setMessage(
-            `Internal Server Error: please contact rosehackucr@gmail.com`
-          );
-          setVisible(true);
-          return;
-        }
+    const response = await axios.post("/api/createUser", user);
+
+    if (response.status === 201) {
+      setMessage(
+        "There is an account already registered under this email address!"
+      );
+      setVisible(true);
+      return;
+    } else if (response.status !== 200) {
+      setMessage("Internal Server Error");
+      setVisible(true);
+      return;
+    }
+
+    delete user["password"];
+    delete user["confirm_password"];
+
+    if (user.resume !== undefined) {
+      uploadBytes(
+        ref(storage, `resumes/${user.resume.name}`),
+        user.resume
+      ).then((snapshot) => {
+        console.log(snapshot);
+        setFile(snapshot.metadata.fullPath);
+        setUser({ ...user, resume: user.resume.name });
       });
+    }
+
+    const responseTwo = await axios.post("/api/storeUser", user);
+
+    if (responseTwo.status !== 200) {
+      setMessage(
+        "There was an registering your account, please contact rosehackucr@gmail.com for assistance!"
+      );
+      setVisible(true);
+      return;
+    }
+
+    setMessage("Registration Successful!");
+    setVisible(true);
   };
 
   return (

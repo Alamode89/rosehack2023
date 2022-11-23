@@ -1,6 +1,11 @@
-import React from "react";
-import Questions from "./Questions";
+import React, { Suspense } from "react";
 import { FaCircle } from "react-icons/fa";
+import dynamic from "next/dynamic";
+// import Questions from "./Questions";
+
+const Questions = dynamic(() => import("../components/Questions"), {
+  suspense: true,
+});
 
 const FAQ = () => {
   return (
@@ -29,7 +34,9 @@ const FAQ = () => {
           <img src="PINK_HEART1.png" className="h-10 w-10 hidden md:flex" />
         </div>
         <div className="w-full flex justify-center items-center flex-col">
-          <Questions />
+          <Suspense fallback={`Loading...`}>
+            <Questions />
+          </Suspense>
         </div>
 
         <div className="text-center p-0 pt-4">

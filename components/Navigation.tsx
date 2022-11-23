@@ -11,7 +11,7 @@ const Navigation = () => {
         expand="md"
         fixed="top"
       >
-        <Nav.Link href="/">
+        <Nav.Link href="/#">
           <Image
             src="/ROSE_HACK.png"
             height={70}

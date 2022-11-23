@@ -131,7 +131,7 @@ const Register = () => {
       <div className="my-24 border-4 rounded-3xl drop-shadow-blue border-white items-center flex flex-col w-10/12">
         <div className="flex justify-center items-center  w-full relative">
           <div className="absolute top-1/2 left-3 -translate-y-1/2">
-            <Link href="/">
+            <Link href="/#">
               <FaChevronLeft className="text-white md:text-5xl text-3xl hover:drop-shadow-white hover:scale-[1.2] ease-in-out duration-300 hover:cursor-pointer" />
             </Link>
           </div>

@@ -41,9 +41,16 @@ const Register = () => {
     setUser({ ...user, school: school });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     for (const key of Object.keys(user)) {
-      if (user[key] === "" || user[key] === "Choose:") {
+      if (
+        user[key] === "" ||
+        user[key] === "Choose:" ||
+        user[key] === undefined
+      ) {
+        if (key === "resume") {
+          continue;
+        }
         setMessage("Please fill out all fields for registration!");
         setVisible(true);
         return;
@@ -56,42 +63,62 @@ const Register = () => {
       return;
     }
 
-    uploadBytes(ref(storage, `resumes/${user.resume.name}`), user.resume).then(
-      (snapshot) => {
-        console.log(snapshot);
-        setFile(snapshot.metadata.fullPath);
-      }
-    );
+    if (
+      user.password.length < 8 ||
+      !user.password.match(/[A-Z]/) ||
+      !user.password.match(/[a-z]/) ||
+      !user.password.match(/[0-9]/)
+    ) {
+      setMessage(
+        "Password does not meet requirements. Please use at least 1 uppercase letter, 1 lowercase letter, and 1 number"
+      );
+      setVisible(true);
+      return;
+    }
 
+    console.log(user);
     setUser({ ...user, resume: file });
 
-    axios
-      .post("/api/register", user)
-      .then((response) => {
-        if (response.status === 200) {
-          setMessage(
-            "Registration Successful! Thank you for joining Rosehack 2023!"
-          );
-          setVisible(true);
-          return;
-        }
-      })
-      .catch((error) => {
-        if (error.response.status === 400) {
-          setMessage(
-            "An account with this email already exists! Please use a different email!"
-          );
-          setVisible(true);
-          return;
-        } else if (error.response.status === 500) {
-          console.log(error);
-          setMessage(
-            `Internal Server Error: please contact rosehackucr@gmail.com`
-          );
-          setVisible(true);
-          return;
-        }
+    const response = await axios.post("/api/createUser", user);
+
+    if (response.status === 201) {
+      setMessage(
+        "There is an account already registered under this email address!"
+      );
+      setVisible(true);
+      return;
+    } else if (response.status !== 200) {
+      setMessage("Internal Server Error");
+      setVisible(true);
+      return;
+    }
+
+    delete user["password"];
+    delete user["confirm_password"];
+
+    if (user.resume !== undefined) {
+      uploadBytes(
+        ref(storage, `resumes/${user.resume.name}`),
+        user.resume
+      ).then((snapshot) => {
+        console.log(snapshot);
+        setFile(snapshot.metadata.fullPath);
+        setUser({ ...user, resume: user.resume.name });
       });
+    }
+
+    const responseTwo = await axios.post("/api/storeUser", user);
+
+    if (responseTwo.status !== 200) {
+      setMessage(
+        "There was an registering your account, please contact rosehackucr@gmail.com for assistance!"
+      );
+      setVisible(true);
+      return;
+    }
+
+    setMessage("Registration Successful!");
+    setVisible(true);
   };
 
   return (
@@ -156,7 +183,7 @@ const Register = () => {
               value={user.email}
               onChange={handleField}
               maxLength={50}
-              placeholder="Email Address"
+              placeholder="email address"
               className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
@@ -171,7 +198,7 @@ const Register = () => {
               name="password"
               value={user.password}
               onChange={handleField}
-              placeholder="Password"
+              placeholder="password"
               className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
@@ -184,7 +211,7 @@ const Register = () => {
               name="confirm_password"
               value={user.confirm_password}
               onChange={handleField}
-              placeholder="Password"
+              placeholder="confirm password"
               className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
@@ -200,7 +227,7 @@ const Register = () => {
               value={user.phone}
               onChange={handleField}
               maxLength={15}
-              placeholder="Phone Number"
+              placeholder="phone number"
               className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
@@ -220,7 +247,7 @@ const Register = () => {
         <Row className="w-10/12 justify-between">
           <Col md={5} className="px-0 py-1">
             <label className=" text-left font-pixel text-md text-white w-full ml-4">
-              <p className="p-0 m-0 text-red-500 inline">*</p> grade
+              <p className="p-0 m-0 text-red-500 inline">*</p>grade
             </label>
             <Selector
               options={grades}
@@ -288,6 +315,7 @@ const Register = () => {
               type="file"
               name="resume"
               id="resume"
+              accept="application/pdf"
               value=""
               onChange={(e: any) =>
                 setUser({ ...user, resume: e.target.files[0] })
@@ -342,12 +370,81 @@ const Register = () => {
           label="Will you be able to provide COVID vaccination status if asked? Rosehack board reserves the right to ask for COVID vaccination status during checkin."
         />
         <hr className="border-0 h-1 w-10/12 opacity-100 m-0 p-0 bg-gradient-to-r from-white" />
-        <Checkbox
-          user={user}
-          setUser={setUser}
-          propertyOfUser="dietary"
-          label="Do you eat meat?"
-        />
+        <Row className="w-10/12 flex justify-between">
+          <Col className="px-0 py-1">
+            <label
+              htmlFor="vegetarian"
+              className="text-left font-pixel text-md text-white w-11/12 hover:cursor-pointer"
+            >
+              <p className="p-0 m-0 text-red-500 inline">*</p>
+              Do you have any of the following dietary restrictions?
+            </label>
+            <label
+              htmlFor="vegetarian"
+              className="text-left font-pixel text-md text-white w-11/12 hover:cursor-pointer"
+            >
+              Vegetarian?
+            </label>
+            <input
+              type="checkbox"
+              name="vegetarian"
+              checked={user.vegetarian}
+              onChange={() => {
+                setUser({ ...user, vegetarian: !user["vegetarian"] });
+                console.log(user);
+              }}
+              className="appearance-none w-5 h-5 hover:cursor-pointer checked:bg-white rounded-full !ring-0 !focus:ring-0 border-2 border-white ease-in-out duration-300"
+            />
+
+            <label
+              htmlFor="vegan"
+              className="text-left font-pixel text-md text-white w-11/12 hover:cursor-pointer"
+            >
+              Vegan?
+            </label>
+            <input
+              type="checkbox"
+              name="vegan"
+              checked={user.vegan}
+              onChange={() => {
+                setUser({ ...user, vegan: !user["vegan"] });
+              }}
+              className="appearance-none w-5 h-5 hover:cursor-pointer checked:bg-white rounded-full !ring-0 !focus:ring-0 border-2 border-white ease-in-out duration-300"
+            />
+
+            <label
+              htmlFor="kosher"
+              className="text-left font-pixel text-md text-white w-11/12 hover:cursor-pointer"
+            >
+              Kosher?
+            </label>
+            <input
+              type="checkbox"
+              name="kosher"
+              checked={user.kosher}
+              onChange={() => {
+                setUser({ ...user, kosher: !user["kosher"] });
+              }}
+              className="appearance-none w-5 h-5 hover:cursor-pointer checked:bg-white rounded-full !ring-0 !focus:ring-0 border-2 border-white ease-in-out duration-300"
+            />
+
+            <label
+              htmlFor="hindu"
+              className="text-left font-pixel text-md text-white w-11/12 hover:cursor-pointer"
+            >
+              Hindu?
+            </label>
+            <input
+              type="checkbox"
+              name="hindu"
+              checked={user.hindu}
+              onChange={() => {
+                setUser({ ...user, hindu: !user["hindu"] });
+              }}
+              className="appearance-none w-5 h-5 hover:cursor-pointer checked:bg-white rounded-full !ring-0 !focus:ring-0 border-2 border-white ease-in-out duration-300"
+            />
+          </Col>
+        </Row>
         <button
           onClick={handleSubmit}
           className="px-5 py-2 hover:scale-105 rounded-xl m-5 bg-transparent border-4 border-white  font-pixel text-md md:text-xl lg:text-2xl text-white text-center"

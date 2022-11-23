@@ -11,7 +11,13 @@ const Checkbox = ({ user, setUser, propertyOfUser, label }: props) => {
   return (
     <Row className="w-10/12 flex justify-between">
       <Col className="px-0 py-1">
-        <label className="text-left font-pixel text-md text-white w-11/12">
+        <label
+          htmlFor={propertyOfUser}
+          className="text-left font-pixel text-md text-white w-11/12 hover:cursor-pointer"
+          onClick={() => {
+            setUser({ ...user, [propertyOfUser]: !user[propertyOfUser] });
+          }}
+        >
           <p className="p-0 m-0 text-red-500 inline">*</p>
           {label}
         </label>
@@ -22,7 +28,7 @@ const Checkbox = ({ user, setUser, propertyOfUser, label }: props) => {
           onChange={() => {
             setUser({ ...user, [propertyOfUser]: !user[propertyOfUser] });
           }}
-          className="appearance-none w-5 h-5  checked:bg-white rounded-full !ring-0 !focus:ring-0 border-2 border-white ease-in-out duration-300"
+          className="appearance-none w-5 h-5 hover:cursor-pointer checked:bg-white rounded-full !ring-0 !focus:ring-0 border-2 border-white ease-in-out duration-300"
         />
       </Col>
     </Row>

@@ -8,7 +8,10 @@ import pinkHeart from "../public/PINK_HEART1.png";
 import pixels from "../public/pixels_landing.png";
 const Landing = () => {
   return (
-    <div className="flex flex-col bg-gradient-to-br from-landing-bottom to-landing-bottompink w-full justify-center item-center p-0 m-0">
+    <section
+      id=""
+      className="flex flex-col bg-gradient-to-br from-landing-bottom to-landing-bottompink w-full justify-center item-center p-0 m-0"
+    >
       <div className="drop-shadow-white bg-gradient-radial w-11/12 md:w-7/12 flex pt-12 pb-3 m-auto text-center items-center justify-evenly">
         <Image
           src={pinkHeart}
@@ -142,7 +145,7 @@ const Landing = () => {
         />
       </div>
       <Image src={pixels} alt="" draggable="false" className="w-[100vw]" />
-    </div>
+    </section>
   );
 };
 

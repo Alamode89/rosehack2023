@@ -6,6 +6,7 @@ import { schools } from "../components/data/schools";
 import Schools from "../components/Schools";
 import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
+import { MdOutlineFileUpload } from "react-icons/md";
 import axios from "axios";
 import { storage } from "../firebase";
 import { ref, uploadBytes } from "firebase/storage";
@@ -26,13 +27,10 @@ const Register = () => {
   const [file, setFile] = useState("");
 
   const handleInput = (data: string, value: string) => {
-    console.log(data, value);
     setUser({ ...user, [data]: value });
-    console.log(user);
   };
 
   const handleField = (e: any) => {
-    console.log(e.target.name, e.target.value);
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
@@ -40,57 +38,92 @@ const Register = () => {
     setUser({ ...user, school: school });
   };
 
-  const handleSubmit = () => {
+  const handleMessage = (message: string) => {
+    setMessage(message);
+    setVisible(true);
+    setUser({ ...user, password: "", confirm_password: "" });
+  };
+
+  const handleSubmit = async () => {
     for (const key of Object.keys(user)) {
-      if (user[key] === "" || user[key] === "Choose:") {
-        setMessage("Please fill out all fields for registration!");
-        setVisible(true);
+      if (
+        user[key] === "" ||
+        user[key] === "Choose:" ||
+        user[key] === undefined
+      ) {
+        if (key === "resume") {
+          continue;
+        }
+        handleMessage("Please fill out all fields for registration!");
         return;
       }
     }
 
     if (user.password !== user.confirm_password) {
-      setMessage("Passwords do not match! Please re-enter password!");
-      setVisible(true);
+      handleMessage("Passwords do not match! Please re-enter password!");
       return;
     }
 
-    uploadBytes(ref(storage, `resumes/${user.resume.name}`), user.resume).then(
-      (snapshot) => {
-        console.log(snapshot);
-        setFile(snapshot.metadata.fullPath);
-      }
-    );
+    if (
+      !user.mlh ||
+      !user.usa ||
+      !user.marketing ||
+      !user.in_person ||
+      !user.covid
+    ) {
+      handleMessage(
+        "Please check all the boxes before submitting, you will be required to meet the following guidelines in order to participate!"
+      );
+      return;
+    }
+    if (
+      user.password.length < 8 ||
+      !user.password.match(/[A-Z]/) ||
+      !user.password.match(/[a-z]/) ||
+      !user.password.match(/[0-9]/)
+    ) {
+      handleMessage(
+        "Password does not meet requirements. Please use at least 1 uppercase letter, 1 lowercase letter, and 1 number"
+      );
+      return;
+    }
 
     setUser({ ...user, resume: file });
 
-    axios
-      .post("/api/register", user)
-      .then((response) => {
-        if (response.status === 200) {
-          setMessage(
-            "Registration Successful! Thank you for joining Rosehack 2023!"
-          );
-          setVisible(true);
-          return;
-        }
-      })
-      .catch((error) => {
-        if (error.response.status === 400) {
-          setMessage(
-            "An account with this email already exists! Please use a different email!"
-          );
-          setVisible(true);
-          return;
-        } else if (error.response.status === 500) {
-          console.log(error);
-          setMessage(
-            `Internal Server Error: please contact rosehackucr@gmail.com`
-          );
-          setVisible(true);
-          return;
-        }
+    const response = await axios.post("/api/createUser", user);
+
+    if (response.status === 201) {
+      handleMessage(
+        "There is an account already registered under this email address!"
+      );
+      return;
+    } else if (response.status !== 200) {
+      handleMessage("Internal Server Error");
+      return;
+    }
+
+    delete user["password"];
+    delete user["confirm_password"];
+
+    if (user.resume !== undefined) {
+      uploadBytes(
+        ref(storage, `resumes/${user.resume.name}`),
+        user.resume
+      ).then((snapshot) => {
+        setFile(snapshot.metadata.fullPath);
+        setUser({ ...user, resume: user.resume.name });
       });
+    }
+
+    const responseTwo = await axios.post("/api/storeUser", user);
+
+    if (responseTwo.status !== 200) {
+      handleMessage(
+        "There was an registering your account, please contact rosehackucr@gmail.com for assistance!"
+      );
+      return;
+    }
+    handleMessage("Registration Successful!");
   };
 
   return (
@@ -98,8 +131,8 @@ const Register = () => {
       <div className="my-24 border-4 rounded-3xl drop-shadow-blue border-white items-center flex flex-col w-10/12">
         <div className="flex justify-center items-center  w-full relative">
           <div className="absolute top-1/2 left-3 -translate-y-1/2">
-            <Link href="/">
-              <FaChevronLeft className="text-white text-5xl hover:!text-about-right hover:cursor-pointer" />
+            <Link href="/#">
+              <FaChevronLeft className="text-white md:text-5xl text-3xl hover:drop-shadow-white hover:scale-[1.2] ease-in-out duration-300 hover:cursor-pointer" />
             </Link>
           </div>
           <div className="font-pixel text-md md:text-xl lg:text-4xl p-0 text-white text-center w-full m-4">
@@ -117,37 +150,37 @@ const Register = () => {
         <Row className="w-10/12 flex justify-between ">
           <Col md={5} className="px-0 py-1">
             <label className="text-left font-pixel text-md text-white w-full ml-4">
-              first name
+              <p className="p-0 m-0 text-red-500 inline">*</p>first name
             </label>
             <input
               type="text"
               name="first"
               value={user.first}
               onChange={handleField}
-              placeholder="First Name"
+              placeholder="first name"
               maxLength={30}
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
           <Col md={5} className="px-0 py-1">
             <label className="text-left font-pixel text-md text-white w-full ml-4">
-              last name
+              <p className="p-0 m-0 text-red-500 inline">*</p>last name
             </label>
             <input
               type="text"
               name="last"
               value={user.last}
               onChange={handleField}
-              placeholder="Last Name"
+              placeholder="last name"
               maxLength={30}
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
         </Row>
         <Row className="w-10/12 flex justify-start">
           <Col className="px-0 py-1">
             <label className="text-left font-pixel text-md text-white w-full ml-4">
-              email
+              <p className="p-0 m-0 text-red-500 inline">*</p>email
             </label>
             <input
               type="text"
@@ -155,43 +188,43 @@ const Register = () => {
               value={user.email}
               onChange={handleField}
               maxLength={50}
-              placeholder="Email Address"
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+              placeholder="email address"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
         </Row>
         <Row className="w-10/12 flex justify-between">
           <Col className="px-0 py-1" md={5}>
             <label className="text-left font-pixel text-md text-white w-full ml-4">
-              password
+              <p className="p-0 m-0 text-red-500 inline">*</p>password
             </label>
             <input
               type="password"
               name="password"
               value={user.password}
               onChange={handleField}
-              placeholder="Password"
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+              placeholder="password"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
           <Col className="px-0 py-1" md={5}>
             <label className="text-left font-pixel text-md text-white w-full ml-4">
-              confirm password
+              <p className="p-0 m-0 text-red-500 inline">*</p>confirm password
             </label>
             <input
               type="password"
               name="confirm_password"
               value={user.confirm_password}
               onChange={handleField}
-              placeholder="Password"
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+              placeholder="confirm password"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
         </Row>
         <Row className="w-10/12">
           <Col className="px-0 py-1">
             <label className="text-left font-pixel text-md text-white w-full ml-4">
-              phone number
+              <p className="p-0 m-0 text-red-500 inline">*</p>phone number
             </label>
             <input
               type="tel"
@@ -199,15 +232,15 @@ const Register = () => {
               value={user.phone}
               onChange={handleField}
               maxLength={15}
-              placeholder="Phone Number"
-              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white"
+              placeholder="phone number"
+              className="font-lexend text-white rounded-xl p-2 w-full bg-transparent border-4 border-white focus:outline-0 focus:drop-shadow-whitesmall focus:scale-[1.01] ease-in-out duration-300"
             />
           </Col>
         </Row>
         <Row className="w-10/12">
           <Col className="px-0 py-1">
             <label className="text-left font-pixel text-md text-white w-full ml-4">
-              school
+              <p className="p-0 m-0 text-red-500 inline">*</p>school
             </label>
             <Schools
               schools={schools}
@@ -219,7 +252,7 @@ const Register = () => {
         <Row className="w-10/12 justify-between">
           <Col md={5} className="px-0 py-1">
             <label className=" text-left font-pixel text-md text-white w-full ml-4">
-              grade
+              <p className="p-0 m-0 text-red-500 inline">*</p>grade
             </label>
             <Selector
               options={grades}
@@ -230,7 +263,7 @@ const Register = () => {
           </Col>
           <Col md={5} className="px-0 py-1">
             <label className=" text-left font-pixel text-md text-white w-full ml-4">
-              major
+              <p className="p-0 m-0 text-red-500 inline">*</p>major
             </label>
             <Selector
               options={majors}
@@ -243,7 +276,7 @@ const Register = () => {
         <Row className=" w-10/12 justify-between flex">
           <Col md={3} className="px-0 py-1">
             <label className=" text-left font-pixel text-md text-white w-full ml-4">
-              shirt size
+              <p className="p-0 m-0 text-red-500 inline">*</p>shirt size
             </label>
             <Selector
               options={shirts}
@@ -254,7 +287,7 @@ const Register = () => {
           </Col>
           <Col md={3} className="px-0 py-1">
             <label className=" text-left font-pixel text-md text-white w-full ml-4">
-              age
+              <p className="p-0 m-0 text-red-500 inline">*</p>age
             </label>
             <Selector
               options={ages}
@@ -265,7 +298,7 @@ const Register = () => {
           </Col>
           <Col md={3} className="px-0 py-1">
             <label className=" text-left font-pixel text-md text-white w-full ml-4">
-              gender
+              <p className="p-0 m-0 text-red-500 inline">*</p>gender
             </label>
             <Selector
               options={genders}
@@ -281,12 +314,13 @@ const Register = () => {
               htmlFor="resume"
               className="text-left font-pixel text-md text-white w-full ml-4"
             >
-              resume
+              resume (optional)
             </label>
             <input
               type="file"
               name="resume"
               id="resume"
+              accept="application/pdf"
               value=""
               onChange={(e: any) =>
                 setUser({ ...user, resume: e.target.files[0] })
@@ -297,7 +331,12 @@ const Register = () => {
               htmlFor="resume"
               className="!font-lexend p-2 text-white w-full bg-transparent !border-4 border-solid border-white !rounded-xl focus:border-white active:border-white"
             >
-              Selected File: {user.resume?.name}{" "}
+              <div className="flex justify-between items-center">
+                <p className="hover:cursor-pointer p-0 m-0">
+                  Selected File: {user.resume?.name || "No File Selected"}
+                </p>
+                <MdOutlineFileUpload className="text-3xl m-0 p-0 hover:cursor-pointer" />
+              </div>
             </label>
           </Col>
         </Row>
@@ -305,7 +344,10 @@ const Register = () => {
           user={user}
           setUser={setUser}
           propertyOfUser="marketing"
-          label="Do you consent to videos and photos being taken of you? These photos will be used for on our official Rosehack Instagram and other social media. If you have any concerns, please contact us at rosehackucr@gmail.com"
+          label={`I, ${
+            user.first + " " + user.last
+          } give the University of California, Riverside, the absolute right and permission to use my photograph/video in its promotional materials and publicity efforts. I understand that the photographs/video may be used in a publication, print ad, direct-mail piece, electronic media (e.g. video, CD-ROM, Internet/WWW, UCTV), or other form of promotion. I release the University, the photographer/videographer, their officers, employees, agents, and designees from liability for any violation of any personal or proprietary right I may have in connection with such use. I am 18 years of age or older. By checking the following box, I agree to the above terms.
+          `}
         />
         <hr className="border-0 h-1 w-10/12 opacity-100 m-0 p-0 bg-gradient-to-r from-white" />
         <Checkbox
@@ -336,12 +378,93 @@ const Register = () => {
           label="Will you be able to provide COVID vaccination status if asked? Rosehack board reserves the right to ask for COVID vaccination status during checkin."
         />
         <hr className="border-0 h-1 w-10/12 opacity-100 m-0 p-0 bg-gradient-to-r from-white" />
-        <Checkbox
-          user={user}
-          setUser={setUser}
-          propertyOfUser="dietary"
-          label="Do you eat meat?"
-        />
+        <Row className="w-10/12 flex justify-between">
+          <Col className="px-0 py-1">
+            <label
+              htmlFor="vegetarian"
+              className="text-left font-lexend text-md text-white w-11/12 hover:cursor-pointer"
+            >
+              <p className="p-0 m-0 text-red-500 inline">*</p>
+              Do you have any of the following dietary restrictions? (leave
+              empty if none)
+            </label>
+            <label
+              htmlFor="vegetarian"
+              className="text-left font-lexend text-md text-white w-11/12 hover:cursor-pointer"
+              onClick={() => {
+                setUser({ ...user, vegetarian: !user["vegetarian"] });
+              }}
+            >
+              Vegetarian?
+            </label>
+            <input
+              type="checkbox"
+              name="vegetarian"
+              checked={user.vegetarian}
+              onChange={() => {
+                setUser({ ...user, vegetarian: !user["vegetarian"] });
+              }}
+              className="appearance-none w-5 h-5 hover:cursor-pointer checked:bg-white rounded-full !ring-0 !focus:ring-0 border-2 border-white ease-in-out duration-300"
+            />
+
+            <label
+              htmlFor="vegan"
+              className="text-left font-lexend text-md text-white w-11/12 hover:cursor-pointer"
+              onClick={() => {
+                setUser({ ...user, vegan: !user["vegan"] });
+              }}
+            >
+              Vegan?
+            </label>
+            <input
+              type="checkbox"
+              name="vegan"
+              checked={user.vegan}
+              onChange={() => {
+                setUser({ ...user, vegan: !user["vegan"] });
+              }}
+              className="appearance-none w-5 h-5 hover:cursor-pointer checked:bg-white rounded-full !ring-0 !focus:ring-0 border-2 border-white ease-in-out duration-300"
+            />
+
+            <label
+              htmlFor="kosher"
+              className="text-left font-lexend text-md text-white w-11/12 hover:cursor-pointer"
+              onClick={() => {
+                setUser({ ...user, kosher: !user["kosher"] });
+              }}
+            >
+              Kosher?
+            </label>
+            <input
+              type="checkbox"
+              name="kosher"
+              checked={user.kosher}
+              onChange={() => {
+                setUser({ ...user, kosher: !user["kosher"] });
+              }}
+              className="appearance-none w-5 h-5 hover:cursor-pointer checked:bg-white rounded-full !ring-0 !focus:ring-0 border-2 border-white ease-in-out duration-300"
+            />
+
+            <label
+              htmlFor="hindu"
+              className="text-left font-lexend text-md text-white w-11/12 hover:cursor-pointer"
+              onClick={() => {
+                setUser({ ...user, hindu: !user["hindu"] });
+              }}
+            >
+              Hindu?
+            </label>
+            <input
+              type="checkbox"
+              name="hindu"
+              checked={user.hindu}
+              onChange={() => {
+                setUser({ ...user, hindu: !user["hindu"] });
+              }}
+              className="appearance-none w-5 h-5 hover:cursor-pointer checked:bg-white rounded-full !ring-0 !focus:ring-0 border-2 border-white ease-in-out duration-300"
+            />
+          </Col>
+        </Row>
         <button
           onClick={handleSubmit}
           className="px-5 py-2 hover:scale-105 rounded-xl m-5 bg-transparent border-4 border-white  font-pixel text-md md:text-xl lg:text-2xl text-white text-center"

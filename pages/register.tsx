@@ -24,7 +24,6 @@ const Register = () => {
   const [user, setUser] = useState<any>(data);
   const [visible, setVisible] = useState(false);
   const [message, setMessage] = useState("");
-  const [file, setFile] = useState("");
 
   const handleInput = (data: string, value: string) => {
     setUser({ ...user, [data]: value });
@@ -88,8 +87,6 @@ const Register = () => {
       return;
     }
 
-    setUser({ ...user, resume: file });
-
     const response = await axios.post("/api/createUser", user);
 
     if (response.status === 201) {
@@ -106,16 +103,13 @@ const Register = () => {
     delete user["confirm_password"];
 
     if (user.resume !== undefined) {
-      uploadBytes(
-        ref(storage, `resumes/${user.resume.name}`),
-        user.resume
-      ).then((snapshot) => {
-        setFile(snapshot.metadata.fullPath);
-        setUser({ ...user, resume: user.resume.name });
-      });
+      uploadBytes(ref(storage, `resumes/${user.resume.name}`), user.resume);
     }
 
-    const responseTwo = await axios.post("/api/storeUser", user);
+    const responseTwo = await axios.post("/api/storeUser", {
+      ...user,
+      resume: user.resume.name,
+    });
 
     if (responseTwo.status !== 200) {
       handleMessage(
@@ -123,6 +117,7 @@ const Register = () => {
       );
       return;
     }
+
     handleMessage("Registration Successful!");
   };
 

@@ -119,7 +119,7 @@ const Register = () => {
 
     if (responseTwo.status !== 200) {
       handleMessage(
-        "There was an registering your account, please contact rosehackucr@gmail.com for assistance!"
+        "There was an error registering your account, please contact rosehackucr@gmail.com for assistance!"
       );
       return;
     }

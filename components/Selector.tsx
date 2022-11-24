@@ -24,7 +24,7 @@ const Selector = ({ options, user, field, handleInput }: props) => {
       <Dropdown.Menu className="w-full font-lexend active:bg-white">
         {options.map((option, index) => (
           <Dropdown.Item
-            className="font-lexend text-black hover:!bg-register-top hover:!text-white"
+            className="font-lexend text-black hover:!bg-register-top hover:!text-white !whitespace-normal"
             key={index}
             onClick={() => handleInput(field, option)}
           >

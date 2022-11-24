@@ -132,7 +132,7 @@ const Register = () => {
   };
 
   return (
-    <div className="flex justify-center items-center flex-col bg-gradient-to-b from-about-top to-about-bottom w-full">
+    <div className="flex justify-center items-center flex-col bg-gradient-to-b from-about-top to-about-bottom w-full min-h-screen">
       <div className="my-24 border-4 rounded-3xl drop-shadow-blue border-white items-center flex flex-col w-10/12">
         <div className="flex justify-center items-center  w-full relative">
           <div className="absolute top-1/2 left-3 -translate-y-1/2">

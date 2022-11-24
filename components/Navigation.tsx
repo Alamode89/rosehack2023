@@ -11,24 +11,20 @@ const Navigation = () => {
         expand="md"
         fixed="top"
       >
-        <Nav.Link href="/#">
-          <Image
-            src="/ROSE_HACK.png"
-            height={70}
-            width={140}
-            layout="fixed"
-            alt="RoseHack Logo"
-            className="p-2 fixed top-0 left-0"
-          />
-        </Nav.Link>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
           className="mr-4 border-0 text-white"
         >
           <FaBars size="30" />
         </Navbar.Toggle>
-        <Navbar.Collapse className="flex justify-end items-center">
+        <Navbar.Collapse className="flex justify-center items-center">
           <Nav className="font-pixel flex lg:w-6/12 w-full justify-center items-center">
+            <Nav.Link
+              href="/#"
+              className="!text-xl text-center text-white p-3 hover:underline decoration-4 underline-offset-8"
+            >
+              HOME
+            </Nav.Link>
             <Nav.Link
               href="/#about"
               className="!text-xl text-center text-white p-3 hover:underline decoration-4 underline-offset-8"

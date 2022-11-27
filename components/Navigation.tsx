@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { FaBars } from "react-icons/fa";

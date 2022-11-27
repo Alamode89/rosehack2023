@@ -118,12 +118,24 @@ const Register = () => {
 
     const responseTwo = await axios.post("/api/storeUser", {
       ...user,
-      resume: user.resume.name,
+      resume: user.resume?.name || "",
     });
 
     if (responseTwo.status !== 200) {
       handleMessage(
         "There was an error registering your account, please contact rosehackucr@gmail.com for assistance!"
+      );
+      return;
+    }
+
+    const responseThree = await axios.post("/api/sendConfirmation", {
+      email: user.email,
+      name: user.first,
+    });
+
+    if (responseThree.status !== 200) {
+      handleMessage(
+        "You have been registered, however, there was an error sendnig a confirmation email, please contact rosehackucr@gmail.com"
       );
       return;
     }

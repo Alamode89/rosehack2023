@@ -5,7 +5,7 @@ export default async function addStudent(
   res: NextApiResponse
 ) {
   const sendgridMail = require("@sendgrid/mail");
-  const API_KEY = process.env.NEXT_SENDGRID_API_KEY;
+  const API_KEY = process.env.NEXT_PUBLIC_SENDGRID_API_KEY;
 
   sendgridMail.setApiKey(API_KEY);
 

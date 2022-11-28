@@ -2,11 +2,27 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { db } from "../../firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
+interface stats {
+  participants: number
+  male: number
+  female: number
+  transgender: number
+  nonbinary: number
+  computer_science: number
+  computer_engineering: number
+  csba: number
+  data_science: number
+  electrical_engineering: number
+  mechanical_engineering: number
+  environmental_engineering: number
+  other_major: number
+}
+
 export default async function addStudent(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const stats = {};
+  const stats: stats = Object();
   console.log("got here");
 
   stats["participants"] = (await getDocs(collection(db, "users"))).size;

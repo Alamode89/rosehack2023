@@ -10,6 +10,9 @@ import {
   FaTimes,
   FaRegClock,
 } from "react-icons/fa";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase";
+import { useRouter } from "next/router";
 
 interface user {
   first: string;
@@ -34,12 +37,22 @@ interface user {
 }
 
 const admin = () => {
+  const router = useRouter();
+
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState(users);
   const [nameFilteredUsers, setNameFilteredUsers] = useState(filteredUsers);
   const [statusFilter, setStatusFilter] = useState("all");
   const [name, setName] = useState("");
   const [trigger, setTrigger] = useState(false);
+  const [user] = useAuthState(auth);
+
+  useEffect(() => {
+    console.log("INDEX ", user);
+    if (user === null || user === undefined) {
+      router.push("/admin/login");
+    }
+  }, []);
 
   const handleStatus = (email: string, status: string) => {
     axios.post("/api/updateStatus", { email: email, status: status });
@@ -57,7 +70,6 @@ const admin = () => {
       .catch((error) => {
         console.log(error);
       });
-    console.log("called");
   }, [trigger]);
 
   const handleSearch = () => {

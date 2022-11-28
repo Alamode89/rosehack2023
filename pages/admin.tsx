@@ -186,8 +186,8 @@ const admin = () => {
       <div className="w-9/12 border-x-4 border-white bg-admin-dark/40">
         <Accordion
           defaultActiveKey="0"
-          class="list-unstyled"
-          className="bg-transparent w-9/12 list-unstyled"
+          className="[list-style:none]"
+          bsPrefix="bootstrap"
         >
           {nameFilteredUsers.map((user: user, index: number) => (
             <Accordion.Item
@@ -195,10 +195,7 @@ const admin = () => {
               key={index}
               className="w-full"
             >
-              <Accordion.Header
-                class="list-unstyled"
-                className="w-full border-b-4 border-white"
-              >
+              <Accordion.Header className="w-full border-b-4 border-white list-unstyled">
                 <div className="text-center w-1/12 border-r-2 border-white flex justify-center items-center">
                   {user.status === "pending" ? (
                     <FaRegClock className="text-yellow-500 text-xl" />

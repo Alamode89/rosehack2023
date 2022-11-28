@@ -9,7 +9,7 @@ import { FaChevronLeft } from "react-icons/fa";
 import { MdOutlineFileUpload } from "react-icons/md";
 import axios from "axios";
 import { storage } from "../firebase";
-import { ref, uploadBytes } from "firebase/storage";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import Checkbox from "../components/Checkbox";
 import {
   data,
@@ -24,6 +24,8 @@ const Register = () => {
   const [user, setUser] = useState<any>(data);
   const [visible, setVisible] = useState(false);
   const [message, setMessage] = useState("");
+  const [disable, setDisable] = useState(false);
+  const [link, setLink] = useState<string | undefined>(undefined);
 
   const handleInput = (data: string, value: string) => {
     setUser({ ...user, [data]: value });
@@ -40,17 +42,19 @@ const Register = () => {
   const handleMessage = (message: string) => {
     setMessage(message);
     setVisible(true);
+    setDisable(false);
     setUser({ ...user, password: "", confirm_password: "" });
   };
 
   const handleSubmit = async () => {
+    setDisable(true);
     for (const key of Object.keys(user)) {
       if (
         user[key] === "" ||
         user[key] === "Choose:" ||
         user[key] === undefined
       ) {
-        if (key === "resume") {
+        if (key === "resume" || key === "team") {
           continue;
         }
         handleMessage("Please fill out all fields for registration!");
@@ -102,23 +106,37 @@ const Register = () => {
     delete user["password"];
     delete user["confirm_password"];
 
+    console.log("BEFORE RESUME");
+
     if (user.resume !== undefined) {
       if (
         user.resume.name.includes(user.first.toLowerCase()) &&
         user.resume.name.includes(user.last.toLowerCase())
       ) {
-        uploadBytes(ref(storage, `resumes/${user.resume.name}`), user.resume);
+        await uploadBytes(
+          ref(storage, `resumes/${user.resume.name}`),
+          user.resume
+        );
+        getDownloadURL(ref(storage, `resumes/${user.resume.name}`))
+          .then((url) => {
+            setLink(url);
+            console.log(url);
+          })
+          .catch((error) => {
+            // Handle any errors
+            console.log(error);
+          });
+      } else {
+        handleMessage(
+          "Please include your first name and last name in the resume file name!"
+        );
         return;
       }
-      handleMessage(
-        "Please include your first name and last name in the resume file name!"
-      );
-      return;
     }
 
     const responseTwo = await axios.post("/api/storeUser", {
       ...user,
-      resume: user.resume.name,
+      resume: link || "",
     });
 
     if (responseTwo.status !== 200) {
@@ -128,7 +146,22 @@ const Register = () => {
       return;
     }
 
+    console.log("BEFORE CONFIRM");
+
+    const responseThree = await axios.post("/api/sendConfirmation", {
+      email: user.email,
+      name: user.first,
+    });
+
+    if (responseThree.status !== 200) {
+      handleMessage(
+        "You have been registered, however, there was an error sendnig a confirmation email, please contact rosehackucr@gmail.com"
+      );
+      return;
+    }
+
     handleMessage("Registration Successful!");
+    setDisable(false);
   };
 
   return (
@@ -137,7 +170,9 @@ const Register = () => {
         <div className="flex justify-center items-center  w-full relative">
           <div className="absolute top-1/2 left-3 -translate-y-1/2">
             <Link href="/#">
-              <FaChevronLeft className="text-white md:text-5xl text-3xl hover:drop-shadow-white hover:scale-[1.2] ease-in-out duration-300 hover:cursor-pointer" />
+              <a>
+                <FaChevronLeft className="text-white md:text-5xl text-3xl hover:drop-shadow-white hover:scale-[1.2] ease-in-out duration-300 hover:cursor-pointer" />
+              </a>
             </Link>
           </div>
           <div className="font-pixel text-md md:text-xl lg:text-4xl p-0 text-white text-center w-full m-4">
@@ -472,6 +507,7 @@ const Register = () => {
         </Row>
         <button
           onClick={handleSubmit}
+          disabled={disable}
           className="px-5 py-2 hover:scale-105 rounded-xl m-5 bg-transparent border-4 border-white  font-pixel text-md md:text-xl lg:text-2xl text-white text-center"
         >
           SUBMIT

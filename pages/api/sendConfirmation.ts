@@ -37,7 +37,9 @@ export default async function addStudent(
   sendgridMail
     .send(message)
     .then((response: any) => {
-      return res.status(200).json(`Email Sent Successfully. Response: ${response}`);
+      return res
+        .status(200)
+        .json(`Email Sent Successfully. Response: ${response}`);
     })
     .catch((error: any) => {
       return res.status(501).json(`Email Send Failed! Error: ${error}`);

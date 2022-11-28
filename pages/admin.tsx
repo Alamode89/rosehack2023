@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Accordion from "react-bootstrap/Accordion";
 import Badge from "react-bootstrap/Badge";
-import Dropdown from "react-bootstrap/Dropdown";
 import {
   FaSearch,
   FaAngleDown,
@@ -10,6 +9,28 @@ import {
   FaTimes,
   FaRegClock,
 } from "react-icons/fa";
+
+interface user {
+  first: string;
+  last: string;
+  age: string;
+  phone: string;
+  email: string;
+  school: string;
+  grade: string;
+  gender: string;
+  shirt: string;
+  major: string;
+  resume: undefined | File;
+  marketing: boolean;
+  vegetarian: boolean;
+  kosher: boolean;
+  vegan: boolean;
+  hindu: boolean;
+  allergies: boolean;
+  status: string;
+  team: string;
+}
 
 const admin = () => {
   const [users, setUsers] = useState([]);
@@ -19,7 +40,7 @@ const admin = () => {
   const [name, setName] = useState("");
   const [trigger, setTrigger] = useState(false);
 
-  const handleStatus = (email, status) => {
+  const handleStatus = (email: string, status: string) => {
     axios.post("/api/updateStatus", { email: email, status: status });
     setTrigger(!trigger);
   };
@@ -45,7 +66,7 @@ const admin = () => {
       return;
     } else if (statusFilter === "all" && name !== "") {
       setNameFilteredUsers(
-        users.filter((user) => {
+        users.filter((user: user) => {
           return (user.first + " " + user.last)
             .toUpperCase()
             .includes(name.toUpperCase());
@@ -54,12 +75,12 @@ const admin = () => {
       return;
     }
     setFilteredUsers(
-      users.filter((user) => {
+      users.filter((user: user) => {
         return statusFilter === user.status;
       })
     );
     setNameFilteredUsers(
-      users.filter((user) => {
+      users.filter((user: user) => {
         return (
           statusFilter === user.status &&
           (user.first + " " + user.last)
@@ -70,16 +91,16 @@ const admin = () => {
     );
   };
 
-  const handleStatusFilter = (status) => {
+  const handleStatusFilter = (status: string) => {
     setStatusFilter(status);
     if (status !== "all") {
       setFilteredUsers(
-        users.filter((user) => {
+        users.filter((user: user) => {
           return status === user.status;
         })
       );
       setNameFilteredUsers(
-        users.filter((user) => {
+        users.filter((user: user) => {
           return status === user.status;
         })
       );
@@ -163,19 +184,19 @@ const admin = () => {
       </div>
       <div className="w-9/12 border-x-4 border-white bg-admin-dark/40">
         <Accordion
-          class="list-unstyled"
           defaultActiveKey="0"
-          className="bg-transparent w-9/12 "
+          class="list-unstyled"
+          className="bg-transparent w-9/12 list-unstyled"
         >
-          {nameFilteredUsers.map((user, index) => (
+          {nameFilteredUsers.map((user: user, index: number) => (
             <Accordion.Item
               eventKey={`${index}`}
               key={index}
-              className=" w-full"
+              className="w-full"
             >
               <Accordion.Header
                 class="list-unstyled"
-                className=" w-full border-b-4 border-white"
+                className="w-full border-b-4 border-white"
               >
                 <div className="text-center w-1/12 border-r-2 border-white flex justify-center items-center">
                   {user.status === "pending" ? (
@@ -197,19 +218,25 @@ const admin = () => {
                 <div className="text-center w-1/3 border-white text-white text-base font-lexand flex flex-row items-center justify-center">
                   <div className="flex w-9/12 flex-row justify-between items-center">
                     {user.status === "approved" ? (
-                      <Badge
-                        bg="danger"
-                        onClick={() => handleStatus(user.email, "rejected")}
-                      >
-                        Reject
-                      </Badge>
+                      <>
+                        <Badge bg="success">Approve</Badge>
+                        <Badge
+                          bg="danger"
+                          onClick={() => handleStatus(user.email, "rejected")}
+                        >
+                          Reject
+                        </Badge>
+                      </>
                     ) : user.status === "rejected" ? (
-                      <Badge
-                        bg="success"
-                        onClick={() => handleStatus(user.email, "approved")}
-                      >
-                        Approve
-                      </Badge>
+                      <>
+                        <Badge
+                          bg="success"
+                          onClick={() => handleStatus(user.email, "approved")}
+                        >
+                          Approve
+                        </Badge>
+                        <Badge bg="danger">Reject</Badge>
+                      </>
                     ) : (
                       <>
                         <Badge
@@ -231,15 +258,78 @@ const admin = () => {
                 </div>
               </Accordion.Header>
               <Accordion.Body className=" w-full flex justify-center items-center border-b-4 border-white">
-                <div className="w-10/12 text-white text-base font-lexend text-center">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                <div className="w-10/12 text-white text-base font-lexend flex justify-evenly items-start p-2">
+                  <div className="w-1/3 p-2">
+                    <p className="underline m-0 p-0 text-lg text-center">
+                      General Information
+                    </p>
+                    <div className="p-0 m-0 font-light">
+                      Team:
+                      <p className="m-0 p-0 font-black inline">
+                        {" "}
+                        {user.team === "" || user.team === undefined
+                          ? "Independent"
+                          : user.team}
+                      </p>
+                    </div>
+                    <div className="p-0 m-0 font-light">
+                      School:
+                      <p className="m-0 p-0 font-black inline">
+                        {" "}
+                        {user.school}
+                      </p>
+                    </div>
+                    <div className="p-0 m-0 font-light">
+                      Major:
+                      <p className="m-0 p-0 font-black inline"> {user.major}</p>
+                    </div>
+                    <div className="p-0 m-0 font-light">
+                      Gender:
+                      <p className="m-0 p-0 font-black inline">
+                        {" "}
+                        {user.gender}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="w-1/3 p-2">
+                    <p className="text-lg underline m-0 p-0 text-center">
+                      Misc Information
+                    </p>
+                    <div className="p-0 m-0 font-light">
+                      Phone:
+                      <p className="m-0 p-0 font-black inline"> {user.phone}</p>
+                    </div>
+                    <div className="p-0 m-0 font-light">
+                      Shirt:
+                      <p className="m-0 p-0 font-black inline">
+                        {" "}
+                        Adult {user.shirt}
+                      </p>
+                    </div>
+                    <div className="p-0 m-0 font-light">
+                      Age:
+                      <p className="m-0 p-0 font-black inline">
+                        {" "}
+                        {user.age} years old
+                      </p>
+                    </div>
+                  </div>
+                  <div className="w-1/3 p-2">
+                    <p className="text-lg underline m-0 p-0 text-center">
+                      Dietary Restrictions
+                    </p>
+                    <div className="text-center">
+                      {user.vegetarian && (
+                        <Badge bg="success">Vegetarian</Badge>
+                      )}
+                      {user.vegan && <Badge bg="warning">Vegan</Badge>}
+                      {user.kosher && <Badge bg="primary">Kosher</Badge>}
+                      {user.hindu && <Badge bg="info">Hindu</Badge>}
+                      {user.allergies && (
+                        <Badge bg="secondary">Allergies</Badge>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </Accordion.Body>
             </Accordion.Item>

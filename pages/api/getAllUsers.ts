@@ -6,16 +6,16 @@ export default async function addStudent(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-    const result:Array<Object> = []
-    try {
-        const snapshot = await getDocs(collection(db, "users"))
-        snapshot.forEach(doc => {
-            result.push(doc.data())
-        })
-        res.status(200).json(result)
-        res.end()
-    } catch {
-        res.status(500).json([])
-        res.end()
-    }    
+  const result: Array<Object> = [];
+  try {
+    const snapshot = await getDocs(collection(db, "users"));
+    snapshot.forEach((doc) => {
+      result.push(doc.data());
+    });
+    res.status(200).json(result);
+    res.end();
+  } catch {
+    res.status(500).json([]);
+    res.end();
+  }
 }

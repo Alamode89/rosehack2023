@@ -6,8 +6,8 @@ export default async function addStudent(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-    await updateDoc(doc(db, "users", req.body.email), {
-      status: req.body.status
-    });
-    res.status(200).json({})
+  await updateDoc(doc(db, "users", req.body.email), {
+    status: req.body.status,
+  });
+  res.status(200).json({});
 }

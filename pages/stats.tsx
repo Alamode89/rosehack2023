@@ -3,7 +3,6 @@ import axios from "axios";
 
 const stats = () => {
   const [stats, setStats] = useState({});
-  const [gender, setGender] = useState([]);
 
   useEffect(() => {
     axios.get("/api/getStats").then((response) => {

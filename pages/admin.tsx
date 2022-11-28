@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Accordion from "react-bootstrap/Accordion";
 import Badge from "react-bootstrap/Badge";
+import Button from "react-bootstrap/Button";
 import {
   FaSearch,
   FaAngleDown,
@@ -219,38 +220,42 @@ const admin = () => {
                   <div className="flex w-9/12 flex-row justify-between items-center">
                     {user.status === "approved" ? (
                       <>
-                        <Badge bg="success">Approve</Badge>
-                        <Badge
-                          bg="danger"
+                        <Button variant="secondary" disabled>
+                          Approve
+                        </Button>
+                        <Button
+                          variant="danger"
                           onClick={() => handleStatus(user.email, "rejected")}
                         >
                           Reject
-                        </Badge>
+                        </Button>
                       </>
                     ) : user.status === "rejected" ? (
                       <>
-                        <Badge
-                          bg="success"
+                        <Button
+                          variant="success"
                           onClick={() => handleStatus(user.email, "approved")}
                         >
                           Approve
-                        </Badge>
-                        <Badge bg="danger">Reject</Badge>
+                        </Button>
+                        <Button variant="secondary" disabled>
+                          Reject
+                        </Button>
                       </>
                     ) : (
                       <>
-                        <Badge
-                          bg="success"
+                        <Button
+                          variant="success"
                           onClick={() => handleStatus(user.email, "approved")}
                         >
                           Approve
-                        </Badge>
-                        <Badge
-                          bg="danger"
+                        </Button>
+                        <Button
+                          variant="danger"
                           onClick={() => handleStatus(user.email, "rejected")}
                         >
                           Reject
-                        </Badge>
+                        </Button>
                       </>
                     )}
                     <FaAngleDown className="text-white text-2xl ml-2" />

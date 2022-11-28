@@ -40,6 +40,7 @@ export default async function addStudent(
         .json(`Email Sent Successfully. Response: ${response}`);
     })
     .catch((error: any) => {
+      console.log(error)
       return res.status(501).json(`Email Send Failed! Error: ${error}`);
     });
 }

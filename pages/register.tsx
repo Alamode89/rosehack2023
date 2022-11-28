@@ -91,6 +91,20 @@ const Register = () => {
       return;
     }
 
+    if (user.resume !== undefined) {
+      if (
+        !(
+          user.resume.name.includes(user.first.toLowerCase()) &&
+          user.resume.name.includes(user.last.toLowerCase())
+        )
+      ) {
+        handleMessage(
+          "Please include your first name and last name in the resume file name!"
+        );
+        return;
+      }
+    }
+
     const response = await axios.post("/api/createUser", user);
 
     if (response.status === 201) {
@@ -109,29 +123,19 @@ const Register = () => {
     console.log("BEFORE RESUME");
 
     if (user.resume !== undefined) {
-      if (
-        user.resume.name.includes(user.first.toLowerCase()) &&
-        user.resume.name.includes(user.last.toLowerCase())
-      ) {
-        await uploadBytes(
-          ref(storage, `resumes/${user.resume.name}`),
-          user.resume
-        );
-        getDownloadURL(ref(storage, `resumes/${user.resume.name}`))
-          .then((url) => {
-            setLink(url);
-            console.log(url);
-          })
-          .catch((error) => {
-            // Handle any errors
-            console.log(error);
-          });
-      } else {
-        handleMessage(
-          "Please include your first name and last name in the resume file name!"
-        );
-        return;
-      }
+      await uploadBytes(
+        ref(storage, `resumes/${user.resume.name}`),
+        user.resume
+      );
+      getDownloadURL(ref(storage, `resumes/${user.resume.name}`))
+        .then((url) => {
+          setLink(url);
+          console.log(url);
+        })
+        .catch((error) => {
+          // Handle any errors
+          console.log(error);
+        });
     }
 
     const responseTwo = await axios.post("/api/storeUser", {

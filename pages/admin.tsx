@@ -22,7 +22,7 @@ interface user {
   gender: string;
   shirt: string;
   major: string;
-  resume: undefined | File;
+  resume: string;
   marketing: boolean;
   vegetarian: boolean;
   kosher: boolean;
@@ -318,6 +318,17 @@ const admin = () => {
                         {user.age} years old
                       </p>
                     </div>
+                    {user.resume !== "" && (
+                      <div className="p-0 m-0 font-light">
+                        Resume:{" "}
+                        <a
+                          href={user.resume}
+                          className="m-0 p-0 font-black inline text-white no-underline hover:underline"
+                        >
+                          {user.first}&apos;s Resume
+                        </a>
+                      </div>
+                    )}
                   </div>
                   <div className="w-1/3 p-2">
                     <p className="text-lg underline m-0 p-0 text-center">

@@ -75,6 +75,7 @@ module.exports = {
         },
       },
       dropShadow: {
+        yellow: "0 0px 9px rgba(255,210,100, 1)",
         blue: "0 0px 9px rgba(73,200,255, 1)",
         bluesmall: "0 0px 3px rgba(73,200,255, 1)",
         pink: "0 0px 9px rgba(252,122,213, 1)",
@@ -134,6 +135,11 @@ module.exports = {
           right: "#57AEFF",
           pink: "#E653BA",
           blue: "#15DBFF",
+        },
+        admin: {
+          top: "#8700A9",
+          bottom: "#69FFF6",
+          dark: "#260056",
         },
         register: {
           top: "#9E00FF",

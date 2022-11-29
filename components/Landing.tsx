@@ -3,9 +3,9 @@ import { FaCircle } from "react-icons/fa";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Link from "next/link";
 import Image from "next/image";
-import blueHeart from "../public/BLUE_HEART1.png";
-import pinkHeart from "../public/PINK_HEART1.png";
-import pixels from "../public/pixels_landing.png";
+import blueHeart from "../public/blue_heart.webp";
+import pinkHeart from "../public/pink_heart.webp";
+import pixels from "../public/pixels_1.webp";
 const Landing = () => {
   return (
     <section

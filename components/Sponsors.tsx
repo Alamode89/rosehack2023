@@ -12,7 +12,7 @@ const Sponsors = () => {
       <div className="w-10/12 flex justify-center items-center flex-col">
         <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
           <img
-            src="PINK_HEART1.png"
+            src="pink_heart.webp"
             className="h-10 w-10 transform hidden md:flex"
           />
           <FaCircle className="text-white hidden md:flex" />
@@ -27,7 +27,7 @@ const Sponsors = () => {
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
-          <img src="PINK_HEART1.png" className="h-10 w-10 hidden md:flex" />
+          <img src="pink_heart.webp" className="h-10 w-10 hidden md:flex" />
         </div>
         <Row>
           {sponsors.map((sponsor, index) => (
@@ -47,7 +47,7 @@ const Sponsors = () => {
         </Row>
       </div>
       <div className="w-full justify-center mt-20">
-        <img draggable="false" src="pixel6.png" />
+        <img draggable="false" src="pixels_6.webp" />
       </div>
     </section>
   );

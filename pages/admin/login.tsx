@@ -25,8 +25,13 @@ const login = () => {
   };
 
   return (
-    <div>
-      <button onClick={login}>Login</button>
+    <div className=" bg-gradient-to-br from-landing-bottom to-landing-bottompink w-full h-screen flex justify-center items-center">
+      <button
+        onClick={login}
+        className="animate-bounce shadow-[0_0_16px_0]  no-underline shadow-[#15DBFF] px-4 drop-shadow-blue p-2 font-pixel text-white border-[6px] rounded-2xl text-sm md:text-2xl"
+      >
+        Login
+      </button>
     </div>
   );
 };

@@ -10,7 +10,7 @@ const About = () => {
     >
       <div className="flex justify-between items-center w-10/12 m-5 drop-shadow-white">
         <img
-          src="PINK_HEART1.png"
+          src="pink_heart.webp"
           className="h-10 w-10 transform hidden md:flex"
         />
         <FaCircle className=" text-white hidden md:flex" />
@@ -25,7 +25,7 @@ const About = () => {
         <FaCircle className=" text-white hidden md:flex" />
         <FaCircle className=" text-white hidden lg:flex" />
         <FaCircle className=" text-white hidden md:flex" />
-        <img src="PINK_HEART1.png" className="h-10 w-10 hidden md:flex" />
+        <img src="pink_heart.webp" className="h-10 w-10 hidden md:flex" />
       </div>
 
       <Row className="sm:w-9/12 w-10/12 flex justify-center items-center flex-row-reverse sm:flex-row">
@@ -36,17 +36,17 @@ const About = () => {
         >
           <div className="flex justify-between items-center mb-4 w-full">
             <img
-              src="PINK_HEART1.png"
+              src="pink_heart.webp"
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
             />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
             <img
-              src="PINK_HEART1.png"
+              src="pink_heart.webp"
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
             />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
             <img
-              src="PINK_HEART1.png"
+              src="pink_heart.webp"
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
             />
           </div>
@@ -59,17 +59,17 @@ const About = () => {
 
           <div className="flex justify-between items-center mt-4 w-full">
             <img
-              src="PINK_HEART1.png"
+              src="pink_heart.webp"
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
             />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
             <img
-              src="PINK_HEART1.png"
+              src="pink_heart.webp"
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
             />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
             <img
-              src="PINK_HEART1.png"
+              src="pink_heart.webp"
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
             />
           </div>
@@ -77,13 +77,13 @@ const About = () => {
         <Col xl={4} md={6} className="flex items-center justify-center p-8">
           <img
             className="w-2/5 md:w-10/12 pt-5 md:pt-0"
-            src="MACHINE_3.png"
+            src="machine_2.webp"
           ></img>
         </Col>
       </Row>
       <Row className="mt-5 sm:w-9/12 w-10/12 flex justify-center items-center flex-col-reverse md:flex-row-reverse">
         <Col xl={4} md={6} className="flex items-center justify-center">
-          <img className="w-2/5 md:w-10/12 pt-5 md:pt-0" src="MACHINE_2.png" />
+          <img className="w-2/5 md:w-10/12 pt-5 md:pt-0" src="machine_1.webp" />
         </Col>
         <Col
           xl={8}
@@ -92,17 +92,17 @@ const About = () => {
         >
           <div className="flex justify-between items-center mb-4 w-full">
             <img
-              src="BLUE_HEART1.png"
+              src="blue_heart.webp"
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
             />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
             <img
-              src="BLUE_HEART1.png"
+              src="blue_heart.webp"
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
             />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
             <img
-              src="BLUE_HEART1.png"
+              src="blue_heart.webp"
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
             />
           </div>
@@ -114,17 +114,17 @@ const About = () => {
           </p>
           <div className="flex justify-between items-center mt-4 w-full">
             <img
-              src="BLUE_HEART1.png"
+              src="blue_heart.webp"
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
             />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
             <img
-              src="BLUE_HEART1.png"
+              src="blue_heart.webp"
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
             />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
             <img
-              src="BLUE_HEART1.png"
+              src="blue_heart.webp"
               className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
             />
           </div>
@@ -137,7 +137,7 @@ const About = () => {
           mentorship, and so much more!
         </p>
         <div className="flex justify-between md:px-5 !px-2 my-3 w-10/12">
-          <img className="w-3/12 md:w-2/12" src="RH_SPONSORS_BUTTON1.png"></img>
+          <img className="w-3/12 md:w-2/12" src="plus_button.webp"></img>
           <div className="w-2/12 flex justify-between items-center">
             <div className="h-full flex justify-center items-end">
               <FaCircle className="text-about-pink text-3xl md:text-5xl" />
@@ -149,7 +149,7 @@ const About = () => {
         </div>
       </div>
       <div className="w-full justify-center mt-20">
-        <img draggable="false" src="pixel2.png" />
+        <img draggable="false" src="pixels_2.webp" />
       </div>
     </section>
   );

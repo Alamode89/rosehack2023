@@ -1,13 +1,8 @@
-import React, { Suspense } from "react";
-import dynamic from "next/dynamic";
-// import Profile from "./Profile";
+import React from "react";
+import Profile from "./Profile";
 import { Row, Col } from "react-bootstrap";
 import { profiles, commitee } from "./data/team";
 import { FaCircle } from "react-icons/fa";
-
-const Profile = dynamic(() => import("../components/Profile"), {
-  suspense: true,
-});
 
 const Team = () => {
   return (
@@ -38,15 +33,13 @@ const Team = () => {
         <Row className="flex justify-center items-initial">
           {profiles.map((profile, index) => (
             <Col lg={3} md={4} xs={6} key={index} className=" p-3">
-              <Suspense fallback={`Loading...`}>
-                <Profile
-                  name={profile.name}
-                  position={profile.position}
-                  shadow={profile.shadow}
-                  image={profile.image}
-                  linkedin={profile.linkedin}
-                />
-              </Suspense>
+              <Profile
+                name={profile.name}
+                position={profile.position}
+                shadow={profile.shadow}
+                image={profile.image}
+                linkedin={profile.linkedin}
+              />
             </Col>
           ))}
         </Row>

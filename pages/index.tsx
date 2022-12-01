@@ -8,13 +8,11 @@ import FAQ from "../components/FAQ";
 const Home: NextPage = () => {
   return (
     <div className="flex justify-center items-center flex-col">
-      {/* <Suspense fallback={`Loading...`}> */}
       <Landing />
       <About />
       <Sponsors />
       <Team />
       <FAQ />
-      {/* </Suspense> */}
       <title>Rose Hack 2023</title>
     </div>
   );

@@ -125,6 +125,17 @@ const admin = () => {
 
   return (
     <div className="p-5 bg-gradient-to-b from-admin-top to-admin-bottom flex justify-center items-center flex-col">
+      <p className="font-pixel text-3xl text-white">
+        {nameFilteredUsers.length}{" "}
+        {statusFilter === "all"
+          ? "Registered"
+          : statusFilter === "approved"
+          ? "Approved"
+          : statusFilter === "rejected"
+          ? "Rejected"
+          : "Pending"}{" "}
+        Participants
+      </p>
       <div className="w-9/12 my-5">
         <div className="w-full flex flex-row justify-start items-center">
           <Badge

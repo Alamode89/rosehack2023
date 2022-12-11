@@ -122,9 +122,7 @@ const admin = () => {
   const login = () => {
     signInWithPopup(auth, new GoogleAuthProvider())
       .then(async (result: any) => {
-        if (result.user.email === "rosehackucr@gmail.com") {
-          setUser(result.user.email);
-        }
+        setUser(result.user.email);
       })
       .catch((error) => {
         console.log(error);

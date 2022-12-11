@@ -3,7 +3,11 @@ import axios from "axios";
 import Accordion from "react-bootstrap/Accordion";
 import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
+
 import {
+  FaRegCopy,
+  FaSchool,
+  FaBaby,
   FaSearch,
   FaAngleDown,
   FaCheck,
@@ -35,7 +39,18 @@ interface user {
   status: string;
   team: string;
 }
-
+function copyToClipboard(copyText: string) {
+  navigator.clipboard.writeText(copyText);
+  const x = document.getElementById("snackbar");
+  if (x != null) {
+    x.className =
+      "visible z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2";
+    setTimeout(function () {
+      x.className =
+        "hidden z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2";
+    }, 1000);
+  }
+}
 const admin = () => {
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState(users);
@@ -250,12 +265,36 @@ const admin = () => {
                       <FaTimes className="text-red-500 text-xl" />
                     )}
                   </div>
-                  <div className="text-center w-1/3 border-r-2 border-white text-white text-lg font-lexand">
-                    {user.first + " " + user.last}
+
+                  <div className="w-1/3 border-r-2 border-white flex justify-center items-center">
+                    {parseInt(user.age) < 18 && (
+                      <FaBaby className="text-white text-lg mx-2" />
+                    )}
+
+                    {user.school != "University of California, Riverside" && (
+                      <FaSchool className="text-white text-lg mx-2 " />
+                    )}
+                    <div className="text-center text-white text-lg font-lexand">
+                      {user.first + " " + user.last}
+                    </div>
                   </div>
 
-                  <div className="text-center w-1/3 border-r-2 border-white text-white text-lg font-lexand">
-                    {user.email}
+                  <div className="text-center w-1/3 border-r-2 border-white flex justify-center items-center">
+                    <div className="text-center text-white text-lg font-lexand">
+                      {user.email}
+                    </div>
+                    <FaRegCopy
+                      className="ml-2 text-white text-lg font-lexand"
+                      onClick={() => {
+                        copyToClipboard(user.email);
+                      }}
+                    />
+                    <div
+                      id="snackbar"
+                      className="hidden z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2"
+                    >
+                      Email Copied
+                    </div>
                   </div>
 
                   <div className="text-center w-1/3 border-white text-white text-base font-lexand flex flex-row items-center justify-center">

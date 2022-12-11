@@ -43,7 +43,7 @@ const admin = () => {
   const [statusFilter, setStatusFilter] = useState("all");
   const [name, setName] = useState("");
   const [trigger, setTrigger] = useState(false);
-  const [user, setUser] = useState<string>("");
+  const [user, setUser] = useState<string | null>("");
 
   onAuthStateChanged(auth, (currentState) => {
     if (currentState !== null) setUser(currentState.email);

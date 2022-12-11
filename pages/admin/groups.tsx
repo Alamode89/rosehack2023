@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 
 const groups = () => {
   const [user] = useAuthState(auth);
-  const router = useRouter();
+  // const router = useRouter();
 
   // useEffect(() => {
   //   console.log("GROUPS", user);

@@ -41,7 +41,6 @@ const Navigation = () => {
             )}
             {user && (
               <Nav.Link
-                href="/admin/login"
                 onClick={() =>
                   signOut(auth)
                     .then((response) => {

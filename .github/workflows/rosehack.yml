@@ -2,9 +2,9 @@ name: Rosehack 2023
 
 on:
   push:
-    branches: ["static", "live"]
+    branches: ["dev", "main"]
   pull_request:
-    branches: ["static", "live"]
+    branches: ["dev", "main"]
 
 jobs:
   format:

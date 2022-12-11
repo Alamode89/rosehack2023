@@ -11,9 +11,7 @@ import {
   FaRegClock,
 } from "react-icons/fa";
 import { auth } from "../../firebase";
-import { onAuthStateChanged, User } from "firebase/auth";
-import { db } from "../../firebase";
-import { doc, getDoc } from "firebase/firestore";
+import { onAuthStateChanged } from "firebase/auth";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 interface user {
@@ -45,10 +43,11 @@ const admin = () => {
   const [statusFilter, setStatusFilter] = useState("all");
   const [name, setName] = useState("");
   const [trigger, setTrigger] = useState(false);
-  const [user, setUser] = useState<null | string | User>(null);
+  const [user, setUser] = useState<string>("");
 
   onAuthStateChanged(auth, (currentState) => {
-    setUser(currentState);
+    if (currentState !== null) setUser(currentState.email);
+    else setUser("");
   });
 
   const handleStatus = (email: string, status: string) => {
@@ -123,10 +122,8 @@ const admin = () => {
   const login = () => {
     signInWithPopup(auth, new GoogleAuthProvider())
       .then(async (result: any) => {
-        const docSnap = await getDoc(doc(db, "admin", result.user.email));
-
-        if (docSnap.exists()) {
-          setUser("admin");
+        if (result.user.email === "rosehackucr@gmail.com") {
+          setUser(result.user.email);
         }
       })
       .catch((error) => {
@@ -134,7 +131,7 @@ const admin = () => {
       });
   };
 
-  if (user === null) {
+  if (user !== "rosehackucr@gmail.com") {
     return (
       <div className=" bg-gradient-to-br from-landing-bottom to-landing-bottompink w-full h-screen flex justify-center items-center">
         <button

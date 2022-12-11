@@ -23,7 +23,7 @@ const Navigation = () => {
         </Navbar.Toggle>
         <Navbar.Collapse className="flex justify-center items-center">
           <Nav className="font-pixel flex lg:w-6/12 w-full justify-center items-center">
-            {user && (
+            {user?.email === "rosehackucr@gmail.com" && (
               <Nav.Link
                 href="/admin"
                 className="!text-xl text-center text-white p-3 hover:underline decoration-4 underline-offset-8"
@@ -31,7 +31,7 @@ const Navigation = () => {
                 PARTICIPANTS
               </Nav.Link>
             )}
-            {user && (
+            {user?.email === "rosehackucr@gmail.com" && (
               <Nav.Link
                 href="/admin/groups"
                 className="!text-xl text-center text-white p-3 hover:underline decoration-4 underline-offset-8"
@@ -39,7 +39,7 @@ const Navigation = () => {
                 GROUPS
               </Nav.Link>
             )}
-            {user && (
+            {user?.email === "rosehackucr@gmail.com" && (
               <Nav.Link
                 onClick={() =>
                   signOut(auth)

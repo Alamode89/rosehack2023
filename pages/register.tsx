@@ -105,6 +105,17 @@ const Register = () => {
       }
     }
 
+    if (!/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/.test(user.email)) {
+      handleMessage("Please enter a valid email address");
+      return;
+    }
+    if (
+      !/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(user.phone)
+    ) {
+      handleMessage("Please enter a valid phone number");
+      return;
+    }
+
     const response = await axios.post("/api/createUser", user);
 
     if (response.status === 201) {

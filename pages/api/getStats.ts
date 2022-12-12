@@ -3,19 +3,19 @@ import { db } from "../../firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
 interface stats {
-  participants: number
-  male: number
-  female: number
-  transgender: number
-  nonbinary: number
-  computer_science: number
-  computer_engineering: number
-  csba: number
-  data_science: number
-  electrical_engineering: number
-  mechanical_engineering: number
-  environmental_engineering: number
-  other_major: number
+  participants: number;
+  male: number;
+  female: number;
+  transgender: number;
+  nonbinary: number;
+  computer_science: number;
+  computer_engineering: number;
+  csba: number;
+  data_science: number;
+  electrical_engineering: number;
+  mechanical_engineering: number;
+  environmental_engineering: number;
+  other_major: number;
 }
 
 export default async function addStudent(

@@ -40,18 +40,18 @@ interface user {
   team: string;
 }
 
-function copyToClipboard(copyText: string) {
+const copyToClipboard = (copyText: string) => {
   navigator.clipboard.writeText(copyText);
   const x = document.getElementById("snackbar");
   if (x != null) {
     x.className =
       "visible z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2";
-    setTimeout(function () {
+    setTimeout(() => {
       x.className =
         "hidden z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2";
     }, 1000);
   }
-}
+};
 
 const admin = () => {
   const [users, setUsers] = useState([]);
@@ -67,8 +67,8 @@ const admin = () => {
     else setUser("");
   });
 
-  const handleStatus = (email: string, status: string) => {
-    axios.post("/api/updateStatus", { email: email, status: status });
+  const handleStatus = async (email: string, status: string) => {
+    await axios.post("/api/updateStatus", { email: email, status: status });
     setTrigger(!trigger);
   };
 

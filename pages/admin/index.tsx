@@ -61,10 +61,12 @@ const admin = () => {
   const [trigger, setTrigger] = useState(false);
   const [user, setUser] = useState<string | null>("");
 
-  onAuthStateChanged(auth, (currentState) => {
-    if (currentState !== null) setUser(currentState.email);
-    else setUser("");
-  });
+  useEffect(() => {
+    onAuthStateChanged(auth, (currentState) => {
+      if (currentState !== null) setUser(currentState.email);
+      else setUser("");
+    });
+  }, []);
 
   const handleStatus = async (email: string, status: string) => {
     await axios.post("/api/updateStatus", { email: email, status: status });
@@ -116,6 +118,8 @@ const admin = () => {
         })
       );
       return;
+    } else {
+      setFilteredUsers(users);
     }
   };
 
@@ -204,6 +208,7 @@ const admin = () => {
               placeholder="name"
               value={name}
               onChange={(e) => {
+                console.log("VALUE", e.target.value);
                 setName(e.target.value);
               }}
             />

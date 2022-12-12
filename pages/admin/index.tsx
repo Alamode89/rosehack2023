@@ -157,7 +157,7 @@ const admin = () => {
     );
   } else {
     return (
-      <div className="p-5 bg-gradient-to-b from-admin-top to-admin-bottom flex justify-center items-center flex-col">
+      <div className="min-h-screen p-5 bg-gradient-to-b from-admin-top to-admin-bottom flex justify-center items-center flex-col">
         <p className="font-pixel text-3xl text-white">
           {nameFilteredUsers.length}{" "}
           {statusFilter === "all"
@@ -229,7 +229,7 @@ const admin = () => {
             />
           </div>
         </div>
-        <div className="w-9/12 border-4 border-white rounded-t-2xl  bg-admin-dark/40 flex flex-row">
+        <div className="w-11/12 border-4 border-white rounded-t-2xl  bg-admin-dark/40 flex flex-row">
           <div className="text-center w-1/12 border-r-2 border-white text-white text-base font-lexand">
             STATUS
           </div>
@@ -243,7 +243,7 @@ const admin = () => {
             ACTION
           </div>
         </div>
-        <div className="w-9/12 border-x-4 border-white bg-admin-dark/40">
+        <div className="w-11/12 border-x-4 border-white bg-admin-dark/40">
           <Accordion
             defaultActiveKey="0"
             className="[list-style:none]"
@@ -266,25 +266,25 @@ const admin = () => {
                     )}
                   </div>
 
-                  <div className="w-1/3 border-r-2 border-white flex justify-center items-center">
+                  <div className="w-1/3 border-r-2 border-white flex justify-start items-center">
+                    <div className="text-center text-white text-lg font-lexand ml-2">
+                      {user.first + " " + user.last}
+                    </div>
                     {parseInt(user.age) < 18 && (
-                      <FaBaby className="text-white text-lg mx-2" />
+                      <FaBaby className="text-purple-300 text-lg mx-1" />
                     )}
 
                     {user.school != "University of California, Riverside" && (
-                      <FaSchool className="text-white text-lg mx-2 " />
+                      <FaSchool className="text-pink-300 text-lg mx-1 " />
                     )}
-                    <div className="text-center text-white text-lg font-lexand">
-                      {user.first + " " + user.last}
-                    </div>
                   </div>
 
-                  <div className="text-center w-1/3 border-r-2 border-white flex justify-center items-center">
-                    <div className="text-center text-white text-lg font-lexand">
+                  <div className="text-center w-1/3 border-r-2 border-white flex justify-start items-center">
+                    <div className="text-center text-white text-lg font-lexand ml-2">
                       {user.email}
                     </div>
                     <FaRegCopy
-                      className="ml-2 text-white text-lg font-lexand"
+                      className="ml-2 text-blue-300 text-lg font-lexand"
                       onClick={() => {
                         copyToClipboard(user.email);
                       }}
@@ -439,7 +439,7 @@ const admin = () => {
             ))}
           </Accordion>
         </div>
-        <div className="w-9/12 h-8 border-x-4 border-b-4 border-white rounded-b-2xl  bg-admin-dark/40 flex flex-row" />
+        <div className="w-11/12 h-8 border-x-4 border-b-4 border-white rounded-b-2xl  bg-admin-dark/40 flex flex-row" />
       </div>
     );
   }

@@ -55,8 +55,7 @@ const copyToClipboard = (copyText: string) => {
 
 const admin = () => {
   const [users, setUsers] = useState([]);
-  const [filteredUsers, setFilteredUsers] = useState(users);
-  const [nameFilteredUsers, setNameFilteredUsers] = useState(filteredUsers);
+  const [filteredUsers, setFilteredUsers] = useState([]);
   const [statusFilter, setStatusFilter] = useState("all");
   const [name, setName] = useState("");
   const [trigger, setTrigger] = useState(false);
@@ -73,25 +72,31 @@ const admin = () => {
   };
 
   useEffect(() => {
-    axios
-      .get("/api/getAllUsers")
-      .then((response) => {
-        setUsers(response.data);
-        setFilteredUsers(response.data);
-        setNameFilteredUsers(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    const getUsers = async () => {
+      await axios
+        .get("/api/getAllUsers")
+        .then((response) => {
+          setUsers(response.data);
+          setFilteredUsers(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+
+    getUsers();
   }, [trigger]);
 
   const handleSearch = () => {
-    if (statusFilter === "all" && name === "") {
-      setFilteredUsers(users);
-      setNameFilteredUsers(users);
+    if (name === "") {
+      setFilteredUsers(
+        users.filter((user: user) => {
+          return statusFilter === user.status;
+        })
+      );
       return;
-    } else if (statusFilter === "all" && name !== "") {
-      setNameFilteredUsers(
+    } else if (name !== "") {
+      setFilteredUsers(
         users.filter((user: user) => {
           return (user.first + " " + user.last)
             .toUpperCase()
@@ -100,21 +105,6 @@ const admin = () => {
       );
       return;
     }
-    setFilteredUsers(
-      users.filter((user: user) => {
-        return statusFilter === user.status;
-      })
-    );
-    setNameFilteredUsers(
-      users.filter((user: user) => {
-        return (
-          statusFilter === user.status &&
-          (user.first + " " + user.last)
-            .toUpperCase()
-            .includes(name.toUpperCase())
-        );
-      })
-    );
   };
 
   const handleStatusFilter = (status: string) => {
@@ -125,15 +115,8 @@ const admin = () => {
           return status === user.status;
         })
       );
-      setNameFilteredUsers(
-        users.filter((user: user) => {
-          return status === user.status;
-        })
-      );
       return;
     }
-    setFilteredUsers(users);
-    setNameFilteredUsers(users);
   };
 
   const login = () => {
@@ -161,7 +144,7 @@ const admin = () => {
     return (
       <div className="min-h-screen p-5 bg-gradient-to-b from-admin-top to-admin-bottom flex justify-center items-center flex-col">
         <p className="font-pixel text-3xl text-white">
-          {nameFilteredUsers.length}{" "}
+          {filteredUsers.length}{" "}
           {statusFilter === "all"
             ? "Registered"
             : statusFilter === "approved"
@@ -246,12 +229,8 @@ const admin = () => {
           </div>
         </div>
         <div className="w-11/12 border-x-4 border-white bg-admin-dark/40">
-          <Accordion
-            defaultActiveKey="0"
-            className="[list-style:none]"
-            bsPrefix="bootstrap"
-          >
-            {nameFilteredUsers.map((user: user, index: number) => (
+          <Accordion className="[list-style:none]" bsPrefix="bootstrap">
+            {filteredUsers.map((user: user, index: number) => (
               <Accordion.Item
                 eventKey={`${index}`}
                 key={index}
@@ -272,12 +251,12 @@ const admin = () => {
                     <div className="text-center text-white text-lg font-lexand ml-2">
                       {user.first + " " + user.last}
                     </div>
-                    {parseInt(user.age) < 18 && (
-                      <FaBaby className="text-purple-300 text-lg mx-1" />
+                    {(parseInt(user.age) < 18 || user.age === "<16") && (
+                      <FaBaby className="text-purple-300 text-lg ml-2" />
                     )}
 
                     {user.school != "University of California, Riverside" && (
-                      <FaSchool className="text-pink-300 text-lg mx-1 " />
+                      <FaSchool className="text-pink-300 text-lg ml-2" />
                     )}
                   </div>
 

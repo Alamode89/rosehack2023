@@ -39,18 +39,20 @@ interface user {
   status: string;
   team: string;
 }
+
 function copyToClipboard(copyText: string) {
   navigator.clipboard.writeText(copyText);
   const x = document.getElementById("snackbar");
   if (x != null) {
     x.className =
-      "visible z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2";
+      "visible z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2";
     setTimeout(function () {
       x.className =
-        "hidden z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2";
+        "hidden z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2";
     }, 1000);
   }
 }
+
 const admin = () => {
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState(users);

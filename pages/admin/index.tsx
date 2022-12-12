@@ -3,7 +3,11 @@ import axios from "axios";
 import Accordion from "react-bootstrap/Accordion";
 import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
+
 import {
+  FaRegCopy,
+  FaSchool,
+  FaBaby,
   FaSearch,
   FaAngleDown,
   FaCheck,
@@ -36,45 +40,65 @@ interface user {
   team: string;
 }
 
+const copyToClipboard = (copyText: string) => {
+  navigator.clipboard.writeText(copyText);
+  const x = document.getElementById("snackbar");
+  if (x != null) {
+    x.className =
+      "visible z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2";
+    setTimeout(() => {
+      x.className =
+        "hidden z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2";
+    }, 1000);
+  }
+};
+
 const admin = () => {
   const [users, setUsers] = useState([]);
-  const [filteredUsers, setFilteredUsers] = useState(users);
-  const [nameFilteredUsers, setNameFilteredUsers] = useState(filteredUsers);
+  const [filteredUsers, setFilteredUsers] = useState([]);
   const [statusFilter, setStatusFilter] = useState("all");
   const [name, setName] = useState("");
   const [trigger, setTrigger] = useState(false);
   const [user, setUser] = useState<string | null>("");
 
-  onAuthStateChanged(auth, (currentState) => {
-    if (currentState !== null) setUser(currentState.email);
-    else setUser("");
-  });
+  useEffect(() => {
+    onAuthStateChanged(auth, (currentState) => {
+      if (currentState !== null) setUser(currentState.email);
+      else setUser("");
+    });
+  }, []);
 
-  const handleStatus = (email: string, status: string) => {
-    axios.post("/api/updateStatus", { email: email, status: status });
+  const handleStatus = async (email: string, status: string) => {
+    await axios.post("/api/updateStatus", { email: email, status: status });
     setTrigger(!trigger);
   };
 
   useEffect(() => {
-    axios
-      .get("/api/getAllUsers")
-      .then((response) => {
-        setUsers(response.data);
-        setFilteredUsers(response.data);
-        setNameFilteredUsers(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    const getUsers = async () => {
+      await axios
+        .get("/api/getAllUsers")
+        .then((response) => {
+          setUsers(response.data);
+          setFilteredUsers(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+
+    getUsers();
   }, [trigger]);
 
   const handleSearch = () => {
-    if (statusFilter === "all" && name === "") {
-      setFilteredUsers(users);
-      setNameFilteredUsers(users);
+    if (name === "") {
+      setFilteredUsers(
+        users.filter((user: user) => {
+          return statusFilter === user.status;
+        })
+      );
       return;
-    } else if (statusFilter === "all" && name !== "") {
-      setNameFilteredUsers(
+    } else if (name !== "") {
+      setFilteredUsers(
         users.filter((user: user) => {
           return (user.first + " " + user.last)
             .toUpperCase()
@@ -83,21 +107,6 @@ const admin = () => {
       );
       return;
     }
-    setFilteredUsers(
-      users.filter((user: user) => {
-        return statusFilter === user.status;
-      })
-    );
-    setNameFilteredUsers(
-      users.filter((user: user) => {
-        return (
-          statusFilter === user.status &&
-          (user.first + " " + user.last)
-            .toUpperCase()
-            .includes(name.toUpperCase())
-        );
-      })
-    );
   };
 
   const handleStatusFilter = (status: string) => {
@@ -108,15 +117,10 @@ const admin = () => {
           return status === user.status;
         })
       );
-      setNameFilteredUsers(
-        users.filter((user: user) => {
-          return status === user.status;
-        })
-      );
       return;
+    } else {
+      setFilteredUsers(users);
     }
-    setFilteredUsers(users);
-    setNameFilteredUsers(users);
   };
 
   const login = () => {
@@ -142,9 +146,9 @@ const admin = () => {
     );
   } else {
     return (
-      <div className="p-5 bg-gradient-to-b from-admin-top to-admin-bottom flex justify-center items-center flex-col">
+      <div className="min-h-screen p-5 bg-gradient-to-b from-admin-top to-admin-bottom flex justify-center items-center flex-col">
         <p className="font-pixel text-3xl text-white">
-          {nameFilteredUsers.length}{" "}
+          {filteredUsers.length}{" "}
           {statusFilter === "all"
             ? "Registered"
             : statusFilter === "approved"
@@ -154,7 +158,7 @@ const admin = () => {
             : "Pending"}{" "}
           Participants
         </p>
-        <div className="w-9/12 my-5">
+        <div className="w-11/12 my-5">
           <div className="w-full flex flex-row justify-start items-center">
             <Badge
               className={`${
@@ -204,6 +208,7 @@ const admin = () => {
               placeholder="name"
               value={name}
               onChange={(e) => {
+                console.log("VALUE", e.target.value);
                 setName(e.target.value);
               }}
             />
@@ -214,7 +219,7 @@ const admin = () => {
             />
           </div>
         </div>
-        <div className="w-9/12 border-4 border-white rounded-t-2xl  bg-admin-dark/40 flex flex-row">
+        <div className="w-11/12 border-4 border-white rounded-t-2xl  bg-admin-dark/40 flex flex-row">
           <div className="text-center w-1/12 border-r-2 border-white text-white text-base font-lexand">
             STATUS
           </div>
@@ -228,13 +233,9 @@ const admin = () => {
             ACTION
           </div>
         </div>
-        <div className="w-9/12 border-x-4 border-white bg-admin-dark/40">
-          <Accordion
-            defaultActiveKey="0"
-            className="[list-style:none]"
-            bsPrefix="bootstrap"
-          >
-            {nameFilteredUsers.map((user: user, index: number) => (
+        <div className="w-11/12 border-x-4 border-white bg-admin-dark/40">
+          <Accordion className="[list-style:none]" bsPrefix="bootstrap">
+            {filteredUsers.map((user: user, index: number) => (
               <Accordion.Item
                 eventKey={`${index}`}
                 key={index}
@@ -250,12 +251,36 @@ const admin = () => {
                       <FaTimes className="text-red-500 text-xl" />
                     )}
                   </div>
-                  <div className="text-center w-1/3 border-r-2 border-white text-white text-lg font-lexand">
-                    {user.first + " " + user.last}
+
+                  <div className="w-1/3 border-r-2 border-white flex justify-start items-center">
+                    <div className="text-center text-white text-lg font-lexand ml-2">
+                      {user.first + " " + user.last}
+                    </div>
+                    {(parseInt(user.age) < 18 || user.age === "<16") && (
+                      <FaBaby className="text-purple-300 text-lg ml-2" />
+                    )}
+
+                    {user.school != "University of California, Riverside" && (
+                      <FaSchool className="text-pink-300 text-lg ml-2" />
+                    )}
                   </div>
 
-                  <div className="text-center w-1/3 border-r-2 border-white text-white text-lg font-lexand">
-                    {user.email}
+                  <div className="text-center w-1/3 border-r-2 border-white flex justify-start items-center">
+                    <div className="text-center text-white text-lg font-lexand ml-2">
+                      {user.email}
+                    </div>
+                    <FaRegCopy
+                      className="ml-2 text-blue-300 text-lg font-lexand"
+                      onClick={() => {
+                        copyToClipboard(user.email);
+                      }}
+                    />
+                    <div
+                      id="snackbar"
+                      className="hidden z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2"
+                    >
+                      Email Copied
+                    </div>
                   </div>
 
                   <div className="text-center w-1/3 border-white text-white text-base font-lexand flex flex-row items-center justify-center">
@@ -400,7 +425,7 @@ const admin = () => {
             ))}
           </Accordion>
         </div>
-        <div className="w-9/12 h-8 border-x-4 border-b-4 border-white rounded-b-2xl  bg-admin-dark/40 flex flex-row" />
+        <div className="w-11/12 h-8 border-x-4 border-b-4 border-white rounded-b-2xl  bg-admin-dark/40 flex flex-row" />
       </div>
     );
   }

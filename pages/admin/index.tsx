@@ -171,7 +171,7 @@ const admin = () => {
             : "Pending"}{" "}
           Participants
         </p>
-        <div className="w-9/12 my-5">
+        <div className="w-11/12 my-5">
           <div className="w-full flex flex-row justify-start items-center">
             <Badge
               className={`${

@@ -1,31 +1,31 @@
 export const sponsors = [
   {
-    pic: "triad.jpeg",
+    pic: "triad.webp",
     link: "https://www.triadmagnetics.com/",
     color: "#F5BB2C",
   },
   {
-    pic: "desmos.png",
+    pic: "desmos.webp",
     link: "https://www.desmos.com",
     color: "#148B47",
   },
   {
-    pic: "balsamiq.jpg",
+    pic: "balsamiq.webp",
     link: "https://balsamiq.com/",
     color: "#AF040A",
   },
   {
-    pic: "ripplematch.png",
+    pic: "ripplematch.webp",
     link: "https://ripplematch.com/",
     color: "#3B8BEA",
   },
   {
-    pic: "wolfram.png",
+    pic: "wolfram.webp",
     link: "https://www.wolframalpha.com/",
     color: "#FD755D",
   },
   {
-    pic: "badabeanbadaboom.jpeg",
+    pic: "badabeanbadaboom.webp",
     link: "https://www.badabeansnacks.com/",
     color: "#6C2310",
   },

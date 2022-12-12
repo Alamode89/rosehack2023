@@ -1,13 +1,8 @@
-import React, { Suspense } from "react";
-import dynamic from "next/dynamic";
-// import Profile from "./Profile";
+import React from "react";
+import Profile from "./Profile";
 import { Row, Col } from "react-bootstrap";
 import { profiles, commitee } from "./data/team";
 import { FaCircle } from "react-icons/fa";
-
-const Profile = dynamic(() => import("../components/Profile"), {
-  suspense: true,
-});
 
 const Team = () => {
   return (
@@ -18,7 +13,7 @@ const Team = () => {
       <div className="w-10/12 flex justify-center items-center flex-col">
         <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
           <img
-            src="PINK_HEART1.png"
+            src="pink_heart.webp"
             className="h-10 w-10 transform hidden md:flex"
           />
           <FaCircle className="text-white hidden md:flex" />
@@ -33,26 +28,24 @@ const Team = () => {
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
-          <img src="PINK_HEART1.png" className="h-10 w-10 hidden md:flex" />
+          <img src="pink_heart.webp" className="h-10 w-10 hidden md:flex" />
         </div>
         <Row className="flex justify-center items-initial">
           {profiles.map((profile, index) => (
             <Col lg={3} md={4} xs={6} key={index} className=" p-3">
-              <Suspense fallback={`Loading...`}>
-                <Profile
-                  name={profile.name}
-                  position={profile.position}
-                  shadow={profile.shadow}
-                  image={profile.image}
-                  linkedin={profile.linkedin}
-                />
-              </Suspense>
+              <Profile
+                name={profile.name}
+                position={profile.position}
+                shadow={profile.shadow}
+                image={profile.image}
+                linkedin={profile.linkedin}
+              />
             </Col>
           ))}
         </Row>
         <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
           <img
-            src="PINK_HEART1.png"
+            src="pink_heart.webp"
             className="h-10 w-10 transform hidden md:flex"
           />
           <FaCircle className="text-white hidden md:flex" />
@@ -67,7 +60,7 @@ const Team = () => {
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
-          <img src="PINK_HEART1.png" className="h-10 w-10 hidden md:flex" />
+          <img src="pink_heart.webp" className="h-10 w-10 hidden md:flex" />
         </div>
         <div className="flex justify-center items-stretch flex-col p-2 w-full">
           <div
@@ -94,7 +87,7 @@ const Team = () => {
       </div>
 
       <div className="w-full justify-center mt-20">
-        <img draggable="false" src="pixel5.png" />
+        <img draggable="false" src="pixels_5.webp" />
       </div>
     </section>
   );

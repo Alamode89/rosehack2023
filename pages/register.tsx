@@ -94,8 +94,8 @@ const Register = () => {
     if (user.resume !== undefined) {
       if (
         !(
-          user.resume.name.includes(user.first.toLowerCase()) &&
-          user.resume.name.includes(user.last.toLowerCase())
+          user.resume.name.toLowerCase().includes(user.first.toLowerCase()) &&
+          user.resume.name.toLowerCase().includes(user.last.toLowerCase())
         )
       ) {
         handleMessage(

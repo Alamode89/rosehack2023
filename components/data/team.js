@@ -7,7 +7,7 @@ export const profiles = [
     linkedin: "https://www.linkedin.com/in/ashley-kim-838893196/",
     instagram: "https://www.instagram.com/kimyvmin/ ",
     github: "",
-    image: "ashley.jpeg",
+    image: "ashley.webp",
     shadow: "shadow-team-green",
   },
   {
@@ -18,7 +18,7 @@ export const profiles = [
     linkedin: "https://www.linkedin.com/in/hallie-pham-46a749191",
     instagram: "https://www.instagram.com/halliepham/?hl=en",
     github: "",
-    image: "hallie.jpeg",
+    image: "hallie.webp",
     shadow: "shadow-team-pink",
   },
   {
@@ -29,7 +29,7 @@ export const profiles = [
     linkedin: "",
     instagram: "",
     github: "",
-    image: "annabelle.jpeg",
+    image: "annabelle.webp",
     shadow: "shadow-team-yellow",
   },
   {
@@ -40,7 +40,7 @@ export const profiles = [
     linkedin: "https://www.linkedin.com/in/angelika-bermudez-4233931b8/",
     instagram: "https://www.instagram.com/sussyangy/",
     github: "",
-    image: "angie.jpeg",
+    image: "angie.webp",
     shadow: "shadow-team-teal",
   },
   {
@@ -51,7 +51,7 @@ export const profiles = [
     linkedin: "https://www.linkedin.com/in/samarth-srinivasa/",
     instagram: "https://www.instagram.com/samarth_srinivasa/",
     github: "https://github.com/SamarthSrinivasa",
-    image: "samarth.jpeg",
+    image: "samarth.webp",
     shadow: "shadow-team-hotpink",
   },
   {
@@ -62,7 +62,7 @@ export const profiles = [
     linkedin: "https://www.linkedin.com/in/nicoleb-garcia/",
     instagram: "https://www.instagram.com/lpurgitoryl/",
     github: "https://github.com/lpurgitoryl",
-    image: "nicole.jpeg",
+    image: "nicole.webp",
     shadow: "shadow-team-orange",
   },
   {
@@ -73,7 +73,7 @@ export const profiles = [
     linkedin: "https://www.linkedin.com/in/bonnieyeh",
     instagram: "https://www.instagram.com/bonnnies/",
     github: "",
-    image: "bonnie.jpeg",
+    image: "bonnie.webp",
     shadow: "shadow-team-gold",
   },
   {
@@ -84,7 +84,7 @@ export const profiles = [
     linkedin: "",
     instagram: "https://www.instagram.com/samdosea/",
     github: "",
-    image: "samantha.jpeg",
+    image: "samantha.webp",
     shadow: "shadow-team-purple",
   },
   {
@@ -95,7 +95,7 @@ export const profiles = [
     linkedin: "https://www.linkedin.com/in/cindydo-ucr/",
     instagram: "https://www.instagram.com/c1ndydonut/",
     github: "https://github.com/condoes",
-    image: "cindy.jpeg",
+    image: "cindy.webp",
     shadow: "shadow-team-lightpurple",
   },
   {
@@ -106,7 +106,7 @@ export const profiles = [
     linkedin: "https://www.linkedin.com/in/andreamantee/",
     instagram: " https://www.instagram.com/andweeeee/",
     github: "https://github.com/Alamode89",
-    image: "andre.jpeg",
+    image: "andre.webp",
     shadow: "shadow-team-green",
   },
   {
@@ -117,7 +117,7 @@ export const profiles = [
     linkedin: "https://www.linkedin.com/in/divyank-shah/",
     instagram: "https://www.instagram.com/divyank.shah/",
     github: "https://github.com/shahdivyank",
-    image: "divyank.jpeg",
+    image: "divyank.webp",
     shadow: "shadow-team-pink",
   },
 ];
@@ -139,6 +139,5 @@ export const commitee = [
   "Adreyan Distor",
   "Zijun Wang",
   "Trisha Agrawal",
-  "Jake Kim",
   "Suryateja Duvvuri",
 ];

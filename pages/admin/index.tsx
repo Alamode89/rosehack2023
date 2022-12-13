@@ -142,8 +142,8 @@ const admin = () => {
     );
   } else {
     return (
-      <div className="p-5 bg-gradient-to-b from-admin-top to-admin-bottom flex justify-center items-center flex-col">
-        <p className="font-pixel text-3xl text-white">
+      <div className="md:p-5 bg-gradient-to-b from-admin-top to-admin-bottom flex justify-center items-center flex-col">
+        <p className="p-3 font-pixel text-3xl text-white">
           {nameFilteredUsers.length}{" "}
           {statusFilter === "all"
             ? "Registered"
@@ -214,21 +214,21 @@ const admin = () => {
             />
           </div>
         </div>
-        <div className="w-9/12 border-4 border-white rounded-t-2xl  bg-admin-dark/40 flex flex-row">
-          <div className="text-center w-1/12 border-r-2 border-white text-white text-base font-lexand">
+        <div className="md:w-9/12 w-11/12 border-4 border-white rounded-t-2xl  bg-admin-dark/40 flex flex-row">
+          <div className="text-center md:w-1/12 w-1/4 border-r-2 border-white text-white text-base font-lexand">
             STATUS
           </div>
-          <div className="text-center w-1/3 border-r-2 border-white text-white text-base font-lexand">
+          <div className="text-center md:w-1/3 w-1/4 border-r-2 border-white text-white text-base font-lexand">
             NAME
           </div>
-          <div className="text-center w-1/3 border-r-2 border-white text-white text-base font-lexand">
+          <div className="text-center md:w-1/3 w-1/4 border-r-2 border-white text-white text-base font-lexand">
             EMAIL
           </div>
-          <div className="text-center w-1/3 border-white text-white text-base font-lexand">
+          <div className="text-center md:w-1/3 w-1/4 border-white text-white text-base font-lexand">
             ACTION
           </div>
         </div>
-        <div className="w-9/12 border-x-4 border-white bg-admin-dark/40">
+        <div className="md:w-9/12 w-11/12 border-x-4 border-white bg-admin-dark/40">
           <Accordion
             defaultActiveKey="0"
             className="[list-style:none]"
@@ -241,7 +241,7 @@ const admin = () => {
                 className="w-full"
               >
                 <Accordion.Header className="w-full border-b-4 border-white list-unstyled">
-                  <div className="text-center w-1/12 border-r-2 border-white flex justify-center items-center">
+                  <div className="text-center md:w-1/12 w-1/4 border-r-2 border-white flex justify-center items-center">
                     {user.status === "pending" ? (
                       <FaRegClock className="text-yellow-500 text-xl" />
                     ) : user.status === "approved" ? (
@@ -254,12 +254,12 @@ const admin = () => {
                     {user.first + " " + user.last}
                   </div>
 
-                  <div className="text-center w-1/3 border-r-2 border-white text-white text-lg font-lexand">
+                  <div className="text-center w-1/3 border-r-2 border-white text-white text-lg font-lexand break-words">
                     {user.email}
                   </div>
 
                   <div className="text-center w-1/3 border-white text-white text-base font-lexand flex flex-row items-center justify-center">
-                    <div className="flex w-9/12 flex-row justify-between items-center">
+                    <div className="flex w-9/12 md:flex-row flex-col justify-between items-center">
                       {user.status === "approved" ? (
                         <>
                           <Button variant="secondary" disabled>
@@ -306,9 +306,9 @@ const admin = () => {
                 </Accordion.Header>
                 <Accordion.Body className=" w-full flex justify-center items-center border-b-4 border-white">
                   <div className="w-10/12 text-white text-base font-lexend flex justify-evenly items-start p-2">
-                    <div className="w-1/3 p-2">
+                    <div className="w-1/3">
                       <p className="underline m-0 p-0 text-lg text-center">
-                        General Information
+                        General Info
                       </p>
                       <div className="p-0 m-0 font-light">
                         Team:
@@ -343,7 +343,7 @@ const admin = () => {
                     </div>
                     <div className="w-1/3 p-2">
                       <p className="text-lg underline m-0 p-0 text-center">
-                        Misc Information
+                        Misc Info
                       </p>
                       <div className="p-0 m-0 font-light">
                         Phone:

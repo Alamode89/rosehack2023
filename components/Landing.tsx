@@ -1,12 +1,22 @@
-import React from "react";
 import { FaCircle } from "react-icons/fa";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Link from "next/link";
 import Image from "next/image";
 import blueHeart from "../public/blue_heart.webp";
 import pinkHeart from "../public/pink_heart.webp";
+import React, { useState, useEffect } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase";
 import pixels from "../public/pixels_1.webp";
 const Landing = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
+  useEffect(() => {
+    onAuthStateChanged(auth, (currentState) => {
+      if (currentState !== null) {
+        setLoggedIn(true);
+      }
+    });
+  }, []);
   return (
     <section
       id=""
@@ -71,11 +81,20 @@ const Landing = () => {
           JANUARY 14-15
         </p>
         <div className="flex items-center justify-center pt-3">
-          <Link href="/register">
-            <a className="animate-bounce shadow-[0_0_16px_0]  no-underline shadow-[#15DBFF] px-4 drop-shadow-blue p-2 font-pixel text-white border-[6px] rounded-2xl text-sm md:text-2xl">
-              Register
-            </a>
-          </Link>
+          {!loggedIn && (
+            <Link href="/register">
+              <a className="animate-bounce shadow-[0_0_16px_0]  no-underline shadow-[#15DBFF] px-4 drop-shadow-blue p-2 font-pixel text-white border-[6px] rounded-2xl text-sm md:text-2xl">
+                Register
+              </a>
+            </Link>
+          )}
+          {loggedIn && (
+            <Link href="/dashboard">
+              <a className="animate-bounce shadow-[0_0_16px_0]  no-underline shadow-[#15DBFF] px-4 drop-shadow-blue p-2 font-pixel text-white border-[6px] rounded-2xl text-sm md:text-2xl">
+                Dashboard
+              </a>
+            </Link>
+          )}
         </div>
         <div className="pt-4 w-7/12 justify-center items-center m-auto">
           <ProgressBar

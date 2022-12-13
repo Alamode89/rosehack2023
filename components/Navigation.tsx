@@ -54,6 +54,12 @@ const Navigation = () => {
             >
               REGISTER
             </Nav.Link>
+            <Nav.Link
+              href="/user"
+              className="!text-xl text-center text-white mr-1 hover:underline decoration-4 underline-offset-8"
+            >
+              LOGIN
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

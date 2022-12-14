@@ -156,6 +156,10 @@ module.exports = {
           contact: "#26DDE1",
           email: "#48BDFF",
         },
+        schedule: {
+          top: "#CC00FF",
+          bottom: "#FF4F79",
+        },
       },
       boxShadow: {
         hover: "0px 4px 10px #FFFFFF, 0px 4px 16px #FFFFFF",

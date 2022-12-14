@@ -4,12 +4,14 @@ import Landing from "../components/Landing";
 import Sponsors from "../components/Sponsors";
 import Team from "../components/Team";
 import FAQ from "../components/FAQ";
+import Schedule from "../components/Schedule";
 
 const Home: NextPage = () => {
   return (
     <div className="flex justify-center items-center flex-col">
       <Landing />
       <About />
+      <Schedule />
       <Sponsors />
       <Team />
       <FAQ />

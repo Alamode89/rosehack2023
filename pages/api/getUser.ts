@@ -7,12 +7,12 @@ export default async function addStudent(
   res: NextApiResponse
 ) {
   try {
-    console.log(req.body, req.body)
+    console.log(req.body, req.body);
     const snapshot = await getDoc(doc(db, "users", req.body.email));
     res.status(200).json(snapshot.data());
-    return
+    return;
   } catch {
     res.status(500).json({});
-    return
+    return;
   }
 }

@@ -6,6 +6,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
 import axios from "axios";
 import { data } from "../components/data/register";
+import { Row, Col } from "react-bootstrap";
 
 const dashboard = () => {
   const router = useRouter();
@@ -13,6 +14,7 @@ const dashboard = () => {
   const [userData, setUserData] = useState<typeof data>(data);
 
   useEffect(() => {
+    console.log(userData);
     onAuthStateChanged(auth, async (currentState) => {
       if (currentState === null) router.push("/user");
       else if (currentState !== null) {
@@ -41,14 +43,122 @@ const dashboard = () => {
     return;
   };
   return (
-    <div className="flex justify-center items-center flex-col bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-400 w-full min-h-screen">
-      current User: {user && user.email}
-      <div>{userData.team}</div>
-      <div>First name: {userData.first}</div>
-      <div>Last name: {userData.last}</div>
+    <div className="w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-400 flex flex-col justify-center items-center">
+      <Row className="flex justify-center items-start flex-row w-10/12 min-h-screen ">
+        <Col
+          md={5}
+          className="mt-5 mx-2 min-h-screen bg-white rounded-2xl flex flex-col items-center justify-start"
+        >
+          <div className="h-8 text-center w-10/12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 font-pixel text-md md:text-xl lg:text-2xl mt-4">
+            GOOD MORNING{" "}
+          </div>
+          <div className="h-12 text-center w-10/12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 font-pixel text-md md:text-xl lg:text-2xl mt-4">
+            {userData.first} {userData.last}!
+          </div>
+          <div className="bg-gradient-to-r from-purple-400 to-pink-600 h-1 w-10/12 mb-2" />
+          <div className="text-base w-full font-lexend flex flex-col justify-center items-center ">
+            <div className="m-2 flex items-center">
+              <span className="font-pixel">email:</span>
+              <span>{user && user.email}</span>
+            </div>
+            <div className="m-2 flex items-center ">
+              <span className="font-pixel">phone:</span>
+              <span>{userData.phone}</span>
+            </div>
+            <div className="m-2 flex items-center">
+              <span className="font-pixel ">grade:</span>
+              <span>{userData.grade}</span>
+            </div>
+            <div className="m-2 flex items-center">
+              <span className="font-pixel">school:</span>
+              <span>{userData.school}</span>
+            </div>
+            <div className="m-2 flex items-center">
+              <span className="font-pixel ">gender:</span>
+              <span>{userData.gender}</span>
+            </div>
+            <div className="m-2 flex items-center">
+              <span className="font-pixel">age:</span>
+              <span>{userData.age}</span>
+            </div>
+            <div className="m-2 flex items-center">
+              <span className="font-pixel">major:</span>
+              <span>{userData.major}</span>
+            </div>
+            <div className="m-2 flex items-center">
+              <span className="font-pixel">in person:</span>
+              <span>{userData.in_person ? "yes" : "no"}</span>
+            </div>
+            <div className="m-2 flex items-center">
+              <span className="font-pixel">food specialties:</span>
+              <span>
+                {userData.hindu ? "hindu" : ""}
+                {userData.kosher ? " kosher" : ""}
+                {userData.vegan ? " vegan" : ""}
+                {userData.vegetarian ? " vegetarian" : ""}
+                {!(
+                  userData.hindu ||
+                  userData.kosher ||
+                  userData.vegan ||
+                  userData.vegetarian
+                )
+                  ? "none"
+                  : ""}
+              </span>
+            </div>
+            <div className="m-2 flex items-center">
+              <span className="font-pixel">veccinated:</span>
+              <span>{userData.covid ? "yes" : "no"}</span>
+            </div>
+            <button
+              onClick={() => handleLogOut()}
+              className="hover:scale-105 rounded-xl m-5 bg-gradient-to-r from-purple-400 to-pink-600  font-pixel text-md md:text-xl lg:text-2xl text-white text-center px-3 py-2"
+            >
+              EDIT MY PROFILE
+            </button>
+          </div>
+        </Col>
+        <Col
+          md={5}
+          className="mt-5 h-full mx-2 min-h-screen bg-white rounded-2xl flex flex-col items-center justify-between"
+        >
+          <div className="w-full flex flex-col items-center justify-center">
+            <div className="h-12 text-center w-10/12 text-transparent bg-clip-text bg-gradient-to-r from-[#64e8de] to-[#8a64eb] font-pixel text-md md:text-xl lg:text-2xl mt-4">
+              TEAM
+            </div>
+            <div className="bg-gradient-to-r from-[#64e8de] to-[#8a64eb] h-1 w-10/12" />
+          </div>
+          {userData.team === "" && (
+            <div className="text-xl font-lexend text-gray-500">No team</div>
+          )}
+          {userData.team === "" ? (
+            <div className=" flex flex-col w-10/12">
+              <button
+                onClick={() => handleLogOut()}
+                className="hover:scale-105 rounded-xl mb-2 bg-gradient-to-r from-[#64e8de] to-[#8a64eb]  w-full font-pixel text-md md:text-xl lg:text-2xl text-white text-center px-3 py-2"
+              >
+                JOIN A TEAM
+              </button>
+              <button
+                onClick={() => handleLogOut()}
+                className="hover:scale-105 rounded-xl mb-2 bg-gradient-to-r from-[#268de1] to-[#b65eba] w-full font-pixel text-md md:text-xl lg:text-2xl text-white text-center px-3 py-2"
+              >
+                CREAT A TEAM
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={() => handleLogOut()}
+              className="hover:scale-105 rounded-xl m-5 bg-gradient-to-r from-[#64e8de] to-[#8a64eb]   font-pixel text-md md:text-xl lg:text-2xl text-white text-center px-3 py-2"
+            >
+              EDIT MY TEAM
+            </button>
+          )}
+        </Col>
+      </Row>
       <button
         onClick={() => handleLogOut()}
-        className="hover:scale-105 rounded-xl m-5 bg-gradient-to-r from-purple-400 to-pink-600 font-pixel text-md md:text-xl lg:text-2xl text-white text-center px-3 py-2"
+        className="hover:scale-105 rounded-xl m-5 bg-gradient-to-r from-[#6ee2f5] to-[#6454f0] font-pixel text-md md:text-xl lg:text-2xl text-white text-center px-3 py-2"
       >
         LOGOUT
       </button>

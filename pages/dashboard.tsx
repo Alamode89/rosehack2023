@@ -40,11 +40,31 @@ const dashboard = () => {
   }, []);
 
   const joinTeam = async () => {
+    if (id === userData.team) {
+      alert("Cannot join team you already are in");
+      return;
+    }
+
+    const response = await axios.post("/api/verifyTeam", { id: id });
+    if (!response.data) {
+      alert("team is full");
+      return;
+    }
+
+    await axios.post("/api/leaveTeam", {
+      email: userData.email,
+      team: userData.team,
+      members: team?.members.length,
+      name: userData.first + " " + userData.last,
+    });
+
     await axios.post("/api/updateTeam", {
       email: userData.email,
       team: id,
       name: userData.first + " " + userData.last,
     });
+
+    setUserData({ ...userData, team: id });
     setTrigger(!trigger);
   };
 

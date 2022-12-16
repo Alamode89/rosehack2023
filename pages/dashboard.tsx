@@ -18,6 +18,8 @@ const dashboard = () => {
   const [user] = useAuthState(auth);
   const [userData, setUserData] = useState<typeof data>(data);
   const [team, setTeam] = useState<team_type>();
+  const [id, setId] = useState("");
+  const [trigger, setTrigger] = useState(false);
 
   useEffect(() => {
     console.log(userData);
@@ -31,10 +33,32 @@ const dashboard = () => {
         const teamResponse = await axios.post("/api/getTeam", {
           uid: response.data.team,
         });
+        console.log(teamResponse.data);
         setTeam(teamResponse.data);
       }
     });
   }, []);
+
+  const joinTeam = async () => {
+    await axios.post("/api/updateTeam", {
+      email: userData.email,
+      team: id,
+      name: userData.first + " " + userData.last,
+    });
+    setTrigger(!trigger);
+  };
+
+  useEffect(() => {
+    const getTeamData = async () => {
+      const teamResponse = await axios.post("/api/getTeam", {
+        uid: id,
+      });
+      console.log(teamResponse.data);
+      setTeam(teamResponse.data);
+    };
+
+    getTeamData();
+  }, [trigger]);
 
   const logOut = async () => {
     signOut(auth)
@@ -143,10 +167,16 @@ const dashboard = () => {
             <div>
               Send this ID to your teammates to have them join your team
             </div>
-            <input type="text" className="border-2 border-black" />
-            <button>Join</button>
+            <input
+              type="text"
+              name="id"
+              value={id}
+              className="border-2 border-black"
+              onChange={(e) => setId(e.target.value)}
+            />
+            <button onClick={joinTeam}>Join</button>
             <p>{team?.name}</p>
-            {team?.members.map((member, index) => (
+            {team?.members?.map((member, index) => (
               <p key={index}>{member}</p>
             ))}
           </div>

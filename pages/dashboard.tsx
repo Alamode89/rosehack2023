@@ -21,6 +21,7 @@ const dashboard = () => {
   const [team, setTeam] = useState<team_type>();
   const [id, setId] = useState("");
   const [trigger, setTrigger] = useState(false);
+  const [teamName, setTeamName] = useState("");
 
   useEffect(() => {
     console.log(userData);
@@ -54,7 +55,7 @@ const dashboard = () => {
     await axios.post("/api/leaveTeam", {
       email: userData.email,
       team: userData.team,
-      members: team?.members.length,
+      members: team?.members?.length,
       name: userData.first + " " + userData.last,
     });
 
@@ -69,7 +70,7 @@ const dashboard = () => {
   };
 
   const leaveTeam = async () => {
-    if (team?.members.length === 1) {
+    if (team?.members?.length === 1) {
       alert("cannot leave team when ur the only one lol");
       return;
     }
@@ -77,7 +78,7 @@ const dashboard = () => {
     await axios.post("/api/leaveTeam", {
       email: userData.email,
       team: userData.team,
-      members: team?.members.length,
+      members: team?.members?.length,
       name: userData.first + " " + userData.last,
     });
 
@@ -115,6 +116,14 @@ const dashboard = () => {
       .catch((error) => {
         console.log(error);
       });
+  };
+
+  const renameTeam = async () => {
+    await axios.post("/api/renameTeam", {
+      name: teamName,
+      team: userData.team,
+    });
+    setTeam({ ...team!, name: teamName });
   };
 
   const handleLogOut = async () => {
@@ -217,12 +226,24 @@ const dashboard = () => {
               type="text"
               name="id"
               value={id}
+              placeholder="New Team ID"
               className="border-2 border-black"
               onChange={(e) => setId(e.target.value)}
             />
             <button onClick={joinTeam}>Join</button>
             <button onClick={leaveTeam}>Leave</button>
             <p>{team?.name}</p>
+            <input
+              type="text"
+              name="teamName"
+              value={teamName}
+              placeholder="New Team Name"
+              className="border-2 border-black"
+              onChange={(e) => {
+                setTeamName(e.target.value);
+              }}
+            />
+            <button onClick={() => renameTeam()}>Rename Team</button>
             {team?.members?.map((member, index) => (
               <p key={index}>{member}</p>
             ))}

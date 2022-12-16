@@ -34,7 +34,6 @@ const dashboard = () => {
         const teamResponse = await axios.post("/api/getTeam", {
           uid: response.data.team,
         });
-        console.log(teamResponse.data);
         setTeam(teamResponse.data);
       }
     });
@@ -85,7 +84,7 @@ const dashboard = () => {
     const uuid = uuidv4();
     await axios.post("/api/newTeam", {
       email: userData.email,
-      uuid: uuidv4(),
+      uuid: uuid,
       name: userData.first + " " + userData.last,
     });
 
@@ -101,7 +100,6 @@ const dashboard = () => {
       const teamResponse = await axios.post("/api/getTeam", {
         uid: id,
       });
-      console.log(teamResponse.data);
       setTeam(teamResponse.data);
     };
 

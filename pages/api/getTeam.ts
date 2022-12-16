@@ -10,9 +10,9 @@ export default async function addStudent(
     console.log(req.body, req.body);
     const snapshot = await getDoc(doc(db, "teams", req.body.uid));
     res.status(200).json(snapshot.data());
-    return;
+    res.end()
   } catch {
-    res.status(500).json({});
-    return;
+    res.status(201).json({});
+    res.end()
   }
 }

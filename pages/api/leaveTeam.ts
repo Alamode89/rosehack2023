@@ -10,12 +10,12 @@ export default async function addStudent(
     team: "",
   });
 
-  if(req.body.members === 1) {
+  if (req.body.members === 1) {
     await deleteDoc(doc(db, "teams", req.body.team));
   } else {
     await updateDoc(doc(db, "teams", req.body.team), {
-        members: arrayRemove(req.body.name),
-      });
+      members: arrayRemove(req.body.name),
+    });
   }
 
   res.status(200).json({});

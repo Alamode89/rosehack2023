@@ -8,10 +8,10 @@ export default async function addStudent(
 ) {
   try {
     const snapshot = await getDoc(doc(db, "teams", req.body.id));
-    if(snapshot.data()?.members.length < 4) {
-        res.status(200).json(true);
+    if (snapshot.data()?.members.length < 4) {
+      res.status(200).json(true);
     } else {
-        res.status(200).json(false);
+      res.status(200).json(false);
     }
     return;
   } catch {

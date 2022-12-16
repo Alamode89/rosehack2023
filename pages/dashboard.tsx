@@ -8,10 +8,16 @@ import axios from "axios";
 import { data } from "../components/data/register";
 import { Row, Col } from "react-bootstrap";
 
+interface team_type {
+  members: Array<string>;
+  name: string;
+}
+
 const dashboard = () => {
   const router = useRouter();
   const [user] = useAuthState(auth);
   const [userData, setUserData] = useState<typeof data>(data);
+  const [team, setTeam] = useState<team_type>();
 
   useEffect(() => {
     console.log(userData);
@@ -22,6 +28,10 @@ const dashboard = () => {
           email: currentState.email,
         });
         setUserData(response.data);
+        const teamResponse = await axios.post("/api/getTeam", {
+          uid: response.data.team,
+        });
+        setTeam(teamResponse.data);
       }
     });
   }, []);
@@ -120,7 +130,7 @@ const dashboard = () => {
         </Col>
         <Col
           md={5}
-          className="mt-5 h-full mx-2 min-h-screen bg-white rounded-2xl flex flex-col items-center justify-between"
+          className="mt-5 h-full mx-2 min-h-screen bg-white rounded-2xl flex flex-col items-center justify-start"
         >
           <div className="w-full flex flex-col items-center justify-center">
             <div className="h-12 text-center w-10/12 text-transparent bg-clip-text bg-gradient-to-r from-[#64e8de] to-[#8a64eb] font-pixel text-md md:text-xl lg:text-2xl mt-4">
@@ -128,32 +138,18 @@ const dashboard = () => {
             </div>
             <div className="bg-gradient-to-r from-[#64e8de] to-[#8a64eb] h-1 w-10/12" />
           </div>
-          {userData.team === "" && (
-            <div className="text-xl font-lexend text-gray-500">No team</div>
-          )}
-          {userData.team === "" ? (
-            <div className=" flex flex-col w-10/12">
-              <button
-                onClick={() => handleLogOut()}
-                className="hover:scale-105 rounded-xl mb-2 bg-gradient-to-r from-[#64e8de] to-[#8a64eb]  w-full font-pixel text-md md:text-xl lg:text-2xl text-white text-center px-3 py-2"
-              >
-                JOIN A TEAM
-              </button>
-              <button
-                onClick={() => handleLogOut()}
-                className="hover:scale-105 rounded-xl mb-2 bg-gradient-to-r from-[#268de1] to-[#b65eba] w-full font-pixel text-md md:text-xl lg:text-2xl text-white text-center px-3 py-2"
-              >
-                CREAT A TEAM
-              </button>
+          <div>
+            <div className="text-3xl">Team ID: {userData.team}</div>
+            <div>
+              Send this ID to your teammates to have them join your team
             </div>
-          ) : (
-            <button
-              onClick={() => handleLogOut()}
-              className="hover:scale-105 rounded-xl m-5 bg-gradient-to-r from-[#64e8de] to-[#8a64eb]   font-pixel text-md md:text-xl lg:text-2xl text-white text-center px-3 py-2"
-            >
-              EDIT MY TEAM
-            </button>
-          )}
+            <input type="text" className="border-2 border-black" />
+            <button>Join</button>
+            <p>{team?.name}</p>
+            {team?.members.map((member, index) => (
+              <p key={index}>{member}</p>
+            ))}
+          </div>
         </Col>
       </Row>
       <button

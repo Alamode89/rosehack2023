@@ -7,6 +7,7 @@ import { signOut } from "firebase/auth";
 import axios from "axios";
 import { data } from "../components/data/register";
 import { Row, Col } from "react-bootstrap";
+import { v4 as uuidv4 } from "uuid";
 
 interface team_type {
   members: Array<string>;
@@ -66,6 +67,33 @@ const dashboard = () => {
 
     setUserData({ ...userData, team: id });
     setTrigger(!trigger);
+  };
+
+  const leaveTeam = async () => {
+    if (team?.members.length === 1) {
+      alert("cannot leave team when ur the only one lol");
+      return;
+    }
+
+    await axios.post("/api/leaveTeam", {
+      email: userData.email,
+      team: userData.team,
+      members: team?.members.length,
+      name: userData.first + " " + userData.last,
+    });
+
+    const uuid = uuidv4();
+    await axios.post("/api/newTeam", {
+      email: userData.email,
+      uuid: uuidv4(),
+      name: userData.first + " " + userData.last,
+    });
+
+    setUserData({ ...userData, team: uuid });
+    setTeam({
+      name: "No Team Name",
+      members: [userData.first + " " + userData.last],
+    });
   };
 
   useEffect(() => {
@@ -195,6 +223,7 @@ const dashboard = () => {
               onChange={(e) => setId(e.target.value)}
             />
             <button onClick={joinTeam}>Join</button>
+            <button onClick={leaveTeam}>Leave</button>
             <p>{team?.name}</p>
             {team?.members?.map((member, index) => (
               <p key={index}>{member}</p>

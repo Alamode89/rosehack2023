@@ -11,7 +11,7 @@ export default async function addStudent(
   });
 
   await setDoc(doc(db, "teams", req.body.uuid), {
-    name: "No Team Name",
+    name: "Untitled Team",
     members: [req.body.name],
   });
 

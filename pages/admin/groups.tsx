@@ -36,7 +36,11 @@ const admin = () => {
   };
 
   const handleStatus = async (id: string, status: string) => {
-    await axios.post("/api/updateQualification", { id: id, status: status });
+    await axios.post("/api/updateTeamField", {
+      field: "status",
+      id: id,
+      status: status,
+    });
     setTrigger(!trigger);
   };
 

@@ -7,7 +7,7 @@ export default async function addStudent(
   res: NextApiResponse
 ) {
   await updateDoc(doc(db, "teams", req.body.id), {
-    status: req.body.status,
+    [req.body.field]: req.body.status,
   });
   res.status(200).json({});
 }

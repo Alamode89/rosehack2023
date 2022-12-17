@@ -287,7 +287,9 @@ const admin = () => {
                           <FaCheck
                             onClick={() => {
                               setNoteEdit(false);
-                              handleUpdate("logs", team.id, note);
+                              if (note !== team.data.logs) {
+                                handleUpdate("logs", team.id, note);
+                              }
                             }}
                             className="text-green-300 text-lg ml-2 hover:cursor-pointer"
                           />
@@ -324,7 +326,9 @@ const admin = () => {
                           <FaCheck
                             onClick={() => {
                               setPrizeEdit(false);
-                              handleUpdate("prizeLogs", team.id, prize);
+                              if (prize !== team.data.prizeLogs) {
+                                handleUpdate("prizeLogs", team.id, prize);
+                              }
                             }}
                             className="text-green-300 text-lg ml-2 hover:cursor-pointer"
                           />

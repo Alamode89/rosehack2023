@@ -20,6 +20,7 @@ const admin = () => {
   const [user, setUser] = useState<string | null>("");
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
+  const [trigger, setTrigger] = useState(false);
 
   const copyToClipboard = (copyText: string) => {
     navigator.clipboard.writeText(copyText);
@@ -32,6 +33,11 @@ const admin = () => {
           "hidden z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2";
       }, 1000);
     }
+  };
+
+  const handleStatus = async (id: string, status: string) => {
+    await axios.post("/api/updateQualification", { id: id, status: status });
+    setTrigger(!trigger);
   };
 
   useEffect(() => {
@@ -58,7 +64,7 @@ const admin = () => {
     };
 
     getUsers();
-  }, []);
+  }, [trigger]);
 
   const handleSearch = () => {
     setFilteredTeams(
@@ -206,12 +212,22 @@ const admin = () => {
                           <Button variant="secondary" disabled>
                             Qualify
                           </Button>
-                          <Button variant="danger">Disqualify</Button>
+                          <Button
+                            variant="danger"
+                            onClick={() => handleStatus(team.id, "rejected")}
+                          >
+                            Disqualify
+                          </Button>
                         </>
                       ) : (
                         <>
-                          <Button variant="secondary">Qualify</Button>
-                          <Button variant="danger" disabled>
+                          <Button
+                            variant="success"
+                            onClick={() => handleStatus(team.id, "approved")}
+                          >
+                            Qualify
+                          </Button>
+                          <Button variant="secondary" disabled>
                             Disqualify
                           </Button>
                         </>

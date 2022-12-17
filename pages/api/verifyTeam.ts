@@ -8,9 +8,7 @@ export default async function addStudent(
 ) {
   try {
     const snapshot = await getDoc(doc(db, "teams", req.body.id));
-    if(!snapshot.data())
-    {
-      
+    if (!snapshot.data()) {
       res.status(201).json(true);
       return;
     }

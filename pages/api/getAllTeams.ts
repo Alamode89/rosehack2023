@@ -10,7 +10,7 @@ export default async function addStudent(
   try {
     const snapshot = await getDocs(collection(db, "teams"));
     snapshot.forEach((doc) => {
-      result.push({id: doc.id, data: doc.data()});
+      result.push({ id: doc.id, data: doc.data() });
     });
     res.status(200).json(result);
     res.end();

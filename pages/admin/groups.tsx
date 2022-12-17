@@ -9,6 +9,7 @@ import {
   FaAngleDown,
   FaCheck,
   FaTimes,
+  FaPencilAlt,
 } from "react-icons/fa";
 import { auth } from "../../firebase";
 import { onAuthStateChanged } from "firebase/auth";
@@ -21,6 +22,10 @@ const admin = () => {
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
   const [trigger, setTrigger] = useState(false);
+  const [noteEdit, setNoteEdit] = useState(false);
+  const [prizeEdit, setPrizeEdit] = useState(false);
+  const [note, setNote] = useState("");
+  const [prize, setPrize] = useState("");
 
   const copyToClipboard = (copyText: string) => {
     navigator.clipboard.writeText(copyText);
@@ -276,21 +281,77 @@ const admin = () => {
                       </div>
                     </div>
                     <div className="w-1/3">
-                      <p className="m-0 p-0 text-lg font-black font-lexend">
+                      <div className="m-0 p-0 text-lg font-black font-lexend flex items-center">
                         Notes
-                      </p>
-                      <div className="p-0 m-0">
-                        {team.data.logs === "" ? "No Notes" : team.data.logs}
+                        {noteEdit ? (
+                          <FaCheck
+                            onClick={() => {
+                              setNoteEdit(false);
+                              handleUpdate("logs", team.id, note);
+                            }}
+                            className="text-green-300 text-lg ml-2 hover:cursor-pointer"
+                          />
+                        ) : (
+                          <FaPencilAlt
+                            onClick={() => setNoteEdit(true)}
+                            className="text-gray-300 text-lg ml-2 hover:cursor-pointer"
+                          />
+                        )}
+                      </div>
+                      <div className="p-0 m-0 ">
+                        {noteEdit ? (
+                          <input
+                            value={note}
+                            placeholder={
+                              team.data.logs === ""
+                                ? "No Notes"
+                                : team.data.logs
+                            }
+                            onChange={(e) => setNote(e.target.value)}
+                            className="text-white bg-transparent"
+                          />
+                        ) : team.data.logs === "" ? (
+                          "No Notes"
+                        ) : (
+                          team.data.logs
+                        )}
                       </div>
                     </div>
                     <div className="w-1/3">
-                      <p className="m-0 p-0 text-lg font-black font-lexend">
+                      <div className="m-0 p-0 text-lg font-black font-lexend flex items-center">
                         Prize Information
-                      </p>
+                        {prizeEdit ? (
+                          <FaCheck
+                            onClick={() => {
+                              setPrizeEdit(false);
+                              handleUpdate("prizeLogs", team.id, prize);
+                            }}
+                            className="text-green-300 text-lg ml-2 hover:cursor-pointer"
+                          />
+                        ) : (
+                          <FaPencilAlt
+                            onClick={() => setPrizeEdit(true)}
+                            className="text-gray-300 text-lg ml-2 hover:cursor-pointer"
+                          />
+                        )}
+                      </div>
                       <div className="p-0 m-0">
-                        {team.data.prizeLogs === ""
-                          ? "No prize notes"
-                          : team.data.prizeLogs}
+                        {prizeEdit ? (
+                          <input
+                            value={prize}
+                            placeholder={
+                              team.data.prizeLogs === ""
+                                ? "No Notes"
+                                : team.data.prizeLogs
+                            }
+                            onChange={(e) => setPrize(e.target.value)}
+                            className="text-white bg-transparent"
+                          />
+                        ) : team.data.prizeLogs === "" ? (
+                          "No Notes"
+                        ) : (
+                          team.data.prizeLogs
+                        )}
                       </div>
                     </div>
                   </div>

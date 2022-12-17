@@ -35,7 +35,11 @@ const admin = () => {
     }
   };
 
-  const handleUpdate = async (field: string, id: string, status: string) => {
+  const handleUpdate = async (
+    field: string,
+    id: string,
+    status: string | boolean
+  ) => {
     await axios.post("/api/updateTeamField", {
       field: field,
       id: id,
@@ -239,6 +243,17 @@ const admin = () => {
                             Disqualify
                           </Button>
                         </>
+                      )}
+                      {team.data.prize === true ? (
+                        <FaTimes
+                          onClick={() => handleUpdate("prize", team.id, false)}
+                          className="text-red-300 text-2xl ml-2"
+                        />
+                      ) : (
+                        <FaTrophy
+                          onClick={() => handleUpdate("prize", team.id, true)}
+                          className="text-yellow-300 text-2xl ml-2"
+                        />
                       )}
                       <FaAngleDown className="text-white text-2xl ml-2" />
                     </div>

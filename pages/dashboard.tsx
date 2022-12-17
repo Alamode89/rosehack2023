@@ -8,6 +8,7 @@ import axios from "axios";
 import { data } from "../components/data/register";
 import { Row, Col } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
+import { FaRegCopy } from "react-icons/fa";
 
 interface team_type {
   members: Array<string>;
@@ -22,6 +23,12 @@ const dashboard = () => {
   const [id, setId] = useState("");
   const [trigger, setTrigger] = useState(false);
   const [teamName, setTeamName] = useState("");
+  const [create, setCreate] = useState(false);
+  const [join, setJoin] = useState(false);
+  const [inTeam, setInTeam] = useState(false);
+  const [snackBar, setSnackBar] = useState(
+    "hidden z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2"
+  );
 
   useEffect(() => {
     console.log(userData);
@@ -36,19 +43,30 @@ const dashboard = () => {
           uid: response.data.team,
         });
         setTeam(teamResponse.data);
+        if (teamResponse.data.name != "Untitled Team") {
+          setInTeam(true);
+        }
       }
     });
   }, []);
 
   const joinTeam = async () => {
+    if (id === "") {
+      alert("Please enter a team ID");
+      return;
+    }
     if (id === userData.team) {
       alert("Cannot join team you already are in");
       return;
     }
 
     const response = await axios.post("/api/verifyTeam", { id: id });
-    if (!response.data) {
-      alert("team is full");
+
+    if (response.status === 201) {
+      alert("Cannot find team");
+      return;
+    } else if (response.status === 202) {
+      alert("Teaem full");
       return;
     }
 
@@ -67,8 +85,17 @@ const dashboard = () => {
 
     setUserData({ ...userData, team: id });
     setTrigger(!trigger);
+    setJoin(false);
+    setInTeam(true);
   };
-
+  // const dummy = async () => {
+  //   const uuid = uuidv4();
+  //   await axios.post("/api/newTeam", {
+  //     email: userData.email,
+  //     uuid: uuid,
+  //     name: userData.first + " " + userData.last,
+  //   });
+  // };
   const leaveTeam = async () => {
     if (team?.members?.length === 1) {
       alert("cannot leave team when ur the only one lol");
@@ -91,9 +118,10 @@ const dashboard = () => {
 
     setUserData({ ...userData, team: uuid });
     setTeam({
-      name: "No Team Name",
+      name: "Untitled Team",
       members: [userData.first + " " + userData.last],
     });
+    setInTeam(false);
   };
 
   useEffect(() => {
@@ -119,17 +147,38 @@ const dashboard = () => {
   };
 
   const renameTeam = async () => {
+    if (teamName == "Untitled Team") {
+      alert("please use a different name!");
+      return;
+    }
+    if (teamName == "") {
+      alert("please enter a team name!");
+      return;
+    }
     await axios.post("/api/renameTeam", {
       name: teamName,
       team: userData.team,
     });
     setTeam({ ...team!, name: teamName });
+    setInTeam(true);
+    setCreate(false);
   };
 
   const handleLogOut = async () => {
     const response = await logOut();
     console.log(response);
     return;
+  };
+  const copyToClipboard = (copyText: string) => {
+    navigator.clipboard.writeText(copyText);
+    setSnackBar(
+      "visible z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2"
+    );
+    setTimeout(() => {
+      setSnackBar(
+        "hidden z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2"
+      );
+    }, 1000);
   };
   return (
     <div className="w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-400 flex flex-col justify-center items-center">
@@ -217,37 +266,146 @@ const dashboard = () => {
             </div>
             <div className="bg-gradient-to-r from-[#64e8de] to-[#8a64eb] h-1 w-10/12" />
           </div>
-          <div>
-            <div className="text-3xl">Team ID: {userData.team}</div>
-            <div>
-              Send this ID to your teammates to have them join your team
+          {create ? (
+            <div className="flex flex-col justify-start items-center w-full">
+              <div className="font-pixel text-base mt-3">Team Name:</div>
+
+              <input
+                type="text"
+                name="teamName"
+                value={teamName}
+                placeholder="New Team Name"
+                className="border-2 border-black w-11/12"
+                onChange={(e) => {
+                  setTeamName(e.target.value);
+                }}
+              />
+              <button
+                onClick={() => renameTeam()}
+                className="hover:scale-105 rounded-xl mt-2 bg-gradient-to-r from-[#268de1] to-[#b65eba] font-pixel text-md md:text-lg lg:text-2xl text-white text-center px-3 py-2"
+              >
+                CREATE
+              </button>
+              <button
+                onClick={() => {
+                  setCreate(false);
+                }}
+                className="mt-3 hover:scale-105 rounded-xl bg-gradient-to-r to-[#64e8de] from-[#8a64eb] font-pixel text-md md:text-lg lg:text-2xl text-white text-center px-3 py-2"
+              >
+                BACK
+              </button>
             </div>
-            <input
-              type="text"
-              name="id"
-              value={id}
-              placeholder="New Team ID"
-              className="border-2 border-black"
-              onChange={(e) => setId(e.target.value)}
-            />
-            <button onClick={joinTeam}>Join</button>
-            <button onClick={leaveTeam}>Leave</button>
-            <p>{team?.name}</p>
-            <input
-              type="text"
-              name="teamName"
-              value={teamName}
-              placeholder="New Team Name"
-              className="border-2 border-black"
-              onChange={(e) => {
-                setTeamName(e.target.value);
-              }}
-            />
-            <button onClick={() => renameTeam()}>Rename Team</button>
-            {team?.members?.map((member, index) => (
-              <p key={index}>{member}</p>
-            ))}
-          </div>
+          ) : join ? (
+            <div className="flex flex-col justify-between items-center">
+              <div className="font-pixel text-base mt-3">Enter a Team ID</div>
+              <input
+                type="text"
+                name="id"
+                value={id}
+                placeholder="New Team ID"
+                className="border-2 mt-1 border-black"
+                onChange={(e) => setId(e.target.value)}
+              />
+              <button
+                onClick={joinTeam}
+                className="mt-3 hover:scale-105 rounded-xl bg-gradient-to-r from-[#64e8de] to-[#8a64eb] font-pixel text-md md:text-lg lg:text-2xl text-white text-center px-3 py-2"
+              >
+                JOIN
+              </button>
+              <button
+                onClick={() => {
+                  setJoin(false);
+                }}
+                className="mt-3 hover:scale-105 rounded-xl bg-gradient-to-r to-[#64e8de] from-[#8a64eb] font-pixel text-md md:text-lg lg:text-2xl text-white text-center px-3 py-2"
+              >
+                BACK
+              </button>
+            </div>
+          ) : inTeam ? (
+            <div className="flex flex-col justify-center items-start w-11/12">
+              <div className="flex flex-row justify-center items-center mt-3">
+                <span className="font-pixel text-base">Team Name:</span>
+                <span className="font-lexend text-base ">{team?.name}</span>
+              </div>
+              <div className="flex flex-row justify-center items-center mt-3">
+                <span className="font-pixel text-base">Team ID:</span>
+                <span className="font-lexend text-xs ">{userData.team}</span>
+                <FaRegCopy
+                  className="ml-2 text-blue-300 text-lg font-lexand hover:text-pink-400 hover:cursor-pointer"
+                  onClick={() => {
+                    copyToClipboard(userData.team);
+                  }}
+                />
+                <div className={snackBar}>ID Copied</div>
+              </div>
+              <div className="font-lexend text-sm text-pink-400 text-start w-9/12">
+                Send this ID to your teammates to have them join your team
+              </div>
+              <div className="flex flex-col">
+                <div className="font-pixel text-base my-2">Teammates:</div>
+                {team?.members?.map((member, index) => (
+                  <p className="font-lexend text-base mb-1" key={index}>
+                    {member}
+                  </p>
+                ))}
+              </div>
+              <div className="font-pixel text-base my-2">Rename your team:</div>
+              <div className="w-full flex flex-row items-between justify-center">
+                <input
+                  type="text"
+                  name="teamName"
+                  value={teamName}
+                  placeholder="New Team Name"
+                  className="border-2 border-black w-2/3 p-1"
+                  onChange={(e) => {
+                    setTeamName(e.target.value);
+                  }}
+                />
+                <button
+                  className="w-1/4 ml-2 px-1 py-0 rounded-md bg-pink-400 text-white font-pixel text-xs"
+                  onClick={() => renameTeam()}
+                >
+                  Rename
+                </button>
+              </div>
+              <div className="w-full flex flex-col justify-center items-center my-3">
+                <button
+                  className="hover:scale-105 rounded-xl mb-2 bg-gradient-to-r from-[#64e8de] to-[#8a64eb] text-base font-pixel text-white text-center px-3 py-2"
+                  onClick={leaveTeam}
+                >
+                  Leave the team
+                </button>
+                <button
+                  className="hover:scale-105 rounded-xl bg-gradient-to-r from-pink-400 to-blue-300 text-base font-pixel text-white text-center px-3 py-2"
+                  onClick={() => {
+                    setJoin(true);
+                  }}
+                >
+                  Join A different Team
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-col items-center justify-between">
+              <div className="font-lexand text-xl text-gray-500">No Team</div>
+              <button
+                onClick={() => {
+                  setJoin(true);
+                }}
+                className="hover:scale-105 rounded-xl bg-gradient-to-r from-[#64e8de] to-[#8a64eb] font-pixel text-md md:text-lg lg:text-2xl text-white text-center px-3 py-2"
+              >
+                JOIN A TEAM
+              </button>
+              <button
+                onClick={() => {
+                  setCreate(true);
+                }}
+                className="hover:scale-105 rounded-xl mt-2 mb-5 bg-gradient-to-r from-[#268de1] to-[#b65eba] font-pixel text-md md:text-lg lg:text-2xl text-white text-center px-3 py-2"
+              >
+                CREATE A TEAM
+              </button>
+            </div>
+          )}
         </Col>
       </Row>
       <button

@@ -4,8 +4,10 @@ import { FaBars } from "react-icons/fa";
 import { auth } from "../../firebase";
 import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useRouter } from "next/router";
 
 const Navigation = () => {
+  const router = useRouter();
   const [user] = useAuthState(auth);
 
   return (
@@ -45,6 +47,7 @@ const Navigation = () => {
                   signOut(auth)
                     .then((response) => {
                       console.log(response);
+                      router.push("/admin");
                     })
                     .catch((error) => {
                       console.log(error);

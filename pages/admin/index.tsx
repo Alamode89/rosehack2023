@@ -64,7 +64,6 @@ const admin = () => {
   useEffect(() => {
     onAuthStateChanged(auth, (currentState) => {
       if (currentState !== null) setUser(currentState.email);
-      else setUser("");
     });
   }, []);
 

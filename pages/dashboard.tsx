@@ -188,52 +188,52 @@ const dashboard = () => {
           className="mt-5 mx-2 min-h-screen bg-white rounded-2xl flex flex-col items-center justify-start"
         >
           <div className="h-8 text-center w-10/12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 font-pixel text-md md:text-xl lg:text-2xl mt-4">
-            GOOD MORNING{" "}
+            Good Morning{" "}
           </div>
           <div className="h-12 text-center w-10/12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 font-pixel text-md md:text-xl lg:text-2xl mt-4">
             {userData.first} {userData.last}!
           </div>
           <div className="bg-gradient-to-r from-purple-400 to-pink-600 h-1 w-10/12 mb-2" />
           <div className="text-base w-full font-lexend flex flex-col justify-center items-center ">
-            <div className="m-2 flex items-center">
-              <span className="font-pixel">email:</span>
+            <div className="m-2 flex items-center text-left w-full pl-4">
+              <span className="font-pixel  text-sm">email:</span>
               <span>{user && user.email}</span>
             </div>
-            <div className="m-2 flex items-center ">
-              <span className="font-pixel">phone:</span>
+            <div className="m-2 flex items-center text-left w-full pl-4">
+              <span className="font-pixel  text-sm">phone:</span>
               <span>{userData.phone}</span>
             </div>
-            <div className="m-2 flex items-center">
-              <span className="font-pixel ">grade:</span>
+            <div className="m-2 flex items-center text-left w-full pl-4">
+              <span className="font-pixel  text-sm">grade:</span>
               <span>{userData.grade}</span>
             </div>
-            <div className="m-2 flex items-center">
-              <span className="font-pixel">school:</span>
+            <div className="m-2 flex items-center text-left w-full pl-4">
+              <span className="font-pixel  text-sm">school:</span>
               <span>{userData.school}</span>
             </div>
-            <div className="m-2 flex items-center">
-              <span className="font-pixel ">gender:</span>
+            <div className="m-2 flex items-center text-left w-full pl-4">
+              <span className="font-pixel  text-sm">gender:</span>
               <span>{userData.gender}</span>
             </div>
-            <div className="m-2 flex items-center">
-              <span className="font-pixel">age:</span>
+            <div className="m-2 flex items-center text-left w-full pl-4">
+              <span className="font-pixel  text-sm">age:</span>
               <span>{userData.age}</span>
             </div>
-            <div className="m-2 flex items-center">
-              <span className="font-pixel">major:</span>
+            <div className="m-2 flex items-center text-left w-full pl-4">
+              <span className="font-pixel  text-sm">major:</span>
               <span>{userData.major}</span>
             </div>
-            <div className="m-2 flex items-center">
-              <span className="font-pixel">in person:</span>
+            <div className="m-2 flex items-center text-left w-full pl-4">
+              <span className="font-pixel  text-sm">in person:</span>
               <span>{userData.in_person ? "yes" : "no"}</span>
             </div>
-            <div className="m-2 flex items-center">
-              <span className="font-pixel">food specialties:</span>
+            <div className="m-2 flex items-center text-left w-full pl-4">
+              <span className="font-pixel text-sm">dietary restrictions:</span>
               <span>
-                {userData.hindu ? "hindu" : ""}
-                {userData.kosher ? " kosher" : ""}
-                {userData.vegan ? " vegan" : ""}
-                {userData.vegetarian ? " vegetarian" : ""}
+                {userData.hindu ? "Hindu," : ""}
+                {userData.kosher ? " Kosher," : ""}
+                {userData.vegan ? " Vegan," : ""}
+                {userData.vegetarian ? " Vegetarian" : ""}
                 {!(
                   userData.hindu ||
                   userData.kosher ||
@@ -244,8 +244,8 @@ const dashboard = () => {
                   : ""}
               </span>
             </div>
-            <div className="m-2 flex items-center">
-              <span className="font-pixel">veccinated:</span>
+            <div className="m-2 flex items-center text-left w-full pl-4">
+              <span className="font-pixel text-sm">vaccinated:</span>
               <span>{userData.covid ? "yes" : "no"}</span>
             </div>
             <button

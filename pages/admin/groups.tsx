@@ -153,7 +153,7 @@ const admin = () => {
             <input
               className="w-11/12 appearance-none focus:outline-0 active:outline-0 bg-transparent border-4 border-white rounded-bl-3xl rounded-br-3xl rounded-tr-3xl  p-2 text-xl font-lexand text-white"
               type="text"
-              placeholder="team name or id"
+              placeholder="Team Name or Team ID"
               value={search}
               onChange={(e) => {
                 setSearch(e.target.value);

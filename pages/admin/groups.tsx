@@ -84,7 +84,14 @@ const admin = () => {
       teams.filter((team: any) => {
         return (
           search.trim() === team.id.trim() ||
-          search.trim() === team.data.name.trim()
+          team.data.name
+            .trim()
+            .toLowerCase()
+            .includes(search.trim().toLowerCase()) ||
+          team.data.members[0]
+            .toLowerCase()
+            .trim()
+            .includes(search.trim().toLowerCase())
         );
       })
     );
@@ -191,7 +198,11 @@ const admin = () => {
 
                   <div className="w-1/3 border-r-2 border-white flex justify-start items-center">
                     <div className="text-center text-white text-lg font-lexand ml-2">
-                      {team.data.name}
+                      {team.data.members.length === 1 ? (
+                        <>{team.data.members[0]}</>
+                      ) : (
+                        <>{team.data.name}</>
+                      )}
                     </div>
                     {team.data.prize ? (
                       <FaTrophy className="text-yellow-300 text-lg ml-2" />

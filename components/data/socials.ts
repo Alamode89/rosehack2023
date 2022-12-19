@@ -10,9 +10,9 @@ export const SocialLinks = [
   {
     path: "mailto:rosehackucr@gmail.com",
     title: "Email",
-    image: <FaEnvelope className="text-5xl hover:text-header-hover" />,
+    image: FaEnvelope,
   },
-
+/*
   {
     path: "https://www.instagram.com/rosehackucr/",
     title: "Instagram",
@@ -35,5 +35,5 @@ export const SocialLinks = [
     path: "https://twitter.com/rosehack_ucr",
     title: "Twitter",
     image: <FaTwitter className="text-5xl hover:text-header-hover" />,
-  },
+  },*/
 ];

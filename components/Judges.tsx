@@ -1,8 +1,8 @@
 import React from "react";
-import Profile from "./Profile";
-import { Row, Col } from "react-bootstrap";
-import { judge } from "./data/judges";
-import { FaCircle } from "react-icons/fa";
+// import Profile from "./Profile";
+// import { Row, Col } from "react-bootstrap";
+// import { judge } from "./data/judges";
+// import { FaCircle } from "react-icons/fa";
 
 const Judges = () => {
   return (

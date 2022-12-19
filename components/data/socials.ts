@@ -12,7 +12,7 @@ export const SocialLinks = [
     title: "Email",
     image: FaEnvelope,
   },
-/*
+  /*
   {
     path: "https://www.instagram.com/rosehackucr/",
     title: "Instagram",

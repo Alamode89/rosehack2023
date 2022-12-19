@@ -156,6 +156,10 @@ module.exports = {
           contact: "#26DDE1",
           email: "#48BDFF",
         },
+        judges: {
+          top: "#8700A9",
+          bottom: "#8C7DFF",
+        },
       },
       boxShadow: {
         hover: "0px 4px 10px #FFFFFF, 0px 4px 16px #FFFFFF",

@@ -116,7 +116,7 @@ const Signin = () => {
         <div
           className={`${
             !showSnackBar ? "hidden" : "visible"
-          } z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2`}
+          } z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2`}
         >
           {message}
         </div>

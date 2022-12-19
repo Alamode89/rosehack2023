@@ -26,9 +26,8 @@ const dashboard = () => {
   const [create, setCreate] = useState(false);
   const [join, setJoin] = useState(false);
   const [inTeam, setInTeam] = useState(false);
-  const [snackBar, setSnackBar] = useState(
-    "hidden z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2"
-  );
+  const [showSnackBar, setShowSnackBar] = useState(false);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     console.log(userData);
@@ -49,24 +48,40 @@ const dashboard = () => {
       }
     });
   }, []);
+  const snackBar = () => {
+    setShowSnackBar(true);
+    setTimeout(() => {
+      setShowSnackBar(false);
+      setMessage("");
+    }, 1000);
+  };
 
+  const copyToClipboard = (copyText: string) => {
+    setMessage("ID Copied");
+    navigator.clipboard.writeText(copyText);
+    snackBar();
+  };
   const joinTeam = async () => {
     if (id === "") {
-      alert("Please enter a team ID");
+      setMessage("Please enter a team ID");
+      snackBar();
       return;
     }
     if (id === userData.team) {
-      alert("Cannot join team you already are in");
+      setMessage("Cannot join team you already are in");
+      snackBar();
       return;
     }
 
     const response = await axios.post("/api/verifyTeam", { id: id });
 
     if (response.status === 201) {
-      alert("Cannot find team");
+      setMessage("Cannot find team");
+      snackBar();
       return;
     } else if (response.status === 202) {
-      alert("Teaem full");
+      setMessage("Team full");
+      snackBar();
       return;
     }
 
@@ -88,17 +103,10 @@ const dashboard = () => {
     setJoin(false);
     setInTeam(true);
   };
-  // const dummy = async () => {
-  //   const uuid = uuidv4();
-  //   await axios.post("/api/newTeam", {
-  //     email: userData.email,
-  //     uuid: uuid,
-  //     name: userData.first + " " + userData.last,
-  //   });
-  // };
   const leaveTeam = async () => {
     if (team?.members?.length === 1) {
-      alert("cannot leave team when ur the only one lol");
+      setMessage("You cannot leave team when you are the only one");
+      snackBar();
       return;
     }
 
@@ -148,11 +156,13 @@ const dashboard = () => {
 
   const renameTeam = async () => {
     if (teamName == "Untitled Team") {
-      alert("please use a different name!");
+      setMessage("please use a different name!");
+      snackBar();
       return;
     }
     if (teamName == "") {
-      alert("please enter a team name!");
+      setMessage("please enter a team name!");
+      snackBar();
       return;
     }
     await axios.post("/api/renameTeam", {
@@ -169,19 +179,15 @@ const dashboard = () => {
     console.log(response);
     return;
   };
-  const copyToClipboard = (copyText: string) => {
-    navigator.clipboard.writeText(copyText);
-    setSnackBar(
-      "visible z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2"
-    );
-    setTimeout(() => {
-      setSnackBar(
-        "hidden z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2"
-      );
-    }, 1000);
-  };
   return (
     <div className="w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-400 flex flex-col justify-center items-center">
+      <div
+        className={`${
+          !showSnackBar ? "hidden" : "visible"
+        } z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2`}
+      >
+        {message}
+      </div>
       <Row className="flex justify-center items-start flex-row w-10/12 min-h-screen ">
         <Col
           md={5}
@@ -336,7 +342,6 @@ const dashboard = () => {
                     copyToClipboard(userData.team);
                   }}
                 />
-                <div className={snackBar}>ID Copied</div>
               </div>
               <div className="font-lexend text-sm text-pink-400 text-start w-9/12">
                 Send this ID to your teammates to have them join your team

@@ -40,19 +40,6 @@ interface user {
   team: string;
 }
 
-const copyToClipboard = (copyText: string) => {
-  navigator.clipboard.writeText(copyText);
-  const x = document.getElementById("snackbar");
-  if (x != null) {
-    x.className =
-      "visible z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2";
-    setTimeout(() => {
-      x.className =
-        "hidden z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2";
-    }, 1000);
-  }
-};
-
 const admin = () => {
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
@@ -60,6 +47,21 @@ const admin = () => {
   const [name, setName] = useState("");
   const [trigger, setTrigger] = useState(false);
   const [user, setUser] = useState<string | null>("");
+  const [snackBar, setSnackBar] = useState(
+    "hidden z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2"
+  );
+
+  const copyToClipboard = (copyText: string) => {
+    navigator.clipboard.writeText(copyText);
+    setSnackBar(
+      "visible z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2"
+    );
+    setTimeout(() => {
+      setSnackBar(
+        "hidden z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2"
+      );
+    }, 1000);
+  };
 
   useEffect(() => {
     onAuthStateChanged(auth, (currentState) => {
@@ -274,12 +276,6 @@ const admin = () => {
                         copyToClipboard(user.email);
                       }}
                     />
-                    <div
-                      id="snackbar"
-                      className="hidden z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2"
-                    >
-                      Email Copied
-                    </div>
                   </div>
 
                   <div className="text-center w-1/3 border-white text-white text-base font-lexand flex flex-row items-center justify-center">
@@ -425,6 +421,7 @@ const admin = () => {
           </Accordion>
         </div>
         <div className="w-11/12 h-8 border-x-4 border-b-4 border-white rounded-b-2xl  bg-admin-dark/40 flex flex-row" />
+        <div className={snackBar}>Email Copied</div>
       </div>
     );
   }

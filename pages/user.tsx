@@ -68,8 +68,8 @@ const Signin = () => {
   };
   return (
     <div className="flex justify-center items-center flex-col bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-400 w-full min-h-[90vh]">
-      <div className="flex flex-col justify-center items-center h-11/12 w-1/4 bg-white rounded-lg">
-        <p className="h-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 font-lexend font-bold text-md md:text-xl lg:text-4xl text-center m-4">
+      <div className="flex flex-col justify-center items-center h-11/12 w-10/12 md:w-1/3  bg-white rounded-lg">
+        <p className="h-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 font-lexend font-bold text-3xl lg:text-4xl text-center m-4">
           Login
         </p>
         <label className="text-left font-lexend font-bold text-xl text-black w-10/12">
@@ -109,7 +109,7 @@ const Signin = () => {
         />
         <button
           onClick={() => handleSubmit(email, password)}
-          className="hover:scale-105 rounded-xl m-5 bg-gradient-to-r from-purple-400 to-pink-600 font-lexend font-bold text-md md:text-xl lg:text-3xl text-white text-center px-3 py-2"
+          className="hover:scale-105 rounded-xl m-5 bg-gradient-to-r from-purple-400 to-pink-600 font-lexend font-bold text-2xl lg:text-4xl text-white text-center px-3 py-2"
         >
           Submit
         </button>

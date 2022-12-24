@@ -11,8 +11,8 @@ const Home: NextPage = () => {
     <div className="flex justify-center items-center flex-col">
       <Landing />
       <About />
-      <Judges />
       <Sponsors />
+      <Judges />
       <Team />
       <FAQ />
       <title>Rose Hack 2023</title>

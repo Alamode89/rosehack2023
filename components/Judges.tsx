@@ -43,6 +43,32 @@ const Judges = () => {
             </Col>
           ))}
         </Row>
+        <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
+          <img
+            src="pink_heart.webp"
+            className="h-14 w-14 transform hidden md:flex"
+          />
+          <FaCircle className="text-white hidden md:flex" />
+          <img
+            src="pink_heart.webp"
+            className="h-14 w-14 transform hidden md:flex"
+          />
+          <FaCircle className="text-white hidden md:flex" />
+          <img
+            src="pink_heart.webp"
+            className="h-14 w-14 transform hidden md:flex"
+          />
+          <FaCircle className="text-white hidden lg:flex" />
+          <img
+            src="pink_heart.webp"
+            className="h-14 w-14 transform hidden md:flex"
+          />
+          <FaCircle className="text-white hidden md:flex" />
+          <img
+            src="pink_heart.webp"
+            className="h-14 w-14 transform hidden md:flex"
+          />
+        </div>
     </div>
     </section>
   );

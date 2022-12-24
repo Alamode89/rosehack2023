@@ -44,7 +44,7 @@ const Navigation = () => {
             </Nav.Link>
             <Nav.Link
               href="/#sponsors"
-              className="!text-xl text-center text-white p-3 hover:underline decoration-4 underline-offset-8"
+              className="!text-xl text-center text-white p-2 hover:underline decoration-4 underline-offset-8"
             >
               SPONSORS
             </Nav.Link>

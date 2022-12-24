@@ -61,6 +61,7 @@ const dashboard = () => {
     navigator.clipboard.writeText(copyText);
     snackBar();
   };
+
   const joinTeam = async () => {
     if (id === "") {
       setMessage("Please enter a team ID");
@@ -102,6 +103,7 @@ const dashboard = () => {
     setTrigger(!trigger);
     setJoin(false);
     setInTeam(true);
+    setId("");
   };
   const leaveTeam = async () => {
     if (team?.members?.length === 1) {
@@ -172,6 +174,7 @@ const dashboard = () => {
       team: userData.team,
     });
     setTeam({ ...team!, name: teamName });
+    setTeamName("");
     setInTeam(true);
     setCreate(false);
   };

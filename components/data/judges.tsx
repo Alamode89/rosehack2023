@@ -1,8 +1,9 @@
 export const judge = [
   {
     name: "Divyank Shah",
-    description: "Student at UCR",
+    position: "Project Manager and Dad",
     linkedin: "",
     image: "divyank.webp",
+    shadow: "",
   },
 ];

@@ -76,7 +76,7 @@ const dashboard = () => {
     const response = await axios.post("/api/verifyTeam", { id: id });
 
     if (response.status === 201) {
-      setMessage("Cannot find team");
+      setMessage("Invalid Team ID, please try again!");
       snackBar();
       return;
     } else if (response.status === 202) {

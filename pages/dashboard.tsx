@@ -80,7 +80,7 @@ const dashboard = () => {
       snackBar();
       return;
     } else if (response.status === 202) {
-      setMessage("Team full");
+      setMessage("Team already has 4 members, please find another team!");
       snackBar();
       return;
     }

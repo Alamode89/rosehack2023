@@ -8,7 +8,7 @@ import axios from "axios";
 import { data } from "../components/data/register";
 import { Row, Col } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
-import { FaRegCopy } from "react-icons/fa";
+import { FaRegCopy, FaCheck, FaTimes, FaRegClock } from "react-icons/fa";
 
 interface team_type {
   members: Array<string>;
@@ -42,7 +42,7 @@ const dashboard = () => {
           uid: response.data.team,
         });
         setTeam(teamResponse.data);
-        if (teamResponse.data.name != "Untitled Team") {
+        if (teamResponse.data.name !== "Untitled Team") {
           setInTeam(true);
         }
       }
@@ -53,7 +53,7 @@ const dashboard = () => {
     setTimeout(() => {
       setShowSnackBar(false);
       setMessage("");
-    }, 1000);
+    }, 3000);
   };
 
   const copyToClipboard = (copyText: string) => {
@@ -61,6 +61,7 @@ const dashboard = () => {
     navigator.clipboard.writeText(copyText);
     snackBar();
   };
+
   const joinTeam = async () => {
     if (id === "") {
       setMessage("Please enter a team ID");
@@ -68,7 +69,7 @@ const dashboard = () => {
       return;
     }
     if (id === userData.team) {
-      setMessage("Cannot join team you already are in");
+      setMessage("You are already apart of the team you are trying to join!");
       snackBar();
       return;
     }
@@ -76,11 +77,11 @@ const dashboard = () => {
     const response = await axios.post("/api/verifyTeam", { id: id });
 
     if (response.status === 201) {
-      setMessage("Cannot find team");
+      setMessage("Invalid Team ID, please try again!");
       snackBar();
       return;
     } else if (response.status === 202) {
-      setMessage("Team full");
+      setMessage("Team already has 4 members, please find another team!");
       snackBar();
       return;
     }
@@ -102,10 +103,13 @@ const dashboard = () => {
     setTrigger(!trigger);
     setJoin(false);
     setInTeam(true);
+    setId("");
   };
   const leaveTeam = async () => {
     if (team?.members?.length === 1) {
-      setMessage("You cannot leave team when you are the only one");
+      setMessage(
+        "You cannot leave your current team, since there is only 1 member!"
+      );
       snackBar();
       return;
     }
@@ -170,6 +174,7 @@ const dashboard = () => {
       team: userData.team,
     });
     setTeam({ ...team!, name: teamName });
+    setTeamName("");
     setInTeam(true);
     setCreate(false);
   };
@@ -180,7 +185,20 @@ const dashboard = () => {
     return;
   };
   return (
-    <div className="w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-400 flex flex-col justify-center items-center">
+    <div className="w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-400 flex flex-col justify-evenly items-center min-h-[90vh]">
+      <a
+        id="mlh-trust-badge"
+        className="block max-w-[100px] min-w-[60px] fixed right-[50px] top-0 w-[10%] z-[1000000]"
+        href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2023-season&utm_content=wh"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img
+          src="https://s3.amazonaws.com/logged-assets/trust-badge/2023/mlh-trust-badge-2023-white.svg"
+          alt="Major League Hacking 2023 Hackathon Season"
+          className="w-full"
+        />
+      </a>
       <div
         className={`${
           !showSnackBar ? "hidden" : "visible"
@@ -188,236 +206,276 @@ const dashboard = () => {
       >
         {message}
       </div>
-      <Row className="flex justify-center items-start flex-row w-10/12 min-h-screen ">
+      <p className="text-white font-lexend m-0 p-0 text-5xl w-full text-center">
+        {new Date().getHours() < 12 && new Date().getHours() > 5
+          ? "Good Morning"
+          : new Date().getHours() < 16 && new Date().getHours() > 12
+          ? "Good Afternoon"
+          : new Date().getHours() < 20 && new Date().getHours() > 16
+          ? "Good Evening"
+          : "Good Night"}{" "}
+        {userData.first} {userData.last}!
+      </p>
+
+      <Row className="flex justify-evenly items-stretch w-full">
         <Col
-          md={5}
-          className="mt-5 mx-2 min-h-screen bg-white rounded-2xl flex flex-col items-center justify-start"
+          md={4}
+          className="bg-white rounded-2xl flex flex-col items-center justify-start"
         >
-          <div className="h-8 text-center w-10/12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 font-pixel text-md md:text-xl lg:text-2xl mt-4">
-            Good Morning{" "}
+          <div className="h-8 text-center w-10/12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 font-lexend text-md md:text-xl lg:text-2xl mt-4">
+            Information
           </div>
-          <div className="h-12 text-center w-10/12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 font-pixel text-md md:text-xl lg:text-2xl mt-4">
-            {userData.first} {userData.last}!
-          </div>
-          <div className="bg-gradient-to-r from-purple-400 to-pink-600 h-1 w-10/12 mb-2" />
-          <div className="text-base w-full font-lexend flex flex-col justify-center items-center ">
-            <div className="m-2 flex items-center text-left w-full pl-4">
-              <span className="font-pixel  text-sm">email:</span>
-              <span>{user && user.email}</span>
+
+          <div className="bg-gradient-to-r from-purple-400 to-pink-600 h-1 w-10/12" />
+          <div className="font-lexend flex flex-col justify-evenly items-start p-4">
+            <div className="flex items-center justify-center">
+              <p className="p-0 m-0 inline font-bold text-lg">Application:</p>
+              <div className="flex items-center ml-1">
+                {userData.status === "pending" ? (
+                  <>
+                    Pending
+                    <FaRegClock className="text-yellow-500 ml-2 text-xl" />
+                  </>
+                ) : userData.status === "approved" ? (
+                  <>
+                    Approved
+                    <FaCheck className="text-green-500 text-xl ml-2" />
+                  </>
+                ) : (
+                  <>
+                    Rejected
+                    <FaTimes className="text-red-500 text-xl ml-2" />
+                  </>
+                )}
+              </div>
             </div>
-            <div className="m-2 flex items-center text-left w-full pl-4">
-              <span className="font-pixel  text-sm">phone:</span>
-              <span>{userData.phone}</span>
+
+            <div>
+              <p className="p-0 m-0 inline font-bold text-lg">Email:</p>{" "}
+              {user && user.email}
             </div>
-            <div className="m-2 flex items-center text-left w-full pl-4">
-              <span className="font-pixel  text-sm">grade:</span>
-              <span>{userData.grade}</span>
+            <div>
+              <p className="p-0 m-0 inline font-bold text-lg">Phone:</p>{" "}
+              {userData.phone}
             </div>
-            <div className="m-2 flex items-center text-left w-full pl-4">
-              <span className="font-pixel  text-sm">school:</span>
-              <span>{userData.school}</span>
+            <div>
+              <p className="p-0 m-0 inline font-bold text-lg">Grade:</p>{" "}
+              {userData.grade}
             </div>
-            <div className="m-2 flex items-center text-left w-full pl-4">
-              <span className="font-pixel  text-sm">gender:</span>
-              <span>{userData.gender}</span>
+            <div>
+              <p className="p-0 m-0 inline font-bold text-lg">School:</p>{" "}
+              {userData.school}
             </div>
-            <div className="m-2 flex items-center text-left w-full pl-4">
-              <span className="font-pixel  text-sm">age:</span>
-              <span>{userData.age}</span>
+            <div>
+              <p className="p-0 m-0 inline font-bold text-lg">Gender:</p>{" "}
+              {userData.gender}
             </div>
-            <div className="m-2 flex items-center text-left w-full pl-4">
-              <span className="font-pixel  text-sm">major:</span>
-              <span>{userData.major}</span>
+            <div>
+              <p className="p-0 m-0 inline font-bold text-lg">Age:</p>{" "}
+              {userData.age}
             </div>
-            <div className="m-2 flex items-center text-left w-full pl-4">
-              <span className="font-pixel  text-sm">in person:</span>
-              <span>{userData.in_person ? "yes" : "no"}</span>
+            <div>
+              <p className="p-0 m-0 inline font-bold text-lg">Major:</p>{" "}
+              {userData.major}
             </div>
-            <div className="m-2 flex items-center text-left w-full pl-4">
-              <span className="font-pixel text-sm">dietary restrictions:</span>
-              <span>
-                {userData.hindu ? "Hindu," : ""}
-                {userData.kosher ? " Kosher," : ""}
-                {userData.vegan ? " Vegan," : ""}
-                {userData.vegetarian ? " Vegetarian" : ""}
-                {!(
-                  userData.hindu ||
-                  userData.kosher ||
-                  userData.vegan ||
-                  userData.vegetarian
-                )
-                  ? "none"
-                  : ""}
-              </span>
+            <div>
+              <p className="p-0 m-0 inline font-bold text-lg">
+                Attending In Person:
+              </p>{" "}
+              {userData.in_person ? "yes" : "no"}
             </div>
-            <div className="m-2 flex items-center text-left w-full pl-4">
-              <span className="font-pixel text-sm">vaccinated:</span>
-              <span>{userData.covid ? "yes" : "no"}</span>
+            <div>
+              <p className="p-0 m-0 inline font-bold text-lg">Vaccinated:</p>{" "}
+              {userData.covid ? "yes" : "no"}
             </div>
-            <button
-              onClick={() => handleLogOut()}
-              className="hover:scale-105 rounded-xl m-5 bg-gradient-to-r from-purple-400 to-pink-600  font-pixel text-md md:text-xl lg:text-2xl text-white text-center px-3 py-2"
-            >
-              EDIT MY PROFILE
-            </button>
+            <div>
+              <p className="p-0 m-0 inline font-bold text-lg">
+                Dietary Restrictions:
+              </p>{" "}
+              {userData.hindu ? "Hindu," : ""}
+              {userData.kosher ? " Kosher," : ""}
+              {userData.vegan ? " Vegan," : ""}
+              {userData.vegetarian ? " Vegetarian" : ""}
+              {!(
+                userData.hindu ||
+                userData.kosher ||
+                userData.vegan ||
+                userData.vegetarian
+              )
+                ? "none"
+                : ""}
+            </div>
           </div>
         </Col>
         <Col
-          md={5}
-          className="mt-5 h-full mx-2 min-h-screen bg-white rounded-2xl flex flex-col items-center justify-start"
+          md={7}
+          className="bg-white rounded-2xl flex flex-col items-center justify-start"
         >
-          <div className="w-full flex flex-col items-center justify-center">
-            <div className="h-12 text-center w-10/12 text-transparent bg-clip-text bg-gradient-to-r from-[#64e8de] to-[#8a64eb] font-pixel text-md md:text-xl lg:text-2xl mt-4">
-              TEAM
-            </div>
-            <div className="bg-gradient-to-r from-[#64e8de] to-[#8a64eb] h-1 w-10/12" />
+          <div className="h-8 text-center w-10/12 text-transparent bg-clip-text bg-gradient-to-r from-[#64e8de] to-[#8a64eb] font-lexend text-md md:text-xl lg:text-2xl mt-4">
+            TEAM
           </div>
+          <div className="bg-gradient-to-r from-[#64e8de] to-[#8a64eb] h-1 w-10/12" />
           {create ? (
             <div className="flex flex-col justify-start items-center w-full">
-              <div className="font-pixel text-base mt-3">Team Name:</div>
-
+              <div className="font-lexend text-lg font-bold mt-3">
+                Team Name:
+              </div>
               <input
                 type="text"
                 name="teamName"
                 value={teamName}
                 placeholder="New Team Name"
-                className="border-2 border-black w-11/12"
+                className="border-2 font-lexend border-black w-10/12 p-1"
                 onChange={(e) => {
                   setTeamName(e.target.value);
                 }}
               />
-              <button
-                onClick={() => renameTeam()}
-                className="hover:scale-105 rounded-xl mt-2 bg-gradient-to-r from-[#268de1] to-[#b65eba] font-pixel text-md md:text-lg lg:text-2xl text-white text-center px-3 py-2"
-              >
-                CREATE
-              </button>
-              <button
-                onClick={() => {
-                  setCreate(false);
-                }}
-                className="mt-3 hover:scale-105 rounded-xl bg-gradient-to-r to-[#64e8de] from-[#8a64eb] font-pixel text-md md:text-lg lg:text-2xl text-white text-center px-3 py-2"
-              >
-                BACK
-              </button>
+              <div className="flex justify-evenly w-full m-3">
+                <button
+                  className="hover:scale-105 rounded-xl bg-gradient-to-r from-pink-400 to-blue-300 text-lg font-lexend font-bold text-white text-center px-3 py-2"
+                  onClick={() => renameTeam()}
+                >
+                  Create Team
+                </button>
+                <button
+                  className="hover:scale-105 rounded-xl bg-gradient-to-r from-[#64e8de] to-[#8a64eb] text-lg font-lexend font-bold text-white text-center px-3 py-2"
+                  onClick={() => {
+                    setCreate(false);
+                  }}
+                >
+                  Back
+                </button>
+              </div>
             </div>
           ) : join ? (
-            <div className="flex flex-col justify-between items-center">
-              <div className="font-pixel text-base mt-3">Enter a Team ID</div>
+            <div className="flex flex-col justify-between items-center w-10/12">
+              <div className="font-lexend font-bold text-lg mt-3">
+                Enter a Team ID
+              </div>
               <input
                 type="text"
                 name="id"
                 value={id}
                 placeholder="New Team ID"
-                className="border-2 mt-1 border-black"
+                className="border-2 border-black w-full p-1 font-lexend"
                 onChange={(e) => setId(e.target.value)}
               />
-              <button
-                onClick={joinTeam}
-                className="mt-3 hover:scale-105 rounded-xl bg-gradient-to-r from-[#64e8de] to-[#8a64eb] font-pixel text-md md:text-lg lg:text-2xl text-white text-center px-3 py-2"
-              >
-                JOIN
-              </button>
-              <button
-                onClick={() => {
-                  setJoin(false);
-                }}
-                className="mt-3 hover:scale-105 rounded-xl bg-gradient-to-r to-[#64e8de] from-[#8a64eb] font-pixel text-md md:text-lg lg:text-2xl text-white text-center px-3 py-2"
-              >
-                BACK
-              </button>
+              <div className="flex justify-evenly w-full m-3">
+                <button
+                  className="hover:scale-105 rounded-xl bg-gradient-to-r from-pink-400 to-blue-300 text-lg font-lexend font-bold text-white text-center px-3 py-2"
+                  onClick={joinTeam}
+                >
+                  Join
+                </button>
+                <button
+                  className="hover:scale-105 rounded-xl bg-gradient-to-r from-[#64e8de] to-[#8a64eb] text-lg font-lexend font-bold text-white text-center px-3 py-2"
+                  onClick={() => {
+                    setJoin(false);
+                  }}
+                >
+                  Back
+                </button>
+              </div>
             </div>
           ) : inTeam ? (
-            <div className="flex flex-col justify-center items-start w-11/12">
-              <div className="flex flex-row justify-center items-center mt-3">
-                <span className="font-pixel text-base">Team Name:</span>
-                <span className="font-lexend text-base ">{team?.name}</span>
+            <div className="flex flex-col justify-center items-start w-11/12  p-4">
+              <div>
+                <p className="p-0 m-0 inline font-bold text-lg">Team Name:</p>{" "}
+                {team?.name}
               </div>
-              <div className="flex flex-row justify-center items-center mt-3">
-                <span className="font-pixel text-base">Team ID:</span>
-                <span className="font-lexend text-xs ">{userData.team}</span>
-                <FaRegCopy
-                  className="ml-2 text-blue-300 text-lg font-lexand hover:text-pink-400 hover:cursor-pointer"
-                  onClick={() => {
-                    copyToClipboard(userData.team);
-                  }}
-                />
+              <div className="flex items-center justify-center">
+                <p className="p-0 m-0 inline font-bold text-lg">Team ID:</p>
+                <div className="flex items-center ml-1">
+                  {userData.team}
+                  <FaRegCopy
+                    className="ml-2 text-blue-300 text-lg font-lexand hover:text-pink-400 hover:cursor-pointer"
+                    onClick={() => {
+                      copyToClipboard(userData.team);
+                    }}
+                  />
+                </div>
               </div>
-              <div className="font-lexend text-sm text-pink-400 text-start w-9/12">
-                Send this ID to your teammates to have them join your team
+              <div className="font-lexend text-sm text-pink-400 text-start">
+                Send this Team ID to your teammates to have them join your team!
               </div>
               <div className="flex flex-col">
-                <div className="font-pixel text-base my-2">Teammates:</div>
+                <div className="font-lexend text-lg my-2 font-bold">
+                  Teammates:
+                </div>
                 {team?.members?.map((member, index) => (
                   <p className="font-lexend text-base mb-1" key={index}>
                     {member}
                   </p>
                 ))}
               </div>
-              <div className="font-pixel text-base my-2">Rename your team:</div>
+              <div className="font-lexend text-lg font-bold my-2">
+                Rename your team:
+              </div>
               <div className="w-full flex flex-row items-between justify-center">
                 <input
                   type="text"
                   name="teamName"
                   value={teamName}
                   placeholder="New Team Name"
-                  className="border-2 border-black w-2/3 p-1"
+                  className="border-2 border-black w-2/3 p-1 font-lexend"
                   onChange={(e) => {
                     setTeamName(e.target.value);
                   }}
                 />
                 <button
-                  className="w-1/4 ml-2 px-1 py-0 rounded-md bg-pink-400 text-white font-pixel text-xs"
+                  className="w-1/4 ml-2 px-1 py-0 rounded-md bg-pink-400 text-white font-lexend font-bold text-lg hover:scale-105"
                   onClick={() => renameTeam()}
                 >
                   Rename
                 </button>
               </div>
-              <div className="w-full flex flex-col justify-center items-center my-3">
+              <div className="w-full flex justify-evenly items-center my-3">
                 <button
-                  className="hover:scale-105 rounded-xl mb-2 bg-gradient-to-r from-[#64e8de] to-[#8a64eb] text-base font-pixel text-white text-center px-3 py-2"
+                  className="hover:scale-105 rounded-xl bg-gradient-to-r from-[#64e8de] to-[#8a64eb] text-lg font-lexend font-bold text-white text-center px-3 py-2"
                   onClick={leaveTeam}
                 >
-                  Leave the team
+                  Leave Team
                 </button>
                 <button
-                  className="hover:scale-105 rounded-xl bg-gradient-to-r from-pink-400 to-blue-300 text-base font-pixel text-white text-center px-3 py-2"
+                  className="hover:scale-105 rounded-xl bg-gradient-to-r from-pink-400 to-blue-300 text-lg font-lexend font-bold text-white text-center px-3 py-2"
                   onClick={() => {
                     setJoin(true);
                   }}
                 >
-                  Join A different Team
+                  Join Team
                 </button>
               </div>
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-between">
-              <div className="font-lexand text-xl text-gray-500">No Team</div>
-              <button
-                onClick={() => {
-                  setJoin(true);
-                }}
-                className="hover:scale-105 rounded-xl bg-gradient-to-r from-[#64e8de] to-[#8a64eb] font-pixel text-md md:text-lg lg:text-2xl text-white text-center px-3 py-2"
-              >
-                JOIN A TEAM
-              </button>
-              <button
-                onClick={() => {
-                  setCreate(true);
-                }}
-                className="hover:scale-105 rounded-xl mt-2 mb-5 bg-gradient-to-r from-[#268de1] to-[#b65eba] font-pixel text-md md:text-lg lg:text-2xl text-white text-center px-3 py-2"
-              >
-                CREATE A TEAM
-              </button>
+            <div className="flex flex-col items-center justify-center w-full">
+              <div className="font-lexand text-center text-xl text-black font-bold w-full m-3">
+                No Team
+              </div>
+              <div className="w-10/12 flex justify-evenly m-3">
+                <button
+                  className="hover:scale-105 rounded-xl bg-gradient-to-r from-pink-400 to-blue-300 text-lg font-lexend font-bold text-white text-center px-3 py-2"
+                  onClick={() => {
+                    setJoin(true);
+                  }}
+                >
+                  Join Team
+                </button>
+                <button
+                  className="hover:scale-105 rounded-xl bg-gradient-to-r from-[#64e8de] to-[#8a64eb] text-lg font-lexend font-bold text-white text-center px-3 py-2"
+                  onClick={() => setCreate(true)}
+                >
+                  Create Team
+                </button>
+              </div>
             </div>
           )}
         </Col>
       </Row>
       <button
         onClick={() => handleLogOut()}
-        className="hover:scale-105 rounded-xl m-5 bg-gradient-to-r from-[#6ee2f5] to-[#6454f0] font-pixel text-md md:text-xl lg:text-2xl text-white text-center px-3 py-2"
+        className="hover:scale-105 rounded-xl bg-gradient-to-r from-[#6ee2f5] to-[#6454f0] font-lexend font-bold text-md md:text-xl lg:text-3xl text-white text-center px-3 py-2"
       >
-        LOGOUT
+        Logout
       </button>
     </div>
   );

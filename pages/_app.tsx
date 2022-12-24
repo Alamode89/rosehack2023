@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </>
     );
-  } else if (router.asPath.startsWith("/dashboard")) {
+  } else if (router.asPath == "/dashboard" || router.asPath == "/user") {
     return (
       <>
         <Navigation />

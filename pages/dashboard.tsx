@@ -206,7 +206,7 @@ const dashboard = () => {
       >
         {message}
       </div>
-      <p className="text-white font-lexend m-0 p-0 text-5xl w-full text-center">
+      <p className="text-white font-lexend mt-16 p-0 text-3xl sm:text-5xl w-full text-center">
         {new Date().getHours() < 12 && new Date().getHours() > 5
           ? "Good Morning"
           : new Date().getHours() < 16 && new Date().getHours() > 12
@@ -217,20 +217,22 @@ const dashboard = () => {
         {userData.first} {userData.last}!
       </p>
 
-      <Row className="flex justify-evenly items-stretch w-full">
+      <Row className="flex justify-evenly items-stretch w-11/12">
         <Col
           md={4}
-          className="bg-white rounded-2xl flex flex-col items-center justify-start"
+          className="bg-white rounded-2xl flex flex-col items-center justify-start m-2"
         >
-          <div className="h-8 text-center w-10/12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 font-lexend text-md md:text-xl lg:text-2xl mt-4">
-            Information
+          <div className="h-8 text-center w-10/12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 font-lexend text-base md:text-xl lg:text-2xl mt-4">
+            INFORMATION
           </div>
 
           <div className="bg-gradient-to-r from-purple-400 to-pink-600 h-1 w-10/12" />
           <div className="font-lexend flex flex-col justify-evenly items-start p-4">
             <div className="flex items-center justify-center">
-              <p className="p-0 m-0 inline font-bold text-lg">Application:</p>
-              <div className="flex items-center ml-1">
+              <p className="p-0 m-0 inline font-bold text-base sm:text-lg">
+                Status:
+              </p>
+              <div className="flex items-center ml-1 text-base sm:text-lg">
                 {userData.status === "pending" ? (
                   <>
                     Pending
@@ -250,48 +252,43 @@ const dashboard = () => {
               </div>
             </div>
 
-            <div>
-              <p className="p-0 m-0 inline font-bold text-lg">Email:</p>{" "}
+            <div className="text-base sm:text-lg">
+              <p className="p-0 m-0 inline font-bold ">Email:</p>{" "}
               {user && user.email}
             </div>
-            <div>
-              <p className="p-0 m-0 inline font-bold text-lg">Phone:</p>{" "}
+            <div className="text-base sm:text-lg">
+              <p className="p-0 m-0 inline font-bold">Phone:</p>{" "}
               {userData.phone}
             </div>
-            <div>
-              <p className="p-0 m-0 inline font-bold text-lg">Grade:</p>{" "}
+            <div className="text-base sm:text-lg">
+              <p className="p-0 m-0 inline font-bold">Grade:</p>{" "}
               {userData.grade}
             </div>
-            <div>
-              <p className="p-0 m-0 inline font-bold text-lg">School:</p>{" "}
+            <div className="text-base sm:text-lg">
+              <p className="p-0 m-0 inline font-bold">School:</p>{" "}
               {userData.school}
             </div>
-            <div>
-              <p className="p-0 m-0 inline font-bold text-lg">Gender:</p>{" "}
+            <div className="text-base sm:text-lg">
+              <p className="p-0 m-0 inline font-bold">Gender:</p>{" "}
               {userData.gender}
             </div>
-            <div>
-              <p className="p-0 m-0 inline font-bold text-lg">Age:</p>{" "}
-              {userData.age}
+            <div className="text-base sm:text-lg">
+              <p className="p-0 m-0 inline font-bold">Age:</p> {userData.age}
             </div>
-            <div>
-              <p className="p-0 m-0 inline font-bold text-lg">Major:</p>{" "}
+            <div className="text-base sm:text-lg">
+              <p className="p-0 m-0 inline font-bold">Major:</p>{" "}
               {userData.major}
             </div>
-            <div>
-              <p className="p-0 m-0 inline font-bold text-lg">
-                Attending In Person:
-              </p>{" "}
+            <div className="text-base sm:text-lg">
+              <p className="p-0 m-0 inline font-bold">In Person:</p>{" "}
               {userData.in_person ? "yes" : "no"}
             </div>
-            <div>
-              <p className="p-0 m-0 inline font-bold text-lg">Vaccinated:</p>{" "}
+            <div className="text-base sm:text-lg">
+              <p className="p-0 m-0 inline font-bold">Vaccinated:</p>{" "}
               {userData.covid ? "yes" : "no"}
             </div>
-            <div>
-              <p className="p-0 m-0 inline font-bold text-lg">
-                Dietary Restrictions:
-              </p>{" "}
+            <div className="text-base sm:text-lg">
+              <p className="p-0 m-0 inline font-bold">Dietary Restrictions:</p>{" "}
               {userData.hindu ? "Hindu," : ""}
               {userData.kosher ? " Kosher," : ""}
               {userData.vegan ? " Vegan," : ""}
@@ -309,7 +306,7 @@ const dashboard = () => {
         </Col>
         <Col
           md={7}
-          className="bg-white rounded-2xl flex flex-col items-center justify-start"
+          className="bg-white rounded-2xl flex flex-col items-center justify-start m-2"
         >
           <div className="h-8 text-center w-10/12 text-transparent bg-clip-text bg-gradient-to-r from-[#64e8de] to-[#8a64eb] font-lexend text-md md:text-xl lg:text-2xl mt-4">
             TEAM
@@ -335,7 +332,7 @@ const dashboard = () => {
                   className="hover:scale-105 rounded-xl bg-gradient-to-r from-pink-400 to-blue-300 text-lg font-lexend font-bold text-white text-center px-3 py-2"
                   onClick={() => renameTeam()}
                 >
-                  Create Team
+                  Create
                 </button>
                 <button
                   className="hover:scale-105 rounded-xl bg-gradient-to-r from-[#64e8de] to-[#8a64eb] text-lg font-lexend font-bold text-white text-center px-3 py-2"
@@ -458,13 +455,13 @@ const dashboard = () => {
                     setJoin(true);
                   }}
                 >
-                  Join Team
+                  Join
                 </button>
                 <button
                   className="hover:scale-105 rounded-xl bg-gradient-to-r from-[#64e8de] to-[#8a64eb] text-lg font-lexend font-bold text-white text-center px-3 py-2"
                   onClick={() => setCreate(true)}
                 >
-                  Create Team
+                  Create
                 </button>
               </div>
             </div>
@@ -473,7 +470,7 @@ const dashboard = () => {
       </Row>
       <button
         onClick={() => handleLogOut()}
-        className="hover:scale-105 rounded-xl bg-gradient-to-r from-[#6ee2f5] to-[#6454f0] font-lexend font-bold text-md md:text-xl lg:text-3xl text-white text-center px-3 py-2"
+        className="hover:scale-105 rounded-xl bg-gradient-to-r from-[#6ee2f5] to-[#6454f0] font-lexend font-bold text-md md:text-xl lg:text-3xl text-white text-center px-3 py-2 m-2"
       >
         Logout
       </button>

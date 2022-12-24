@@ -26,18 +26,20 @@ const admin = () => {
   const [prizeEdit, setPrizeEdit] = useState(false);
   const [note, setNote] = useState("");
   const [prize, setPrize] = useState("");
+  const [snackBar, setSnackBar] = useState(
+    "hidden z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2"
+  );
 
   const copyToClipboard = (copyText: string) => {
     navigator.clipboard.writeText(copyText);
-    const x = document.getElementById("snackbar");
-    if (x != null) {
-      x.className =
-        "visible z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2";
-      setTimeout(() => {
-        x.className =
-          "hidden z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2";
-      }, 1000);
-    }
+    setSnackBar(
+      "visible z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2"
+    );
+    setTimeout(() => {
+      setSnackBar(
+        "hidden z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2"
+      );
+    }, 1000);
   };
 
   const handleUpdate = async (
@@ -198,7 +200,8 @@ const admin = () => {
 
                   <div className="w-1/3 border-r-2 border-white flex justify-start items-center">
                     <div className="text-center text-white text-lg font-lexand ml-2">
-                      {team.data.members.length === 1 ? (
+                      {team.data.members.length === 1 &&
+                      team.data.name === "Untitled Team" ? (
                         <>{team.data.members[0]}</>
                       ) : (
                         <>{team.data.name}</>
@@ -221,12 +224,6 @@ const admin = () => {
                         copyToClipboard(team.id);
                       }}
                     />
-                    <div
-                      id="snackbar"
-                      className="hidden z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2"
-                    >
-                      Team ID Copied
-                    </div>
                   </div>
 
                   <div className="text-center w-1/3 border-white text-white text-base font-lexand flex flex-row items-center justify-center">
@@ -376,6 +373,7 @@ const admin = () => {
           </Accordion>
         </div>
         <div className="w-11/12 h-8 border-x-4 border-b-4 border-white rounded-b-2xl  bg-admin-dark/40 flex flex-row" />
+        <div className={snackBar}>Team ID Copied</div>
       </div>
     );
   }

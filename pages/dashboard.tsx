@@ -53,7 +53,7 @@ const dashboard = () => {
     setTimeout(() => {
       setShowSnackBar(false);
       setMessage("");
-    }, 1000);
+    }, 3000);
   };
 
   const copyToClipboard = (copyText: string) => {
@@ -314,58 +314,65 @@ const dashboard = () => {
           <div className="bg-gradient-to-r from-[#64e8de] to-[#8a64eb] h-1 w-10/12" />
           {create ? (
             <div className="flex flex-col justify-start items-center w-full">
-              <div className="font-pixel text-base mt-3">Team Name:</div>
-
+              <div className="font-lexend text-lg font-bold mt-3">
+                Team Name:
+              </div>
               <input
                 type="text"
                 name="teamName"
                 value={teamName}
                 placeholder="New Team Name"
-                className="border-2 border-black w-11/12"
+                className="border-2 font-lexend border-black w-10/12 p-1"
                 onChange={(e) => {
                   setTeamName(e.target.value);
                 }}
               />
-              <button
-                onClick={() => renameTeam()}
-                className="hover:scale-105 rounded-xl mt-2 bg-gradient-to-r from-[#268de1] to-[#b65eba] font-pixel text-md md:text-lg lg:text-2xl text-white text-center px-3 py-2"
-              >
-                CREATE
-              </button>
-              <button
-                onClick={() => {
-                  setCreate(false);
-                }}
-                className="mt-3 hover:scale-105 rounded-xl bg-gradient-to-r to-[#64e8de] from-[#8a64eb] font-pixel text-md md:text-lg lg:text-2xl text-white text-center px-3 py-2"
-              >
-                BACK
-              </button>
+              <div className="flex justify-evenly w-full m-3">
+                <button
+                  className="hover:scale-105 rounded-xl bg-gradient-to-r from-pink-400 to-blue-300 text-lg font-lexend font-bold text-white text-center px-3 py-2"
+                  onClick={() => renameTeam()}
+                >
+                  Create Team
+                </button>
+                <button
+                  className="hover:scale-105 rounded-xl bg-gradient-to-r from-[#64e8de] to-[#8a64eb] text-lg font-lexend font-bold text-white text-center px-3 py-2"
+                  onClick={() => {
+                    setCreate(false);
+                  }}
+                >
+                  Back
+                </button>
+              </div>
             </div>
           ) : join ? (
-            <div className="flex flex-col justify-between items-center">
-              <div className="font-pixel text-base mt-3">Enter a Team ID</div>
+            <div className="flex flex-col justify-between items-center w-10/12">
+              <div className="font-lexend font-bold text-lg mt-3">
+                Enter a Team ID
+              </div>
               <input
                 type="text"
                 name="id"
                 value={id}
                 placeholder="New Team ID"
-                className="border-2 mt-1 border-black"
+                className="border-2 border-black w-full p-1 font-lexend"
                 onChange={(e) => setId(e.target.value)}
               />
-              <button
-                onClick={joinTeam}
-                className="mt-3 hover:scale-105 rounded-xl bg-gradient-to-r from-[#64e8de] to-[#8a64eb] font-pixel text-md md:text-lg lg:text-2xl text-white text-center px-3 py-2"
-              >
-                JOIN
-              </button>
-              <button
-                onClick={() => {
-                  setJoin(false);
-                }}
-                className="mt-3 hover:scale-105 rounded-xl bg-gradient-to-r to-[#64e8de] from-[#8a64eb] font-pixel text-md md:text-lg lg:text-2xl text-white text-center px-3 py-2"
-              >
-                BACK
-              </button>
+              <div className="flex justify-evenly w-full m-3">
+                <button
+                  className="hover:scale-105 rounded-xl bg-gradient-to-r from-pink-400 to-blue-300 text-lg font-lexend font-bold text-white text-center px-3 py-2"
+                  onClick={joinTeam}
+                >
+                  Join
+                </button>
+                <button
+                  className="hover:scale-105 rounded-xl bg-gradient-to-r from-[#64e8de] to-[#8a64eb] text-lg font-lexend font-bold text-white text-center px-3 py-2"
+                  onClick={() => {
+                    setJoin(false);
+                  }}
+                >
+                  Back
+                </button>
+              </div>
             </div>
           ) : inTeam ? (
             <div className="flex flex-col justify-center items-start w-11/12  p-4">
@@ -407,7 +414,7 @@ const dashboard = () => {
                   name="teamName"
                   value={teamName}
                   placeholder="New Team Name"
-                  className="border-2 border-black w-2/3 p-1"
+                  className="border-2 border-black w-2/3 p-1 font-lexend"
                   onChange={(e) => {
                     setTeamName(e.target.value);
                   }}
@@ -437,24 +444,26 @@ const dashboard = () => {
               </div>
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-between">
-              <div className="font-lexand text-xl text-gray-500">No Team</div>
-              <button
-                onClick={() => {
-                  setJoin(true);
-                }}
-                className="hover:scale-105 rounded-xl bg-gradient-to-r from-[#64e8de] to-[#8a64eb] font-pixel text-md md:text-lg lg:text-2xl text-white text-center px-3 py-2"
-              >
-                JOIN A TEAM
-              </button>
-              <button
-                onClick={() => {
-                  setCreate(true);
-                }}
-                className="hover:scale-105 rounded-xl mt-2 mb-5 bg-gradient-to-r from-[#268de1] to-[#b65eba] font-pixel text-md md:text-lg lg:text-2xl text-white text-center px-3 py-2"
-              >
-                CREATE A TEAM
-              </button>
+            <div className="flex flex-col items-center justify-center w-full">
+              <div className="font-lexand text-center text-xl text-black font-bold w-full m-3">
+                No Team
+              </div>
+              <div className="w-10/12 flex justify-evenly m-3">
+                <button
+                  className="hover:scale-105 rounded-xl bg-gradient-to-r from-pink-400 to-blue-300 text-lg font-lexend font-bold text-white text-center px-3 py-2"
+                  onClick={() => {
+                    setJoin(true);
+                  }}
+                >
+                  Join Team
+                </button>
+                <button
+                  className="hover:scale-105 rounded-xl bg-gradient-to-r from-[#64e8de] to-[#8a64eb] text-lg font-lexend font-bold text-white text-center px-3 py-2"
+                  onClick={() => setCreate(true)}
+                >
+                  Create Team
+                </button>
+              </div>
             </div>
           )}
         </Col>

@@ -40,19 +40,6 @@ interface user {
   team: string;
 }
 
-const copyToClipboard = (copyText: string) => {
-  navigator.clipboard.writeText(copyText);
-  const x = document.getElementById("snackbar");
-  if (x != null) {
-    x.className =
-      "visible z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2";
-    setTimeout(() => {
-      x.className =
-        "hidden z-50 bg-black text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2";
-    }, 1000);
-  }
-};
-
 const admin = () => {
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
@@ -60,11 +47,25 @@ const admin = () => {
   const [name, setName] = useState("");
   const [trigger, setTrigger] = useState(false);
   const [user, setUser] = useState<string | null>("");
+  const [snackBar, setSnackBar] = useState(
+    "hidden z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2"
+  );
+
+  const copyToClipboard = (copyText: string) => {
+    navigator.clipboard.writeText(copyText);
+    setSnackBar(
+      "visible z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2"
+    );
+    setTimeout(() => {
+      setSnackBar(
+        "hidden z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2 -translate-x-1/2"
+      );
+    }, 1000);
+  };
 
   useEffect(() => {
     onAuthStateChanged(auth, (currentState) => {
       if (currentState !== null) setUser(currentState.email);
-      else setUser("");
     });
   }, []);
 
@@ -223,13 +224,13 @@ const admin = () => {
           <div className="text-center w-1/12 border-r-2 border-white text-white text-base font-lexand">
             STATUS
           </div>
-          <div className="text-center md:w-1/3 w-1/4 border-r-2 border-white text-white text-base font-lexand">
+          <div className="text-center w-1/3 border-r-2 border-white text-white text-base font-lexand">
             NAME
           </div>
-          <div className="text-center md:w-1/3 w-1/4 border-r-2 border-white text-white text-base font-lexand">
+          <div className="text-center w-1/3 border-r-2 border-white text-white text-base font-lexand">
             EMAIL
           </div>
-          <div className="text-center md:w-1/3 w-1/4 border-white text-white text-base font-lexand">
+          <div className="text-center w-1/3 border-white text-white text-base font-lexand">
             ACTION
           </div>
         </div>
@@ -242,7 +243,7 @@ const admin = () => {
                 className="w-full"
               >
                 <Accordion.Header className="w-full border-b-4 border-white list-unstyled">
-                  <div className="text-center md:w-1/12 w-1/4 border-r-2 border-white flex justify-center items-center">
+                  <div className="text-center w-1/12 border-r-2 border-white flex justify-center items-center">
                     {user.status === "pending" ? (
                       <FaRegClock className="text-yellow-500 text-xl" />
                     ) : user.status === "approved" ? (
@@ -275,16 +276,10 @@ const admin = () => {
                         copyToClipboard(user.email);
                       }}
                     />
-                    <div
-                      id="snackbar"
-                      className="hidden z-50 bg-black/60 text-white text-center p-2 fixed bottom-[30px] left-1/2"
-                    >
-                      Email Copied
-                    </div>
                   </div>
 
                   <div className="text-center w-1/3 border-white text-white text-base font-lexand flex flex-row items-center justify-center">
-                    <div className="flex w-9/12 md:flex-row flex-col justify-between items-center">
+                    <div className="flex w-9/12 flex-row justify-between items-center">
                       {user.status === "approved" ? (
                         <>
                           <Button variant="secondary" disabled>
@@ -331,9 +326,9 @@ const admin = () => {
                 </Accordion.Header>
                 <Accordion.Body className=" w-full flex justify-center items-center border-b-4 border-white">
                   <div className="w-10/12 text-white text-base font-lexend flex justify-evenly items-start p-2">
-                    <div className="w-1/3">
+                    <div className="w-1/3 p-2">
                       <p className="underline m-0 p-0 text-lg text-center">
-                        General Info
+                        General Information
                       </p>
                       <div className="p-0 m-0 font-light">
                         Team:
@@ -368,7 +363,7 @@ const admin = () => {
                     </div>
                     <div className="w-1/3 p-2">
                       <p className="text-lg underline m-0 p-0 text-center">
-                        Misc Info
+                        Misc Information
                       </p>
                       <div className="p-0 m-0 font-light">
                         Phone:
@@ -426,6 +421,7 @@ const admin = () => {
           </Accordion>
         </div>
         <div className="w-11/12 h-8 border-x-4 border-b-4 border-white rounded-b-2xl  bg-admin-dark/40 flex flex-row" />
+        <div className={snackBar}>Email Copied</div>
       </div>
     );
   }

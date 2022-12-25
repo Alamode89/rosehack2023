@@ -1,7 +1,8 @@
 import React from "react";
 import { FaCircle } from "react-icons/fa";
 import { workshops, events, events2, activities } from "./data/schedule";
-import { Row, Col } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import Image from "next/image";
 
 import pixels from "../public/pixels_4.webp";
@@ -17,7 +18,6 @@ const Schedule = () => {
         <FaCircle className="text-white" />
       </div>
       <div className="md:ml-16 flex justify-left items-center text-center">
-        {/* <FaCircle className="text-white text-sm text-center" /> */}
         <p className="p-2 font-pixel text-3xl text-white drop-shadow-blue">
           DAY ONE - JANUARY 14
         </p>
@@ -31,24 +31,12 @@ const Schedule = () => {
             {workshops.map((workshop, index) => (
               <Col key={index}>
                 <div className="bg-gradient-to-b from-schedule-purple/25 drop-shadow-blue border-4 rounded-3xl m-3 p-3 text-white font-lexend">
-                  <Row class="g-0">
-                    <Row>
-                      <p className="text-2xl">{workshop.title}</p>
-                    </Row>
-                    <Row>
-                      <p>{workshop.time}</p>
-
-                      <hr></hr>
-                    </Row>
-                    <Row>
-                      <p className="drop-shadow-pinksmall"> {workshop.lead}</p>
-
-                      <hr className="text-white"></hr>
-                    </Row>
-                    <Row>
-                      <p>{workshop.loc}</p>
-                    </Row>
-                  </Row>
+                  <p className="text-2xl">{workshop.title}</p>
+                  <p>{workshop.time}</p>
+                  <hr />
+                  <p className="drop-shadow-pinksmall"> {workshop.lead}</p>
+                  <hr className="text-white" />
+                  <p>{workshop.loc}</p>
                 </div>
               </Col>
             ))}
@@ -59,22 +47,14 @@ const Schedule = () => {
               Events
             </p>
             {events.map((event, index) => (
-              <Col key={index}>
-                <div className="bg-gradient-to-b from-schedule-purple/25 drop-shadow-blue border-4 rounded-3xl m-3 p-3 text-white font-lexend">
-                  <Row class="g-0">
-                    <Row>
-                      <p className="text-2xl">{event.title}</p>
-                    </Row>
-                    <Row>
-                      <p>{event.time}</p>
-                      <hr></hr>
-                    </Row>
-
-                    <Row>
-                      <p>{event.loc}</p>
-                    </Row>
-                  </Row>
-                </div>
+              <Col
+                key={index}
+                className="bg-gradient-to-b from-schedule-purple/25 drop-shadow-blue border-4 rounded-3xl m-3 p-3 text-white font-lexend"
+              >
+                <p className="text-2xl">{event.title}</p>
+                <p>{event.time}</p>
+                <hr />
+                <p>{event.loc}</p>
               </Col>
             ))}
           </Col>
@@ -84,29 +64,20 @@ const Schedule = () => {
               Activities
             </p>
             {activities.map((act, index) => (
-              <Col key={index}>
-                <div className="bg-gradient-to-b from-schedule-purple/25 drop-shadow-blue border-4 rounded-3xl m-3 p-3 text-white font-lexend">
-                  <Row class="g-0">
-                    <Row className="text-2xl">
-                      <p>{act.title}</p>
-                    </Row>
-                    <Row>
-                      <p>{act.time}</p>
-                      <hr></hr>
-                    </Row>
-
-                    <Row>
-                      <p>{act.loc}</p>
-                    </Row>
-                  </Row>
-                </div>
+              <Col
+                key={index}
+                className="bg-gradient-to-b from-schedule-purple/25 drop-shadow-blue border-4 rounded-3xl m-3 p-3 text-white font-lexend"
+              >
+                <p className="text-2xl">{act.title}</p>
+                <p>{act.time}</p>
+                <hr />
+                <p>{act.loc}</p>
               </Col>
             ))}
           </Col>
         </Row>
       </div>
       <div className="md:ml-16 flex justify-left items-center text-center mt-4">
-        {/* <FaCircle className="text-white text-sm text-center" /> */}
         <p className="md:mt-12 p-2 font-pixel text-3xl text-white drop-shadow-blue">
           DAY TWO - JANUARY 15
         </p>
@@ -118,21 +89,14 @@ const Schedule = () => {
               Events
             </p>
             {events2.map((event, index) => (
-              <Col key={index}>
-                <div className="bg-gradient-to-b from-schedule-purple/25 drop-shadow-blue border-4 rounded-3xl m-3 p-3 text-white font-lexend">
-                  <Row class="g-0">
-                    <Row className="text-2xl">
-                      <p>{event.title}</p>
-                    </Row>
-                    <Row>
-                      <p>{event.time}</p>
-                      <hr></hr>
-                    </Row>
-                    <Row>
-                      <p>{event.loc}</p>
-                    </Row>
-                  </Row>
-                </div>
+              <Col
+                key={index}
+                className="bg-gradient-to-b from-schedule-purple/25 drop-shadow-blue border-4 rounded-3xl m-3 p-3 text-white font-lexend"
+              >
+                <p className="text-2xl">{event.title}</p>
+                <p>{event.time}</p>
+                <hr />
+                <p>{event.loc}</p>
               </Col>
             ))}
           </Col>

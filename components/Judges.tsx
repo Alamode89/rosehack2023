@@ -8,7 +8,7 @@ const Judges = () => {
   return (
     <section
       id="judges"
-      className="bg-gradient-to-b from-judges-top to-judges-bottom flex justify-center items-center flex-col scroll-my-[10vh]"
+      className="bg-gradient-to-b from-judges-top to-team-top flex justify-center items-center flex-col scroll-my-[10vh]"
     >
       <div className="w-10/12 flex justify-center items-center flex-col">
         <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
@@ -43,7 +43,7 @@ const Judges = () => {
             </Col>
           ))}
         </Row>
-        <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
+        {/* <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
           <img
             src="pink_heart.webp"
             className="h-14 w-14 transform hidden md:flex"
@@ -68,7 +68,7 @@ const Judges = () => {
             src="pink_heart.webp"
             className="h-14 w-14 transform hidden md:flex"
           />
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -1,0 +1,58 @@
+export const judges = [
+  {
+    name: "Divyank Shah",
+    position: "Project Manager",
+    linkedin: "",
+    image: "divyank.webp",
+    shadow: "shadow-team-teal",
+  },
+  {
+    name: "Divyank Shah",
+    position: "Project Manager",
+    linkedin: "",
+    image: "divyank.webp",
+    shadow: "shadow-team-teal",
+  },
+  {
+    name: "Divyank Shah",
+    position: "Project Manager",
+    linkedin: "",
+    image: "divyank.webp",
+    shadow: "shadow-team-teal",
+  },
+  {
+    name: "Divyank Shah",
+    position: "Project Manager",
+    linkedin: "",
+    image: "divyank.webp",
+    shadow: "shadow-team-teal",
+  },
+  {
+    name: "Divyank Shah",
+    position: "Professor from UCR",
+    linkedin: "",
+    image: "divyank.webp",
+    shadow: "shadow-team-green",
+  },
+  {
+    name: "Divyank Shah",
+    position: "Project Manager",
+    linkedin: "",
+    image: "divyank.webp",
+    shadow: "shadow-team-green",
+  },
+  {
+    name: "Divyank Shah",
+    position: "Project Manager",
+    linkedin: "",
+    image: "divyank.webp",
+    shadow: "shadow-team-green",
+  },
+  {
+    name: "Divyank Shah",
+    position: "Project Manager",
+    linkedin: "",
+    image: "divyank.webp",
+    shadow: "shadow-team-green",
+  },
+];

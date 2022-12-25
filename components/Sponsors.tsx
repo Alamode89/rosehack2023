@@ -47,7 +47,7 @@ const Sponsors = () => {
         </Row>
       </div>
       <div className="w-full justify-center mt-20">
-        <img draggable="false" src="pixels_6.webp" />
+        <img draggable="false" src="pixels_3.webp" />
       </div>
     </section>
   );

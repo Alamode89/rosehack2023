@@ -1,7 +1,7 @@
 import React from "react";
 import { FaCircle } from "react-icons/fa";
 import { workshops, events, events2, activities } from "./data/schedule";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import Image from "next/image";
 
 import pixels from "../public/pixels_4.webp";
@@ -59,7 +59,7 @@ const Schedule = () => {
               Events
             </p>
             {events.map((event, index) => (
-              <Col>
+              <Col key={index}>
                 <div className="bg-gradient-to-b from-schedule-purple/25 drop-shadow-blue border-4 rounded-3xl m-3 p-3 text-white font-lexend">
                   <Row class="g-0">
                     <Row>
@@ -84,7 +84,7 @@ const Schedule = () => {
               Activities
             </p>
             {activities.map((act, index) => (
-              <Col>
+              <Col key={index}>
                 <div className="bg-gradient-to-b from-schedule-purple/25 drop-shadow-blue border-4 rounded-3xl m-3 p-3 text-white font-lexend">
                   <Row class="g-0">
                     <Row className="text-2xl">
@@ -118,7 +118,7 @@ const Schedule = () => {
               Events
             </p>
             {events2.map((event, index) => (
-              <Col>
+              <Col key={index}>
                 <div className="bg-gradient-to-b from-schedule-purple/25 drop-shadow-blue border-4 rounded-3xl m-3 p-3 text-white font-lexend">
                   <Row class="g-0">
                     <Row className="text-2xl">

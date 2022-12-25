@@ -157,8 +157,8 @@ module.exports = {
           email: "#48BDFF",
         },
         judges: {
-          top: "#8700A9",
-          bottom: "#8C7DFF",
+          top: "#DB00FF",
+          bottom: "#00E0FF",
         },
       },
       boxShadow: {

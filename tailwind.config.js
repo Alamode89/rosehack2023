@@ -156,6 +156,12 @@ module.exports = {
           contact: "#26DDE1",
           email: "#48BDFF",
         },
+        schedule: {
+          top: "#CC00FF",
+          bottom: "#FF4F79",
+          purple: "#6112A1",
+          darkpurple: "#8700A9",
+        },
         judges: {
           top: "#DB00FF",
           bottom: "#00E0FF",

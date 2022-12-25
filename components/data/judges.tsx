@@ -1,4 +1,4 @@
-export const judge = [
+export const judges = [
   {
     name: "Divyank Shah",
     position: "Project Manager",

@@ -1,7 +1,7 @@
 import React from "react";
 import Profile from "./Profile";
 import { Row, Col } from "react-bootstrap";
-import { judge } from "./data/judges";
+import { judges } from "./data/judges";
 import { FaCircle } from "react-icons/fa";
 
 const Judges = () => {
@@ -31,7 +31,7 @@ const Judges = () => {
           <img src="pink_heart.webp" className="h-10 w-10 hidden md:flex" />
         </div>
         <Row className="flex justify-center items-initial">
-          {judge.map((judge, index) => (
+          {judges.map((judge, index) => (
             <Col lg={3} md={4} xs={6} key={index} className=" p-3">
               <Profile
                 name={judge.name}

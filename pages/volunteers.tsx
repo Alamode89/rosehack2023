@@ -9,9 +9,11 @@ const volunteers = () => {
           Join Rosehack as a Volunteer or Mentor!
         </p>
         <p className="w-10/12 text-center text-lg">
-          Rose Hack is coming January 14-15, 2023. Thank you for your interest
-          in Rose Hack, UC Riverside’s women-centric hackathon founded by the
-          female leaders of SWE and WINC!
+          Rose Hack is UC Riverside&apos;s women-center hackathon happening on
+          January 14-15, 2023. Thank you for showing interest in becoming a
+          volunteer or mentor, we truly appreciate all the help we can get. All
+          volunteers and mentors will be provided meals during breakfast, lunch
+          and dinner hours.
         </p>
         <Row className="w-full flex justify-center items-start">
           <Col

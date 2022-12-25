@@ -16,7 +16,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Lexend&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap"
             rel="stylesheet"
           ></link>
         </Head>

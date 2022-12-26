@@ -24,7 +24,7 @@ const FAQ = () => {
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
 
-          <p className="font-pixel text-4xl p-0 m-0 text-white text-center w-full md:w-auto">
+          <p className="font-pixel text-2xl p-0 m-0 text-white text-center w-full md:w-auto">
             FAQ
           </p>
           <FaCircle className="text-white hidden md:flex" />
@@ -33,7 +33,7 @@ const FAQ = () => {
           <FaCircle className="text-white hidden md:flex" />
           <img src="pink_heart.webp" className="h-10 w-10 hidden md:flex" />
         </div>
-        <div className="w-full flex justify-center items-center flex-col">
+        <div className="w-10/12 flex justify-center items-center flex-col">
           <Suspense fallback={`Loading...`}>
             <Questions />
           </Suspense>

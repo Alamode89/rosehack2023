@@ -4,7 +4,6 @@ import type { AppProps } from "next/app";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Layout from "../components/Layout";
 import { useRouter } from "next/router";
-import AdminNavigation from "../components/Admin/Navigation";
 import Navigation from "../components/Navigation";
 // eslint-disable-next-line camelcase
 import { Lexend, Press_Start_2P } from "@next/font/google";
@@ -19,14 +18,7 @@ const pixel = Press_Start_2P({
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
-  if (router.asPath.startsWith("/admin")) {
-    return (
-      <main className={`${lexend.variable} ${pixel.variable}`}>
-        <AdminNavigation />
-        <Component {...pageProps} />
-      </main>
-    );
-  } else if (router.asPath == "/dashboard" || router.asPath == "/user") {
+  if (router.asPath == "/dashboard" || router.asPath == "/user") {
     return (
       <main className={`${lexend.variable} ${pixel.variable}`}>
         <Navigation />

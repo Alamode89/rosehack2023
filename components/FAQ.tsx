@@ -1,6 +1,8 @@
 import React, { Suspense } from "react";
 import { FaCircle } from "react-icons/fa";
 import dynamic from "next/dynamic";
+import Image from "next/image";
+import pixels from "../public/pixels_7.webp";
 // import Questions from "./Questions";
 
 const Questions = dynamic(() => import("../components/Questions"), {
@@ -11,7 +13,7 @@ const FAQ = () => {
   return (
     <section
       id="faq"
-      className="bg-gradient-to-b from-faq-top to-faq-bottom w-full flex justify-center items-center flex-col pb-6 scroll-my-[10vh]"
+      className="bg-gradient-to-b from-faq-top to-faq-bottom w-full flex justify-center items-center flex-col m-0"
     >
       <div className="w-10/12 flex justify-center items-center flex-col">
         <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
@@ -57,6 +59,12 @@ const FAQ = () => {
           <img src="favicon.ico" className="w-1/5 mx-auto" />
         </div>
       </div>
+      <Image
+        src={pixels}
+        alt=""
+        draggable="false"
+        className="w-[100vw] p-0 m-0 !drop-shadow-lg "
+      />
     </section>
   );
 };

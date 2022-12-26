@@ -26,10 +26,10 @@ const Profile = ({ name, position, shadow, image, linkedin }: props) => {
           className="border-white border-8 rounded-[2rem]"
         />
       </a>
-      <p className="inline p-0 m-0 mt-3 font-lexend md:text-3xl text-xl text-white font-black text-center">
+      <p className="inline p-0 m-0 mt-3 font-lexend md:text-2xl text-xl text-white font-black text-center">
         {name}
       </p>
-      <p className="inline p-0 m-0 font-lexend md:text-xl text-base text-white text-center">
+      <p className="inline p-0 m-0 font-lexend md:text-lg text-base text-white text-center">
         {position}
       </p>
     </div>

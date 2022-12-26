@@ -18,7 +18,7 @@ const FaqItem = ({ index, element }: any) => {
       >
         <Accordion.Button
           onClick={() => setClicked(!clicked)}
-          className={`!bg-faq-middle !border-green-500 font-lexend !shadow-blue-500 !text-faq-question after:!bg-none focus:!shadow-none !rounded-none`}
+          className={`!bg-transparent !border-none font-lexend !shadow-blue-500 !text-faq-question after:!bg-none focus:!shadow-none !rounded-none`}
         >
           {clicked ? (
             <FaMinus className="pr-2 text-2xl " />
@@ -29,7 +29,7 @@ const FaqItem = ({ index, element }: any) => {
         </Accordion.Button>
       </div>
       <Accordion.Body
-        className={`bg-faq-middle !border-transparent font-lexend text-faq-answer !pt-6 !pb-8`}
+        className={`!border-transparent font-lexend text-faq-answer !pt-6 !pb-8`}
       >
         {element.answer}
       </Accordion.Body>
@@ -41,7 +41,7 @@ const FAQQuestions = () => {
   return (
     <div className="w-full flex justify-center items-center flex-col mt-5">
       <Accordion
-        className="flex flex-col content-center w-full py-5 bg-faq-middle rounded-3xl !border-transparent"
+        className="flex flex-col content-center w-10/12 py-5 !bg-gradient-to-b from-[#1C113F] via-[#350097] to-[#8700A9] rounded-3xl !border-transparent drop-shadow-lg"
         flush
         alwaysOpen
       >

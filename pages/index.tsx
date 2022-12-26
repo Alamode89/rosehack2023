@@ -4,17 +4,17 @@ import Landing from "../components/Landing";
 import Sponsors from "../components/Sponsors";
 import Team from "../components/Team";
 import FAQ from "../components/FAQ";
-import Schedule from "../components/Schedule";
-import Judges from "../components/Judges";
+// import Schedule from "../components/Schedule";
+// import Judges from "../components/Judges";
 
 const Home: NextPage = () => {
   return (
     <div className="flex justify-center items-center flex-col">
       <Landing />
       <About />
-      <Schedule />
+      {/* <Schedule /> */}
       <Sponsors />
-      <Judges />
+      {/* <Judges /> */}
       <Team />
       <FAQ />
       <title>Rose Hack 2023</title>

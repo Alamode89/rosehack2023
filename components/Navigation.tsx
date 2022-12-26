@@ -1,20 +1,8 @@
-import { onAuthStateChanged } from "firebase/auth";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { FaBars } from "react-icons/fa";
-import { auth } from "../firebase";
 
 const Navigation = () => {
-  const [login, setLogin] = useState(true);
-
-  useEffect(() => {
-    onAuthStateChanged(auth, (currentState) => {
-      if (currentState !== null) {
-        setLogin(false);
-      }
-    });
-  }, []);
-
   return (
     <div className="from:bg-header-left to:bg-header-right min-h-[7vh]">
       <Navbar
@@ -60,20 +48,12 @@ const Navigation = () => {
             >
               FAQ
             </Nav.Link>
-            <Nav.Link
+            {/* <Nav.Link
               href="/register"
               className="!text-base text-center text-white p-1 mx-2 hover:underline hover:drop-shadow-blue decoration-4 underline-offset-6"
             >
               REGISTER
-            </Nav.Link>
-            {login && (
-              <Nav.Link
-                href="/user"
-                className="!text-base text-center text-white p-1 mx-2 hover:underline hover:drop-shadow-pink decoration-4 underline-offset-6"
-              >
-                LOGIN
-              </Nav.Link>
-            )}
+            </Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

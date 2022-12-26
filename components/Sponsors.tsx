@@ -2,6 +2,7 @@ import React from "react";
 import { FaCircle } from "react-icons/fa";
 import { Row, Col } from "react-bootstrap";
 import { sponsors } from "./data/sponsors";
+import Image from "next/image";
 
 const Sponsors = () => {
   return (
@@ -35,8 +36,11 @@ const Sponsors = () => {
               <div>
                 <div className={`rounded-full hover:-translate-y-2`}>
                   <a href={sponsor.link} target="_blank" rel="noreferrer">
-                    <img
-                      src={sponsor.pic}
+                    <Image
+                      src={`/${sponsor.pic}`}
+                      width="300"
+                      height="300"
+                      alt="Sponsor Image"
                       className="border-about-right drop-shadow-blue border-4 rounded-full "
                     />
                   </a>

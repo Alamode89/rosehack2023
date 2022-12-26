@@ -21,7 +21,7 @@ const Team = () => {
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
 
-          <p className="font-pixel text-4xl p-0 m-0 text-white text-center w-full md:w-auto">
+          <p className="font-pixel text-2xl p-0 m-0 text-white text-center w-full md:w-auto">
             THE TEAM
           </p>
           <FaCircle className="text-white hidden md:flex" />
@@ -53,7 +53,7 @@ const Team = () => {
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
 
-          <p className=" font-pixel text-4xl p-0 m-0 text-white text-center w-full md:w-auto">
+          <p className=" font-pixel text-2xl p-0 m-0 text-white text-center w-full md:w-auto">
             COMMITTEE MEMBERS
           </p>
           <FaCircle className="text-white hidden md:flex" />

@@ -62,25 +62,27 @@ const Team = () => {
           <FaCircle className="text-white hidden md:flex" />
           <img src="pink_heart.webp" className="h-10 w-10 hidden md:flex" />
         </div>
-        <div className="flex justify-center items-stretch flex-col p-2 w-full">
+        <div className="flex justify-center items-stretch flex-col p-2 w-10/12">
           <div
-            className={`shadow-team-yellow shadow-[20px_-16px_0px_0px] rounded-[2rem] w-full`}
+            className={`shadow-team-yellow shadow-[20px_-16px_0px_0px] rounded-[2rem] w-full drop-shadow-lg`}
           >
-            <div className="border-white bg-white border-8 rounded-3xl">
-              <Row className="w-full p-3 flex justify-left items-center">
-                {commitee.map((member, index) => (
-                  <Col
-                    key={index}
-                    xl={3}
-                    xs={12}
-                    className="flex justify-left items-center"
-                  >
-                    <p className="p-0 m-2 text-lg text-center w-full font-semibold text-black font-lexend">
-                      {member}
-                    </p>
-                  </Col>
-                ))}
-              </Row>
+            <div className="border-white bg-white border-8 rounded-3xl drop-shadow-lg">
+              <div className="bg-fourPointStarts m-2 rounded-[2rem]">
+                <Row className="w-full p-3 flex justify-left items-center">
+                  {commitee.map((member, index) => (
+                    <Col
+                      key={index}
+                      xl={3}
+                      xs={12}
+                      className="flex justify-left items-center"
+                    >
+                      <p className="p-0 m-2 text-lg text-center w-full font-semibold text-black font-lexend">
+                        {member}
+                      </p>
+                    </Col>
+                  ))}
+                </Row>
+              </div>
             </div>
           </div>
         </div>

@@ -15,15 +15,8 @@ const Footer = () => {
               md={1}
               className="flex justify-center m-0 p-0"
             >
-              <Link href={link.path}>
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title={link.title}
-                  className="text-white"
-                >
-                  {link.image}
-                </a>
+              <Link href={link.path} className="text-white">
+                {link.image}
               </Link>
             </Col>
           );

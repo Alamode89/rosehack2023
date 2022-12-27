@@ -5,7 +5,7 @@ interface props {
   name: String;
   position: String;
   shadow: String;
-  image: string;
+  image: any;
   linkedin: string;
 }
 
@@ -26,7 +26,7 @@ const Profile = ({ name, position, shadow, image, linkedin }: props) => {
           className="border-white border-8 rounded-[2rem]"
         /> */}
         <Image
-          src={`/${image}`}
+          src={image}
           width={200}
           height={200}
           alt="Profile Image"

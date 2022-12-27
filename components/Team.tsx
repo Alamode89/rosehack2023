@@ -5,6 +5,31 @@ import { profiles, commitee } from "./data/team";
 import { FaCircle } from "react-icons/fa";
 import PinkHeart from "../public/pink_heart.webp";
 import Image from "next/image";
+import Ashley from "../public/Ashley.webp";
+import Hallie from "../public/Hallie.webp";
+import Annabelle from "../public/Annabelle.webp";
+import Angie from "../public/Angie.webp";
+import Samarth from "../public/Samarth.webp";
+import Nicole from "../public/Nicole.webp";
+import Bonnie from "../public/Bonnie.webp";
+import Samantha from "../public/Samantha.webp";
+import Cindy from "../public/Cindy.webp";
+import Andre from "../public/Andre.webp";
+import Divyank from "../public/Divyank.webp";
+
+const images = [
+  Ashley,
+  Hallie,
+  Annabelle,
+  Angie,
+  Samarth,
+  Nicole,
+  Bonnie,
+  Samantha,
+  Cindy,
+  Andre,
+  Divyank,
+];
 
 const Team = () => {
   return (
@@ -51,7 +76,7 @@ const Team = () => {
                 name={profile.name}
                 position={profile.position}
                 shadow={profile.shadow}
-                image={profile.image}
+                image={images[index]}
                 linkedin={profile.linkedin}
               />
             </Col>

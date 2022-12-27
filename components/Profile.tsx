@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 interface props {
@@ -18,8 +17,8 @@ const Profile = ({ name, position, shadow, image, linkedin }: props) => {
         className={`${shadow} shadow-[20px_-16px_0px_0px] rounded-[2rem] hover:-translate-y-2`}
         rel="noreferrer"
       >
-        <Image
-          src={`/${image}`}
+        <img
+          src={image}
           width={200}
           height={200}
           alt="Profile Image"

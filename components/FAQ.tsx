@@ -1,8 +1,6 @@
 import React, { Suspense } from "react";
 import { FaCircle } from "react-icons/fa";
 import dynamic from "next/dynamic";
-import Image from "next/image";
-import pixels from "../public/pixels_7.webp";
 // import Questions from "./Questions";
 
 const Questions = dynamic(() => import("../components/Questions"), {
@@ -59,8 +57,8 @@ const FAQ = () => {
           <img src="favicon.ico" className="w-1/5 mx-auto" />
         </div>
       </div>
-      <Image
-        src={pixels}
+      <img
+        src="pixels_7.webp"
         alt=""
         draggable="false"
         className="w-[100vw] p-0 m-0 !drop-shadow-lg "

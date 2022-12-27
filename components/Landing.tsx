@@ -1,11 +1,7 @@
 import { FaCircle } from "react-icons/fa";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Link from "next/link";
-import Image from "next/image";
-import blueHeart from "../public/blue_heart.webp";
-import pinkHeart from "../public/pink_heart.webp";
 import React from "react";
-import pixels from "../public/pixels_1.webp";
 
 const Landing = () => {
   return (
@@ -15,8 +11,8 @@ const Landing = () => {
     >
       <div className="w-full bg-TicTacToe m-0 p-0 flex flex-col justify-center items-between">
         <div className="drop-shadow-white w-11/12 md:w-7/12 flex pt-12 pb-3 m-auto text-center items-center justify-evenly">
-          <Image
-            src={pinkHeart}
+          <img
+            src="pink_heart.webp"
             alt=""
             draggable="false"
             width="55"
@@ -24,8 +20,8 @@ const Landing = () => {
           />
           <FaCircle className="text-white hidden md:block" />
           <FaCircle className="text-white hidden md:block" />
-          <Image
-            src={blueHeart}
+          <img
+            src="blue_heart.webp"
             alt=""
             draggable="false"
             width="55"
@@ -33,8 +29,8 @@ const Landing = () => {
           />
           <FaCircle className="text-white hidden md:block" />
           <FaCircle className="text-white hidden md:block" />
-          <Image
-            src={pinkHeart}
+          <img
+            src="pink_heart.webp"
             alt=""
             draggable="false"
             width="55"
@@ -42,8 +38,8 @@ const Landing = () => {
           />
           <FaCircle className="text-white hidden md:block" />
           <FaCircle className="text-white hidden md:block" />
-          <Image
-            src={blueHeart}
+          <img
+            src="blue_heart.webp"
             alt=""
             draggable="false"
             width="55"
@@ -104,8 +100,8 @@ const Landing = () => {
           </div>
         </div>
         <div className="drop-shadow-white w-11/12 md:w-7/12  flex pb-12 pt-3 m-auto text-center items-center justify-evenly">
-          <Image
-            src={pinkHeart}
+          <img
+            src="pink_heart.webp"
             alt=""
             draggable="false"
             width="55"
@@ -113,8 +109,8 @@ const Landing = () => {
           />
           <FaCircle className="text-white hidden md:block" />
           <FaCircle className="text-white  hidden md:block" />
-          <Image
-            src={blueHeart}
+          <img
+            src="blue_heart.webp"
             alt=""
             draggable="false"
             width="55"
@@ -122,8 +118,8 @@ const Landing = () => {
           />
           <FaCircle className="text-white hidden md:block" />
           <FaCircle className="text-white hidden md:block" />
-          <Image
-            src={pinkHeart}
+          <img
+            src="pink_heart.webp"
             alt=""
             draggable="false"
             width="55"
@@ -131,16 +127,16 @@ const Landing = () => {
           />
           <FaCircle className="text-white hidden md:block" />
           <FaCircle className="text-white hidden md:block" />
-          <Image
-            src={blueHeart}
+          <img
+            src="blue_heart.webp"
             alt=""
             draggable="false"
             width="55"
             className="drop-shadow-pink"
           />
         </div>
-        <Image
-          src={pixels}
+        <img
+          src="pixels_1.webp"
           alt=""
           draggable="false"
           className="w-[100vw] p-0 m-0"

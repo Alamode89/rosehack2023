@@ -94,6 +94,9 @@ module.exports = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        fourPointStarts: "url('../public/fourPointStarts.svg')",
+        formalInvitation: "url('../public/formalInvitation.svg')",
+        TicTacToe: "url('../public/landing.svg')",
       },
       colors: {
         rose: {

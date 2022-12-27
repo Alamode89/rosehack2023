@@ -5,8 +5,6 @@ import Col from "react-bootstrap/Col";
 import Snackbar from "../components/Snackbar";
 import { schools } from "../components/data/schools";
 import Schools from "../components/Schools";
-import Link from "next/link";
-import { FaChevronLeft } from "react-icons/fa";
 import { MdOutlineFileUpload } from "react-icons/md";
 import axios from "axios";
 import { storage } from "../firebase";
@@ -20,6 +18,8 @@ import {
   ages,
   shirts,
 } from "../components/data/register";
+import Header from "../components/Register/Header";
+import Label from "../components/Register/Label";
 
 const Register = () => {
   const [user, setUser] = useState<any>(data);
@@ -183,18 +183,7 @@ const Register = () => {
   return (
     <div className="flex justify-center items-center flex-col bg-gradient-to-b from-about-top to-about-bottom w-full min-h-screen">
       <div className="my-24 border-4 rounded-3xl drop-shadow-blue border-white items-center flex flex-col w-10/12">
-        <div className="flex justify-center items-center  w-full relative">
-          <div className="absolute top-1/2 left-3 -translate-y-1/2">
-            <Link href="/#">
-              <a>
-                <FaChevronLeft className="text-white md:text-5xl text-3xl hover:drop-shadow-white hover:scale-[1.2] ease-in-out duration-300 hover:cursor-pointer" />
-              </a>
-            </Link>
-          </div>
-          <div className="font-pixel text-md md:text-xl lg:text-4xl p-0 text-white text-center w-full m-4">
-            REGISTER
-          </div>
-        </div>
+        <Header />
 
         {visible && (
           <Snackbar
@@ -205,9 +194,7 @@ const Register = () => {
         )}
         <Row className="w-10/12 flex justify-between ">
           <Col md={5} className="px-0 py-1">
-            <label className="text-left font-pixel text-md text-white w-full ml-4">
-              <p className="p-0 m-0 text-red-500 inline">*</p>first name
-            </label>
+            <Label field="first name" />
             <input
               type="text"
               name="first"
@@ -219,9 +206,7 @@ const Register = () => {
             />
           </Col>
           <Col md={5} className="px-0 py-1">
-            <label className="text-left font-pixel text-md text-white w-full ml-4">
-              <p className="p-0 m-0 text-red-500 inline">*</p>last name
-            </label>
+            <Label field="last name" />
             <input
               type="text"
               name="last"
@@ -235,9 +220,7 @@ const Register = () => {
         </Row>
         <Row className="w-10/12 flex justify-start">
           <Col className="px-0 py-1">
-            <label className="text-left font-pixel text-md text-white w-full ml-4">
-              <p className="p-0 m-0 text-red-500 inline">*</p>email
-            </label>
+            <Label field="email" />
             <input
               type="text"
               name="email"
@@ -251,9 +234,7 @@ const Register = () => {
         </Row>
         <Row className="w-10/12 flex justify-between">
           <Col className="px-0 py-1" md={5}>
-            <label className="text-left font-pixel text-md text-white w-full ml-4">
-              <p className="p-0 m-0 text-red-500 inline">*</p>password
-            </label>
+            <Label field="password" />
             <input
               type="password"
               name="password"
@@ -264,9 +245,7 @@ const Register = () => {
             />
           </Col>
           <Col className="px-0 py-1" md={5}>
-            <label className="text-left font-pixel text-md text-white w-full ml-4">
-              <p className="p-0 m-0 text-red-500 inline">*</p>confirm password
-            </label>
+            <Label field="confirm password" />
             <input
               type="password"
               name="confirm_password"
@@ -279,9 +258,7 @@ const Register = () => {
         </Row>
         <Row className="w-10/12">
           <Col className="px-0 py-1">
-            <label className="text-left font-pixel text-md text-white w-full ml-4">
-              <p className="p-0 m-0 text-red-500 inline">*</p>phone number
-            </label>
+            <Label field="phone number" />
             <input
               type="tel"
               name="phone"
@@ -295,9 +272,7 @@ const Register = () => {
         </Row>
         <Row className="w-10/12">
           <Col className="px-0 py-1">
-            <label className="text-left font-pixel text-md text-white w-full ml-4">
-              <p className="p-0 m-0 text-red-500 inline">*</p>school
-            </label>
+            <Label field="school" />
             <Schools
               schools={schools}
               school={user.school}
@@ -307,9 +282,7 @@ const Register = () => {
         </Row>
         <Row className="w-10/12 justify-between">
           <Col md={5} className="px-0 py-1">
-            <label className=" text-left font-pixel text-md text-white w-full ml-4">
-              <p className="p-0 m-0 text-red-500 inline">*</p>grade
-            </label>
+            <Label field="grade" />
             <Selector
               options={grades}
               user={user}
@@ -318,9 +291,7 @@ const Register = () => {
             />
           </Col>
           <Col md={5} className="px-0 py-1">
-            <label className=" text-left font-pixel text-md text-white w-full ml-4">
-              <p className="p-0 m-0 text-red-500 inline">*</p>major
-            </label>
+            <Label field="major" />
             <Selector
               options={majors}
               user={user}
@@ -331,9 +302,7 @@ const Register = () => {
         </Row>
         <Row className=" w-10/12 justify-between flex">
           <Col md={3} className="px-0 py-1">
-            <label className=" text-left font-pixel text-md text-white w-full ml-4">
-              <p className="p-0 m-0 text-red-500 inline">*</p>shirt size
-            </label>
+            <Label field="shirt size" />
             <Selector
               options={shirts}
               user={user}
@@ -342,9 +311,7 @@ const Register = () => {
             />
           </Col>
           <Col md={3} className="px-0 py-1">
-            <label className=" text-left font-pixel text-md text-white w-full ml-4">
-              <p className="p-0 m-0 text-red-500 inline">*</p>age
-            </label>
+            <Label field="age" />
             <Selector
               options={ages}
               user={user}
@@ -353,9 +320,7 @@ const Register = () => {
             />
           </Col>
           <Col md={3} className="px-0 py-1">
-            <label className=" text-left font-pixel text-md text-white w-full ml-4">
-              <p className="p-0 m-0 text-red-500 inline">*</p>gender
-            </label>
+            <Label field="gender" />
             <Selector
               options={genders}
               user={user}

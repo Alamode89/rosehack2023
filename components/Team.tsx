@@ -3,6 +3,8 @@ import Profile from "./Profile";
 import { Row, Col } from "react-bootstrap";
 import { profiles, commitee } from "./data/team";
 import { FaCircle } from "react-icons/fa";
+import PinkHeart from "../public/pink_heart.webp";
+import Image from "next/image";
 
 const Team = () => {
   return (
@@ -12,9 +14,15 @@ const Team = () => {
     >
       <div className="w-10/12 flex justify-center items-center flex-col">
         <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
-          <img
+          {/* <img
             src="pink_heart.webp"
             className="h-10 transform hidden md:flex"
+          /> */}
+          <Image
+            src={PinkHeart}
+            alt=""
+            width={55}
+            className="transform hidden md:flex"
           />
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden md:flex" />
@@ -28,7 +36,13 @@ const Team = () => {
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
-          <img src="pink_heart.webp" className="h-10 hidden md:flex" />
+          {/* <img src="pink_heart.webp" className="h-10 hidden md:flex" /> */}
+          <Image
+            src={PinkHeart}
+            alt=""
+            width={55}
+            className="transform hidden md:flex"
+          />
         </div>
         <Row className="flex justify-center items-initial">
           {profiles.map((profile, index) => (
@@ -44,9 +58,15 @@ const Team = () => {
           ))}
         </Row>
         <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
-          <img
+          {/* <img
             src="pink_heart.webp"
             className="h-10 transform hidden md:flex"
+          /> */}
+          <Image
+            src={PinkHeart}
+            alt=""
+            width={55}
+            className="transform hidden md:flex"
           />
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden md:flex" />
@@ -60,7 +80,13 @@ const Team = () => {
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
-          <img src="pink_heart.webp" className="h-10 hidden md:flex" />
+          {/* <img src="pink_heart.webp" className="h-10 hidden md:flex" /> */}
+          <Image
+            src={PinkHeart}
+            alt=""
+            width={55}
+            className="transform hidden md:flex"
+          />
         </div>
         <div className="flex justify-center items-stretch flex-col p-2 w-10/12">
           <div

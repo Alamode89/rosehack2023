@@ -2,6 +2,8 @@ import React from "react";
 import { FaCircle } from "react-icons/fa";
 import { Row, Col } from "react-bootstrap";
 import { sponsors } from "./data/sponsors";
+import PinkHeart from "../public/pink_heart.webp";
+
 import Image from "next/image";
 
 const Sponsors = () => {
@@ -12,9 +14,15 @@ const Sponsors = () => {
     >
       <div className="w-11/12 flex justify-center items-center flex-col">
         <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
-          <img
+          {/* <img
             src="pink_heart.webp"
             className="h-10 transform hidden md:flex"
+          /> */}
+          <Image
+            src={PinkHeart}
+            alt=""
+            width={55}
+            className="transform hidden md:flex"
           />
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden md:flex" />
@@ -28,7 +36,13 @@ const Sponsors = () => {
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
-          <img src="pink_heart.webp" className="h-10 hidden md:flex" />
+          {/* <img src="pink_heart.webp" className="h-10 hidden md:flex" /> */}
+          <Image
+            src={PinkHeart}
+            alt=""
+            width={55}
+            className="transform hidden md:flex"
+          />
         </div>
         <Row className="w-8/12">
           {sponsors.map((sponsor, index) => (
@@ -40,8 +54,8 @@ const Sponsors = () => {
                   <a href={sponsor.link} target="_blank" rel="noreferrer">
                     <Image
                       src={`/${sponsor.pic}`}
-                      width="300"
-                      height="300"
+                      width={300}
+                      height={300}
                       alt="Sponsor Image"
                       className={`border-white ${
                         index % 2 == 0 ? "drop-shadow-blue" : "drop-shadow-pink"

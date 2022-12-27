@@ -1,6 +1,9 @@
 import React from "react";
 import { FaCircle } from "react-icons/fa";
 import { Row, Col } from "react-bootstrap";
+import Image from "next/image";
+import PinkHeart from "../public/pink_heart.webp";
+import BlueHeart from "../public/blue_heart.webp";
 
 const About = () => {
   return (
@@ -9,9 +12,15 @@ const About = () => {
       className="bg-gradient-to-b from-about-top to-about-bottom w-full flex justify-center items-center flex-col scroll-my-[10vh]"
     >
       <div className="flex justify-between items-center w-10/12 mt-5 drop-shadow-white">
-        <img
+        {/* <img
           src="pink_heart.webp"
           className="h-10 w-10 transform hidden md:flex"
+        /> */}
+        <Image
+          src={PinkHeart}
+          alt=""
+          width={55}
+          className="transform hidden md:flex"
         />
         <FaCircle className=" text-white hidden md:flex" />
         <FaCircle className=" text-white hidden md:flex" />
@@ -25,7 +34,8 @@ const About = () => {
         <FaCircle className=" text-white hidden md:flex" />
         <FaCircle className=" text-white hidden lg:flex" />
         <FaCircle className=" text-white hidden md:flex" />
-        <img src="pink_heart.webp" className="h-10 w-10 hidden md:flex" />
+        {/* <img src="pink_heart.webp" className="h-10 w-10 hidden md:flex" /> */}
+        <Image src={PinkHeart} alt="" width={55} className="hidden md:flex" />
       </div>
 
       <Row className="mt-5 md:mt-0 sm:w-9/12 w-10/12 flex justify-evenly items-center flex-row-reverse sm:flex-row">
@@ -35,19 +45,34 @@ const About = () => {
           className="md:px-4 px-0 flex justify-center items-center flex-col"
         >
           <div className="flex justify-between items-center mb-4 w-full">
-            <img
-              src="pink_heart.webp"
-              className="h-6 md:h-10 md:w-10 drop-shadow-pink"
+            {/* <img src="pink_heart.webp" className="" /> */}
+            <Image
+              src={PinkHeart}
+              alt=""
+              width={55}
+              className="drop-shadow-pink"
             />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
-            <img
+            {/* <img
               src="pink_heart.webp"
               className="h-6 md:h-10 md:w-10 drop-shadow-pink"
+            /> */}
+            <Image
+              src={PinkHeart}
+              alt=""
+              width={55}
+              className="drop-shadow-pink"
             />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
-            <img
+            {/* <img
               src="pink_heart.webp"
               className="h-6 md:h-10 md:w-10 drop-shadow-pink"
+            /> */}
+            <Image
+              src={PinkHeart}
+              alt=""
+              width={55}
+              className="drop-shadow-pink"
             />
           </div>
           <p className="drop-shadow-pinksmall py-0 md:py-5 font-lexend text-base md:text-xl w-11/12 p-0 m-0 text-white text-justify">
@@ -58,19 +83,37 @@ const About = () => {
           </p>
 
           <div className="flex justify-between items-center mt-4 w-full">
-            <img
+            {/* <img
               src="pink_heart.webp"
               className="h-6 md:h-10 md:w-10 drop-shadow-pink"
+            /> */}
+            <Image
+              src={PinkHeart}
+              alt=""
+              width={55}
+              className="drop-shadow-pink"
             />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
-            <img
+            {/* <img
               src="pink_heart.webp"
               className="h-6 md:h-10 md:w-10 drop-shadow-pink"
+            /> */}
+            <Image
+              src={PinkHeart}
+              alt=""
+              width={55}
+              className="drop-shadow-pink"
             />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
-            <img
+            {/* <img
               src="pink_heart.webp"
               className="h-6 md:h-10 md:w-10 drop-shadow-pink"
+            /> */}
+            <Image
+              src={PinkHeart}
+              alt=""
+              width={55}
+              className="drop-shadow-pink"
             />
           </div>
         </Col>
@@ -91,19 +134,37 @@ const About = () => {
           className="md:px-5 px-0 flex justify-center items-center flex-col"
         >
           <div className="flex justify-between items-center mb-4 w-full">
-            <img
+            {/* <img
               src="blue_heart.webp"
               className="h-6 md:h-10 md:w-10 drop-shadow-blue"
+            /> */}
+            <Image
+              src={BlueHeart}
+              alt=""
+              width={55}
+              className="drop-shadow-blue"
             />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
-            <img
+            {/* <img
               src="blue_heart.webp"
               className="h-6 md:h-10 md:w-10 drop-shadow-blue"
+            /> */}
+            <Image
+              src={BlueHeart}
+              alt=""
+              width={55}
+              className="drop-shadow-blue"
             />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
-            <img
+            {/* <img
               src="blue_heart.webp"
               className="h-6 md:h-10 md:w-10 drop-shadow-blue"
+            /> */}
+            <Image
+              src={BlueHeart}
+              alt=""
+              width={55}
+              className="drop-shadow-blue"
             />
           </div>
           <p className="drop-shadow-bluesmall py-0 md:py-5 text-abse md:text-xl font-lexend w-11/12 p-0 m-0 text-white text-justify">
@@ -113,19 +174,37 @@ const About = () => {
             in science and technology.
           </p>
           <div className="flex justify-between items-center mt-4 w-full">
-            <img
+            {/* <img
               src="blue_heart.webp"
               className="h-6 md:h-10 md:w-10 drop-shadow-blue"
+            /> */}
+            <Image
+              src={BlueHeart}
+              alt=""
+              width={55}
+              className="drop-shadow-blue"
             />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
-            <img
+            {/* <img
               src="blue_heart.webp"
               className="h-6 md:h-10 md:w-10 drop-shadow-blue"
+            /> */}
+            <Image
+              src={BlueHeart}
+              alt=""
+              width={55}
+              className="drop-shadow-blue"
             />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
-            <img
+            {/* <img
               src="blue_heart.webp"
               className="h-6 md:h-10 md:w-10 drop-shadow-blue"
+            /> */}
+            <Image
+              src={BlueHeart}
+              alt=""
+              width={55}
+              className="drop-shadow-blue"
             />
           </div>
         </Col>

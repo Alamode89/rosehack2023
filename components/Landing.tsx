@@ -2,6 +2,9 @@ import { FaCircle } from "react-icons/fa";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Link from "next/link";
 import React from "react";
+import BlueHeart from "../public/blue_heart.webp";
+import PinkHeart from "../public/pink_heart.webp";
+import Image from "next/image";
 
 const Landing = () => {
   return (
@@ -11,38 +14,58 @@ const Landing = () => {
     >
       <div className="w-full bg-TicTacToe m-0 p-0 flex flex-col justify-center items-between">
         <div className="drop-shadow-white w-11/12 md:w-7/12 flex pt-12 pb-3 m-auto text-center items-center justify-evenly">
-          <img
+          {/* <img
             src="pink_heart.webp"
             alt=""
             draggable="false"
             width="55"
             className="drop-shadow-pink"
-          />
-          <FaCircle className="text-white hidden md:block" />
-          <FaCircle className="text-white hidden md:block" />
-          <img
-            src="blue_heart.webp"
+          /> */}
+          <Image
+            src={PinkHeart}
             alt=""
-            draggable="false"
-            width="55"
+            width={55}
             className="drop-shadow-pink"
           />
           <FaCircle className="text-white hidden md:block" />
           <FaCircle className="text-white hidden md:block" />
-          <img
+          <Image
+            src={BlueHeart}
+            alt=""
+            width={55}
+            className="drop-shadow-pink"
+          />
+          <FaCircle className="text-white hidden md:block" />
+          <FaCircle className="text-white hidden md:block" />
+          {/* <img
             src="pink_heart.webp"
             alt=""
             draggable="false"
             width="55"
             className="drop-shadow-pink"
+          /> */}
+          <Image
+            src={PinkHeart}
+            alt=""
+            width={55}
+            className="drop-shadow-pink"
           />
           <FaCircle className="text-white hidden md:block" />
           <FaCircle className="text-white hidden md:block" />
-          <img
+          {/* <img
             src="blue_heart.webp"
             alt=""
             draggable="false"
             width="55"
+            className="drop-shadow-pink"
+          /> */}
+          <Image
+            src={BlueHeart}
+            alt=""
+            // draggable="false"
+            // width={55}
+            // height
+            width={55}
             className="drop-shadow-pink"
           />
         </div>
@@ -100,38 +123,68 @@ const Landing = () => {
           </div>
         </div>
         <div className="drop-shadow-white w-11/12 md:w-7/12  flex pb-12 pt-3 m-auto text-center items-center justify-evenly">
-          <img
+          {/* <img
             src="pink_heart.webp"
             alt=""
             draggable="false"
             width="55"
+            className="drop-shadow-pink"
+          /> */}
+          <Image
+            src={PinkHeart}
+            alt=""
+            width={55}
             className="drop-shadow-pink"
           />
           <FaCircle className="text-white hidden md:block" />
           <FaCircle className="text-white  hidden md:block" />
-          <img
+          {/* <img
             src="blue_heart.webp"
             alt=""
             draggable="false"
             width="55"
             className="drop-shadow-pink"
+          /> */}
+          <Image
+            src={BlueHeart}
+            alt=""
+            // draggable="false"
+            // width={55}
+            // height
+            width={55}
+            className="drop-shadow-pink"
           />
           <FaCircle className="text-white hidden md:block" />
           <FaCircle className="text-white hidden md:block" />
-          <img
+          {/* <img
             src="pink_heart.webp"
             alt=""
             draggable="false"
             width="55"
             className="drop-shadow-pink"
+          /> */}
+          <Image
+            src={PinkHeart}
+            alt=""
+            width={55}
+            className="drop-shadow-pink"
           />
           <FaCircle className="text-white hidden md:block" />
           <FaCircle className="text-white hidden md:block" />
-          <img
+          {/* <img
             src="blue_heart.webp"
             alt=""
             draggable="false"
             width="55"
+            className="drop-shadow-pink"
+          /> */}
+          <Image
+            src={BlueHeart}
+            alt=""
+            // draggable="false"
+            // width={55}
+            // height
+            width={55}
             className="drop-shadow-pink"
           />
         </div>

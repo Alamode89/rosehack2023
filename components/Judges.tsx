@@ -3,6 +3,8 @@ import Profile from "./Profile";
 import { Row, Col } from "react-bootstrap";
 import { judges } from "./data/judges";
 import { FaCircle } from "react-icons/fa";
+import Image from "next/image";
+import PinkHeart from "../public/pink_heart.webp";
 
 const Judges = () => {
   return (
@@ -12,9 +14,15 @@ const Judges = () => {
     >
       <div className="w-10/12 flex justify-center items-center flex-col">
         <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
-          <img
+          {/* <img
             src="pink_heart.webp"
             className="h-10 w-10 transform hidden md:flex"
+          /> */}
+          <Image
+            src={PinkHeart}
+            alt=""
+            width={55}
+            className="transform hidden md:flex"
           />
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden md:flex" />
@@ -28,7 +36,13 @@ const Judges = () => {
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
-          <img src="pink_heart.webp" className="h-10 w-10 hidden md:flex" />
+          {/* <img src="pink_heart.webp" className="h-10 w-10 hidden md:flex" /> */}
+          <Image
+            src={PinkHeart}
+            alt=""
+            width={55}
+            className="transform hidden md:flex"
+          />
         </div>
         <Row className="flex justify-center items-initial">
           {judges.map((judge, index) => (

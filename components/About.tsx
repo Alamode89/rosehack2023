@@ -5,6 +5,9 @@ import Image from "next/image";
 import PinkHeart from "../public/pink_heart.webp";
 import BlueHeart from "../public/blue_heart.webp";
 import Pixels from "../public/pixels_2.webp";
+import Button from "../public/plus_button.webp";
+import Machine1 from "../public/machine_1.webp";
+import Machine2 from "../public/machine_2.webp";
 
 const About = () => {
   return (
@@ -93,15 +96,16 @@ const About = () => {
           </div>
         </Col>
         <Col xl={3} md={5} className="flex items-center justify-center p-8">
-          <img
-            className="w-2/5 md:w-10/12 pt-5 md:pt-0"
-            src="machine_2.webp"
-          ></img>
+          <div className="w-2/5 md:w-10/12 pt-5 md:pt-0">
+            <Image src={Machine2} alt="Arcade Machine" />
+          </div>
         </Col>
       </Row>
       <Row className="mt-1 sm:w-9/12 w-10/12 flex justify-evenly items-center flex-col-reverse md:flex-row-reverse">
         <Col xl={3} md={5} className="flex items-center justify-center">
-          <img className="w-2/5 md:w-10/12 pt-5 md:pt-0" src="machine_1.webp" />
+          <div className="w-2/5 md:w-10/12 pt-5 md:pt-0">
+            <Image src={Machine1} alt="Arcade Machine" />
+          </div>
         </Col>
         <Col
           xl={7}
@@ -169,10 +173,9 @@ const About = () => {
           </p>
         </div>
         <div className="flex justify-between md:px-5 !px-2 my-3 w-10/12">
-          <img
-            className="w-3/12 md:w-2/12 drop-shadow-lg"
-            src="plus_button.webp"
-          ></img>
+          <div className="w-3/12 md:w-2/12 drop-shadow-lg">
+            <Image src={Button} alt="Play Button" />
+          </div>
           <div className="w-2/12 flex justify-between items-center">
             <div className="h-full flex justify-center items-end">
               <FaCircle className="text-about-pink text-3xl md:text-5xl drop-shadow-lg" />

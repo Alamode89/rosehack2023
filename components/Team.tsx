@@ -67,7 +67,7 @@ const Team = () => {
             className={`shadow-team-yellow shadow-[20px_-16px_0px_0px] rounded-[2rem] w-full drop-shadow-lg`}
           >
             <div className="border-white bg-white border-8 rounded-3xl drop-shadow-lg">
-              <div className="bg-fourPointStarts m-2 rounded-[2rem]">
+              <div className="m-2 rounded-[2rem]">
                 <Row className="w-full p-3 flex justify-left items-center">
                   {commitee.map((member, index) => (
                     <Col

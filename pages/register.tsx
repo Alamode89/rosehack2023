@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Selector from "../components/Selector";
-import { Row, Col } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import Snackbar from "../components/Snackbar";
 import { schools } from "../components/data/schools";
 import Schools from "../components/Schools";

@@ -1,6 +1,7 @@
 import React from "react";
 import { FaCircle } from "react-icons/fa";
-import { Row, Col } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import Image from "next/image";
 import PinkHeart from "../public/pink_heart.webp";
 import BlueHeart from "../public/blue_heart.webp";

@@ -3,7 +3,7 @@ import { FaCircle } from "react-icons/fa";
 import { Row, Col } from "react-bootstrap";
 import { sponsors } from "./data/sponsors";
 import PinkHeart from "../public/pink_heart.webp";
-
+import Pixels from "../public/pixels_6.webp";
 import Image from "next/image";
 
 const Sponsors = () => {
@@ -14,10 +14,6 @@ const Sponsors = () => {
     >
       <div className="w-11/12 flex justify-center items-center flex-col">
         <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
-          {/* <img
-            src="pink_heart.webp"
-            className="h-10 transform hidden md:flex"
-          /> */}
           <Image
             src={PinkHeart}
             alt=""
@@ -36,7 +32,6 @@ const Sponsors = () => {
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
-          {/* <img src="pink_heart.webp" className="h-10 hidden md:flex" /> */}
           <Image
             src={PinkHeart}
             alt=""
@@ -69,7 +64,7 @@ const Sponsors = () => {
         </Row>
       </div>
       <div className="w-full justify-center mt-20">
-        <img draggable="false" src="pixels_6.webp" />
+        <Image src={Pixels} alt="Pixels" />
       </div>
     </section>
   );

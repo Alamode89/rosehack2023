@@ -4,6 +4,7 @@ import { Row, Col } from "react-bootstrap";
 import Image from "next/image";
 import PinkHeart from "../public/pink_heart.webp";
 import BlueHeart from "../public/blue_heart.webp";
+import Pixels from "../public/pixels_2.webp";
 
 const About = () => {
   return (
@@ -12,10 +13,6 @@ const About = () => {
       className="bg-gradient-to-b from-about-top to-about-bottom w-full flex justify-center items-center flex-col scroll-my-[10vh]"
     >
       <div className="flex justify-between items-center w-10/12 mt-5 drop-shadow-white">
-        {/* <img
-          src="pink_heart.webp"
-          className="h-10 w-10 transform hidden md:flex"
-        /> */}
         <Image
           src={PinkHeart}
           alt=""
@@ -34,7 +31,6 @@ const About = () => {
         <FaCircle className=" text-white hidden md:flex" />
         <FaCircle className=" text-white hidden lg:flex" />
         <FaCircle className=" text-white hidden md:flex" />
-        {/* <img src="pink_heart.webp" className="h-10 w-10 hidden md:flex" /> */}
         <Image src={PinkHeart} alt="" width={55} className="hidden md:flex" />
       </div>
 
@@ -45,7 +41,6 @@ const About = () => {
           className="md:px-4 px-0 flex justify-center items-center flex-col"
         >
           <div className="flex justify-between items-center mb-4 w-full">
-            {/* <img src="pink_heart.webp" className="" /> */}
             <Image
               src={PinkHeart}
               alt=""
@@ -53,10 +48,6 @@ const About = () => {
               className="drop-shadow-pink"
             />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
-            {/* <img
-              src="pink_heart.webp"
-              className="h-6 md:h-10 md:w-10 drop-shadow-pink"
-            /> */}
             <Image
               src={PinkHeart}
               alt=""
@@ -64,10 +55,6 @@ const About = () => {
               className="drop-shadow-pink"
             />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
-            {/* <img
-              src="pink_heart.webp"
-              className="h-6 md:h-10 md:w-10 drop-shadow-pink"
-            /> */}
             <Image
               src={PinkHeart}
               alt=""
@@ -83,10 +70,6 @@ const About = () => {
           </p>
 
           <div className="flex justify-between items-center mt-4 w-full">
-            {/* <img
-              src="pink_heart.webp"
-              className="h-6 md:h-10 md:w-10 drop-shadow-pink"
-            /> */}
             <Image
               src={PinkHeart}
               alt=""
@@ -94,10 +77,6 @@ const About = () => {
               className="drop-shadow-pink"
             />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
-            {/* <img
-              src="pink_heart.webp"
-              className="h-6 md:h-10 md:w-10 drop-shadow-pink"
-            /> */}
             <Image
               src={PinkHeart}
               alt=""
@@ -105,10 +84,6 @@ const About = () => {
               className="drop-shadow-pink"
             />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
-            {/* <img
-              src="pink_heart.webp"
-              className="h-6 md:h-10 md:w-10 drop-shadow-pink"
-            /> */}
             <Image
               src={PinkHeart}
               alt=""
@@ -134,10 +109,6 @@ const About = () => {
           className="md:px-5 px-0 flex justify-center items-center flex-col"
         >
           <div className="flex justify-between items-center mb-4 w-full">
-            {/* <img
-              src="blue_heart.webp"
-              className="h-6 md:h-10 md:w-10 drop-shadow-blue"
-            /> */}
             <Image
               src={BlueHeart}
               alt=""
@@ -145,10 +116,6 @@ const About = () => {
               className="drop-shadow-blue"
             />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
-            {/* <img
-              src="blue_heart.webp"
-              className="h-6 md:h-10 md:w-10 drop-shadow-blue"
-            /> */}
             <Image
               src={BlueHeart}
               alt=""
@@ -156,10 +123,6 @@ const About = () => {
               className="drop-shadow-blue"
             />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
-            {/* <img
-              src="blue_heart.webp"
-              className="h-6 md:h-10 md:w-10 drop-shadow-blue"
-            /> */}
             <Image
               src={BlueHeart}
               alt=""
@@ -174,10 +137,6 @@ const About = () => {
             in science and technology.
           </p>
           <div className="flex justify-between items-center mt-4 w-full">
-            {/* <img
-              src="blue_heart.webp"
-              className="h-6 md:h-10 md:w-10 drop-shadow-blue"
-            /> */}
             <Image
               src={BlueHeart}
               alt=""
@@ -185,10 +144,6 @@ const About = () => {
               className="drop-shadow-blue"
             />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
-            {/* <img
-              src="blue_heart.webp"
-              className="h-6 md:h-10 md:w-10 drop-shadow-blue"
-            /> */}
             <Image
               src={BlueHeart}
               alt=""
@@ -196,10 +151,6 @@ const About = () => {
               className="drop-shadow-blue"
             />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
-            {/* <img
-              src="blue_heart.webp"
-              className="h-6 md:h-10 md:w-10 drop-shadow-blue"
-            /> */}
             <Image
               src={BlueHeart}
               alt=""
@@ -233,7 +184,7 @@ const About = () => {
         </div>
       </div>
       <div className="w-full justify-center mt-20">
-        <img draggable="false" src="pixels_2.webp" />
+        <Image src={Pixels} alt="Pixels" />
       </div>
     </section>
   );

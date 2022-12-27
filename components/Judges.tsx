@@ -5,6 +5,7 @@ import { judges } from "./data/judges";
 import { FaCircle } from "react-icons/fa";
 import Image from "next/image";
 import PinkHeart from "../public/pink_heart.webp";
+import Pixels from "../public/pixels_6.webp";
 
 const Judges = () => {
   return (
@@ -14,10 +15,6 @@ const Judges = () => {
     >
       <div className="w-10/12 flex justify-center items-center flex-col">
         <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
-          {/* <img
-            src="pink_heart.webp"
-            className="h-10 w-10 transform hidden md:flex"
-          /> */}
           <Image
             src={PinkHeart}
             alt=""
@@ -36,7 +33,6 @@ const Judges = () => {
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
-          {/* <img src="pink_heart.webp" className="h-10 w-10 hidden md:flex" /> */}
           <Image
             src={PinkHeart}
             alt=""
@@ -86,7 +82,7 @@ const Judges = () => {
       </div>
 
       <div className="w-full justify-center mt-20">
-        <img draggable="false" src="pixels_6.webp" />
+        <Image src={Pixels} alt="Pixels" />
       </div>
     </section>
   );

@@ -16,6 +16,7 @@ import Samantha from "../public/Samantha.webp";
 import Cindy from "../public/Cindy.webp";
 import Andre from "../public/Andre.webp";
 import Divyank from "../public/Divyank.webp";
+import Pixels from "../public/pixels_5.webp";
 
 const images = [
   Ashley,
@@ -39,10 +40,6 @@ const Team = () => {
     >
       <div className="w-10/12 flex justify-center items-center flex-col">
         <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
-          {/* <img
-            src="pink_heart.webp"
-            className="h-10 transform hidden md:flex"
-          /> */}
           <Image
             src={PinkHeart}
             alt=""
@@ -61,7 +58,6 @@ const Team = () => {
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
-          {/* <img src="pink_heart.webp" className="h-10 hidden md:flex" /> */}
           <Image
             src={PinkHeart}
             alt=""
@@ -83,10 +79,6 @@ const Team = () => {
           ))}
         </Row>
         <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
-          {/* <img
-            src="pink_heart.webp"
-            className="h-10 transform hidden md:flex"
-          /> */}
           <Image
             src={PinkHeart}
             alt=""
@@ -105,7 +97,6 @@ const Team = () => {
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
-          {/* <img src="pink_heart.webp" className="h-10 hidden md:flex" /> */}
           <Image
             src={PinkHeart}
             alt=""
@@ -140,7 +131,7 @@ const Team = () => {
       </div>
 
       <div className="w-full justify-center mt-20">
-        <img draggable="false" src="pixels_5.webp" />
+        <Image src={Pixels} alt="Pixels" />
       </div>
     </section>
   );

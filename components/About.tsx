@@ -130,20 +130,25 @@ const About = () => {
           </div>
         </Col>
       </Row>
-      <div className="bg-gradient-to-r from-about-left to-about-right md:w-1/2 w-10/12 rounded-3xl m-5 flex justify-center items-center flex-col">
-        <p className="bg-about-top font-lexend text-base md:text-xl py-5 px-4 m-3 text-white text-center rounded-3xl">
-          Rose Hack welcomes both undergraduate and high school students for a
-          lively weekend filled with innovation, discovery, networking,
-          mentorship, and so much more!
-        </p>
+      <div className="drop-shadow-lg bg-gradient-to-r from-about-left to-about-right md:w-1/2 w-10/12 rounded-3xl m-5 flex justify-center items-center flex-col">
+        <div className="bg-about-top m-3 rounded-3xl drop-shadow-lg">
+          <p className="drop-shadow-bluesmall bg-formalInvitation font-lexend text-base md:text-xl py-5 px-4 text-white text-center rounded-3xl m-0">
+            Rose Hack welcomes both undergraduate and high school students for a
+            lively weekend filled with innovation, discovery, networking,
+            mentorship, and so much more!
+          </p>
+        </div>
         <div className="flex justify-between md:px-5 !px-2 my-3 w-10/12">
-          <img className="w-3/12 md:w-2/12" src="plus_button.webp"></img>
+          <img
+            className="w-3/12 md:w-2/12 drop-shadow-lg"
+            src="plus_button.webp"
+          ></img>
           <div className="w-2/12 flex justify-between items-center">
             <div className="h-full flex justify-center items-end">
-              <FaCircle className="text-about-pink text-3xl md:text-5xl" />
+              <FaCircle className="text-about-pink text-3xl md:text-5xl drop-shadow-lg" />
             </div>
             <div className="flex h-full justify-center items-start">
-              <FaCircle className="text-about-blue text-3xl md:text-5xl" />
+              <FaCircle className="text-about-blue text-3xl md:text-5xl drop-shadow-lg" />
             </div>
           </div>
         </div>

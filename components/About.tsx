@@ -132,7 +132,7 @@ const About = () => {
       </Row>
       <div className="drop-shadow-lg bg-gradient-to-r from-about-left to-about-right md:w-1/2 w-10/12 rounded-3xl m-5 flex justify-center items-center flex-col">
         <div className="bg-about-top m-3 rounded-3xl drop-shadow-lg">
-          <p className="drop-shadow-bluesmall bg-formalInvitation font-lexend text-base md:text-xl py-5 px-4 text-white text-center rounded-3xl m-0">
+          <p className="drop-shadow-bluesmall font-lexend text-base md:text-xl py-5 px-4 text-white text-center rounded-3xl m-0">
             Rose Hack welcomes both undergraduate and high school students for a
             lively weekend filled with innovation, discovery, networking,
             mentorship, and so much more!

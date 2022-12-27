@@ -13,14 +13,13 @@ const Landing = () => {
       id=""
       className="flex flex-col bg-gradient-radial to-about-top from-rose-pink w-full justify-center item-center p-0 m-0"
     >
-      <div className="w-full m-0 p-0 flex flex-col justify-center items-between">
+      <div className="w-full bg-TicTacToe m-0 p-0 flex flex-col justify-center items-between">
         <div className="drop-shadow-white w-11/12 md:w-7/12 flex pt-12 pb-3 m-auto text-center items-center justify-evenly">
           <Image
             src={pinkHeart}
             alt=""
             draggable="false"
             width="55"
-            height="50"
             className="drop-shadow-pink"
           />
           <FaCircle className="text-white hidden md:block" />
@@ -30,7 +29,6 @@ const Landing = () => {
             alt=""
             draggable="false"
             width="55"
-            height="50"
             className="drop-shadow-pink"
           />
           <FaCircle className="text-white hidden md:block" />
@@ -40,7 +38,6 @@ const Landing = () => {
             alt=""
             draggable="false"
             width="55"
-            height="50"
             className="drop-shadow-pink"
           />
           <FaCircle className="text-white hidden md:block" />
@@ -50,7 +47,6 @@ const Landing = () => {
             alt=""
             draggable="false"
             width="55"
-            height="50"
             className="drop-shadow-pink"
           />
         </div>
@@ -113,7 +109,6 @@ const Landing = () => {
             alt=""
             draggable="false"
             width="55"
-            height="50"
             className="drop-shadow-pink"
           />
           <FaCircle className="text-white hidden md:block" />
@@ -123,7 +118,6 @@ const Landing = () => {
             alt=""
             draggable="false"
             width="55"
-            height="50"
             className="drop-shadow-pink"
           />
           <FaCircle className="text-white hidden md:block" />
@@ -133,7 +127,6 @@ const Landing = () => {
             alt=""
             draggable="false"
             width="55"
-            height="50"
             className="drop-shadow-pink"
           />
           <FaCircle className="text-white hidden md:block" />
@@ -143,7 +136,6 @@ const Landing = () => {
             alt=""
             draggable="false"
             width="55"
-            height="50"
             className="drop-shadow-pink"
           />
         </div>

@@ -19,7 +19,7 @@ const FAQ = () => {
         <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
           <img
             src="pink_heart.webp"
-            className="h-10 w-10 transform hidden md:flex"
+            className="h-10 transform hidden md:flex"
           />
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden md:flex" />
@@ -33,7 +33,7 @@ const FAQ = () => {
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
-          <img src="pink_heart.webp" className="h-10 w-10 hidden md:flex" />
+          <img src="pink_heart.webp" className="h-10 hidden md:flex" />
         </div>
         <div className="w-10/12 flex justify-center items-center flex-col">
           <Suspense fallback={`Loading...`}>

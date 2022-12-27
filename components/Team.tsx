@@ -14,7 +14,7 @@ const Team = () => {
         <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
           <img
             src="pink_heart.webp"
-            className="h-10 w-10 transform hidden md:flex"
+            className="h-10 transform hidden md:flex"
           />
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden md:flex" />
@@ -28,7 +28,7 @@ const Team = () => {
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
-          <img src="pink_heart.webp" className="h-10 w-10 hidden md:flex" />
+          <img src="pink_heart.webp" className="h-10 hidden md:flex" />
         </div>
         <Row className="flex justify-center items-initial">
           {profiles.map((profile, index) => (
@@ -46,7 +46,7 @@ const Team = () => {
         <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
           <img
             src="pink_heart.webp"
-            className="h-10 w-10 transform hidden md:flex"
+            className="h-10 transform hidden md:flex"
           />
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden md:flex" />
@@ -60,14 +60,14 @@ const Team = () => {
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
-          <img src="pink_heart.webp" className="h-10 w-10 hidden md:flex" />
+          <img src="pink_heart.webp" className="h-10 hidden md:flex" />
         </div>
         <div className="flex justify-center items-stretch flex-col p-2 w-10/12">
           <div
             className={`shadow-team-yellow shadow-[20px_-16px_0px_0px] rounded-[2rem] w-full drop-shadow-lg`}
           >
             <div className="border-white bg-white border-8 rounded-3xl drop-shadow-lg">
-              <div className="m-2 rounded-[2rem]">
+              <div className="m-2 rounded-[2rem] bg-fourPointStarts">
                 <Row className="w-full p-3 flex justify-left items-center">
                   {commitee.map((member, index) => (
                     <Col

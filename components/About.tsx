@@ -37,17 +37,17 @@ const About = () => {
           <div className="flex justify-between items-center mb-4 w-full">
             <img
               src="pink_heart.webp"
-              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
+              className="h-6 md:h-10 md:w-10 drop-shadow-pink"
             />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
             <img
               src="pink_heart.webp"
-              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
+              className="h-6 md:h-10 md:w-10 drop-shadow-pink"
             />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
             <img
               src="pink_heart.webp"
-              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
+              className="h-6 md:h-10 md:w-10 drop-shadow-pink"
             />
           </div>
           <p className="drop-shadow-pinksmall py-0 md:py-5 font-lexend text-base md:text-xl w-11/12 p-0 m-0 text-white text-justify">
@@ -60,17 +60,17 @@ const About = () => {
           <div className="flex justify-between items-center mt-4 w-full">
             <img
               src="pink_heart.webp"
-              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
+              className="h-6 md:h-10 md:w-10 drop-shadow-pink"
             />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
             <img
               src="pink_heart.webp"
-              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
+              className="h-6 md:h-10 md:w-10 drop-shadow-pink"
             />
             <FaCircle className="text-white drop-shadow-pink text-sm md:text-base" />
             <img
               src="pink_heart.webp"
-              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-pink"
+              className="h-6 md:h-10 md:w-10 drop-shadow-pink"
             />
           </div>
         </Col>
@@ -93,17 +93,17 @@ const About = () => {
           <div className="flex justify-between items-center mb-4 w-full">
             <img
               src="blue_heart.webp"
-              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
+              className="h-6 md:h-10 md:w-10 drop-shadow-blue"
             />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
             <img
               src="blue_heart.webp"
-              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
+              className="h-6 md:h-10 md:w-10 drop-shadow-blue"
             />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
             <img
               src="blue_heart.webp"
-              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
+              className="h-6 md:h-10 md:w-10 drop-shadow-blue"
             />
           </div>
           <p className="drop-shadow-bluesmall py-0 md:py-5 text-abse md:text-xl font-lexend w-11/12 p-0 m-0 text-white text-justify">
@@ -115,24 +115,24 @@ const About = () => {
           <div className="flex justify-between items-center mt-4 w-full">
             <img
               src="blue_heart.webp"
-              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
+              className="h-6 md:h-10 md:w-10 drop-shadow-blue"
             />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
             <img
               src="blue_heart.webp"
-              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
+              className="h-6 md:h-10 md:w-10 drop-shadow-blue"
             />
             <FaCircle className="text-white drop-shadow-blue text-sm md:text-base" />
             <img
               src="blue_heart.webp"
-              className="h-6 w-6 md:h-10 md:w-10 drop-shadow-blue"
+              className="h-6 md:h-10 md:w-10 drop-shadow-blue"
             />
           </div>
         </Col>
       </Row>
       <div className="drop-shadow-lg bg-gradient-to-r from-about-left to-about-right md:w-1/2 w-10/12 rounded-3xl m-5 flex justify-center items-center flex-col">
         <div className="bg-about-top m-3 rounded-3xl drop-shadow-lg">
-          <p className="drop-shadow-bluesmall font-lexend text-base md:text-xl py-5 px-4 text-white text-center rounded-3xl m-0">
+          <p className="bg-formalInvitation drop-shadow-bluesmall font-lexend text-base md:text-xl py-5 px-4 text-white text-center rounded-3xl m-0">
             Rose Hack welcomes both undergraduate and high school students for a
             lively weekend filled with innovation, discovery, networking,
             mentorship, and so much more!

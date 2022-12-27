@@ -3,6 +3,8 @@ import { FaCircle } from "react-icons/fa";
 import { workshops, events, events2, activities } from "./data/schedule";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Pixels from "../public/pixels_2.webp";
+import Image from "next/image";
 
 const Schedule = () => {
   return (
@@ -110,7 +112,9 @@ const Schedule = () => {
         </Row>
       </div>
 
-      <img draggable="false" src="pixels_2.webp" />
+      <div className="w-full justify-center mt-20">
+        <Image src={Pixels} alt="Pixels" />
+      </div>
     </section>
   );
 };

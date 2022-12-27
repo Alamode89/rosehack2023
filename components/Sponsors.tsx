@@ -1,10 +1,29 @@
 import React from "react";
 import { FaCircle } from "react-icons/fa";
-import { Row, Col } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { sponsors } from "./data/sponsors";
 import PinkHeart from "../public/pink_heart.webp";
 import Pixels from "../public/pixels_6.webp";
 import Image from "next/image";
+// import Triad from "../public/triad.webp";
+// import Desmos from "../public/desmos.webp";
+// import Balsamiq from "../public/balsamiq.webp";
+// import Ripplematch from "../public/ripplematch.webp";
+// import Wolfram from "../public/wolfram.webp";
+// import Badabeanbadaboom from "../public/badabeanbadaboom.webp";
+// import Echo3d from "../public/echo3d.webp";
+import Sponsor from "./Sponsor";
+
+// const images = [
+//   Triad,
+//   Desmos,
+//   Balsamiq,
+//   Ripplematch,
+//   Wolfram,
+//   Badabeanbadaboom,
+//   Echo3d,
+// ];
 
 const Sponsors = () => {
   return (
@@ -42,23 +61,13 @@ const Sponsors = () => {
         <Row className="w-8/12">
           {sponsors.map((sponsor, index) => (
             <Col lg={3} md={4} xs={6} key={index} className="p-4">
-              <div>
-                <div
-                  className={`rounded-full hover:-translate-y-2 flex-col flex justify-center items-center`}
-                >
-                  <a href={sponsor.link} target="_blank" rel="noreferrer">
-                    <Image
-                      src={`/${sponsor.pic}`}
-                      width={300}
-                      height={300}
-                      alt="Sponsor Image"
-                      className={`border-white ${
-                        index % 2 == 0 ? "drop-shadow-blue" : "drop-shadow-pink"
-                      } border-4 rounded-full `}
-                    />
-                  </a>
-                </div>
-              </div>
+              <Sponsor
+                link={sponsor.link}
+                // image={images[index]}
+                image={`/${sponsor.pic}`}
+                index={index}
+                key={index}
+              />
             </Col>
           ))}
         </Row>

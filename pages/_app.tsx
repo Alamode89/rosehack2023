@@ -3,8 +3,6 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Layout from "../components/Layout";
-import { useRouter } from "next/router";
-import Navigation from "../components/Navigation";
 // eslint-disable-next-line camelcase
 import { Lexend, Press_Start_2P } from "@next/font/google";
 
@@ -16,24 +14,13 @@ const pixel = Press_Start_2P({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-
-  if (router.asPath == "/dashboard" || router.asPath == "/user") {
-    return (
-      <main className={`${lexend.variable} ${pixel.variable}`}>
-        <Navigation />
+  return (
+    <main className={`${lexend.variable} ${pixel.variable}`}>
+      <Layout>
         <Component {...pageProps} />
-      </main>
-    );
-  } else {
-    return (
-      <main className={`${lexend.variable} ${pixel.variable}`}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </main>
-    );
-  }
+      </Layout>
+    </main>
+  );
 }
 
 export default MyApp;

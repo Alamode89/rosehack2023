@@ -1,6 +1,7 @@
 import React from "react";
 import Profile from "./Profile";
-import { Row, Col } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { judges } from "./data/judges";
 import { FaCircle } from "react-icons/fa";
 import Image from "next/image";

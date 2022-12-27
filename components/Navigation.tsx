@@ -48,12 +48,18 @@ const Navigation = () => {
             >
               FAQ
             </Nav.Link>
-            {/* <Nav.Link
+            <Nav.Link
               href="/register"
               className="!text-base text-center text-white p-1 mx-2 hover:underline hover:drop-shadow-blue decoration-4 underline-offset-6"
             >
               REGISTER
-            </Nav.Link> */}
+            </Nav.Link>
+            <Nav.Link
+              href="https://portal.rosehack.com/"
+              className="!text-base text-center text-white p-1 mx-2 hover:underline hover:drop-shadow-blue decoration-4 underline-offset-6"
+            >
+              LOGIN
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

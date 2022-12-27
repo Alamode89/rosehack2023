@@ -4,20 +4,20 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { profiles, commitee } from "./data/team";
 import { FaCircle } from "react-icons/fa";
-import PinkHeart from "/pink_heart.webp";
+import PinkHeart from "../public/pink_heart.webp";
 import Image from "next/image";
-import Ashley from "/Ashley.webp";
-import Hallie from "/Hallie.webp";
-import Annabelle from "/Annabelle.webp";
-import Angie from "/Angie.webp";
-import Samarth from "/Samarth.webp";
-import Nicole from "/Nicole.webp";
-import Bonnie from "/Bonnie.webp";
-import Samantha from "/Samantha.webp";
-import Cindy from "/Cindy.webp";
-import Andre from "/Andre.webp";
-import Divyank from "/Divyank.webp";
-import Pixels from "/pixels_5.webp";
+import Ashley from "../public/ashley.webp";
+import Hallie from "../public/hallie.webp";
+import Annabelle from "../public/annabelle.webp";
+import Angie from "../public/angie.webp";
+import Samarth from "../public/samarth.webp";
+import Nicole from "../public/nicole.webp";
+import Bonnie from "../public/bonnie.webp";
+import Samantha from "../public/samantha.webp";
+import Cindy from "../public/cindy.webp";
+import Andre from "../public/andre.webp";
+import Divyank from "../public/divyank.webp";
+import Pixels from "../public/pixels_5.webp";
 
 const images = [
   Ashley,

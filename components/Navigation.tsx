@@ -52,7 +52,7 @@ const Navigation = () => {
             </Link>
             <Link
               href="/volunteers"
-              className="!text-base text-center text-white p-1 mx-2 no-underline hover:underline hover:drop-shadow-pink decoration-4 underline-offset-6"
+              className="!text-base text-center text-white p-1 mx-2 no-underline hover:underline hover:drop-shadow-blue decoration-4 underline-offset-6"
             >
               VOLUNTEER
             </Link>

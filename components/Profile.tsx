@@ -1,14 +1,16 @@
+import Image from "next/image";
 import React from "react";
 
 interface props {
   name: String;
   position: String;
   shadow: String;
-  image: string;
+  image: any;
   linkedin: string;
 }
 
 const Profile = ({ name, position, shadow, image, linkedin }: props) => {
+  console.log(image);
   return (
     <div className="flex justify-center items-center flex-col p-2">
       <a
@@ -17,12 +19,18 @@ const Profile = ({ name, position, shadow, image, linkedin }: props) => {
         className={`${shadow} shadow-[20px_-16px_0px_0px] rounded-[2rem] hover:-translate-y-2`}
         rel="noreferrer"
       >
-        <img src={image} className="border-white border-8 rounded-[2rem]" />
+        <Image
+          src={image}
+          width={200}
+          height={200}
+          alt="Profile Image"
+          className="border-white border-8 rounded-[2rem]"
+        />
       </a>
-      <p className="inline p-0 m-0 mt-3 font-lexend md:text-3xl text-xl text-white font-black text-center">
+      <p className="inline p-0 m-0 mt-3 font-lexend md:text-2xl text-xl text-white font-black text-center">
         {name}
       </p>
-      <p className="inline p-0 m-0 font-lexend md:text-3xl text-xl text-white font-black text-center">
+      <p className="inline p-0 m-0 font-lexend md:text-lg text-base text-white text-center">
         {position}
       </p>
     </div>

@@ -89,13 +89,21 @@ module.exports = {
         black: "0 0px 9px rgba(0,0,0, .6)",
       },
       fontFamily: {
-        lexend: ["Lexend"],
-        pixel: ["'Press Start 2P'", "cursive"],
+        lexend: ["var(--font-lexend)"],
+        pixel: ["var(--font-pixel)", "cursive"],
       },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--gradient-color-stops))",
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        fourPointStarts: "url('../public/fourPointStarts.svg')",
+        formalInvitation: "url('../public/formalInvitation.svg')",
+        TicTacToe: "url('../public/landing.svg')",
       },
       colors: {
+        rose: {
+          blue: "#5ca5ff",
+          pink: "#ff4df3",
+          purple: "#a64dff",
+        },
         header: {
           left: "#7500BC",
           right: "#1B0070",
@@ -155,6 +163,16 @@ module.exports = {
           noQuestion: "#01FFC2",
           contact: "#26DDE1",
           email: "#48BDFF",
+        },
+        schedule: {
+          top: "#CC00FF",
+          bottom: "#FF4F79",
+          purple: "#6112A1",
+          darkpurple: "#8700A9",
+        },
+        judges: {
+          top: "#DB00FF",
+          bottom: "#00E0FF",
         },
       },
       boxShadow: {

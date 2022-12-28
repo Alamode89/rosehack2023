@@ -1,42 +1,45 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { FaCircle } from "react-icons/fa";
-import dynamic from "next/dynamic";
-// import Questions from "./Questions";
-
-const Questions = dynamic(() => import("../components/Questions"), {
-  suspense: true,
-});
+import Questions from "../components/Questions";
+import PinkHeart from "../public/pink_heart.webp";
+import Image from "next/image";
+import Pixels from "../public/pixels_7.webp";
 
 const FAQ = () => {
   return (
     <section
       id="faq"
-      className="bg-gradient-to-b from-faq-top to-faq-bottom w-full flex justify-center items-center flex-col pb-6 scroll-my-[10vh]"
+      className="bg-gradient-to-b from-faq-top to-faq-bottom w-full flex justify-center items-center flex-col m-0"
     >
       <div className="w-10/12 flex justify-center items-center flex-col">
         <div className="flex justify-between items-center w-full m-5 drop-shadow-white">
-          <img
-            src="pink_heart.webp"
-            className="h-10 w-10 transform hidden md:flex"
+          <Image
+            src={PinkHeart}
+            alt=""
+            width={55}
+            className="transform hidden md:flex"
           />
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
 
-          <p className="font-pixel text-4xl p-0 m-0 text-white text-center w-full md:w-auto">
+          <p className="font-pixel text-2xl p-0 m-0 text-white text-center w-full md:w-auto">
             FAQ
           </p>
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden md:flex" />
           <FaCircle className="text-white hidden lg:flex" />
           <FaCircle className="text-white hidden md:flex" />
-          <img src="pink_heart.webp" className="h-10 w-10 hidden md:flex" />
+          <Image
+            src={PinkHeart}
+            alt=""
+            width={55}
+            className="transform hidden md:flex"
+          />
         </div>
-        <div className="w-full flex justify-center items-center flex-col">
-          <Suspense fallback={`Loading...`}>
-            <Questions />
-          </Suspense>
+        <div className="w-10/12 flex justify-center items-center flex-col">
+          <Questions />
         </div>
 
         <div className="text-center p-0 pt-4">
@@ -56,6 +59,9 @@ const FAQ = () => {
           </p>
           <img src="favicon.ico" className="w-1/5 mx-auto" />
         </div>
+      </div>
+      <div className="w-full justify-center mt-20">
+        <Image src={Pixels} alt="Pixels" />
       </div>
     </section>
   );

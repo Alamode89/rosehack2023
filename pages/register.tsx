@@ -114,6 +114,7 @@ const Register = () => {
     }
 
     const response = await axios.post("/api/createUser", user);
+    console.log("AFTER USER CREATION");
 
     if (response.status === 201) {
       handleMessage(
@@ -128,9 +129,13 @@ const Register = () => {
     delete user["password"];
     delete user["confirm_password"];
 
+    console.log("AFTER USER STORING");
+    console.log(user);
     const responseTwo = await axios.post("/api/storeUser", {
       ...user,
     });
+
+    console.log("AFTER USER STORING");
 
     if (responseTwo.status !== 200) {
       handleMessage(
@@ -152,6 +157,7 @@ const Register = () => {
       );
       return;
     }
+    console.log("AFTER CONFIRM");
 
     handleMessage("Registration Successful!");
     setDisable(false);

@@ -6,16 +6,20 @@ export default async function addStudent(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  let status: number;
+
   createUserWithEmailAndPassword(auth, req.body.email, req.body.password)
     .then(() => {
-      res.status(200).json({});
+      status = 200;
     })
     .catch((error) => {
       console.log(error);
       if (error.code === "auth/email-already-in-use") {
-        res.status(201).json({});
+        status = 201;
       } else {
-        res.status(500).json({});
+        status = 500;
       }
-    });
+    }).finally(() => {
+      res.status(status).json({});
+    }) ;
 }

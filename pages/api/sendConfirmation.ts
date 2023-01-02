@@ -32,15 +32,17 @@ export default async function addStudent(
   </div>`,
   };
 
+  let status: number;
   sendgridMail
     .send(message)
     .then((response: any) => {
-      return res
-        .status(200)
-        .json(`Email Sent Successfully. Response: ${response}`);
+      status = 200
+      console.log(response)
     })
     .catch((error: any) => {
-      console.log(error);
-      return res.status(501).json(`Email Send Failed! Error: ${error}`);
+      status = 501
+      console.log(error)
+    }).finally(() => {
+      res.status(status).json({});
     });
 }

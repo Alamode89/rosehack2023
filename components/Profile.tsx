@@ -10,7 +10,6 @@ interface props {
 }
 
 const Profile = ({ name, position, shadow, image, linkedin }: props) => {
-  console.log(image);
   return (
     <div className="flex justify-center items-center flex-col p-2">
       <a

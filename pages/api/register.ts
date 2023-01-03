@@ -5,7 +5,7 @@ import { db } from "../../firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 
-export default async function Register(
+export default function Register(
   req: NextApiRequest,
   res: NextApiResponse
 ) {

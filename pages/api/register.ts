@@ -9,23 +9,22 @@ export default async function Register(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-
-  await createUserWithEmailAndPassword(auth, req.body.email, req.body.password)
+  await createUserWithEmailAndPassword(auth, req.body.email, req.body.password);
 
   delete req.body["password"];
   delete req.body["confirm_password"];
   req.body.team = uuidv4();
 
-  console.log("Before Storing User")
-  await setDoc(doc(db, "users", req.body.email), req.body)
-  console.log("After Storing User")
+  console.log("Before Storing User");
+  await setDoc(doc(db, "users", req.body.email), req.body);
+  console.log("After Storing User");
 
-  console.log("Before Setting User Team")
+  console.log("Before Setting User Team");
   await setDoc(doc(db, "teams", req.body.team), {
     name: "Untitled Team",
     members: [req.body.first + " " + req.body.first],
-  })
-  console.log("After Setting User Team")
+  });
+  console.log("After Setting User Team");
 
   const sendgridMail = require("@sendgrid/mail");
   const API_KEY = process.env.NEXT_PUBLIC_SENDGRID_API_KEY;
@@ -55,7 +54,7 @@ export default async function Register(
   </div>`,
   };
 
-  await sendgridMail.send(message)
+  await sendgridMail.send(message);
 
-  res.status(200).json({})
+  res.status(200).json({});
 }

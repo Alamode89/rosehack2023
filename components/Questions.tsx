@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { QA } from "./data/QA";
 
@@ -39,21 +41,41 @@ const FaqItem = ({ index, element }: any) => {
 
 const FAQQuestions = () => {
   return (
-    <div className="w-full flex justify-center items-center flex-col mt-5">
-      <Accordion
-        className="flex flex-col content-center w-10/12 py-5 !bg-gradient-to-b from-[#1C113F] via-[#350097] to-[#8700A9] rounded-3xl !border-transparent drop-shadow-lg"
-        flush
-        alwaysOpen
-      >
-        {QA.map((element, index) => (
-          <FaqItem
-            key={index}
-            className=" focus:!shadow-none m-0 p-0"
-            element={element}
-            index={index}
-          />
-        ))}
-      </Accordion>
+    <div className="w-full flex items-start mt-5">
+      <Row>
+        <Col className="flex items-center justify-center">
+          <Accordion
+            className="flex flex-col content-center w-10/12 py-5 drop-shadow-lg"
+            flush
+            alwaysOpen
+          >
+            {QA.slice(0, QA.length / 2 + 1).map((element, index) => (
+              <FaqItem
+                key={index}
+                className=" focus:!shadow-none m-0 p-0"
+                element={element}
+                index={index}
+              />
+            ))}
+          </Accordion>
+        </Col>
+        <Col>
+          <Accordion
+            className="flex flex-col content-center w-10/12 py-5 drop-shadow-lg"
+            flush
+            alwaysOpen
+          >
+            {QA.slice(QA.length / 2 + 1, QA.length).map((element, index) => (
+              <FaqItem
+                key={index}
+                className=" focus:!shadow-none m-0 p-0"
+                element={element}
+                index={index}
+              />
+            ))}
+          </Accordion>
+        </Col>
+      </Row>
     </div>
   );
 };

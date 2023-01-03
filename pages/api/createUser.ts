@@ -19,7 +19,8 @@ export default async function addStudent(
       } else {
         status = 500;
       }
-    }).finally(() => {
+    })
+    .finally(() => {
       res.status(status).json({});
-    }) ;
+    });
 }

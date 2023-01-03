@@ -5,42 +5,26 @@ import { db } from "../../firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 
-export default function Register(
+export default async function Register(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  createUserWithEmailAndPassword(auth, req.body.email, req.body.password)
-    .then(() => {
-      console.log("Created User Successfully!");
-    })
-    .catch((error) => {
-      console.log("Error Creating Users!", error);
-      res.status(500).json({});
-    });
+
+  await createUserWithEmailAndPassword(auth, req.body.email, req.body.password)
 
   delete req.body["password"];
   delete req.body["confirm_password"];
   req.body.team = uuidv4();
 
   console.log("Before Storing User")
-  setDoc(doc(db, "users", req.body.email), req.body).then(() => {
-    console.log("THEN Block User Store")
-  }).catch((error) => {
-    res.status(500).json({});
-    console.log(error)
-  });
+  await setDoc(doc(db, "users", req.body.email), req.body)
   console.log("After Storing User")
 
   console.log("Before Setting User Team")
-  setDoc(doc(db, "teams", req.body.team), {
+  await setDoc(doc(db, "teams", req.body.team), {
     name: "Untitled Team",
     members: [req.body.first + " " + req.body.first],
-  }).then(() => {
-    console.log("THEN Block Setting User Team")
-  }).catch((error) => {
-    res.status(500).json({});
-    console.log(error)
-  });
+  })
   console.log("After Setting User Team")
 
   const sendgridMail = require("@sendgrid/mail");
@@ -71,15 +55,7 @@ export default function Register(
   </div>`,
   };
 
-  sendgridMail
-    .send(message)
-    .then((response: any) => {
-      console.log("Sent Confirmation Email");
-    })
-    .catch((error: any) => {
-      console.log("Error Sending Confirmation Email!", error);
-      res.status(500).json({});
-    });
+  await sendgridMail.send(message)
 
-  res.status(200).json({});
+  res.status(200).json({})
 }

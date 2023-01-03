@@ -22,15 +22,26 @@ export default async function Register(
   delete req.body["confirm_password"];
   req.body.team = uuidv4();
 
-  setDoc(doc(db, "users", req.body.email), req.body).catch(() => {
+  console.log("Before Storing User")
+  setDoc(doc(db, "users", req.body.email), req.body).then(() => {
+    console.log("THEN Block User Store")
+  }).catch((error) => {
     res.status(500).json({});
+    console.log(error)
   });
+  console.log("After Storing User")
+
+  console.log("Before Setting User Team")
   setDoc(doc(db, "teams", req.body.team), {
     name: "Untitled Team",
     members: [req.body.first + " " + req.body.first],
-  }).catch(() => {
+  }).then(() => {
+    console.log("THEN Block Setting User Team")
+  }).catch((error) => {
     res.status(500).json({});
+    console.log(error)
   });
+  console.log("After Setting User Team")
 
   const sendgridMail = require("@sendgrid/mail");
   const API_KEY = process.env.NEXT_PUBLIC_SENDGRID_API_KEY;

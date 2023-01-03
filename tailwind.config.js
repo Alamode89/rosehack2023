@@ -168,7 +168,9 @@ module.exports = {
           top: "#CC00FF",
           bottom: "#FF4F79",
           purple: "#6112A1",
-          darkpurple: "#8700A9",
+          darkpurple: "#3E086D",
+          blue: "#00E0FF",
+          hotpink: "#DB00FF",
         },
         judges: {
           top: "#DB00FF",

@@ -9,29 +9,28 @@ export default async function Register(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-
   createUserWithEmailAndPassword(auth, req.body.email, req.body.password)
     .then(() => {
-      console.log("Created User Successfully!")
+      console.log("Created User Successfully!");
     })
     .catch((error) => {
-      console.log("Error Creating Users!", error)
-      res.status(500).json({})
-    })
+      console.log("Error Creating Users!", error);
+      res.status(500).json({});
+    });
 
-  delete req.body['password']
-  delete req.body['confirm_password']
-  req.body.team = uuidv4()
-  
+  delete req.body["password"];
+  delete req.body["confirm_password"];
+  req.body.team = uuidv4();
+
   setDoc(doc(db, "users", req.body.email), req.body).catch(() => {
-    res.status(500).json({})
-  })
+    res.status(500).json({});
+  });
   setDoc(doc(db, "teams", req.body.team), {
     name: "Untitled Team",
     members: [req.body.first + " " + req.body.first],
   }).catch(() => {
-    res.status(500).json({})
-  })
+    res.status(500).json({});
+  });
 
   const sendgridMail = require("@sendgrid/mail");
   const API_KEY = process.env.NEXT_PUBLIC_SENDGRID_API_KEY;
@@ -67,9 +66,9 @@ export default async function Register(
       console.log("Sent Confirmation Email");
     })
     .catch((error: any) => {
-      console.log("Error Sending Confirmation Email!", error)
-      res.status(500).json({})
-    })
+      console.log("Error Sending Confirmation Email!", error);
+      res.status(500).json({});
+    });
 
-    res.status(200).json({})
+  res.status(200).json({});
 }

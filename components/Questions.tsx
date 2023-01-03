@@ -14,9 +14,7 @@ const FaqItem = ({ index, element }: any) => {
       eventKey={index}
     >
       <div
-        className={`h-full w-auto border-b-2 border-faq-question !bg-transparent ${
-          index == 0 ? "border-t-2" : ""
-        }`}
+        className={`h-full w-auto border-b-2 border-faq-question !bg-transparent`}
       >
         <Accordion.Button
           onClick={() => setClicked(!clicked)}
@@ -41,11 +39,11 @@ const FaqItem = ({ index, element }: any) => {
 
 const FAQQuestions = () => {
   return (
-    <div className="w-full flex items-start mt-5">
-      <Row>
-        <Col className="flex items-center justify-center">
+    <div className="w-full flex items-start">
+      <Row className="w-full m-0 p-0">
+        <Col className="flex items-start justify-center" xs={12} md={6}>
           <Accordion
-            className="flex flex-col content-center w-10/12 py-5 drop-shadow-lg"
+            className="flex flex-col content-center w-10/12 py-0 drop-shadow-lg"
             flush
             alwaysOpen
           >
@@ -59,9 +57,9 @@ const FAQQuestions = () => {
             ))}
           </Accordion>
         </Col>
-        <Col>
+        <Col className="flex items-start justify-center" xs={12} md={6}>
           <Accordion
-            className="flex flex-col content-center w-10/12 py-5 drop-shadow-lg"
+            className="flex flex-col content-center w-10/12 py-0 drop-shadow-lg"
             flush
             alwaysOpen
           >

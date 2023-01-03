@@ -36,13 +36,14 @@ export default async function addStudent(
   sendgridMail
     .send(message)
     .then((response: any) => {
-      status = 200
-      console.log(response)
+      status = 200;
+      console.log(response);
     })
     .catch((error: any) => {
-      status = 501
-      console.log(error)
-    }).finally(() => {
+      status = 501;
+      console.log(error);
+    })
+    .finally(() => {
       res.status(status).json({});
     });
 }

@@ -38,7 +38,7 @@ const FAQ = () => {
             className="transform hidden md:flex"
           />
         </div>
-        <div className="w-10/12 flex justify-center items-center flex-col">
+        <div className="w-full flex justify-center items-center flex-col py-4">
           <Questions />
         </div>
 

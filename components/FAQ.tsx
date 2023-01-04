@@ -61,7 +61,7 @@ const FAQ = () => {
         </div>
       </div>
       <div className="w-full justify-center mt-20">
-        <Image src={Pixels} alt="Pixels" />
+        <Image src={Pixels} alt="Pixels" className="w-[100vw]" />
       </div>
     </section>
   );

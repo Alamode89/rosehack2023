@@ -1,11 +1,12 @@
 import React from "react";
+import type { NextPage } from "next";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import PinkHeart from "../public/pink_heart.webp";
 import Image from "next/image";
 import Machine3 from "../public/machine_3.webp";
 
-const volunteers = () => {
+const volunteers: NextPage = () => {
   return (
     <div className="drop-shadow-lg w-full flex justify-center items-center flex-col font-lexend bg-gradient-to-r from-header-left to-header-right text-white">
       <div className="w-10/12 flex justify-center items-center flex-col">
@@ -101,6 +102,7 @@ const volunteers = () => {
           </a>
         </p>
       </div>
+      <title>Rose Hack Volunteer</title>
     </div>
   );
 };

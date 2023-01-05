@@ -1489,6 +1489,7 @@ export const schools = [
   "Science and TechnologyEntrepreneurs Park, Indian Institute of Technology",
   "Science Leadership Academy",
   "Scranton High School",
+  "Scripps College"
   "Seneca College",
   "Seton Hall University",
   "Seven Lakes High School",

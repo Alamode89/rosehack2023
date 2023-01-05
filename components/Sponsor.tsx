@@ -8,10 +8,6 @@ interface props {
 }
 
 const Sponsor = ({ image, link, index }: props) => {
-  {
-    console.log(index, image);
-  }
-
   return (
     <div
       className={`rounded-full hover:-translate-y-2 flex-col flex justify-center items-center`}

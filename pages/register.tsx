@@ -113,48 +113,16 @@ const Register = () => {
       return;
     }
 
-    const response = await axios.post("/api/createUser", user);
-
-    if (response.status === 201) {
-      handleMessage(
-        "There is an account already registered under this email address!"
-      );
-      return;
-    } else if (response.status !== 200) {
-      handleMessage("Internal Server Error");
-      return;
-    }
-
-    delete user["password"];
-    delete user["confirm_password"];
-
-    const responseTwo = await axios.post("/api/storeUser", {
-      ...user,
-    });
-
-    if (responseTwo.status !== 200) {
-      handleMessage(
-        "There was an error registering your account, please contact rosehackucr@gmail.com for assistance!"
-      );
-      return;
-    }
-
-    console.log("BEFORE CONFIRM");
-
-    const responseThree = await axios.post("/api/sendConfirmation", {
-      email: user.email,
-      name: user.first,
-    });
-
-    if (responseThree.status !== 200) {
-      handleMessage(
-        "You have been registered, however, there was an error sendnig a confirmation email, please contact rosehackucr@gmail.com"
-      );
-      return;
-    }
-
-    handleMessage("Registration Successful!");
-    setDisable(false);
+    axios
+      .post("/api/register", user)
+      .then((response) => {
+        console.log("Registered Successfully!");
+        handleMessage("Registration Successful!");
+        setDisable(false);
+      })
+      .catch((error) => {
+        console.log("Error!");
+      });
   };
 
   return (

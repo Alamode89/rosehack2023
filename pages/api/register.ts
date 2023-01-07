@@ -9,14 +9,14 @@ export default async function Register(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  await createUserWithEmailAndPassword(auth, req.body.email, req.body.password);
+  await createUserWithEmailAndPassword(auth, req.body.email.toLowerCase(), req.body.password);
 
   delete req.body["password"];
   delete req.body["confirm_password"];
   req.body.team = uuidv4();
 
   console.log("Before Storing User");
-  await setDoc(doc(db, "users", req.body.email), req.body);
+  await setDoc(doc(db, "users", req.body.email.toLowerCase()), req.body);
   console.log("After Storing User");
 
   console.log("Before Setting User Team");
@@ -32,7 +32,7 @@ export default async function Register(
   sendgridMail.setApiKey(API_KEY);
 
   const message = {
-    to: req.body.email,
+    to: req.body.email.toLowerCase(),
     from: {
       name: "Rose hack",
       email: "rosehackucr@gmail.com",

@@ -167,9 +167,10 @@ module.exports = {
         schedule: {
           top: "#CC00FF",
           bottom: "#FF4F79",
-          purple: "#6112A1",
-          darkpurple: "#3E086D",
-          blue: "#00E0FF",
+          coral: "#FF779A",
+          darkpurple: "#6112A1",
+          purple: "#7C4FFF",
+          blue: "#4FA0FF",
           hotpink: "#DB00FF",
         },
         judges: {

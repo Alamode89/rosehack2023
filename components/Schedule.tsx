@@ -48,16 +48,18 @@ const Schedule = () => {
             className={`ml-4 mt-2 ${
               day === "saturday"
                 ? "bg-schedule-darkpurple"
-                : "bg-schedule-purple"
-            } bg-schedule-purple transition hover:bg-schedule-darkpurple p-2 rounded-l-xl border-2 font-lexend`}
+                : "bg-schedule-purple hover:bg-schedule-darkpurple"
+            }  p-2 rounded-l-xl border-2 font-lexend`}
             onClick={() => setDay("saturday")}
           >
             Saturday
           </button>
           <button
             className={`${
-              day === "sunday" ? "bg-schedule-darkpurple" : "bg-schedule-purple"
-            } hover:bg-schedule-darkpurple transition p-2 rounded-r-xl border-y-2 border-r-2 font-lexend`}
+              day === "sunday"
+                ? "bg-schedule-darkpurple"
+                : "bg-schedule-purple hover:bg-schedule-darkpurple"
+            } transition p-2 rounded-r-xl border-y-2 border-r-2 font-lexend`}
             onClick={() => setDay("sunday")}
           >
             Sunday

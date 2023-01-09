@@ -176,21 +176,17 @@ export const Saturday = () => {
           <Time t="11:00 PM" />
           {/* the name is so long omg */}
           <td rowSpan={2}>
-            <div className="border-white/50 border-2 text-center bg-team-yellow rounded-3xl mx-2 text-white font-lexend">
-              <p className="text-rose-pink md:text-xl text-lg pt-2 hidden md:block">
+            <div className="border-white/50 border-2 text-center bg-team-yellow rounded mx-2 text-white font-lexend">
+              <p className="text-rose-pink text-xl pt-2 hidden md:block">
                 Sustainability in Tech
               </p>
-              <p className="text-rose-pink md:text-xl text-lg pt-2 block md:hidden">
+              <p className="text-rose-pink text-xl pt-2 block md:hidden">
                 Sustain. in Tech
               </p>
               <div className="h-[2px] w-full bg-rose-pink " />
-              <p className="md:text-cl text-sm text-rose-pink mt-2">
-                Samarth Srinivasa
-              </p>
+              <p className="text-xl text-rose-pink mt-2">Samarth Srinivasa</p>
               <div className="h-[2px] w-full bg-rose-pink " />
-              <p className="text-rose-pink text-m md:text-xl mt-1 mb-0">
-                WCH127
-              </p>
+              <p className="text-rose-pink text-xl mt-1 mb-0">WCH127</p>
             </div>
           </td>
         </tr>
@@ -209,7 +205,7 @@ export const Sunday = () => {
   return (
     <table className="table-fixed w-full border-collapse">
       <tbody>
-        <th className="w-1/4" />
+        <th className="w-1/6" />
         <tr>
           <Time t="12:00 AM" />
           <td rowSpan={2}>

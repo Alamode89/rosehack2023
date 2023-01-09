@@ -5,7 +5,7 @@ export const Saturday = () => {
   return (
     <table className="table-fixed w-full border-collapse">
       <tbody>
-        <th className="w-1/4"></th>
+        <th className="w-1/4" />
         <tr>
           <Time t="8:30 AM" />
         </tr>
@@ -209,7 +209,7 @@ export const Sunday = () => {
   return (
     <table className="table-fixed w-full border-collapse">
       <tbody>
-        <th className="w-1/4"></th>
+        <th className="w-1/4" />
         <tr>
           <Time t="12:00 AM" />
           <td rowSpan={2}>

@@ -5,7 +5,7 @@ export const Saturday = () => {
   return (
     <table className="table-fixed w-full border-collapse">
       <tbody>
-        <th className="w-1/4" />
+        <th className="w-1/6" />
         <tr>
           <Time t="8:30 AM" />
         </tr>

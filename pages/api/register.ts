@@ -45,7 +45,7 @@ export default async function Register(
     html: `
     <div style="background:rgba(0, 0, 0, 0);">
         <img style="object-fit:contain; width:100%;" src="https://firebasestorage.googleapis.com/v0/b/rosehack-2023.appspot.com/o/email%20banner.png?alt=media&token=a64568f0-1c6a-4b13-ada7-e94ba96f8602">
-        <p>Hey ${req.body.name},</p>
+        <p>Hey ${req.body.first},</p>
         <p>Thank you for applying to Rose hack 2023! You will be notified via email when your application status changes.</p>
         <p>Thank you,</p>
         <p>The Rose Hack Team</p>

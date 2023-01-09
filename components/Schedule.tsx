@@ -45,13 +45,19 @@ const Schedule = () => {
       <div className="text-white rounded-xl bg-gradient-to-b from-schedule-darkpurple/50 to-schedule-bottom/50 border-4 border-white text-center w-10/12 h-[36rem] overflow-auto ">
         <div className="text-left h-16 bg-white/50">
           <button
-            className="ml-4 mt-2 bg-schedule-purple transition hover:bg-schedule-darkpurple focus:bg-schedule-darkpurple p-2 rounded-l-xl border-2 font-lexend "
+            className={`ml-4 mt-2 ${
+              day === "saturday"
+                ? "bg-schedule-darkpurple"
+                : "bg-schedule-purple"
+            } bg-schedule-purple transition hover:bg-schedule-darkpurple p-2 rounded-l-xl border-2 font-lexend`}
             onClick={() => setDay("saturday")}
           >
             Saturday
           </button>
           <button
-            className="bg-schedule-purple hover:bg-schedule-darkpurple transition focus:bg-schedule-darkpurple p-2 rounded-r-xl border-y-2 border-r-2 font-lexend"
+            className={`${
+              day === "sunday" ? "bg-schedule-darkpurple" : "bg-schedule-purple"
+            } hover:bg-schedule-darkpurple transition p-2 rounded-r-xl border-y-2 border-r-2 font-lexend`}
             onClick={() => setDay("sunday")}
           >
             Sunday

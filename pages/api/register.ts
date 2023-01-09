@@ -9,7 +9,11 @@ export default async function Register(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  await createUserWithEmailAndPassword(auth, req.body.email.toLowerCase(), req.body.password);
+  await createUserWithEmailAndPassword(
+    auth,
+    req.body.email.toLowerCase(),
+    req.body.password
+  );
 
   delete req.body["password"];
   delete req.body["confirm_password"];

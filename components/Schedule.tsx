@@ -29,15 +29,15 @@ const Schedule = () => {
       </div>
       <div className="flex flex-col md:flex-row text-center font-lexend text-lg md:text-2xl">
         <div className="flex flex-row">
-          <FaSquare className="text-rose-purple text-xl  md:text-3xl " />
+          <FaSquare className="text-rose-purple text-xl  md:text-3xl mx-2 " />
           <p className="text-white pr-8 md:pr-4"> Activities </p>
-          <FaSquare className="text-schedule-blue text-xl md:text-3xl" />
+          <FaSquare className="text-schedule-blue text-xl md:text-3xl mx-2" />
           <p className="text-white pr-4">Events</p>
         </div>
         <div className="flex flex-row">
-          <FaSquare className="text-white text-xl  md:text-3xl " />
+          <FaSquare className="text-white text-xl  md:text-3xl mx-2" />
           <p className="text-white pr-4"> Workshops </p>
-          <FaSquare className="text-team-yellow text-xl md:text-3xl " />
+          <FaSquare className="text-team-yellow text-xl md:text-3xl mx-2" />
           <p className="text-white"> Speakers </p>
         </div>
       </div>

@@ -3,7 +3,17 @@ import { FaCircle } from "react-icons/fa";
 import { FaSquare } from "react-icons/fa";
 import Pixels from "../public/pixels_2.webp";
 import Image from "next/image";
-import { Saturday, Sunday } from "./Schedule/Days";
+import dynamic from "next/dynamic";
+
+const Saturday = dynamic<{}>(
+  () => import("./Schedule/Days").then((module) => module.Saturday),
+  { ssr: false }
+);
+
+const Sunday = dynamic<{}>(
+  () => import("./Schedule/Days").then((module) => module.Sunday),
+  { ssr: false }
+);
 
 const Schedule = () => {
   const [day, setDay] = useState("saturday");

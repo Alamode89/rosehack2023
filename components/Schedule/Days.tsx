@@ -11,7 +11,7 @@ export const Saturday = () => {
         </tr>
         <tr>
           <Time t="9:00 AM" />
-          <td rowSpan="4">
+          <td rowSpan={4}>
             <Event title="Check-in" loc="WCH127" min="120" />
           </td>
         </tr>
@@ -23,19 +23,19 @@ export const Saturday = () => {
         </tr>
         <tr>
           <Time t="10:30 AM" />
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Event title="Opening Ceremony" loc="WCH127" min="60" />
           </td>
         </tr>
         <tr>
           <Time t="11:00 AM" />
-          <td rowSpan="1">
+          <td rowSpan={1}>
             <Activity title="Icebreakers" loc="WCH127" min="30" />
           </td>
         </tr>
         <tr>
           <Time t="11:30 AM" />
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Workshop
               title="How to Hackathon"
               lead="Angelika Bermudez"
@@ -48,7 +48,7 @@ export const Saturday = () => {
         </tr>
         <tr>
           <Time t="12:30 PM" />
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Event title="Lunch" loc="WCH127" min="60" />
           </td>
         </tr>
@@ -57,7 +57,7 @@ export const Saturday = () => {
         </tr>
         <tr>
           <Time t="1:30 PM" />
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Speaker
               title="Artificial Intelligence"
               lead="Jack O'Grady"
@@ -70,7 +70,7 @@ export const Saturday = () => {
         </tr>
         <tr>
           <Time t="2:30 PM" />
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Workshop
               title="UI/UX"
               lead="Trinah Maulion & Gabriela Alvarez"
@@ -84,7 +84,7 @@ export const Saturday = () => {
         </tr>
         <tr>
           <Time t="3:30 PM" />
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Speaker
               title="How to Publish a Project"
               lead="Nic Stone"
@@ -98,7 +98,7 @@ export const Saturday = () => {
         <tr>
           <Time t="4:30 PM" />
 
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Workshop
               title="Intro to Game Dev"
               lead="Westin Montano"
@@ -111,7 +111,7 @@ export const Saturday = () => {
         </tr>
         <tr>
           <Time t="5:30 PM" />
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Workshop title="Intro to React" lead="Divyank Shah" loc="WCH127" />
           </td>
         </tr>
@@ -120,7 +120,7 @@ export const Saturday = () => {
         </tr>
         <tr>
           <Time t="6:30 PM" />
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Workshop
               title="Intro to Arduino"
               lead="Joshua Candelaria"
@@ -133,17 +133,17 @@ export const Saturday = () => {
         </tr>
         <tr>
           <Time t="7:30 PM" />
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Event title="Dinner" loc="WCH127" min="60" />
           </td>
         </tr>
         <tr>
           <Time t="8:00 PM" />
-          <td rowSpan="2"></td>
+          <td rowSpan={2}></td>
         </tr>
         <tr>
           <Time t="8:30 PM" />
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Event title="Intern Panel" loc="WCH127" min="60" />
           </td>
         </tr>
@@ -155,7 +155,7 @@ export const Saturday = () => {
         </tr>
         <tr>
           <Time t="10:00 PM" />
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Workshop
               title="Resume Workshop"
               lead="Divyank Shah"
@@ -175,8 +175,8 @@ export const Saturday = () => {
         <tr>
           <Time t="11:00 PM" />
           {/* the name is so long omg */}
-          <td rowSpan="2">
-            <div className="border border-white/50 border-2 text-center bg-team-yellow rounded-3xl mx-2 text-white font-lexend">
+          <td rowSpan={2}>
+            <div className="border-white/50 border-2 text-center bg-team-yellow rounded-3xl mx-2 text-white font-lexend">
               <p className="text-rose-pink md:text-xl text-lg pt-2 hidden md:block">
                 Sustainability in Tech
               </p>
@@ -212,10 +212,10 @@ export const Sunday = () => {
         <th className="w-1/4" />
         <tr>
           <Time t="12:00 AM" />
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Activity title="Hot Choco & Snacks" loc="WCH127" min="60" />
           </td>
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Activity
               title="Super Smash Bros Tournament"
               loc="WCH127"
@@ -228,7 +228,7 @@ export const Sunday = () => {
         </tr>
         <tr>
           <Time t="1:00 AM" />
-          <td rowSpan="4">
+          <td rowSpan={4}>
             <Activity title="Movie" loc="WCH127" min="120" />
           </td>
         </tr>
@@ -243,13 +243,13 @@ export const Sunday = () => {
         </tr>
         <tr>
           <Time t="3:00 AM" />
-          <td rowSpan="1">
+          <td rowSpan={1}>
             <Activity title="Kahoot" loc="WCH127" min="30" />
           </td>
         </tr>
         <tr>
           <Time t="3:30 AM" />
-          <td rowSpan="1">
+          <td rowSpan={1}>
             <Activity title="TypeRacer Contest" loc="WCH127" min="30" />
           </td>
         </tr>
@@ -267,7 +267,7 @@ export const Sunday = () => {
         </tr>
         <tr>
           <Time t="6:00 AM" />
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Activity title="Morning Yoga" loc="WCH127" min="60" />
           </td>
         </tr>
@@ -276,7 +276,7 @@ export const Sunday = () => {
         </tr>
         <tr>
           <Time t="7:00 AM" />
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Activity title="Therapy Dogs" loc="WCH127" min="60" />
           </td>
         </tr>
@@ -288,7 +288,7 @@ export const Sunday = () => {
         </tr>
         <tr>
           <Time t="8:30 AM" />
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Event title="Breakfast" loc="WCH127" min="60" />
           </td>
         </tr>
@@ -315,7 +315,7 @@ export const Sunday = () => {
         </tr>
         <tr>
           <Time t="12:30 PM" />
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Event title="Lunch" loc="WCH127" min="60" />
           </td>
         </tr>
@@ -333,7 +333,7 @@ export const Sunday = () => {
         </tr>
         <tr>
           <Time t="3:00 PM" />
-          <td rowSpan="2">
+          <td rowSpan={2}>
             <Event title="Closing Ceremony" loc="WCH127" min="60" />
           </td>
         </tr>

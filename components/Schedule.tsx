@@ -18,14 +18,6 @@ const Sunday = dynamic<{}>(
 const Schedule = () => {
   const [day, setDay] = useState("saturday");
 
-  const checkDay = () => {
-    if (day === "saturday") {
-      return <Saturday />;
-    } else if (day === "sunday") {
-      return <Sunday />;
-    }
-  };
-
   return (
     <section className="flex flex-col w-full bg-gradient-to-b from-schedule-top to-schedule-bottom items-center h-full">
       <div className="flex flex-row items-center justify-center p-4">
@@ -65,7 +57,7 @@ const Schedule = () => {
             Sunday
           </button>
         </div>
-        {checkDay()}
+        {day === "saturday" ? <Saturday /> : <Sunday />}
       </div>
 
       <div className="w-full justify-center mt-20">

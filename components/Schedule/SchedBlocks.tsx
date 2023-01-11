@@ -35,7 +35,7 @@ interface TimeProps {
 
 export function Time(props: TimeProps) {
   return (
-    <div className="border-b-2 items-center bg-white/50 text-white font-lexend text-center px-4 pt-4">
+    <div className="border-b-2 items-center bg-white/50 text-white font-lexend text-center md:px-4 pt-4">
       <p className="text-white text-xl">{props.t}</p>
     </div>
   );
@@ -51,7 +51,7 @@ export function Workshop(props: WorkshopProps) {
       onClick={() => setIsOpen(true)}
     >
       <div className="border-2 border-white/50 h-48 md:h-32 text-center bg-white rounded mx-2 text-white font-lexend">
-        <p className="text-rose-pink text-xl pt-2">{props.title}</p>
+        <p className="text-rose-pink text-md md:text-xl pt-2">{props.title}</p>
         <div onClick={(e) => e.stopPropagation()}>
           <WorkshopPopup
             show={isOpen}
@@ -77,7 +77,7 @@ export function Speaker(props: SpkProps) {
       onClick={() => setIsOpen(true)}
     >
       <div className="border-2 border-white/50 h-48 md:h-32 text-center bg-team-yellow rounded mx-2 text-white font-lexend">
-        <p className="text-rose-pink text-xl pt-2">{props.title}</p>
+        <p className="text-rose-pink text-md md:text-xl pt-2">{props.title}</p>
         <div onClick={(e) => e.stopPropagation()}>
           <SpeakerPopup
             show={isOpen}
@@ -104,7 +104,7 @@ export function Activity(props: ActProps) {
         onClick={() => setIsOpen(true)}
       >
         <div className="border-2 border-white/50  h-24 md:h-16 justify-center text-center items-center bg-rose-purple rounded mx-2 text-white font-lexend">
-          <p className="text-xl pt-1 mb-0 p-0">{props.title}</p>
+          <p className="text-md md:text-xl pt-1 mb-0 p-0">{props.title}</p>
           <div onClick={(e) => e.stopPropagation()}>
             <EventPopup
               show={isOpen}
@@ -126,7 +126,9 @@ export function Activity(props: ActProps) {
         onClick={() => setIsOpen(true)}
       >
         <div className="border-2 border-white/50  h-48 md:h-32 justify-center text-center items-center bg-rose-purple rounded mx-2 text-white font-lexend">
-          <p className="text-xl md:text-xl pt-2 mb-0 p-0">{props.title}</p>
+          <p className="text-md md:text-xl md:text-xl pt-2 mb-0 p-0">
+            {props.title}
+          </p>
           <div onClick={(e) => e.stopPropagation()}>
             <EventPopup
               show={isOpen}
@@ -147,7 +149,7 @@ export function Activity(props: ActProps) {
       onClick={() => setIsOpen(true)}
     >
       <div className=" border-2 border-white/50 h-[17rem] justify-center text-center items-center bg-rose-purple rounded mx-2 text-white font-lexend">
-        <p className="text-xl pt-2 mb-0 p-0">{props.title}</p>
+        <p className="text-md md:text-xl pt-2 mb-0 p-0">{props.title}</p>
         <div onClick={(e) => e.stopPropagation()}>
           <EventPopup
             show={isOpen}
@@ -173,7 +175,7 @@ export function Event(props: EventProps) {
         onClick={() => setIsOpen(true)}
       >
         <div className="border-2 border-white/50 h-24 md:h-16 justify-center text-center items-center bg-schedule-blue rounded mx-2 text-white font-lexend">
-          <p className="text-xl pt-2 mb-0 p-0">{props.title}</p>
+          <p className="text-md md:text-xl pt-2 mb-0 p-0">{props.title}</p>
           <div onClick={(e) => e.stopPropagation()}>
             <EventPopup
               show={isOpen}
@@ -195,7 +197,7 @@ export function Event(props: EventProps) {
         onClick={() => setIsOpen(true)}
       >
         <div className="border-2 border-white/50  h-[24rem] md:h-[17rem] justify-center text-center items-center bg-schedule-blue rounded mx-2 text-white font-lexend">
-          <p className="text-xl pt-2 mb-0 p-0">{props.title}</p>
+          <p className="text-md md:text-xl pt-2 mb-0 p-0">{props.title}</p>
           <div onClick={(e) => e.stopPropagation()}>
             <EventPopup
               show={isOpen}
@@ -216,7 +218,7 @@ export function Event(props: EventProps) {
       onClick={() => setIsOpen(true)}
     >
       <div className="border-2 border-white/50  h-48 md:h-32 justify-center text-center items-center bg-schedule-blue rounded mx-2 text-white font-lexend">
-        <p className="text-xl pt-2 mb-0 p-0">{props.title}</p>
+        <p className="text-md md:text-xl pt-2 mb-0 p-0">{props.title}</p>
         <div onClick={(e) => e.stopPropagation()}>
           <EventPopup
             show={isOpen}

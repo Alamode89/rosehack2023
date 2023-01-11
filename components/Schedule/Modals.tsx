@@ -24,9 +24,9 @@ interface EventProps {
 export function WorkshopPopup(props: WorkshopProps) {
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter" centered>
-      <div className="items-center text-center bg-schedule-purple/75 ">
-        <p className="text-white text-3xl m-2">{props.title}</p>
-        <div className="text-slate-200 text-xl">
+      <div className="items-center text-center bg-white/75 ">
+        <p className="text-rose-pink font-bold text-3xl m-2">{props.title}</p>
+        <div className="text-rose-pink/75 text-xl">
           <p className="text-sm m-2"> {props.time}</p>
           <p className="text-xl font-bold m-0">Location:</p>
           <p className="mb-4">{props.loc}</p>
@@ -41,9 +41,9 @@ export function WorkshopPopup(props: WorkshopProps) {
 export function SpeakerPopup(props: SpkProps) {
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter" centered>
-      <div className="items-center text-center bg-schedule-purple/75 ">
-        <p className="text-white text-3xl m-2">{props.title}</p>
-        <div className="text-slate-200 text-xl">
+      <div className="items-center text-center bg-team-yellow/75 ">
+        <p className="text-rose-pink font-bold text-3xl m-2">{props.title}</p>
+        <div className="text-rose-pink/75  text-xl">
           <p className="text-sm m-2"> {props.time}</p>
           <p className="text-xl font-bold m-0">Location:</p>
           <p className="mb-4">{props.loc}</p>
@@ -59,7 +59,22 @@ export function EventPopup(props: EventProps) {
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter" centered>
       <div className="items-center text-center bg-schedule-blue/75 ">
-        <p className="!font-lexend text-white text-3xl m-2">{props.title}</p>
+        <p className="font-bold text-white text-3xl m-2">{props.title}</p>
+        <div className="text-slate-200 text-xl">
+          <p className="text-sm m-2"> {props.time}</p>
+          <p className="text-xl font-bold m-0">Location:</p>
+          <p className="mb-4">{props.loc}</p>
+        </div>
+      </div>
+    </Modal>
+  );
+}
+
+export function ActPopup(props: EventProps) {
+  return (
+    <Modal {...props} aria-labelledby="contained-modal-title-vcenter" centered>
+      <div className="items-center text-center bg-schedule-purple/75 ">
+        <p className="font-bold text-white text-3xl m-2">{props.title}</p>
         <div className="text-slate-200 text-xl">
           <p className="text-sm m-2"> {props.time}</p>
           <p className="text-xl font-bold m-0">Location:</p>

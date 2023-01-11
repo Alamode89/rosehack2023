@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { WorkshopPopup, EventPopup, SpeakerPopup } from "./Modals";
+import { WorkshopPopup, EventPopup, SpeakerPopup, ActPopup } from "./Modals";
 
 interface EventProps {
   title: string;
@@ -106,7 +106,7 @@ export function Activity(props: ActProps) {
         <div className="border-2 border-white/50  h-24 md:h-16 justify-center text-center items-center bg-rose-purple rounded mx-2 text-white font-lexend">
           <p className="text-md md:text-xl pt-1 mb-0 p-0">{props.title}</p>
           <div onClick={(e) => e.stopPropagation()}>
-            <EventPopup
+            <ActPopup
               show={isOpen}
               onHide={() => setIsOpen(false)}
               title={props.title}
@@ -130,7 +130,7 @@ export function Activity(props: ActProps) {
             {props.title}
           </p>
           <div onClick={(e) => e.stopPropagation()}>
-            <EventPopup
+            <ActPopup
               show={isOpen}
               onHide={() => setIsOpen(false)}
               title={props.title}
@@ -151,7 +151,7 @@ export function Activity(props: ActProps) {
       <div className=" border-2 border-white/50 h-[17rem] justify-center text-center items-center bg-rose-purple rounded mx-2 text-white font-lexend">
         <p className="text-md md:text-xl pt-2 mb-0 p-0">{props.title}</p>
         <div onClick={(e) => e.stopPropagation()}>
-          <EventPopup
+          <ActPopup
             show={isOpen}
             onHide={() => setIsOpen(false)}
             title={props.title}

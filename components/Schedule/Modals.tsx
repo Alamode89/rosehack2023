@@ -6,6 +6,8 @@ interface WorkshopProps {
   loc: string;
   lead: string;
   time: string;
+  show: boolean;
+  onHide: any;
 }
 
 interface SpkProps {
@@ -13,12 +15,16 @@ interface SpkProps {
   loc: string;
   lead: string;
   time: string;
+  show: boolean;
+  onHide: any;
 }
 
 interface EventProps {
   title: string;
   loc: string;
   time: string;
+  show: boolean;
+  onHide: any;
 }
 
 export function WorkshopPopup(props: WorkshopProps) {

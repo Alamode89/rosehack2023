@@ -126,9 +126,7 @@ export function Activity(props: ActProps) {
         onClick={() => setIsOpen(true)}
       >
         <div className="border-2 border-white/50  h-48 md:h-32 justify-center text-center items-center bg-rose-purple rounded mx-2 text-white font-lexend">
-          <p className="text-md md:text-xl md:text-xl pt-2 mb-0 p-0">
-            {props.title}
-          </p>
+          <p className="text-md md:text-xl pt-2 mb-0 p-0">{props.title}</p>
           <div onClick={(e) => e.stopPropagation()}>
             <ActPopup
               show={isOpen}

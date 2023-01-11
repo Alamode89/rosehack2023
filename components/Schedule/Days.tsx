@@ -235,7 +235,7 @@ export const Saturday = () => {
           <td rowSpan={2}>
             <Speaker
               title="Sustainability in Tech"
-              lead="Samarth"
+              lead="Samarth Srinivasa"
               loc="Bourns A265"
               time="11:00 PM - 12:00 AM"
             />

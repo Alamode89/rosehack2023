@@ -11,7 +11,7 @@ export const sponsors = [
   },
   {
     pic: "balsamiq.webp",
-    link: "https://balsamiq.com/",
+    link: "https://balsamiq.com/wireframes/",
     color: "#AF040A",
   },
   {

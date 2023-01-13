@@ -34,4 +34,9 @@ export const sponsors = [
     link: "https://www.echo3d.com/",
     color: "#002D64",
   },
+  {
+    pic: "gcap.webp",
+    link: "https://www.gcapucr.com/",
+    color: "#32CD32",
+  },
 ];

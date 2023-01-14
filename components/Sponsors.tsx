@@ -23,20 +23,20 @@ import Hackster from "../public/hackster.webp";
 import Sponsor from "./Sponsor";
 
 const images = [
-   Triad,
-   Desmos,
-   Balsamiq,
-   Ripplematch,
-   Wolfram,
-   Badabeanbadaboom,
-   Echo3d,
-   Winc,
-   Acm,
-   Swe,
-   Bcoe,
-   Gcap,
-   Google,
-   Hackster,
+  Triad,
+  Desmos,
+  Balsamiq,
+  Ripplematch,
+  Wolfram,
+  Badabeanbadaboom,
+  Echo3d,
+  Winc,
+  Acm,
+  Swe,
+  Bcoe,
+  Gcap,
+  Google,
+  Hackster,
 ];
 
 const Sponsors = () => {

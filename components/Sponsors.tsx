@@ -23,6 +23,10 @@ import Hackster from "../public/hackster.webp";
 import Sponsor from "./Sponsor";
 
 const images = [
+  Winc,
+  Swe,
+  Acm,
+  Bcoe,
   Triad,
   Desmos,
   Balsamiq,
@@ -30,10 +34,6 @@ const images = [
   Wolfram,
   Badabeanbadaboom,
   Echo3d,
-  Winc,
-  Acm,
-  Swe,
-  Bcoe,
   Gcap,
   Google,
   Hackster,

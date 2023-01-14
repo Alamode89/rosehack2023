@@ -1,6 +1,5 @@
 import { FaCircle } from "react-icons/fa";
 import ProgressBar from "react-bootstrap/ProgressBar";
-import Link from "next/link";
 import React from "react";
 import BlueHeart from "../public/blue_heart.webp";
 import PinkHeart from "../public/pink_heart.webp";
@@ -65,12 +64,9 @@ const Landing = () => {
             JANUARY 14-15
           </p>
           <div className="flex items-center justify-center pt-3">
-            <Link
-              href="/register"
-              className="animate-bounce shadow-[0_0_16px_0]  no-underline shadow-[#15DBFF] px-4 drop-shadow-blue p-2 font-pixel text-white border-[6px] rounded-2xl text-sm md:text-2xl"
-            >
-              Register
-            </Link>
+            <p className="animate-bounce shadow-[0_0_16px_0]  no-underline shadow-[#15DBFF] px-4 drop-shadow-blue p-2 font-pixel text-white border-[6px] rounded-2xl text-sm md:text-2xl">
+              Registration Closed!
+            </p>
           </div>
           <div className="pt-4 w-7/12 justify-center items-center m-auto">
             <ProgressBar
@@ -89,14 +85,15 @@ const Landing = () => {
             />
           </div>
           <div className="animate-pulse p-2 pb-4 drop-shadow-green font-pixel text-white text-sm md:text-md">
-            now loading...{" "}
+            {/* now loading...{" "}
             {Math.round(
               (new Date(2023, 0, 14, 12).getTime() - new Date().getTime()) /
                 1000 /
                 3600 /
                 24
             )}
-            &nbsp;days left
+            &nbsp;days left */}
+            100% Rosehack is here!
           </div>
         </div>
         <div className="drop-shadow-white w-11/12 md:w-7/12  flex pb-12 pt-3 m-auto text-center items-center justify-evenly">

@@ -51,10 +51,10 @@ const Navigation = () => {
               FAQ
             </Link>
             <Link
-              href="/volunteers"
+              href="/schedule"
               className="!text-base text-center text-white p-1 mx-2 no-underline hover:underline hover:drop-shadow-blue decoration-4 underline-offset-6"
             >
-              VOLUNTEER
+              SCHEDULE
             </Link>
             <Link
               href="https://portal.rosehack.com/"

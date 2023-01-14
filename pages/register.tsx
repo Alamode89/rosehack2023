@@ -412,15 +412,3 @@ const Register = () => {
 };
 
 export default Register;
-
-// import React from "react";
-
-// const register = () => {
-//   return (
-//     <div className="font-pixel text-2xl bg-gradient-to-r from-header-left to-header-right h-screen flex justify-center items-center text-white">
-//       Registration is Closed!
-//     </div>
-//   );
-// };
-
-// export default register;

@@ -33,7 +33,7 @@ const Home: NextPage = () => {
     <div className="flex justify-center items-center flex-col">
       <Landing />
       <About />
-      <Schedule />
+      <Schedule pixels={true} />
       <Sponsors />
       <Judges />
       <Team />

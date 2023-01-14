@@ -14,7 +14,7 @@ const Sunday = dynamic<{}>(
   { ssr: false }
 );
 
-const Schedule = () => {
+const Schedule = ({ pixels }: { pixels: boolean }) => {
   const [day, setDay] = useState("saturday");
 
   return (
@@ -66,10 +66,12 @@ const Schedule = () => {
         </div>
         {day === "saturday" ? <Saturday /> : <Sunday />}
       </div>
-
-      <div className="w-full justify-center mt-20">
-        <Image src={Pixels} alt="Pixels" className="w-[100vw]" />
-      </div>
+      {pixels && (
+        <div className="w-full justify-center mt-20">
+          <Image src={Pixels} alt="Pixels" className="w-[100vw]" />
+        </div>
+      )}
+      {!pixels && <div className="mb-20" />}
     </section>
   );
 };

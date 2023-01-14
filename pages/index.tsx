@@ -4,7 +4,7 @@ import Landing from "../components/Landing";
 import Sponsors from "../components/Sponsors";
 import Team from "../components/Team";
 import Schedule from "../components/Schedule";
-// import Judges from "../components/Judges";
+import Judges from "../components/Judges";
 import FAQ from "../components/FAQ";
 // import dynamic from "next/dynamic";
 
@@ -35,7 +35,7 @@ const Home: NextPage = () => {
       <About />
       <Schedule />
       <Sponsors />
-      {/* <Judges /> */}
+      <Judges />
       <Team />
       <FAQ />
       <title>Rose Hack 2023</title>

@@ -48,7 +48,7 @@ const Judges = () => {
                 name={judge.name}
                 position={judge.position}
                 shadow={judge.shadow}
-                image={judge.image}
+                image={"/" + judge.image}
                 linkedin={judge.linkedin}
               />
             </Col>

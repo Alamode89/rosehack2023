@@ -48,5 +48,4 @@ export const judges = [
     image: "Stephen.webp",
     shadow: "shadow-team-gold",
   },
-
 ];

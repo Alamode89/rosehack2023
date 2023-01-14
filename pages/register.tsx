@@ -5,10 +5,7 @@ import Col from "react-bootstrap/Col";
 import Snackbar from "../components/Snackbar";
 import { schools } from "../components/data/schools";
 import Schools from "../components/Schools";
-import { MdOutlineFileUpload } from "react-icons/md";
 import axios from "axios";
-import { storage } from "../firebase";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import Checkbox from "../components/Checkbox";
 import {
   data,
@@ -26,7 +23,6 @@ const Register = () => {
   const [visible, setVisible] = useState(false);
   const [message, setMessage] = useState("");
   const [disable, setDisable] = useState(false);
-  const [link, setLink] = useState<string | undefined>(undefined);
 
   const handleInput = (data: string, value: string) => {
     setUser({ ...user, [data]: value });
@@ -117,67 +113,16 @@ const Register = () => {
       return;
     }
 
-    const response = await axios.post("/api/createUser", user);
-
-    if (response.status === 201) {
-      handleMessage(
-        "There is an account already registered under this email address!"
-      );
-      return;
-    } else if (response.status !== 200) {
-      handleMessage("Internal Server Error");
-      return;
-    }
-
-    delete user["password"];
-    delete user["confirm_password"];
-
-    console.log("BEFORE RESUME");
-
-    if (user.resume !== undefined) {
-      await uploadBytes(
-        ref(storage, `resumes/${user.resume.name}`),
-        user.resume
-      );
-      getDownloadURL(ref(storage, `resumes/${user.resume.name}`))
-        .then((url) => {
-          setLink(url);
-          console.log(url);
-        })
-        .catch((error) => {
-          // Handle any errors
-          console.log(error);
-        });
-    }
-
-    const responseTwo = await axios.post("/api/storeUser", {
-      ...user,
-      resume: link || "",
-    });
-
-    if (responseTwo.status !== 200) {
-      handleMessage(
-        "There was an error registering your account, please contact rosehackucr@gmail.com for assistance!"
-      );
-      return;
-    }
-
-    console.log("BEFORE CONFIRM");
-
-    const responseThree = await axios.post("/api/sendConfirmation", {
-      email: user.email,
-      name: user.first,
-    });
-
-    if (responseThree.status !== 200) {
-      handleMessage(
-        "You have been registered, however, there was an error sendnig a confirmation email, please contact rosehackucr@gmail.com"
-      );
-      return;
-    }
-
-    handleMessage("Registration Successful!");
-    setDisable(false);
+    axios
+      .post("/api/register", user)
+      .then((response) => {
+        console.log("Registered Successfully!");
+        handleMessage("Registration Successful!");
+        setDisable(false);
+      })
+      .catch((error) => {
+        console.log("Error!");
+      });
   };
 
   return (
@@ -327,38 +272,6 @@ const Register = () => {
               field="gender"
               handleInput={handleInput}
             />
-          </Col>
-        </Row>
-        <Row className="w-10/12">
-          <Col className="px-0 py-1">
-            <label
-              htmlFor="resume"
-              className="text-left font-pixel text-md text-white w-full ml-4"
-            >
-              resume (optional)
-            </label>
-            <input
-              type="file"
-              name="resume"
-              id="resume"
-              accept="application/pdf"
-              value=""
-              onChange={(e: any) =>
-                setUser({ ...user, resume: e.target.files[0] })
-              }
-              className="hidden"
-            />
-            <label
-              htmlFor="resume"
-              className="!font-lexend p-2 text-white w-full bg-transparent !border-4 border-solid border-white !rounded-xl focus:border-white active:border-white"
-            >
-              <div className="flex justify-between items-center">
-                <p className="hover:cursor-pointer p-0 m-0">
-                  Selected File: {user.resume?.name || "No File Selected"}
-                </p>
-                <MdOutlineFileUpload className="text-3xl m-0 p-0 hover:cursor-pointer" />
-              </div>
-            </label>
           </Col>
         </Row>
         <Checkbox

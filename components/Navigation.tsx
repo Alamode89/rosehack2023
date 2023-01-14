@@ -9,7 +9,7 @@ const Navigation = () => {
     <div className="from:bg-header-left to:bg-header-right min-h-[7vh]">
       <Navbar
         className="bg-gradient-to-r from-header-left to-header-right min-h-[7vh] px-4 !shadow-lg"
-        expand="md"
+        expand="xl"
         fixed="top"
       >
         <Navbar.Toggle
@@ -52,7 +52,7 @@ const Navigation = () => {
             </Link>
             <Link
               href="/volunteers"
-              className="!text-base text-center text-white p-1 mx-2 no-underline hover:underline hover:drop-shadow-pink decoration-4 underline-offset-6"
+              className="!text-base text-center text-white p-1 mx-2 no-underline hover:underline hover:drop-shadow-blue decoration-4 underline-offset-6"
             >
               VOLUNTEER
             </Link>

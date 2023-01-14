@@ -1,8 +1,7 @@
 export const grades = [
   "Less than Secondary / High School",
   "Secondary / High School",
-  "Undergraduate University (2 year)",
-  "Undergraduate University (3+ year)",
+  "Undergraduate University",
   "Graduate University (Masters, Doctoral, etc)",
   "Code School / Bootcamp",
   "Other Vocational / Trade Program / Apprenticeship",

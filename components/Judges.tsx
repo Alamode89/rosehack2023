@@ -7,6 +7,7 @@ import { FaCircle } from "react-icons/fa";
 import Image from "next/image";
 import PinkHeart from "../public/pink_heart.webp";
 import Pixels from "../public/pixels_6.webp";
+import Jiasi from "../public/jiasi.webp";
 
 const Judges = () => {
   return (

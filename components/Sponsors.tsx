@@ -6,24 +6,38 @@ import { sponsors } from "./data/sponsors";
 import PinkHeart from "../public/pink_heart.webp";
 import Pixels from "../public/pixels_6.webp";
 import Image from "next/image";
-// import Triad from "../public/triad.webp";
-// import Desmos from "../public/desmos.webp";
-// import Balsamiq from "../public/balsamiq.webp";
-// import Ripplematch from "../public/ripplematch.webp";
-// import Wolfram from "../public/wolfram.webp";
-// import Badabeanbadaboom from "../public/badabeanbadaboom.webp";
-// import Echo3d from "../public/echo3d.webp";
+import Triad from "../public/triad.webp";
+import Desmos from "../public/desmos.webp";
+import Balsamiq from "../public/balsamiq.webp";
+import Ripplematch from "../public/ripplematch.webp";
+import Wolfram from "../public/wolfram.webp";
+import Badabeanbadaboom from "../public/badabeanbadaboom.webp";
+import Echo3d from "../public/echo3d.webp";
+import Winc from "../public/winc.webp";
+import Acm from "../public/acm.webp";
+import Swe from "../public/swe.webp";
+import Bcoe from "../public/ucreng.webp";
+import Gcap from "../public/gcap.webp";
+import Google from "../public/googlecloud.webp";
+import Hackster from "../public/hackster.webp";
 import Sponsor from "./Sponsor";
 
-// const images = [
-//   Triad,
-//   Desmos,
-//   Balsamiq,
-//   Ripplematch,
-//   Wolfram,
-//   Badabeanbadaboom,
-//   Echo3d,
-// ];
+const images = [
+   Triad,
+   Desmos,
+   Balsamiq,
+   Ripplematch,
+   Wolfram,
+   Badabeanbadaboom,
+   Echo3d,
+   Winc,
+   Acm,
+   Swe,
+   Bcoe,
+   Gcap,
+   Google,
+   Hackster,
+];
 
 const Sponsors = () => {
   return (
@@ -63,8 +77,7 @@ const Sponsors = () => {
             <Col lg={3} md={4} xs={6} key={index} className="p-4">
               <Sponsor
                 link={sponsor.link}
-                // image={images[index]}
-                image={`/${sponsor.pic}`}
+                image={images[index]}
                 index={index}
                 key={index}
               />

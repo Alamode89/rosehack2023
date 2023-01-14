@@ -64,7 +64,7 @@ const Landing = () => {
             JANUARY 14-15
           </p>
           <div className="flex items-center justify-center pt-3">
-            <p className="animate-bounce shadow-[0_0_16px_0]  no-underline shadow-[#15DBFF] px-4 drop-shadow-blue p-2 font-pixel text-white border-[6px] rounded-2xl text-sm md:text-2xl">
+            <p className="animate-bounce shadow-[0_0_16px_0]  no-underline shadow-[#15DBFF] drop-shadow-blue p-2 px-4 font-pixel text-white border-[6px] rounded-2xl text-sm md:text-lg">
               Registration Closed!
             </p>
           </div>

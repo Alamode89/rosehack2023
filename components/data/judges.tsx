@@ -59,7 +59,7 @@ export const judges = [
     name: "Audrey Der",
     position: "Computer Science PhD Candidate",
     linkedin: "https://www.linkedin.com/in/audreyder45/",
-    image: "audrey.webp",
+    image: "Audrey.webp",
     shadow: "shadow-team-green",
   },
   {

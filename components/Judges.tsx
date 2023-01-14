@@ -15,7 +15,7 @@ import Sasya from "../public/sas.webp";
 import Lavi from "../public/Lavi.webp";
 import Stephen from "../public/Stephen.webp";
 import Aishwarya from "../public/aish.webp";
-import Audrey from "../public/audrey.webp";
+import Audrey from "../public/Audrey.webp";
 import Jacob from "../public/Jacob.webp";
 import Madhumitha from "../public/Madhumitha.webp";
 import Kevin from "../public/Kevin.webp";

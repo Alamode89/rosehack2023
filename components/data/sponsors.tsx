@@ -39,4 +39,34 @@ export const sponsors = [
     link: "https://www.gcapucr.com/",
     color: "#32CD32",
   },
+  {
+    pic: "acm.webp",
+    link: "https://acm.cs.ucr.edu/",
+    color: "#2d84ff",
+  },
+  {
+    pic: "gc.webp",
+    link: "https://cloud.google.com/",
+    color: "#3483fb",
+  },
+  {
+    pic: "hackster.webp",
+    link: "https://www.hackster.io/",
+    color: "#00abff",
+  },
+  {
+    pic: "swe.webp",
+    link: "https://swe.org/",
+    color: "#5c517a",
+  },
+  {
+    pic: "ucreng.webp",
+    link: "https://www.engr.ucr.edu/",
+    color: "#003caa",
+  },
+  {
+    pic: "winc.webp",
+    link: "https://winc.cs.ucr.edu/",
+    color: "#f95b52",
+  },
 ];

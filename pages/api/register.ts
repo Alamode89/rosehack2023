@@ -27,6 +27,10 @@ export default async function Register(
   await setDoc(doc(db, "teams", req.body.team), {
     name: "Untitled Team",
     members: [req.body.first + " " + req.body.last],
+    status: "approved",
+    logs: "",
+    prize: false,
+    prizeLogs: ""
   });
   console.log("After Setting User Team");
 

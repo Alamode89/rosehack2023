@@ -35,8 +35,8 @@ interface TimeProps {
 
 export function Time(props: TimeProps) {
   return (
-    <div className="border-b-2 items-center bg-white/50 text-white font-lexend text-center md:px-4 pt-4">
-      <p className="text-white text-xl">{props.t}</p>
+    <div className="border-b-2 items-center bg-white/50 text-white font-lexend text-center md:px-4 pt-4 ">
+      <p className="text-white text-base">{props.t}</p>
     </div>
   );
 }
@@ -50,7 +50,7 @@ export function Workshop(props: WorkshopProps) {
       className="service !no-underline"
       onClick={() => setIsOpen(true)}
     >
-      <div className="border-2 border-white/50 h-48 md:h-32 text-center bg-white rounded mx-2 text-white font-lexend">
+      <div className="border-2 border-white/50 h-48 md:h-28 text-center bg-white rounded mx-2 text-white font-lexend">
         <p className="text-rose-pink text-md md:text-xl pt-2">{props.title}</p>
         <div onClick={(e) => e.stopPropagation()}>
           <WorkshopPopup

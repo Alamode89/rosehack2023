@@ -30,7 +30,7 @@ export default async function Register(
     status: "approved",
     logs: "",
     prize: false,
-    prizeLogs: ""
+    prizeLogs: "",
   });
   console.log("After Setting User Team");
 

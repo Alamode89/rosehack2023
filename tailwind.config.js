@@ -174,7 +174,7 @@ module.exports = {
           hotpink: "#DB00FF",
         },
         judges: {
-          top: "#DB00FF",
+          top: "#CC00FF",
           bottom: "#00E0FF",
         },
       },

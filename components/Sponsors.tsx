@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { sponsors } from "./data/sponsors";
 import PinkHeart from "../public/pink_heart.webp";
-import Pixels from "../public/pixels_6.webp";
+import Pixels from "../public/pixels_2.webp";
 import Image from "next/image";
 // import Triad from "../public/triad.webp";
 // import Desmos from "../public/desmos.webp";

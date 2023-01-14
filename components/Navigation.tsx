@@ -9,7 +9,7 @@ const Navigation = () => {
     <div className="from:bg-header-left to:bg-header-right min-h-[7vh]">
       <Navbar
         className="bg-gradient-to-r from-header-left to-header-right min-h-[7vh] px-4 !shadow-lg"
-        expand="md"
+        expand="xl"
         fixed="top"
       >
         <Navbar.Toggle

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FaCircle } from "react-icons/fa";
-import { FaSquare } from "react-icons/fa";
 import Pixels from "../public/pixels_2.webp";
 import Image from "next/image";
 import dynamic from "next/dynamic";
@@ -29,20 +28,20 @@ const Schedule = () => {
       </div>
       <div className="flex flex-col md:flex-row text-center font-lexend text-lg md:text-2xl">
         <div className="flex flex-row">
-          <FaSquare className="text-rose-purple text-xl  md:text-3xl mx-2 " />
-          <p className="text-white pr-8 md:pr-4"> Activities </p>
-          <FaSquare className="text-schedule-blue text-xl md:text-3xl mx-2" />
-          <p className="text-white pr-4">Events</p>
+          <div className="w-7 h-7 bg-rose-purple text-xl  md:text-3xl mx-2 border-2 b border-white/70 rounded-md" />
+          <p className="text-white pr-8 md:pr-4 text-base"> Activities </p>
+          <div className="w-7 h-7 bg-schedule-blue text-xl md:text-3xl mx-2 border-2 b border-white/70 rounded-md" />
+          <p className="text-white pr-4 text-base">Events</p>
         </div>
         <div className="flex flex-row">
-          <FaSquare className="text-white text-xl  md:text-3xl mx-2" />
-          <p className="text-white pr-4"> Workshops </p>
-          <FaSquare className="text-team-yellow text-xl md:text-3xl mx-2" />
-          <p className="text-white"> Speakers </p>
+          <div className="w-7 h-7 bg-white text-xl  md:text-3xl mx-2 border-2 b border-white/70 rounded-md" />
+          <p className="text-white pr-4 text-base"> Workshops </p>
+          <div className="w-7 h-7 bg-team-yellow text-xl md:text-3xl mx-2 border-2 b border-white/70 rounded-md" />
+          <p className="text-white text-base "> Speakers </p>
         </div>
       </div>
 
-      <div className="text-white rounded-xl bg-gradient-to-b from-schedule-darkpurple/50 to-schedule-bottom/50 border-4 border-white text-center w-10/12 h-[36rem] overflow-auto ">
+      <div className="text-white rounded-xl bg-gradient-to-b from-schedule-darkpurple/50 to-schedule-bottom/50 border-4 border-white text-center w-10/12 md:w-8/12 h-[36rem] overflow-auto ">
         <div className="text-left h-16 bg-white/50">
           <button
             className={`ml-4 mt-2 ${

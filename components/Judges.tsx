@@ -7,6 +7,39 @@ import { FaCircle } from "react-icons/fa";
 import Image from "next/image";
 import PinkHeart from "../public/pink_heart.webp";
 import Pixels from "../public/pixels_6.webp";
+import Jiasi from "../public/Jiasi.webp";
+import Yihan from "../public/Yihan.webp";
+import Allan from "../public/Allan.webp";
+import Craig from "../public/craig.webp";
+import Sasya from "../public/sas.webp";
+import Lavi from "../public/Lavi.webp";
+import Stephen from "../public/Stephen.webp";
+import Aishwarya from "../public/aish.webp";
+import Audrey from "../public/audrey.webp";
+import Jacob from "../public/Jacob.webp";
+import Madhumitha from "../public/Madhumitha.webp";
+import Kevin from "../public/Kevin.webp";
+import Omar from "../public/Omar.webp";
+import Pratap from "../public/pratappic.webp";
+import Xin from "../public/Xin.webp";
+
+const images = [
+  Jiasi,
+  Yihan,
+  Allan,
+  Craig,
+  Sasya,
+  Lavi,
+  Stephen,
+  Aishwarya,
+  Audrey,
+  Jacob,
+  Madhumitha,
+  Kevin,
+  Omar,
+  Pratap,
+  Xin,
+];
 
 const Judges = () => {
   return (
@@ -48,7 +81,7 @@ const Judges = () => {
                 name={judge.name}
                 position={judge.position}
                 shadow={judge.shadow}
-                image={"/" + judge.image}
+                image={images[index]}
                 linkedin={judge.linkedin}
               />
             </Col>

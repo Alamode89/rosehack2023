@@ -14,7 +14,7 @@ export const profiles = [
   {
     name: "Annabelle Le ",
     position: "Operations",
-    linkedin: "www.linkedin.com/in/annabelle-le-95425922a",
+    linkedin: "https://www.linkedin.com/in/annabelle-le-95425922a",
     shadow: "shadow-team-yellow",
   },
   {

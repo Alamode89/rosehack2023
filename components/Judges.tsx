@@ -17,7 +17,7 @@ import Stephen from "../public/Stephen.webp";
 import Aishwarya from "../public/aish.webp";
 import Audrey from "../public/Audrey.webp";
 import Jacob from "../public/Jacob.webp";
-import Madhumitha from "../public/Madhumitha.webp";
+import Madhumitha from "../public/sentilkumar.webp";
 import Kevin from "../public/Kevin.webp";
 import Omar from "../public/Omar.webp";
 import Pratap from "../public/pratappic.webp";

@@ -64,14 +64,16 @@ export const judges = [
   },
   {
     name: "Jacob Poole",
-    position: "Computer Science and Robotics Teacher at Crescenta Valley High School",
+    position:
+      "Computer Science and Robotics Teacher at Crescenta Valley High School",
     linkedin: "https://www.linkedin.com/in/jacob-poole/",
     image: "Jacob.webp",
     shadow: "shadow-team-pink",
   },
   {
     name: "Madhumitha Senthilkumar",
-    position: "M.Eng Biopharmaceutical Processing Student at Keck Graduate Institute",
+    position:
+      "M.Eng Biopharmaceutical Processing Student at Keck Graduate Institute",
     linkedin: "https://www.linkedin.com/in/mithasenthil/",
     image: "Madhumitha.webp",
     shadow: "shadow-team-hotpink",
